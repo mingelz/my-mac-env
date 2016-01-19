@@ -9,10 +9,9 @@ export EDITOR=vim
 export HISTCONTROL=ignorespace
 
 # nvm
-#export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/dist"
-#export NVM_DIR=~/.nvm
-## source $(brew --prefix nvm)/nvm.sh
-#source "/usr/local/opt/nvm/nvm.sh"
+export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/dist"
+export NVM_DIR=~/.nvm
+source "/usr/local/opt/nvm/nvm.sh"
 
 # java
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
