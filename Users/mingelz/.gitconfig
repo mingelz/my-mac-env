@@ -1,0 +1,24 @@
+[user]
+    name = mingelz
+    email = mingelz@gmail.com
+[push]
+    default = simple
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[difftool "vimdiff"]
+    # 默认的 diff.tool = vimdiff 会导致添加 -R (只读) 参数，所以需要专门指定一下 cmd
+    cmd = "vimdiff $LOCAL $REMOTE"
+[alias]
+    br = branch
+    ci = commit
+    cl = clone
+    co = checkout
+    di = difftool
+    mg = merge
+    st = status
+    # http://git-scm.com/docs/git-log
+    #        图形    简短hash        相对时间        装饰ref    30条 显示格式: %h 短哈希, %ar 相对提交时间, %s 提交说明, %an 作者, %d 引用信息, %n 换行
+    lg = log --graph --abbrev-commit --relative-date --decorate -n30 --pretty=format:'%C(red)%h%C(reset) - %C(cyan)(%ar)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
+
