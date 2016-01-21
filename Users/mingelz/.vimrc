@@ -1,6 +1,6 @@
 " Vimrc
 " mingelz <mingelz@gmail.com>
-" 2016-01-03 16:56:25
+" 2016-01-21 14:56:44
 " copyleft
 
 " == 此 vimrc 仅适用于 VIM 7.0 以上版本 == {{{
@@ -11,13 +11,7 @@ endif
 " == }}}
 
 " == 变量 == {{{
-if has("win32")
-  let slash = '\'
-  let VIMFILES = $VIM . slash . 'vimfiles'
-else
-  let slash = '/'
-  let VIMFILES = $HOME . slash . '.vim'
-endif
+let RTHOME=split(&runtimepath, ',')[0]    "先取到 RUNTIMEPATH 路径，.vim 或 vimfiles，接下来会用到
 " == }}}
 
 " == 基础 == {{{
@@ -29,6 +23,8 @@ if has("win32")
   source $VIMRUNTIME/mswin.vim    "设置快捷键为 Windows 方式
   behave mswin    "设置快捷键为 Windows 方式
 endif
+"指定 viminfo 的位置，使用 set viminfo 的方式只能跟字符串，为了合适变量，需要用 let &viminfo
+let &viminfo .= ',n' . RTHOME . '/viminfo'
 " == }}}
 
 " == 编码 == {{{
@@ -140,25 +136,24 @@ set smartcase    "搜索时如果输入的是全小写，则此次搜索大小�
 " == 语法 == {{{
 syntax on    "开启语法高亮支持
 "au BufRead,BufNewFile *.less set filetype=css    " .less 使用 css 语法规则
+au BufRead,BufNewFile *.we set filetype=html
 " == }}}
 
 " == 备份 == {{{
 set nobackup    "关闭备份。备份文件是 Vim 每隔一段时间自动保存的文件，备份文件不会被删除，如果需要在结束编辑时删除备份文件，使用 set writebackup  (见下一个设置项)
 set nowritebackup    "关闭备份。此命令只会在编辑时创建备份文件，当关闭 Vim 时也会将备份文件删除 [nowb=nowritebackup]
-"set backupdir=$VIMFILES/bak/    "设置备份文件的存储路径 [bdir=backupdir]
 "set noswapfile    "关闭交换文件。Vim 会在打开文件的同时，在同目录下 (如需要自定义目录请看下一项) 创建一个交换文件(.swp)，在 Vim 意外关闭的时候，可以通过交换文件恢复之前的操作。非常不建议关闭！
-"set dir=$VIMFILES/swp/    "设置交换文件的存储路径 [dir=directory]
 if has("persistent_undo")    "持久化撤销，该功能从 7.3 版本开始支持
   set undofile    "开启持久化撤销 [udf=undofile]
-  "设置持久化撤销的路径，默认为"."，保存的文件名后缀为 .un~ [udir=undodir]
+  "持久化撤销的路径默认为"."，保存的文件名后缀为 .un~ [udir=undodir]，个人习惯放到 RUNTIMEPATH 目录
   "因为调用了变量，所以使用 `let &undodir` 而不是 `set undodir`
-  "记得在 VIMFILES 下建一个 undofile 目录
-  let &undodir = VIMFILES . slash . 'undofile' . slash
+  "并记得在 RTHOME 下建一个 undo 目录
+  let &undodir = RTHOME . '/undo/'
 endif
 " == }}}
 
 " == 其他 == {{{
-set autochdir    "自动将目录切换到当前文件所在位置 (此定义在 Vim 7.3 中与 :Sex 命令有冲突)
+"set autochdir    "自动将目录切换到当前文件所在位置 (此定义在 GVim 和 MacVim中可能会有系统兼容问题)
 set hidden    "只要 Vim 窗口还在，通过 q 关闭的文件存在于 buffer 中，而不是真正的关闭 (可通过 bd 命令彻底关闭) ，带来的好处是在切换 buffer 时不会丢失操作记录
 set keywordprg=    "K 命令总是使用 :help 查找关键字 (在Linux中默认是 man -s) [kp=keywordprg]
 "set clipboard=unnamed    "默认使用系统剪切板，这会导致 Vim 自己的各个寄存器不可用
@@ -209,8 +204,6 @@ inoremap { {}<Left>
 inoremap } <c-r>=ClosePair('}')<CR>
 inoremap [ []<Left>
 inoremap ] <c-r>=ClosePair(']')<CR>
-"inoremap < <><Left>
-"inoremap > <c-r>=ClosePair('>')<CR>
 " -------------------------------------------}}}--
 
 " -- 上下移动一行文本 -----------------------{{{--
@@ -305,6 +298,7 @@ Plugin 'jelera/vim-javascript-syntax'    "提供更好的 Javascript 语法高�
 Plugin 'cakebaker/scss-syntax.vim'    "Sass 语法高亮
 Plugin 'terryma/vim-multiple-cursors'    "多光标支持，用法参考项目首页
 Plugin 'digitaltoad/vim-jade'    "Jade 语法高亮
+Plugin 'yianwillis/vimcdoc'    "vim中文文档
 call vundle#end()
 
 filetype plugin on    "开启插件支持
