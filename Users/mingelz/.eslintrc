@@ -160,28 +160,45 @@
     // Stylistic Issues
     "array-bracket-spacing": [2, "never"],        // 数组的中括号前后是否要加空格
     "block-spacing": [2, "always"],               // 代码块前后是否要有空格
-    "brace-style": [2, "stroustrup", {                  // http://eslint.org/docs/rules/brace-style
-      "allowSingleLine": true
+    "brace-style": [2, "stroustrup", {            // 大括号的风格，stroustrup 表示 `else` 前不跟 `}`
+      "allowSingleLine": true                     // 有些情况可能只在一行里写
     }],
-    "camelcase": [2, {                            // http://eslint.org/docs/rules/camelcase
-      "properties": "never"
+    "camelcase": [2, {                            // 使用驼峰表示变量
+      "properties": "always"                      // 对象的属性名是否使用驼峰
     }],
-    "comma-spacing": [2, {                        // http://eslint.org/docs/rules/comma-spacing
+    "comma-spacing": [2, {                        // 逗号前后是否要有空格
       "before": false,
       "after": true
     }],
-    "comma-style": [2, "last"],                   // http://eslint.org/docs/rules/comma-style
-    "computed-property-spacing": 2,
-    "consistent-this": 2,
-    "eol-last": 2,                                // http://eslint.org/docs/rules/eol-last
-    "func-names": 0,                              // http://eslint.org/docs/rules/func-names
-    "func-style": 0,                              // http://eslint.org/docs/rules/func-names
-    "id-length": 0,                               // http://eslint.org/docs/rules/func-names
-    "id-match": 0,                                // http://eslint.org/docs/rules/func-names
-    "indent": [2, 2, {                            // http://eslint.org/docs/rules/
-      "SwitchCase": 1
+    "comma-style": [2, "last"],                   // 逗号在前还是在后
+    "computed-property-spacing": [2, "never"],    // 在 ES2015 中属性名可以使用变量，变量中括号内，是否要有空格
+    "consistent-this": [2, "_this"],              // 给 this 一个专门的名字，保持连贯性
+    "eol-last": 2,                                // 最后是否要空一行
+    "func-names": 2,                              // 函数是否一定要有名字，平时一些匿名函数也要起名字，可方便调试
+    "func-style": [2, "declaration", {            // 函数风格，使用函数定义，还是变量定义
+      "allowArrowFunctions": true                 // 是否允许箭头函数
     }],
-    "jsx-quotes": 2,
+    "id-length": [2, {                            // 变量名、函数名、对象属性名的长度
+      "min": 1,                                   // 最小长度
+      "max": 50,                                  // 最大长度
+      "properties": "always",                     // 是否检查对象属性名
+      //"exceptions": ["i"]                         // 例外
+    }],
+    "id-match": [2,                               // 变量、函数名、对象属性名的命名规范
+      "^[a-z]+([A-Z][a-z0-9]+)*$",                // 对应的正则匹配
+      {
+        "properties": true                        // 是否检查对象属性名
+      }
+    ],
+    "indent": [2, 2, {                            // 使用何种缩进方式，现在配置的是 2 个空格缩进
+      "SwitchCase": 1,                            // switch/case 语句是否缩进
+      "VariableDeclarator": {                     // 定义变量的时候如果使用逗号分隔一行一个，如何缩进
+        "var": 2,                                 // 注意这里的 2 指2个缩进，乘以前边的每个缩进 2 个空格，就是要有 4 个空格的缩进
+        "let": 2,
+        "const": 3
+      }
+    }],
+    "jsx-quotes": [0, "prefer-double"],           // jsx 语法倾向于使用哪一种括号
     "key-spacing": [2, {                          // 在对象的冒号前后是否要有空格
       "mode": "strict",                           // 仅允许一个空格
       "beforeColon": false,                       // 在冒号前是否要空格
