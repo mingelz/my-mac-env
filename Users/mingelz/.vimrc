@@ -24,7 +24,12 @@ if has("win32")
   behave mswin    "设置快捷键为 Windows 方式
 endif
 "指定 viminfo 的位置，使用 set viminfo 的方式只能跟字符串，为了合适变量，需要用 let &viminfo
-let &viminfo .= ',n' . RTHOME . '/viminfo'
+if has('nvim')
+  " neovim 的 viminfo 格式不与 vim 兼容
+  let &viminfo .= ',n' . RTHOME . '/nviminfo'
+else
+  let &viminfo .= ',n' . RTHOME . '/viminfo'
+endif
 " == }}}
 
 " == 编码 == {{{
