@@ -93,7 +93,7 @@
     "no-unexpected-multiline": 2,                 // 不允许多行歧义，在不使用分号的情况下容易出现
     "no-unreachable": 2,                          // 在 return, throw, break, continue 后不允许再有语句
     "use-isnan": 2,                               // 使用 `isNaN(foo)` 而不是 `foo == NaN`
-    "valid-jsdoc": [1, {                          // 检查 JSDoc 语法注释，及其正确性
+    "valid-jsdoc": [0, {                          // 检查 JSDoc 语法注释，及其正确性
       // TODO
     }],
     "valid-typeof": 2,                            // 检查 typeof 后的拼写正确性 `typeof foo === 'nunber'`
@@ -112,7 +112,7 @@
     ],
     "default-case": 2,                            // switch 中是否必须要有 default，可使用 `// no default` 来明确表示无 default
     "dot-location": [2,                           // 有换行时 `.` 操作符的位置，跟在 'object' 后，还是 'property' 前
-      "object"
+      "property"
     ],
     "dot-notation": [2, {                         // 对象属性使用 `.` 获取，而不是 [] 获取
       "allowKeywords": true,                      // 是否允许关键字做 key，`foo['class']`
@@ -144,7 +144,6 @@
       "boolean": true,
       "number": true,
       "string": true,
-      "array": "",
       "allow": ["!!", "~", "*", "+"]
     }],
     "no-implicit-globals": 2,                     // 不允许有全局的 var 和 function 定义
@@ -189,7 +188,7 @@
       "allowShortCircuit": true,                  // 可以使用 `a && b()` 形式的短表达式
       "allowTernary": true                        // 允许三元表达式
     }],
-    "no-unused-labels ": 2,                       // 不允许不必要的 label
+    "no-unused-labels": 2,                        // 不允许不必要的 label
     "no-useless-call": 2,                         // 不允许不必要的 .call() 和 .apply()
     "no-useless-concat": 1,                       // 不允许多个常量字符串拼接，但换行拼接不受影响
     "no-void": 2,                                 // 不允许使用 void
@@ -203,7 +202,7 @@
       "any"
     ],
     "yoda": [2,                                   // 比较表达式是否需要符合自然语义
-      "always",                                   // 当使用 always 时就不需要下边两个细节了
+      "never",                                    // 当使用 always 时就不需要下边两个细节了
       {
         "exceptRange": true,                      // 大小于对比要符合区间性
         "onlyEquality": true                      // 等于对比变量在左
@@ -233,7 +232,7 @@
     }],
     "no-undef-init": 2,                           // 不允许定义一个变量的初始值为 undefined
     "no-undefined": 2,                            // 是否可以使用 undefined
-    "no-unused-vars": [2, {                       // 检测是否有未被使用的变量和函数
+    "no-unused-vars": [1, {                       // 检测是否有未被使用的变量和函数
       "vars": "all",                              // 检测所有的变量的使用情况，还是仅检测局部作用域下的变量
       "args": "after-used",                       // 函数参数在未使用前也被认为是未使用变量
       "varsIgnorePattern": "^_",                  // 可被忽略的未使用变量匹配正则
@@ -243,8 +242,10 @@
 
     // Node.js and CommonJS
     "callback-return": 2,
-    "global-require": 2,
-    "handle-callback-err": 2,
+    "global-require": 0,                          // require 都在代码最前边完成
+    "handle-callback-err": [2,                    // 参数标记有 err 时，回调中要有相应的错误处理逻辑
+      "^(e|E)rr(or)?$"
+    ],
     "no-mixed-requires": 2,
     "no-new-require": 2,
     "no-path-concat": 2,
@@ -290,7 +291,7 @@
         "allowArrowFunctions": true               // 是否允许箭头函数
       }
     ],
-    "id-blacklist": [2,                           // 变量名、函数名、对象属性名不允许使用以下单词
+    "id-blacklist": [0,                           // 变量名、函数名、参数名、对象属性名不允许使用以下单词
       "data", "err", "e", "cb", "callback"
     ],
     "id-length": [2, {                            // 变量名、函数名、对象属性名的长度
@@ -299,8 +300,8 @@
       "properties": "always",                     // 是否检查对象属性名
       //"exceptions": ["i"]                         // 例外
     }],
-    "id-match": [2,                               // 变量、函数名、对象属性名的命名规范
-      "^[a-z]+([A-Z][a-z0-9]+)*$",                // 对应的正则匹配
+    "id-match": [0,                               // 变量、函数名、对象属性名的命名规范
+      "^[A-Za-z]+([A-Z][a-z0-9]*)*$",             // 对应的正则匹配
       {
         "properties": true                        // 是否检查对象属性名
       }
@@ -347,7 +348,7 @@
     "max-depth": [2,                              // 每个函数中最大可嵌套的层数
       4
     ],
-    "max-len": [2,                                // 每行的最大长度
+    "max-len": [1,                                // 每行的最大长度
       80,                                         // 每行 80 个字符
       4,                                          // 一个 <tab> 算 4 个字符
       {
@@ -362,8 +363,8 @@
     "max-params": [2,                             // 一个函数最多可以有多少个参数
       9
     ],
-    "max-statements": [2,                         // 一个函数中最多可以有多少条声明
-      9
+    "max-statements": [0,                         // 一个函数中最多可以有多少条语句
+      100
     ],
     "new-cap": [2, {                              // 检查 new 操作符后的命名是否为大写字母开头
       "newIsCap": true,                           // 检查所有首字母开头的函数都仅用 new 调用
@@ -372,11 +373,11 @@
       //"capIsNewExceptions": [""]                  // 对应的 capIsNew 例外，默认: Array, Boolean, Date, Error, Function, Number, Object, RegExp, String, Symbol
     }],
     "new-parens": 2,                              // 使用 new 操作符时，构造函数要带括号
-    "newline-after-var": [2,                      // var 定义后留一个空行（最佳实践希望把定义变量与运行代码用一个空行分开）
+    "newline-after-var": [0,                      // var 定义后留一个空行（最佳实践希望把定义变量与运行代码用一个空行分开）
       "always"
     ],
-    "newline-per-chained-call": [2, {             // 链式调用每行一个调用
-      "ignoreChainWithDepth": 2                   // 如果链式较短，可以忽略
+    "newline-per-chained-call": [0, {             // 链式调用每行一个调用
+      "ignoreChainWithDepth": 3                   // 如果链式较短，可以忽略
     }],
     "no-array-constructor": 2,                    // 不允许使用 Array 构造函数（允许通过数字构造某长度的数组，但不允许传入数组值的方式）
     "no-bitwise": 2,                              // 不允许使用位运算操作符
@@ -394,7 +395,7 @@
       "allowForLoopAfterthoughts": true           // 但允许在 for 循环的表达式中使用
     }],
     "no-restricted-syntax": [2,                   // 不允许某些特殊语法
-      "FunctionExpression",                       // 不允许使用表达式赋值函数 `var fn = function () {}`
+      // "FunctionExpression",                       // 不允许使用表达式赋值函数 `var fn = function () {}`
       "WithStatement",                            // 不允许使用 with
     ],
     "no-spaced-func": 2,                          // 不允许函数调用时函数名与括号中间有空格
@@ -449,7 +450,7 @@
       "single",
       "avoid-escape"
     ],
-    "require-jsdoc": 1,                           // 函数是否有符合 JSDoc 格式的注释
+    "require-jsdoc": 0,                           // 函数是否有符合 JSDoc 格式的注释
     "semi": [2,                                   // 语句后是否要加分号
       "never"
     ],
@@ -457,7 +458,7 @@
       "before": false,
       "after": true
     }],
-    "sort-imports": [2, {                         // import 时的顺序
+    "sort-imports": [0, {                         // import 时的顺序
       "ignoreCase": true,
       "ignoreMemberSort": false,
       "memberSyntaxSortOrder": [
@@ -504,8 +505,12 @@
     "wrap-regex": 2,                              // 是否要包裹正则字面量 `/reg/.test()` -> `(/reg/).test()`
 
     // ECMAScript 6
-    "arrow-body-style": 2,
-    "arrow-parens": 2,
+    "arrow-body-style": [2,                       // 箭头函数的语句是否使用大括号包裹
+      "as-needed"                                 // 大于一句时才需要
+    ],
+    "arrow-parens": [2,                           // 箭头函数参数是否一定要用括号
+      "as-needed"                                 // 大于一个参数时才需要
+    ],
     "arrow-spacing": 2,
     "constructor-super": 2,
     "generator-star-spacing": 2,
@@ -516,11 +521,11 @@
     "no-new-symbol": 2,
     "no-this-before-super": 2,
     "no-useless-constructor": 2,
-    "no-var": 2,
-    "object-shorthand": 2,
+    "no-var": 1,                                  // 只使用 let/const，不使用 var
+    "object-shorthand": 1,                        // 更简洁的对象定义方案
     "prefer-arrow-callback": 2,
-    "prefer-const": 2,
-    "prefer-reflect": 2,
+    "prefer-const": 0,                            // 如果 let 定义的变量未被修改过，提示使用 const
+    "prefer-reflect": 0,                          // 使用 ES6 的 call/apply 方案
     "prefer-rest-params": 2,
     "prefer-spread": 2,
     "prefer-template": 2,
