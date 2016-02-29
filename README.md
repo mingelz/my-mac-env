@@ -45,16 +45,17 @@ My Mac Environment
     + WeChat
     + Xcode
 + [brew](http://brew.sh/) & [cask](http://caskroom.io/)
-    + [Android File Transfer](https://www.android.com/filetransfer/)
+    + [Android File Transfer](https://www.android.com/filetransfer/) `cask`
     + android-platform-tools (adb)
-    + [Atom](http://atom.io)
+    + [Atom](http://atom.io) `cask`
     + autojump (for oh-my-zsh)
-    + [BetterTouchTool](http://bettertouchtool.net/)
+    + [BetterTouchTool](http://bettertouchtool.net/) `cask`
     + ~~git~~ (installed with Xcode)
-    + [Google Chrome](https://www.google.com/chrome/)
-    + [ImageAlpha](http://pngmini.com/)
-    + [MacVim](https://github.com/macvim-dev/macvim)
-    + [MPlayerX](http://mplayerx.org/)
+    + [Google Chrome](https://www.google.com/chrome/) `cask`
+    + [ImageAlpha](http://pngmini.com/) `cask`
+    + [iTerm2](https://www.iterm2.com/) `cask`
+    + [MacVim](https://github.com/macvim-dev/macvim) `cask`
+    + [MPlayerX](http://mplayerx.org/) `cask`
     + nginx
     + nvm & node & npm
         + adam
@@ -62,10 +63,10 @@ My Mac Environment
         + [gulp](http://gulpjs.com/)
         + [mocha](http://mochajs.org/)
         + [uglify-js](https://github.com/mishoo/UglifyJS2)
-    + [SourceTree](https://www.sourcetreeapp.com/)
+    + [SourceTree](https://www.sourcetreeapp.com/) `cask`
     + tree
     + ~~wget~~ (use `curl -o`)
-    + [XnViewMP](http://www.xnview.com/en/xnviewmp/)
+    + [XnViewMP](http://www.xnview.com/en/xnviewmp/) `cask`
 + [gem](https://ruby.taobao.org/)
     + sass
 + Others
