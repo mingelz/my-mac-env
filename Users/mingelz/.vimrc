@@ -114,7 +114,7 @@ endif
 set autoindent    "自动缩进 (继承前一行的缩进) [ai=autoindent]
 set smartindent    "使用智能缩进 [si=smartindent]
 set cindent    "使用 C 语言风格的缩进 [ci=cindent]
-set cinoptions=l1b0j1J1    "自定义 C 语言风格缩进 [cino=cinoptions]
+set cinoptions=l1C3j1J1    "自定义 C 语言风格缩进 [cino=cinoptions]
 set list    "显示缩进参考线及行尾标记 (行尾使用$符)
 set listchars=tab:>-,trail:-    "定义tab以 >--- 显示，行尾空格使用 - 显示 (需要先设置 set list) [lcs=listchars]
 set expandtab    "使用空格代替 tab (使用空格代替tab: expandtab，不使用空格代替tab: noexpandtab) [et=expandtab, noet=noexpandtab]
@@ -299,10 +299,11 @@ Plugin 'VundleVim/Vundle.vim'    "让 vundle 管理插件版本, 必须
 Plugin 'scrooloose/nerdtree'    "文件管理器
 Plugin 'lilydjwg/colorizer'    "修改 CSS 颜色值的背景色为对应颜色
 Plugin 'mattn/emmet-vim'    "原来的 ZenCoding
-Plugin 'jelera/vim-javascript-syntax'    "提供更好的 Javascript 语法高亮，参考自 [Javascript Syntax](http://www.vim.org/scripts/script.php?script_id=1491)
+Plugin 'othree/yajs.vim'    "更好的 Javascript 语法高亮
 Plugin 'cakebaker/scss-syntax.vim'    "Sass 语法高亮
 Plugin 'terryma/vim-multiple-cursors'    "多光标支持，用法参考项目首页
 Plugin 'digitaltoad/vim-jade'    "Jade 语法高亮
+Plugin 'mxw/vim-jsx'    "JSX 语法高亮
 Plugin 'yianwillis/vimcdoc'    "vim中文文档
 call vundle#end()
 
