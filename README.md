@@ -66,6 +66,7 @@ My Mac Environment
     + [SourceTree](https://www.sourcetreeapp.com/) `cask`
     + tree
     + ~~wget~~ (use `curl -o`)
+    + XMind `cask`
     + [XnViewMP](http://www.xnview.com/en/xnviewmp/) `cask`
 + [gem](https://ruby.taobao.org/)
     + sass
