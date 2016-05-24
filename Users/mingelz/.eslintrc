@@ -1,6 +1,6 @@
 /**
  * for: eslint v2.x
- * update: 2016-04-05
+ * update: 2016-05-24
  *
  * ref.:
  *   + http://eslint.org/docs/rules/[rule-name]
@@ -224,7 +224,7 @@
     "no-catch-shadow": 2,                         // 在 IE8 中 catch 参数名会扩散到外部作用域
     "no-delete-var": 2,                           // 不允许使用 delete 删除使用 var 定义的变量
     "no-label-var": 2,                            // 不允许 label 的名字与变量名相同
-    "no-shadow": [2, {                            // 不允许在子作用域中定义与外部作用域同名的变量
+    "no-shadow": [0, {                            // 不允许在子作用域中定义与外部作用域同名的变量
       "builtinGlobals": false,                    // 是否可定义与内置方法/属性同名变量
       "hoist": "functions",                       // 当子作用域在前时，是否可被后边的定义覆盖
       "allow": []                                 // 要排除的关键字
@@ -234,7 +234,7 @@
       "typeof": false                             // 是否针对 typeof 后跟的变量做检测
     }],
     "no-undef-init": 2,                           // 不允许定义一个变量的初始值为 undefined
-    "no-undefined": 2,                            // 是否可以使用 undefined
+    "no-undefined": 1,                            // 是否可以使用 undefined
     "no-unused-vars": [1, {                       // 检测是否有未被使用的变量和函数
       "vars": "all",                              // 检测所有的变量的使用情况，还是仅检测局部作用域下的变量
       "args": "after-used",                       // 函数参数在未使用前也被认为是未使用变量

@@ -54,16 +54,12 @@ My Mac Environment
     + [Google Chrome](https://www.google.com/chrome/) `cask`
     + [ImageAlpha](http://pngmini.com/) `cask`
     + [iTerm2](https://www.iterm2.com/) `cask`
-    + [MacVim](https://github.com/macvim-dev/macvim) `cask`
+    + [MacVim](https://github.com/macvim-dev/macvim)
     + [MPlayerX](http://mplayerx.org/) `cask`
     + nginx
     + nvm & node & npm
         + adam
-        + [eslint](http://eslint.org)
-        + [gulp](http://gulpjs.com/)
-        + [mocha](http://mochajs.org/)
-        + [uglify-js](https://github.com/mishoo/UglifyJS2)
-    + [SourceTree](https://www.sourcetreeapp.com/) `cask`
+        + browser-sync
     + tree
     + ~~wget~~ (use `curl -o`)
     + XMind `cask`
