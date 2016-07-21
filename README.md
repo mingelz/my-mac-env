@@ -13,7 +13,7 @@ My Mac Environment
 |       |-- .eslintrc
 |       |-- .gemrc
 |       |-- .gitconfig
-|       |-- .jshintrc
+|       |-- .mybin/
 |       |-- .npmrc
 |       |-- .ssh/
 |       |-- .vimrc
@@ -39,43 +39,45 @@ My Mac Environment
         + Pages
         + Numbers
         + Keynote
-    + [MWeb Lite](http://www.mweb.im/)
+    + [MWeb / MWeb Lite](http://www.mweb.im/)
     + Pocket
     + The Unarchiver
     + WeChat
     + Xcode
+    + 网易云音乐
 + [brew](http://brew.sh/) & [cask](http://caskroom.io/)
-    + [Android File Transfer](https://www.android.com/filetransfer/) `cask`
+    + -- brew --
     + android-platform-tools (adb)
-    + [Atom](http://atom.io) `cask`
     + autojump (for oh-my-zsh)
-    + [BetterTouchTool](http://bettertouchtool.net/) `cask`
     + ~~git~~ (installed with Xcode)
-    + [Google Chrome](https://www.google.com/chrome/) `cask`
-    + [ImageAlpha](http://pngmini.com/) `cask`
-    + [iTerm2](https://www.iterm2.com/) `cask`
-    + [MacVim](https://github.com/macvim-dev/macvim)
-    + [MPlayerX](http://mplayerx.org/) `cask`
     + nginx
-    + nvm & node & npm
+    + nvm & node
         + adam
-        + browser-sync
+        + npm
     + tree
-    + ~~wget~~ (use `curl -o`)
-    + XMind `cask`
-    + [XnViewMP](http://www.xnview.com/en/xnviewmp/) `cask`
-+ [gem](https://ruby.taobao.org/)
-    + sass
+    + ~~wget~~ (use curl)
+    + -- cask --
+    + [flux](https://justgetflux.com/)
+    + [iTerm2](https://www.iterm2.com/)
+    + [MacVim](https://github.com/macvim-dev/macvim)
+    + [MPlayerX](http://mplayerx.org/)
+    + [XMind](http://www.xmind.net/)
 + Others
     + [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
     + [BaiduInput](http://srf.baidu.com/input/mac.html)
     + [QQ](http://im.qq.com/macqq/)
+    + [Google Chrome](https://www.google.com/chrome/)
     + [AliWangwang](http://wangwang.taobao.com/)
     + [Dingding](http://www.dingtalk.com/)
     + [Thunder](http://mac.xunlei.com/)
+    + [Android File Transfer](https://www.android.com/filetransfer/)
     + [Shadowsock](https://shadowsocks.org/)
+    + [Atom](http://atom.io)
+    + [ImageAlpha](http://pngmini.com/)
+    + [XnViewMP](http://www.xnview.com/en/xnviewmp/)
+    + [BetterTouchTool](http://bettertouchtool.net/)
     + [Charles Proxy](http://www.charlesproxy.com/)
     + [Sketch](https://www.sketchapp.com/)
     + [IntelliJ IDEA](http://www.jetbrains.com/idea/)
-    + Photoshop
+    + Adobe Photoshop
     + Microsoft Office

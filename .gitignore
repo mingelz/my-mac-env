@@ -3,15 +3,18 @@
 Thumbs.db
 Desktop.ini
 
-# Tools
+# IDE
+*.swp
+*.swo
+.idea
+.project
+
+# Dependency, Cache, Temporary
 node_modules/
 bower_components/
 .svn/
 .sass-cache/
 npm-debug.log
-*.sw?
-.idea
-.project
 
-# temporary
-tmp/
+# Distribution
+dist/

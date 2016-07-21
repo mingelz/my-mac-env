@@ -1,7 +1,6 @@
 " Vimrc
 " mingelz <mingelz@gmail.com>
-" 2016-01-21 14:56:44
-" copyleft
+" 2016-07-21 21:42:47
 
 " == 此 vimrc 仅适用于 VIM 7.0 以上版本 == {{{
 if v:version < 700
@@ -47,6 +46,7 @@ set nobomb    "不设置 Unicode BOM
 " == }}}
 
 " == 字体 == {{{
+" 推荐 http://input.fontbureau.com/ 系列的字体
 if has("win32")    "GVim on Windows
   set guifont=Yahei\ Mono:h11:cGB2312    "Yahei Mono 下载地址：http://url.cn/LXjV5U (字体作者博客已无法访问：http://blog.humou.net/?p=898)
   "set guifontwide=Yahei\ Mono:h11:cGB2312
@@ -71,7 +71,7 @@ if has("gui_running")    "当在 GUI 运行时
   set cursorcolumn    "高亮当前列
   "hi cursorline guibg=#333333    "当前行背景色
   "hi cursorcolumn guibg=#333333    "当前列背景色
-  colo desert    "定义配色方案 [colo=colorscheme]
+  colo desert
   if has("win32")
     au GUIEnter * simalt ~x    "界面最大化
     "winpos 1 1    "窗口起始位置，当双屏幕时，可以让 Vim 默认在某个屏幕打开
@@ -86,6 +86,7 @@ endif
 
 " == 标签栏 & 命令行 & 状态栏 == {{{
 set showtabline=2    "显示tab标签 (0:从不显示; 1:至少2个tab才显示; 2:总是显示)
+"set laststatus=2    "显示状态栏 (0:从不显示; 1:至少2个tab才显示; 2:总是显示)
 "set tabline=%N\)\ %t\ %M    "自定义 terminal 下的标签内容 (%N:标签序号; %t:文件名; %M:是否被修改) [gtl=guitablable]
 set wildmenu    "使用增强模式的命令行补全
 set showcmd    "在状态栏显示目前所执行的指令，未完成的指令片断也显示
@@ -115,8 +116,8 @@ set autoindent    "自动缩进 (继承前一行的缩进) [ai=autoindent]
 set smartindent    "使用智能缩进 [si=smartindent]
 set cindent    "使用 C 语言风格的缩进 [ci=cindent]
 set cinoptions=l1C3j1J1    "自定义 C 语言风格缩进 [cino=cinoptions]
-set list    "显示缩进参考线及行尾标记 (行尾使用$符)
-set listchars=tab:>-,trail:-    "定义tab以 >--- 显示，行尾空格使用 - 显示 (需要先设置 set list) [lcs=listchars]
+" set list    "显示缩进参考线及行尾标记 (行尾使用$符)，使用 vim-indent-guides 插件时不再需要配置这一项
+" set listchars=tab:>-,trail:-    "定义tab以 >--- 显示，行尾空格使用 - 显示 (需要先设置 set list) [lcs=listchars]
 set expandtab    "使用空格代替 tab (使用空格代替tab: expandtab，不使用空格代替tab: noexpandtab) [et=expandtab, noet=noexpandtab]
 set tabstop=2    "tab 宽度 (页面中已有的 tab) [ts=tabstop]
 set softtabstop=2    "按 <tab> 或 <backspace> 时，对应的 tab 宽度 [sts=softtabstop]
@@ -158,7 +159,7 @@ endif
 " == }}}
 
 " == 其他 == {{{
-"set autochdir    "自动将目录切换到当前文件所在位置 (此定义在 GVim 和 MacVim中可能会有系统兼容问题)
+set autochdir    "自动将目录切换到当前文件所在位置 (此定义在 GVim 和 MacVim中可能会有系统兼容问题)
 set hidden    "只要 Vim 窗口还在，通过 q 关闭的文件存在于 buffer 中，而不是真正的关闭 (可通过 bd 命令彻底关闭) ，带来的好处是在切换 buffer 时不会丢失操作记录
 set keywordprg=    "K 命令总是使用 :help 查找关键字 (在Linux中默认是 man -s) [kp=keywordprg]
 "set clipboard=unnamed    "默认使用系统剪切板，这会导致 Vim 自己的各个寄存器不可用
@@ -294,25 +295,69 @@ nmap <leader>tn :call SetGuiTabLabel()<CR>
 filetype off    "执行vundle前必须先关闭插件支持
 set rtp+=~/.vim/bundle/Vundle.vim    "添加 vundle runtime path 并启动 vundle
 call vundle#begin()    "必须将安装插件的命令放在 vundle#begin 和 vundle#end 之间
-" 格式为 `Plugin 'github用户名/插件仓库名'`
+" 格式为 `Plugin 'github-username/repo-name'`
 Plugin 'VundleVim/Vundle.vim'    "让 vundle 管理插件版本, 必须
 Plugin 'scrooloose/nerdtree'    "文件管理器
-Plugin 'lilydjwg/colorizer'    "修改 CSS 颜色值的背景色为对应颜色
-Plugin 'mattn/emmet-vim'    "原来的 ZenCoding
+Plugin 'scrooloose/nerdcommenter'    "通过 [count]<leader>ci 切换注释（cc添加，cu取消），更多快捷键详看帮助
+" Plugin 'scrooloose/syntastic'    "语法检查，scrooloose 太 TMD 高产了
+Plugin 'jistr/vim-nerdtree-tabs'    "给 NERDTree 添加自动开启
+Plugin 'terryma/vim-multiple-cursors'    "多光标支持，快捷键 <control-n>
+" Plugin 'mattn/emmet-vim'    "原来的 ZenCoding
+" Plugin 'jiangmiao/simple-javascript-indenter'    "更好的 Javascript 缩进
 Plugin 'othree/yajs.vim'    "更好的 Javascript 语法高亮
 Plugin 'cakebaker/scss-syntax.vim'    "Sass 语法高亮
-Plugin 'terryma/vim-multiple-cursors'    "多光标支持，用法参考项目首页
-Plugin 'digitaltoad/vim-jade'    "Jade 语法高亮
-Plugin 'mxw/vim-jsx'    "JSX 语法高亮
+" Plugin 'digitaltoad/vim-jade'    "Jade 语法高亮
+Plugin 'altercation/vim-colors-solarized'    "漂亮的主题
+" Plugin 'tomasr/molokai'    "又一个漂亮的主题
+" Plugin 'vim-airline/vim-airline'    "powerline 的 vim 版本
+" Plugin 'vim-airline/vim-airline-themes'
+Plugin 'lilydjwg/colorizer'    "修改 CSS 颜色值的背景色为对应颜色
+Plugin 'luochen1990/rainbow'    "彩虹括号
+Plugin 'nathanaelkane/vim-indent-guides'    "更漂亮的缩进
+" Plugin 'Yggdroot/indentLine'    "又一个漂亮的缩进
 Plugin 'yianwillis/vimcdoc'    "vim中文文档
+Plugin 'editorconfig/editorconfig-vim'    "Editor Config
+Plugin 'wakatime/vim-wakatime'    "统计写码时间 https://wakatime.com
 call vundle#end()
 
-filetype plugin on    "开启插件支持
+filetype plugin indent on    "重新开启插件支持
 source $VIMRUNTIME/macros/matchit.vim    "启用 vim 自带的 matchit 插件，扩展 % 键的功能，可以在成对的匹配开始与结束位置跳转。例如左右括号、HTML 的 Tags 等
 " -------------------------------------------}}}--
 
-" -- emmet ----------------------------------{{{--
-"let g:user_emmet_expandabbr_key = '<c-e>'    "emmet 默认的快捷键是 <c-y>,
+" -- 插件设置，仅开启对应插件后有效 ---------{{{--
+" NERDCommenter
+let g:NERDSpaceDelims = 1    "NERDCommenter: 注释时在后边加空格
+let g:NERDDefaultAlign = 'start'    "注释插入到代码行最开始
+
+" syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
+
+" vim-nerdtree-tabs
+map <leader>n <plug>NERDTreeTabsToggle<CR>
+
+" emmet
+" let g:user_emmet_expandabbr_key = '<c-e>'    "emmet 默认的快捷键是 <c-y>,
+
+" vim-airline
+" let g:airline_powerline_fonts = 1    "airline 使用 powerline 字体
+
+" rainbow
+let g:rainbow_active = 1    "彩虹括号默认打开
+
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1    "自动打开缩进线
+
+" vim-colors-solarized
+if has("gui_running")
+  silent! colo solarized    "只在 GUI 下尝试使用 solarized 主题
+endif
 " -------------------------------------------}}}--
 " == }}}
 
@@ -330,6 +375,8 @@ source $VIMRUNTIME/macros/matchit.vim    "启用 vim 自带的 matchit 插件，
 "   + https://github.com/hotoo/vimrc
 "   + http://lilydjwg.is-programmer.com/2014/4/16/what-does-sublime-text-do-better-than-vim.44942.html
 "   + http://t.qq.com/p/t/56342018278957
+"   + http://zhihu.com
+"   + http://v2ex.com
 " == }}}
 
 " XXX: 最后一行为 模式行，请勿修改，可参考 modelines

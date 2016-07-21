@@ -1,6 +1,6 @@
 # alias
 alias la="ls -alhG"
-alias vim=~/Applications/MacVim.app/Contents/MacOS/Vim # MacVim 通过 Cask 安装，这个路径是通过软链接过去的
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim # MacVim 通过 Cask 安装
 
 # editor
 export EDITOR=vim
@@ -12,6 +12,9 @@ export HISTCONTROL=ignorespace
 export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/dist"
 export NVM_DIR=~/.nvm
 source "/usr/local/opt/nvm/nvm.sh"
+
+# mybin path
+export PATH=~/.mybin:$PATH
 
 # java
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
