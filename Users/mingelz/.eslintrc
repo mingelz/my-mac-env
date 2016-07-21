@@ -1,25 +1,29 @@
 /**
- * for: eslint v2.x
- * update: 2016-05-24
- *
  * ref.:
  *   + http://eslint.org/docs/rules/[rule-name]
  *   + https://pirosikick.github.io/eslintrc-editor/
+ *
+ * applicable: eslint v3.1.1
+ * update: 2016-07-21
  */
+
 {
   "root": true,
+
   "extends": "eslint:recommended",                // 可以在这里引用一个成熟的检测方案，如果下边每条细节都指定，则这行可以注释掉
+  "plugins": [],
+  "settings": {},
 
   "env": {                                        // 代码可能运行的环境，及全局变量定义
     "browser": true,
     "node": true,
     "es6": true,
-    "mocha": true,
 
     "commonjs": false,
     "shared-node-browser": false,
     "worker": false,
     "amd": false,
+    "mocha": false,
     "jasmine": false,
     "jest": false,
     "phantomjs": false,
@@ -43,26 +47,20 @@
     // "bar": false
   },
 
-  "parser": "",                                   // js 解析器，默认 Espree, 另有 Esprima, Esprima-FB, Babel-ESLint
+  "parser": "espree",                             // js 解析器，默认 Espree, 另有 Esprima, Esprima-FB, Babel-ESLint
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
       "globalReturn": false,
       "impliedStrict": false,
-      "jsx": false,
-      "experimentalObjectRestSpread": false
+      "jsx": true,
+      "experimentalObjectRestSpread": true
     }
   },
 
-  "plugins": [],
-  "settings": {},
-
   "rules": {
     // Possible Errors
-    "comma-dangle": [2,                           // 对象和数组最后一个 value 后是否加逗号
-      "never"
-    ],
     "no-cond-assign": [2,                         // 不允许在条件语句中使用赋值语句 `if (x = 1)`
       "always"
     ],
@@ -72,46 +70,46 @@
     "no-debugger": 2,                             // 不允许有 debugger
     "no-dupe-args": 2,                            // 函数参数名不允许重复 `function foo (a, b, a)`
     "no-dupe-keys": 2,                            // 对象的 key 不允许重复
-    "no-duplicate-case": 2,                       // switch case 语句的条件不允许重复
+    "no-duplicate-case": 2,                       // switch case 语句语句的条件不允许重复
     "no-empty": 2,                                // 不允许使用空的语句块 `if (foo) {}`
     "no-empty-character-class": 2,                // 正则中不允许使用空字符类 `var foo = /^abc[]/`
     "no-ex-assign": 2,                            // 不允许覆写 catch 语句的参数 `try {} catch (e) { e = 10 }`
     "no-extra-boolean-cast": 2,                   // 在条件判断语句中不允许使用不必要的布尔转换 `if (!!foo)`
     "no-extra-parens": [2,                        // 不允许多余的括号 `var foo = (1 + 2)`
-      "all"                                       // 无论普通的表达式还是函数都做这方面的检查
+      "functions"
     ],
     "no-extra-semi": 2,                           // 不允许多余的分号 `function foo {};`
     "no-func-assign": 2,                          // 不允许对函数名重新赋值
     "no-inner-declarations": [2,                  // 不允许在无独立作用域的块语句内声明函数和变量
-      "both"                                      // 可以是 'both'（不允许定义函数和变量） 或 'functions'（不允许定义函数）
+      "both"
     ],
-    "no-invalid-regexp": [2, {                    // 不允许无效的正则表达式 `RegExp('.', 'z')`
-      "allowConstructorFlags": ["u", "y"]         // ES2015 中的新 flag
-    }],
+    "no-invalid-regexp": 2,                       // 不允许无效的正则表达式
     "no-irregular-whitespace": 2,                 // 不允许普通空格和制表符外的其他非常规空格，如零宽空格、换行符
-    "no-negated-in-lhs": 2,                       // in 操作符前使用否定语句时要使用括号 `if (!(a in b))`
+    "no-negated-in-lhs": 2,                       // in 操作符前使用否定语句时要使用括号
     "no-obj-calls": 2,                            // 不允许直接调用 `Math(), JSON()`
+    "no-prototype-builtins": 2,                   // 使用 `Object.create()` 可以给对象一个特别的 prototype，所以建议使用 `{}.hasOwnProperty.call(foo, 'bar')，而不是 `foo.hasOwnProperty('bar')`
     "no-regex-spaces": 2,                         // 在正则中不允许使用连续多个空格，而要用数量限定 `/foo {3}bar/`
     "no-sparse-arrays": 2,                        // 数组中需要指定每一项，不允许多个逗号连续出现 `['foo',,'bar']`
-    "no-unexpected-multiline": 2,                 // 不允许多行歧义（在不使用分号的情况下容易出现），当行首为 `[`, `(`, `+`, `/`, `-`, `,`, `.` 时前要加分号
+    "no-unexpected-multiline": 2,                 // 不允许多行歧义，在不使用分号的情况下容易出现
     "no-unreachable": 2,                          // 在 return, throw, break, continue 后不允许再有语句
+    "no-unsafe-finally": 2,                       // 在 finally 中不允许使用 return, throw, break, continue 等语句，因为会先于 try 执行
     "use-isnan": 2,                               // 使用 `isNaN(foo)` 而不是 `foo == NaN`
     "valid-jsdoc": [0, {                          // 检查 JSDoc 语法注释，及其正确性
-      // TODO
+      // TODO: 有很多细节配置，待补充
     }],
     "valid-typeof": 2,                            // 检查 typeof 后的拼写正确性 `typeof foo === 'nunber'`
 
     // Best Practices
     "accessor-pairs": 2,                          // 同时提供 getter/setter 方法
-    "array-callback-return": 2,                   // 在数组的递归回调方法（map, reduce, every, filter, ...）中需要有 return
+    "array-callback-return": 2,                   // 在数组的递归回调函数中需要有 return
     "block-scoped-var": 2,                        // 避免变量影响到语句块外（类C）`if (foo) { var bar = 1 }`
     "complexity": [2,                             // 最多有多少个 `if else`
       20                                          // 默认 20
     ],
-    "consistent-return": 1,                       // return 后一定要有值，不能直接写 `return;`
+    "consistent-return": 2,                       // return 后一定要有值，不能直接写 `return;`
     "curly": [2,                                  // if, else, while, do, for 后是否必须使用大括号
-      "multi-line",                               // `all`（所有情况）, `multi`（只在多行时才允许加）, `multi-line`（仅在单行时可以不加）, `multi-or-nest`（只在多行且多条语句时才加）
-      "consistent"                                // 当使用了 `multi*` 时要保持风格一致性，`if (foo) { bar(); baz() } else buz()`
+      "multi-line",
+      "consistent"
     ],
     "default-case": 2,                            // switch 中是否必须要有 default，可使用 `// no default` 来明确表示无 default
     "dot-location": [2,                           // 有换行时 `.` 操作符的位置，跟在 'object' 后，还是 'property' 前
@@ -121,33 +119,33 @@
       "allowKeywords": true,                      // 是否允许关键字做 key，`foo['class']`
       "allowPattern": ""
     }],
-    "eqeqeq": [2,                                 // 使用 `===`
-      "smart"                                     // 两边无类型转换时，可以使用 `==`
+    "eqeqeq": [2,                                 // 使用 `===`，smart 表示两边无类型转换时，可以使用 `==`
+      "smart"
     ],
-    "guard-for-in": 2,                            // 在 `for in` 中检查是否过滤原型链继承属性，`if ({}.hasOwnProperty.call(foo, key))`
-    "no-alert": 2,                                // 避免使用 `alert`, `confirm`, `prompt`
-    "no-caller": 2,                               // 不允许使用 `arguments.caller` 或 `arguments.callee`
+    "guard-for-in": 2,                            // 在 `for in` 中过滤原型链继承属性
+    "no-alert": 2,                                // 避免使用 alert, confirm, prompt
+    "no-caller": 2,                               // 不允许使用 `arguments.caller` 或 `arguments.caller`
     "no-case-declarations": 2,                    // 不允许在 case 中定义变量和函数，如定义需要用大括号 `case: { let foo = 1 }`
-    "no-div-regex": 2,                            // 不允许看起来像除法的正则字面量，如 `/=foo/` 中 `/=` 像是除法运算符，要写成 `/\=foo/`
+    "no-div-regex": 2,                            // 不允许看起来像除法的正则字面量 `/=foo/` 中 `/=` 像是除法运算符，要写成 `/\=foo/`
     "no-else-return": 2,                          // 如果每个 if 及 if else 都中都有 return，则在 else 中不再需要 return，转为在函数最后 return
     "no-empty-function": [2, {                    // 不允许空函数，但如果函数中有注释，并不算空函数
-      "allow": ["constructors"]                   // 允许空函数出现的地方，如构造模数
+      "allow": ["constructors"]                   // 允许空函数出现的地方
     }],
-    "no-empty-pattern": 2,                        // TODO
+    "no-empty-pattern": 2,                        // TODO: 没看太懂这个规则
     "no-eq-null": 2,                              // 不允许使用 `==` 判断 null，而要用 `===`
     "no-eval": 2,                                 // 不允许使用 `eval()`
     "no-extend-native": [2, {                     // 不允许修改原生对象原型
-      "exceptions": ["Object"]                    // 例外
+      "exceptions": ["Object"]
     }],
     "no-extra-bind": 2,                           // 不允许不必要的 bind。比如函数中并没有使用到 `this`，或者箭头函数中
     "no-extra-label": 2,                          // 不允许不必要的 label
     "no-fallthrough": 2,                          // 每个 case 都要 break，可使用 `// falls through` 强制 fallthrough
-    "no-floating-decimal": 2,                     // 小数点前后需要用 0 补齐，不允许留空 `var a = .1`
-    "no-implicit-coercion": [2, {                 // 不允许隐含的类型转换 `!!foo`, `foo * 1`, `foo += ''`，而使用 `Number(foo)`
+    "no-floating-decimal": 2,                     // 小数点前后需要用 0 补齐，不允许留空
+    "no-implicit-coercion": [0, {                 // 不允许隐含的类型转换 `!!foo`, `foo * 1`, `foo += ''`，而使用 `Number(foo)`
       "boolean": true,
       "number": true,
       "string": true,
-      "allow": ["!!", "~", "*", "+"]              // 允许以下操作符带来的类型转换
+      "allow": ["!!", "~", "*", "+"]
     }],
     "no-implicit-globals": 2,                     // 不允许有全局的 var 和 function 定义
     "no-implied-eval": 2,                         // 不允许有隐含 eval，如 `setTimeout("alert(1)", 100)`
@@ -156,7 +154,7 @@
     "no-labels": 1,                               // 不允许使用 label
     "no-lone-blocks": 2,                          // 不允许有无意义的 {} 对
     "no-loop-func": 2,                            // 不允许在循环中定义函数
-    "no-magic-numbers": 1,                        // 不允许直接使用常量数字
+    "no-magic-numbers": 0,                        // 不允许直接使用常量数字
     "no-multi-spaces": [2, {                      // 不允许在代码中有连续空格
       "exceptions": {
         "BinaryExpression": false,                // 表达式中 `var foo = 1  +  2`
@@ -176,9 +174,9 @@
       "props": false                              // 参数的属性是否可被修改
     }],
     "no-proto": 2,                                // 不允许使用 __proto__ 属性
-    "no-redeclare": 2,                            // 不允许对变量重复定义 `var a = 1; var a = 2`
-    "no-return-assign": [2,                       // 不允许 return 后跟表达式
-      "except-parens"                             // 除非表达式用括号括起来
+    "no-redeclare": 2,                            // 不允许对变量重复定义
+    "no-return-assign": [2,                       // 不允许 return 后跟表达式，除非表达式用括号括起来
+      "except-parens"
     ],
     "no-script-url": 2,                           // 不允许使用 `javascript://` 式的URL
     "no-self-assign": 2,                          // 不允许自赋值 `foo = foo`
@@ -193,16 +191,16 @@
     "no-unused-labels": 2,                        // 不允许不必要的 label
     "no-useless-call": 2,                         // 不允许不必要的 .call() 和 .apply()
     "no-useless-concat": 1,                       // 不允许多个常量字符串拼接，但换行拼接不受影响
-    "no-useless-escape": 2,                       // 不允许不必要的转换 `"\'"`
+    "no-useless-escape": 2,                       // 不允许不必要的转义，`'\"'` 中的转义就是非必要的
     "no-void": 2,                                 // 不允许使用 void
-    "no-warning-comments": [1, {                  // 不允许出现 TODO, FIXME 等关键字（保证最终产出的是去掉未完成工作的代码）
+    "no-warning-comments": [1, {                  // 不允许出现 TODO, FIXME 等关键字（保证最终产出无未尽项）
       "terms": ["todo", "fixme", "xxx"]           // 不允许出现的关键字列表
     }],
     "no-with": 2,                                 // 不允许使用 with
     "radix": 2,                                   // 必须传入 parseInt 的第2个参数
     "vars-on-top": 0,                             // 所有变量必须放在作用域顶部
     "wrap-iife": [2,                              // 自执行函数括号放在哪里
-      "any"                                       // `outside`（`(function () {}())`）, `inside`（`(function () {})()`）, `any`（都可以）
+      "any"
     ],
     "yoda": [2,                                   // 比较表达式是否需要符合自然语义
       "never",                                    // 当使用 always 时就不需要下边两个细节了
@@ -224,7 +222,10 @@
     "no-catch-shadow": 2,                         // 在 IE8 中 catch 参数名会扩散到外部作用域
     "no-delete-var": 2,                           // 不允许使用 delete 删除使用 var 定义的变量
     "no-label-var": 2,                            // 不允许 label 的名字与变量名相同
-    "no-shadow": [0, {                            // 不允许在子作用域中定义与外部作用域同名的变量
+    "no-restricted-globals": [2,                  // 不允许调用全局变量名
+      "event"
+    ],
+    "no-shadow": [2, {                            // 不允许在子作用域中定义与外部作用域同名的变量
       "builtinGlobals": false,                    // 是否可定义与内置方法/属性同名变量
       "hoist": "functions",                       // 当子作用域在前时，是否可被后边的定义覆盖
       "allow": []                                 // 要排除的关键字
@@ -234,7 +235,7 @@
       "typeof": false                             // 是否针对 typeof 后跟的变量做检测
     }],
     "no-undef-init": 2,                           // 不允许定义一个变量的初始值为 undefined
-    "no-undefined": 1,                            // 是否可以使用 undefined
+    "no-undefined": 2,                            // 是否可以使用 undefined
     "no-unused-vars": [1, {                       // 检测是否有未被使用的变量和函数
       "vars": "all",                              // 检测所有的变量的使用情况，还是仅检测局部作用域下的变量
       "args": "after-used",                       // 函数参数在未使用前也被认为是未使用变量
@@ -244,8 +245,9 @@
     "no-use-before-define": 2,                    // 变量与函数需要先定义再使用
 
     // Node.js and CommonJS
+    // TODO
     "callback-return": 2,
-    "global-require": 0,                          // require 都在代码最前边完成
+    "global-require": 2,                          // require 都在代码最前边完成
     "handle-callback-err": [2,                    // 参数标记有 err 时，回调中要有相应的错误处理逻辑
       "^(e|E)rr(or)?$"
     ],
@@ -254,7 +256,6 @@
     "no-path-concat": 2,
     "no-process-env": 0,                          // 不在 Node 下使用 `process.env` 获取环境变量
     "no-process-exit": 2,
-    "no-restricted-imports": 2,
     "no-restricted-modules": 2,
     "no-sync": 2,
 
@@ -274,6 +275,9 @@
     "camelcase": [2, {                            // 使用驼峰表示变量
       "properties": "always"                      // 对象的属性名是否使用驼峰
     }],
+    "comma-dangle": [2,                           // 对象和数组最后一个 value 后是否加逗号
+      "only-multiline"                            // 只在多行时可以出现
+    ],
     "comma-spacing": [2, {                        // 逗号前后是否要有空格
       "before": false,
       "after": true
@@ -354,13 +358,19 @@
     ],
     "max-len": [1,                                // 每行的最大长度
       80,                                         // 每行 80 个字符
-      4,                                          // 一个 <tab> 算 4 个字符
+      2,                                          // 一个 <tab> 算 2 个字符
       {
         "ignoreComments": true,                   // 是否检查计算注释
+        "ignoreTrailingComments": true,           // 是否忽略因为结尾注释才超过限定长度
         "ignoreUrls": true,                       // 是否忽略 URL
         "ignorePattern": ""                       // 要忽略的匹配
       }
     ],
+    "max-lines": [2, {                            // 一个文件最多多少行
+      "max": 300,
+      "skipBlankLines": true,                     // 跳过空白行
+      "skipComments": true                        // 跳过注释行
+    }],
     "max-nested-callbacks": [2,                   // 最多嵌套多少层 callback
       3
     ],
@@ -370,9 +380,9 @@
     "max-statements": [0,                         // 一个函数中最多可以有多少条语句
       100
     ],
-    "max-statements-per-line": [2,                // 每行最多几条语句
+    "max-statements-per-line": [2, {              // 一行最多可以有多少条语句
       "max": 1
-    ],
+    }],
     "new-cap": [2, {                              // 检查 new 操作符后的命名是否为大写字母开头
       "newIsCap": true,                           // 检查所有首字母开头的函数都仅用 new 调用
       "capIsNew": true                            // 检查所有 new 后跟的函数都是首字母大写的
@@ -383,14 +393,25 @@
     "newline-after-var": [0,                      // var 定义后留一个空行（最佳实践希望把定义变量与运行代码用一个空行分开）
       "always"
     ],
+    "newline-before-return": 0,                   // return 语句前留一个空行
     "newline-per-chained-call": [0, {             // 链式调用每行一个调用
-      "ignoreChainWithDepth": 3                   // 如果链式较短，可以忽略
+      "ignoreChainWithDepth": 3                   // 如果链式短到 N 个，可以忽略
     }],
     "no-array-constructor": 2,                    // 不允许使用 Array 构造函数（允许通过数字构造某长度的数组，但不允许传入数组值的方式）
     "no-bitwise": 2,                              // 不允许使用位运算操作符
     "no-continue": 2,                             // 不允许使用 continue
     "no-inline-comments": 2,                      // 不允许在代码行最后加注释
     "no-lonely-if": 2,                            // 不允许在 else 中仅有独立的 if，可改用 else if 语句
+    "no-mixed-operators": [2, {                   // 不允许不同优先级的操作符混用，需要使用括号分隔
+      "groups": [                                 // 每一组的优先级相同
+        ["+", "-", "*", "/", "%", "**"],
+        ["&", "|", "^", "~", "<<", ">>", ">>>"],
+        ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+        ["&&", "||"],
+        ["in", "instanceof"]
+      ],
+      "allowSamePrecedence": true                 // 相同优先级的操作符是否可混用
+    }],
     "no-mixed-spaces-and-tabs": 2,                // 不允许在缩进中 <space> 和 <tab> 混用
     "no-multiple-empty-lines": [2, {              // 不允许连续多个空行
       "max": 2
@@ -398,11 +419,11 @@
     "no-negated-condition": 2,                    // 不允许在 if/else 里先用否定式
     "no-nested-ternary": 2,                       // 不允许嵌套三元运算符
     "no-new-object": 2,                           // 不允许使用构造函数声明对象，直接用字面量
-    "no-plusplus": [0, {                          // 不允许使用 ++/-- 操作符，用 +=/-= 代替
+    "no-plusplus": [2, {                          // 不允许使用 ++/-- 操作符，用 +=/-= 代替
       "allowForLoopAfterthoughts": true           // 但允许在 for 循环的表达式中使用
     }],
-    "no-restricted-syntax": [2,                   // 不允许某些特殊语法
-      // "FunctionExpression",                       // 不允许使用表达式赋值函数 `var fn = function () {}`
+    "no-restricted-syntax": [0,                   // 不允许某些特殊语法
+      "FunctionExpression",                       // 不允许使用表达式赋值函数 `var fn = function () {}`
       "WithStatement",                            // 不允许使用 with
     ],
     "no-spaced-func": 2,                          // 不允许函数调用时函数名与括号中间有空格
@@ -417,6 +438,9 @@
       "defaultAssignment": false                  // 默认表达式是否可以使用此方式
     }],
     "no-whitespace-before-property": 2,           // 属性 `.` 前不允许有空格 `foo. bar .baz . quz`，换行对齐不受影响
+    "object-curly-newline": [2, {                 // 对象的大括号内是否要换行
+      "multiline": true                           // 只有多行表示时，需要换行
+    }],
     "object-curly-spacing": [2,                   // 当整个对象在一行时，大括号前后是否要加空格
       "never",
       {
@@ -424,6 +448,9 @@
         "arraysInObjects": false                  // 针对嵌套数组的检测
       }
     ],
+    "object-property-newline": [2, {              // 是否允许对象属性在一行
+      "allowMultiplePropertiesPerLine": false
+    }],
     "one-var": [2, {                              // 一个函数中只有一个 var / const / let
       "uninitialized": "always",                  // 用于非初始化的变量，放在一个 var 里
       "initialized": "never"                      // 用于初始化的变量，每个变量一个 var
@@ -465,13 +492,6 @@
       "before": false,
       "after": true
     }],
-    "sort-imports": [0, {                         // import 时的顺序
-      "ignoreCase": true,
-      "ignoreMemberSort": false,
-      "memberSyntaxSortOrder": [
-        "none", "all", "multiple", "single"
-      ]
-    }],
     "sort-vars": [0, {                            // 变量定义是否按 ASCII 排序
       "ignoreCase": true
     }],
@@ -509,36 +529,95 @@
         }
       }
     ],
+    "unicode-bom": [2,                            // 是否允许出现 BOM
+      "never"
+    ],
     "wrap-regex": 2,                              // 是否要包裹正则字面量 `/reg/.test()` -> `(/reg/).test()`
 
     // ECMAScript 6
     "arrow-body-style": [2,                       // 箭头函数的语句是否使用大括号包裹
       "as-needed"                                 // 大于一句时才需要
     ],
-    "arrow-parens": [2,                           // 箭头函数参数是否一定要用括号
-      "as-needed"                                 // 大于一个参数时才需要
+    "arrow-parens": [0,                           // 箭头函数参数是否一定要用括号
+      "as-needed"                                 // 大于一个时才需要
     ],
-    "arrow-spacing": 2,
-    "constructor-super": 2,
-    "generator-star-spacing": 2,
-    "no-class-assign": 2,
-    "no-confusing-arrow": 2,
-    "no-const-assign": 2,
-    "no-dupe-class-members": 2,
-    "no-duplicate-imports": 2,                    // 不允许重复的 import
-    "no-new-symbol": 2,
-    "no-this-before-super": 2,
-    "no-useless-constructor": 2,                  // ES2015 会自动给 class constructor 添加继承的相关代码，所以如无额外逻辑并非必须
+    "arrow-spacing": [2, {                        // 箭头函数的箭头前后是否要有空格
+      "before": true,                             // 箭头前要有空格
+      "after": true                               // 箭头后要有空格
+    }],
+    "constructor-super": 2,                       // 检查在继承的 class 的 constructor 里边是否有 `super()` 调用
+    "generator-star-spacing": [2, {               // generator 的 * 号前后是否要有空格
+      "before": true,                             // * 号前有空格
+      "after": false                              // * 号后无空格
+    }],
+    "no-class-assign": 2,                         // 不允许 class 定义的名称再被重新赋值
+    "no-confusing-arrow": [2, {                   // 不允许可能产生混淆的箭头函数，如 `let x = a => 1 ? 2 : 3;`
+      "allowParens": false                        // 是否允许通过括号分隔，如 `let x = (a <= 1 ? 2 : 3)`
+    }],
+    "no-const-assign": 2,                         // 不允许对 const 变量再有赋值操作
+    "no-dupe-class-members": 2,                   // 不允许重复的 class 方法/属性
+    "no-duplicate-imports": [2, {                 // 不允许重复 import 同一个 module
+      "includeExports": true                      // 包括 export 的情况
+    }],
+    "no-new-symbol": 2,                           // 不允许使用 new 调用 Symbol，因为 Symbol 是被当作函数进行调用的
+    "no-restricted-imports": [0,                  // 不允许 import 受限制的 module
+      "jquery", "fs"                              // 不允许 import 这些 module
+    ],
+    "no-this-before-super": 2,                    // 不允许在 super 前使用 this
+    "no-useless-computed-key": 2,                 // 不允许不必要的动态对象值
+    "no-useless-constructor": 2,                  // 不允许不必要的 constructor，如果 constructor 什么都没干，就不需要写
+    "no-useless-rename": [2, {                    // 不允许不必要的重命名
+      "ignoreImport": false,                      // import 中是否允许，如 `import { foo as foo } from "bar";`
+      "ignoreExport": false,                      // export 中是否允许，如 `export { foo as foo }`
+      "ignoreDestructuring": false                // 变量解构中是否允许，如 `let { foo: foo } = bar`
+    }],
     "no-var": 1,                                  // 只使用 let/const，不使用 var
-    "object-shorthand": 1,                        // 更简洁的对象定义方案
-    "prefer-arrow-callback": 2,
+    "object-shorthand": [2,                       // 更简洁的对象定义方案
+      "always",                                   // 总是检查对象的属性名和值的关系
+      {
+        "avoidQuotes": true,                      // 不允许简写需要加引号的 key
+        "ignoreConstructors": true                // 忽略构造函数
+      }
+    ],
+    "prefer-arrow-callback": [2, {                // 在必要时建议使用箭头函数
+      "allowNamedFunctions": false,               // 允许命名函数
+      "allowUnboundThis": true,                   // 允许在函数中使用 this
+    }],
     "prefer-const": 0,                            // 如果 let 定义的变量未被修改过，提示使用 const
-    "prefer-reflect": 0,                          // 使用 ES6 的 call/apply 方案
-    "prefer-rest-params": 2,
-    "prefer-spread": 2,
-    "prefer-template": 2,
-    "require-yield": 2,
-    "template-curly-spacing": 2,
-    "yield-star-spacing": 2
+    "prefer-reflect": [0, {                       // 使用 Reflect 方案，而不是原来 Object 上的方法
+      "exceptions": [                             // 可以使用的方法
+        "apply",
+        "call",
+        "defineProperty",
+        "getOwnPropertyDescriptor",
+        "getPrototypeOf",
+        "setPrototypeOf",
+        "isExtensible",
+        "getOwnPropertyNames",
+        "preventExtensions",
+        "delete"
+      ]
+    }],
+    "prefer-rest-params": 2,                      // 建议使用 `...args` 来替代 arguments
+    "prefer-spread": 2,                           // 建议在函数调用时使用解构方案
+    "prefer-template": 2,                         // 有字符串拼接时，建议使用模板字符串
+    "require-yield": 2,                           // 要求在 generator 里必须有 `yield`
+    "rest-spread-spacing": [2,                    // 对象的 rest 解构与扩展运算符，与后边的表达式间是否要有空格
+      "never"
+    ],
+    "sort-imports": [0, {                         // import 时的顺序
+      "ignoreCase": true,                         // 忽略大小写
+      "ignoreMemberSort": false,                  // 忽略解构时每一项的排序
+      "memberSyntaxSortOrder": [                  // 具体的排序规则
+        "none", "all", "multiple", "single"
+      ]
+    }],
+    "template-curly-spacing": [2,                 // 模板字符串表达式与大括号间是否要有空格，`${exp}` 或 `${ exp }`
+      "never"
+    ],
+    "yield-star-spacing": [2, {                   // yield 的 * 号前后是否要有空格，参考 'generator-star-spacing'
+      "before": true,                             // * 号前有空格
+      "after": false                              // * 号后无空格
+    }]
   }
 }
