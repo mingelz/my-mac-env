@@ -353,6 +353,7 @@ let g:rainbow_active = 1    "彩虹括号默认打开
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1    "自动打开缩进线
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']    "在哪些场景下关闭缩进线
 
 " vim-colors-solarized
 if has("gui_running")
