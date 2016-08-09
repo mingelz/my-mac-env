@@ -3,8 +3,8 @@
  *   + http://eslint.org/docs/rules/[rule-name]
  *   + https://pirosikick.github.io/eslintrc-editor/
  *
- * applicable: eslint v3.1.1
- * update: 2016-07-21
+ * applicable: eslint v3.2.2
+ * update: 2016-08-09
  */
 
 {
@@ -71,7 +71,9 @@
     "no-dupe-args": 2,                            // 函数参数名不允许重复 `function foo (a, b, a)`
     "no-dupe-keys": 2,                            // 对象的 key 不允许重复
     "no-duplicate-case": 2,                       // switch case 语句语句的条件不允许重复
-    "no-empty": 2,                                // 不允许使用空的语句块 `if (foo) {}`
+    "no-empty": [2, {                             // 不允许使用空的语句块 `if (foo) {}`
+      "allowEmptyCatch": true                     // 允许空的 catch 语句
+    }],
     "no-empty-character-class": 2,                // 正则中不允许使用空字符类 `var foo = /^abc[]/`
     "no-ex-assign": 2,                            // 不允许覆写 catch 语句的参数 `try {} catch (e) { e = 10 }`
     "no-extra-boolean-cast": 2,                   // 在条件判断语句中不允许使用不必要的布尔转换 `if (!!foo)`
@@ -427,6 +429,7 @@
       "WithStatement",                            // 不允许使用 with
     ],
     "no-spaced-func": 2,                          // 不允许函数调用时函数名与括号中间有空格
+    "no-tabs": 2,                                 // 在代码及注释中不允许使用 tab
     "no-ternary": 0,                              // 不允许使用三元运算符
     "no-trailing-spaces": [2, {                   // 行尾不允许有空格
       "skipBlankLines": false                     // 跳过空行
