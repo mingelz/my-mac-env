@@ -1,10 +1,7 @@
 /**
- * ref.:
- *   + http://eslint.org/docs/rules/[rule-name]
- *   + https://pirosikick.github.io/eslintrc-editor/
- *
- * applicable: eslint v3.2.2
- * update: 2016-08-09
+ * docs: http://eslint.org/docs/rules/[rule-name]
+ * applicable: eslint v3.3.1
+ * update: 2016-08-16
  */
 
 {
@@ -87,14 +84,15 @@
     ],
     "no-invalid-regexp": 2,                       // 不允许无效的正则表达式
     "no-irregular-whitespace": 2,                 // 不允许普通空格和制表符外的其他非常规空格，如零宽空格、换行符
-    "no-negated-in-lhs": 2,                       // in 操作符前使用否定语句时要使用括号
     "no-obj-calls": 2,                            // 不允许直接调用 `Math(), JSON()`
     "no-prototype-builtins": 2,                   // 使用 `Object.create()` 可以给对象一个特别的 prototype，所以建议使用 `{}.hasOwnProperty.call(foo, 'bar')，而不是 `foo.hasOwnProperty('bar')`
     "no-regex-spaces": 2,                         // 在正则中不允许使用连续多个空格，而要用数量限定 `/foo {3}bar/`
     "no-sparse-arrays": 2,                        // 数组中需要指定每一项，不允许多个逗号连续出现 `['foo',,'bar']`
+    "no-template-curly-in-string": 2,             // 不允许在字符串里使用模板字符串变量格式，避免本应该使用模板字符串，结果使用了引号
     "no-unexpected-multiline": 2,                 // 不允许多行歧义，在不使用分号的情况下容易出现
     "no-unreachable": 2,                          // 在 return, throw, break, continue 后不允许再有语句
     "no-unsafe-finally": 2,                       // 在 finally 中不允许使用 return, throw, break, continue 等语句，因为会先于 try 执行
+    "no-unsafe-negation": 2,                      // in/instanceof 操作符前使用否定语句时要使用括号
     "use-isnan": 2,                               // 使用 `isNaN(foo)` 而不是 `foo == NaN`
     "valid-jsdoc": [0, {                          // 检查 JSDoc 语法注释，及其正确性
       // TODO: 有很多细节配置，待补充
@@ -143,6 +141,9 @@
     "no-extra-label": 2,                          // 不允许不必要的 label
     "no-fallthrough": 2,                          // 每个 case 都要 break，可使用 `// falls through` 强制 fallthrough
     "no-floating-decimal": 2,                     // 小数点前后需要用 0 补齐，不允许留空
+    "no-global-assign": [2, {                     // 不允许重定义内建对象（包括 ES5/ES6/Browser/Node 等环境, https://github.com/sindresorhus/globals/）
+      "exceptions": []                            // 例外
+    }],
     "no-implicit-coercion": [0, {                 // 不允许隐含的类型转换 `!!foo`, `foo * 1`, `foo += ''`，而使用 `Number(foo)`
       "boolean": true,
       "number": true,
@@ -166,7 +167,6 @@
       }
     }],
     "no-multi-str": 2,                            // 不允许使用 `\` 转义多行字符串每行结尾
-    "no-native-reassign": 2,                      // 不允许重定义内建对象（包括 ES5/ES6/Browser/Node 等环境, https://github.com/sindresorhus/globals/）
     "no-new": 2,                                  // new 出的实例一定要赋值给变量
     "no-new-func": 2,                             // 不允许使用 Function 构造函数
     "no-new-wrappers": 2,                         // 不允许使用原始对象构造实例 `var str = new String('Hello world'); typeof str === 'object'`
@@ -294,6 +294,12 @@
       "_this"
     ],
     "eol-last": 2,                                // 文件最后是否要空一行
+    "func-call-spacing": [2,                      // 函数调用时函数名与括号中间是否有空格
+      "never",                                    // 不允许有空格，需要空格时为 always
+      {
+        "allowNewlines": false                    // 当选择 always 时是否允许在新行调用
+      }
+    ],
     "func-names": 1,                              // 函数是否一定要有名字，平时一些匿名函数也要起名字，可方便调试
     "func-style": [2,                             // 函数风格，使用函数定义，还是变量定义
       "declaration",
@@ -308,7 +314,7 @@
       "min": 1,                                   // 最小长度
       "max": 50,                                  // 最大长度
       "properties": "always",                     // 是否检查对象属性名
-      //"exceptions": ["i"]                         // 例外
+      "exceptions": []                            // 例外
     }],
     "id-match": [0,                               // 变量、函数名、对象属性名的命名规范
       "^[A-Za-z]+([A-Z][a-z0-9]*)*$",             // 对应的正则匹配
@@ -388,8 +394,8 @@
     "new-cap": [2, {                              // 检查 new 操作符后的命名是否为大写字母开头
       "newIsCap": true,                           // 检查所有首字母开头的函数都仅用 new 调用
       "capIsNew": true                            // 检查所有 new 后跟的函数都是首字母大写的
-      //"newIsCapExceptions": [""]                  // 对应的 newIsCap 例外
-      //"capIsNewExceptions": [""]                  // 对应的 capIsNew 例外，默认: Array, Boolean, Date, Error, Function, Number, Object, RegExp, String, Symbol
+      "newIsCapExceptions": []                    // 对应的 newIsCap 例外
+      "capIsNewExceptions": []                    // 对应的 capIsNew 例外，默认: Array, Boolean, Date, Error, Function, Number, Object, RegExp, String, Symbol
     }],
     "new-parens": 2,                              // 使用 new 操作符时，构造函数要带括号
     "newline-after-var": [0,                      // var 定义后留一个空行（最佳实践希望把定义变量与运行代码用一个空行分开）
@@ -428,7 +434,6 @@
       "FunctionExpression",                       // 不允许使用表达式赋值函数 `var fn = function () {}`
       "WithStatement",                            // 不允许使用 with
     ],
-    "no-spaced-func": 2,                          // 不允许函数调用时函数名与括号中间有空格
     "no-tabs": 2,                                 // 在代码及注释中不允许使用 tab
     "no-ternary": 0,                              // 不允许使用三元运算符
     "no-trailing-spaces": [2, {                   // 行尾不允许有空格
@@ -495,6 +500,13 @@
       "before": false,
       "after": true
     }],
+    "sort-keys": [0,                              // 对对象的 key 排序
+      "asc",                                      // 正序，倒序为 'desc'
+      {
+        "caseSensitive": true,                    // 区分大小写
+        "natural": true                           // 按照自然数排序，如 `1, 10, 2` 还是 `1, 2, 10`
+      }
+    ]
     "sort-vars": [0, {                            // 变量定义是否按 ASCII 排序
       "ignoreCase": true
     }],
