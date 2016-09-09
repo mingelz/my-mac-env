@@ -1,7 +1,7 @@
 /**
  * docs: http://eslint.org/docs/rules/[rule-name]
- * applicable: eslint v3.3.1
- * update: 2016-08-16
+ * applicable: eslint v3.4.0
+ * update: 2016-09-09
  */
 
 {
@@ -97,12 +97,15 @@
     "valid-jsdoc": [0, {                          // 检查 JSDoc 语法注释，及其正确性
       // TODO: 有很多细节配置，待补充
     }],
-    "valid-typeof": 2,                            // 检查 typeof 后的拼写正确性 `typeof foo === 'nunber'`
+    "valid-typeof": [2, {                         // 检查 typeof 后的拼写正确性 `typeof foo === 'nunber'`
+      "requireStringLiterals": false              // typeof 后只能跟 string，此时 `typeof foo === bar` 将不被允许
+    }],
 
     // Best Practices
     "accessor-pairs": 2,                          // 同时提供 getter/setter 方法
     "array-callback-return": 2,                   // 在数组的递归回调函数中需要有 return
     "block-scoped-var": 2,                        // 避免变量影响到语句块外（类C）`if (foo) { var bar = 1 }`
+    "class-methods-use-this": 2,                  // 检查 Class 中的方法是否用到了 `this`，如果没用到建议转为 static 方法
     "complexity": [2,                             // 最多有多少个 `if else`
       20                                          // 默认 20
     ],
@@ -391,6 +394,9 @@
     "max-statements-per-line": [2, {              // 一行最多可以有多少条语句
       "max": 1
     }],
+    "multiline-ternary": [0,                      // 三元表达式的换行方案
+      "never"                                     // 只有 never/always 可选
+    ],
     "new-cap": [2, {                              // 检查 new 操作符后的命名是否为大写字母开头
       "newIsCap": true,                           // 检查所有首字母开头的函数都仅用 new 调用
       "capIsNew": true                            // 检查所有 new 后跟的函数都是首字母大写的
@@ -627,6 +633,7 @@
         "none", "all", "multiple", "single"
       ]
     }],
+    "symbol-description": 2,                      // Symbol 需要描述，如 `let foo = Symbol('some description')`
     "template-curly-spacing": [2,                 // 模板字符串表达式与大括号间是否要有空格，`${exp}` 或 `${ exp }`
       "never"
     ],
