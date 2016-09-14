@@ -4,10 +4,10 @@ Thumbs.db
 Desktop.ini
 
 # IDE
+.idea/
+.project
 *.swp
 *.swo
-.idea
-.project
 
 # Dependency, Cache, Temporary
 node_modules/
@@ -17,4 +17,7 @@ bower_components/
 npm-debug.log
 
 # Distribution
+coverage/
 dist/
+docs/
+*.iml
