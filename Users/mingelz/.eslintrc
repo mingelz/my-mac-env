@@ -296,12 +296,9 @@
     "consistent-this": [2,                        // 给 this 一个专门的名字，保持连贯性
       "_this"
     ],
-    "eol-last": 2,                                // 文件最后是否要空一行
+    "eol-last": 0,                                // 文件最后是否要空一行
     "func-call-spacing": [2,                      // 函数调用时函数名与括号中间是否有空格
-      "never",                                    // 不允许有空格，需要空格时为 always
-      {
-        "allowNewlines": false                    // 当选择 always 时是否允许在新行调用
-      }
+      "never"                                     // 不允许有空格，需要空格时为 always
     ],
     "func-names": 1,                              // 函数是否一定要有名字，平时一些匿名函数也要起名字，可方便调试
     "func-style": [2,                             // 函数风格，使用函数定义，还是变量定义
@@ -399,8 +396,8 @@
     ],
     "new-cap": [2, {                              // 检查 new 操作符后的命名是否为大写字母开头
       "newIsCap": true,                           // 检查所有首字母开头的函数都仅用 new 调用
-      "capIsNew": true                            // 检查所有 new 后跟的函数都是首字母大写的
-      "newIsCapExceptions": []                    // 对应的 newIsCap 例外
+      "capIsNew": true,                           // 检查所有 new 后跟的函数都是首字母大写的
+      "newIsCapExceptions": [],                   // 对应的 newIsCap 例外
       "capIsNewExceptions": []                    // 对应的 capIsNew 例外，默认: Array, Boolean, Date, Error, Function, Number, Object, RegExp, String, Symbol
     }],
     "new-parens": 2,                              // 使用 new 操作符时，构造函数要带括号
@@ -452,8 +449,11 @@
       "defaultAssignment": false                  // 默认表达式是否可以使用此方式
     }],
     "no-whitespace-before-property": 2,           // 属性 `.` 前不允许有空格 `foo. bar .baz . quz`，换行对齐不受影响
-    "object-curly-newline": [2, {                 // 对象的大括号内是否要换行
-      "multiline": true                           // 只有多行表示时，需要换行
+    "object-curly-newline": [0, {                 // 对象的大括号内是否要换行
+      "ObjectExpression": "always",
+      "ObjectPattern": {
+        "multiline": true                         // 只有多行表示时，需要换行
+      }
     }],
     "object-curly-spacing": [2,                   // 当整个对象在一行时，大括号前后是否要加空格
       "never",
@@ -512,7 +512,7 @@
         "caseSensitive": true,                    // 区分大小写
         "natural": true                           // 按照自然数排序，如 `1, 10, 2` 还是 `1, 2, 10`
       }
-    ]
+    ],
     "sort-vars": [0, {                            // 变量定义是否按 ASCII 排序
       "ignoreCase": true
     }],
@@ -556,7 +556,7 @@
     "wrap-regex": 2,                              // 是否要包裹正则字面量 `/reg/.test()` -> `(/reg/).test()`
 
     // ECMAScript 6
-    "arrow-body-style": [2,                       // 箭头函数的语句是否使用大括号包裹
+    "arrow-body-style": [0,                       // 箭头函数的语句是否使用大括号包裹
       "as-needed"                                 // 大于一句时才需要
     ],
     "arrow-parens": [0,                           // 箭头函数参数是否一定要用括号
