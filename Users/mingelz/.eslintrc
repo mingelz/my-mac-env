@@ -1,7 +1,7 @@
 /**
  * docs: http://eslint.org/docs/rules/[rule-name]
- * applicable: eslint v3.4.0
- * update: 2016-09-09
+ * applicable: eslint v3.5.0
+ * update: 2016-09-18
  */
 
 {
@@ -51,7 +51,7 @@
     "ecmaFeatures": {
       "globalReturn": false,
       "impliedStrict": false,
-      "jsx": true,
+      "jsx": false,
       "experimentalObjectRestSpread": true
     }
   },
@@ -262,6 +262,7 @@
     "no-process-env": 0,                          // 不在 Node 下使用 `process.env` 获取环境变量
     "no-process-exit": 2,
     "no-restricted-modules": 2,
+    "no-restricted-properties": 2,
     "no-sync": 2,
 
     // Stylistic Issues
@@ -325,11 +326,21 @@
     "indent": [2,                                 // 使用何种缩进方式
       2,                                          // 以 2 个空格缩进
       {
-        "SwitchCase": 1,                          // switch/case 语句是否缩进
+        "SwitchCase": 1,                          // switch/case 语句是否缩进，1 指 1 个缩进，乘以前边的每个缩进 2 个空格，就是要有 2 个空格的缩进，下同
         "VariableDeclarator": {                   // 定义变量的时候如果使用逗号分隔一行一个，如何缩进
-          "var": 2,                               // 注意这里的 2 指 2 个缩进，乘以前边的每个缩进 2 个空格，就是要有 4 个空格的缩进
+          "var": 2,
           "let": 2,
           "const": 3
+        },
+        "outerIIFEBody": 1,                       // 文件级别的 IIFE 内容有几个缩进
+        "MemberExpression": 1,                    // 属性的缩进
+        "FunctionDeclaration": {                  // 函数的缩进
+          "parameters": 1,                        // 参数，除了数字，也可以用 first，用来表示和第一个参数对齐
+          "body": 1                               // 函数体
+        },
+        "FunctionExpression": {                   // 函数表达式的缩进，参考上边的 FunctionDeclaration
+          "parameters": 1,
+          "body": 1
         }
       }
     ],
@@ -346,6 +357,11 @@
       "after": true,                              // 关键字后的空格
       "overrides": {}
     }],
+    "line-comment-position": [2, {                // 单行注释的位置
+      "position": "above",                        // 在代码的上面
+      "ignorePattern": "",                        // 忽略的正则匹配
+      "applyDefaultPatterns": true                // 此检测默认忽略掉以下单词开始的注释：eslint, jshint, jslint, istanbul, global, exported, jscs, falls through，此选项用于关闭这个默认配置
+    }],
     "linebreak-style": [2,                        // 回车符号使用哪个版本 CR/LF
       "unix"
     ],
@@ -361,16 +377,22 @@
       "allowArrayStart": true,                    // 在 Array 第一行时，需要检查注释前是否有空行
       "allowArrayEnd": true                       // 在 Array 最后一行时，是否检查注释后是否有空行
     }],
+    "lines-around-directive": [2, {               // 像 `use strict`, `use asm` 这样的指令前后是否需要空行
+      "before": "always",
+      "after": "always"
+    }],
     "max-depth": [2,                              // 每个函数中最大可嵌套的层数
       4
     ],
     "max-len": [1,                                // 每行的最大长度
       80,                                         // 每行 80 个字符
-      2,                                          // 一个 <tab> 算 2 个字符
+      4,                                          // 一个 <tab> 算 4 个字符，注意这里指的是 <tab> 字符，而不是缩进对应的空格数
       {
         "ignoreComments": true,                   // 是否检查计算注释
         "ignoreTrailingComments": true,           // 是否忽略因为结尾注释才超过限定长度
         "ignoreUrls": true,                       // 是否忽略 URL
+        "ignoreStrings": true,                    // 是否忽略字符串
+        "ignoreTemplateLiterals": true,           // 是否忽略模板字符串
         "ignorePattern": ""                       // 要忽略的匹配
       }
     ],
@@ -605,6 +627,7 @@
       "allowUnboundThis": true,                   // 允许在函数中使用 this
     }],
     "prefer-const": 0,                            // 如果 let 定义的变量未被修改过，提示使用 const
+    "prefer-numeric-literals": 2,                 // ES2015 规定了 2、8、16 进制数字的字面量表示方式，所以如果使用 parseInt 转换 2、8、16 进制数字时，给出直接使用数字字面量的提示，不建议再使用 parseInt 进行转换
     "prefer-reflect": [0, {                       // 使用 Reflect 方案，而不是原来 Object 上的方法
       "exceptions": [                             // 可以使用的方法
         "apply",
