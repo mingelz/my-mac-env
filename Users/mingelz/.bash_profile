@@ -1,6 +1,6 @@
 # alias
 alias la="ls -alhG"
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim # MacVim 通过 Cask 安装
+alias vim="mvim -v"
 
 # editor
 export EDITOR=vim
@@ -16,6 +16,9 @@ source "/usr/local/opt/nvm/nvm.sh"
 # mybin path
 export PATH=~/.mybin:$PATH
 
-# java
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+# java, 修改最后的版本号实现切换 JAVA_HOME
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 #export PATH=$JAVA_HOME/bin:$PATH
+
+# brew, 填入 github 管理后台生成的 token
+export HOMEBREW_GITHUB_API_TOKEN=""
