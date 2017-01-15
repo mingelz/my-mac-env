@@ -116,8 +116,8 @@ set autoindent    "自动缩进 (继承前一行的缩进) [ai=autoindent]
 set smartindent    "使用智能缩进 [si=smartindent]
 set cindent    "使用 C 语言风格的缩进 [ci=cindent]
 set cinoptions=l1C3j1J1    "自定义 C 语言风格缩进 [cino=cinoptions]
-" set list    "显示缩进参考线及行尾标记 (行尾使用$符)，使用 vim-indent-guides 插件时不再需要配置这一项
-" set listchars=tab:>-,trail:-    "定义tab以 >--- 显示，行尾空格使用 - 显示 (需要先设置 set list) [lcs=listchars]
+set list    "显示缩进参考线及行尾标记 (行尾使用$符)，使用 vim-indent-guides 插件时不再需要配置这一项
+set listchars=tab:>-,trail:-    "定义tab以 >--- 显示，行尾空格使用 - 显示 (需要先设置 set list) [lcs=listchars]
 set expandtab    "使用空格代替 tab (使用空格代替tab: expandtab，不使用空格代替tab: noexpandtab) [et=expandtab, noet=noexpandtab]
 set tabstop=2    "tab 宽度 (页面中已有的 tab) [ts=tabstop]
 set softtabstop=2    "按 <tab> 或 <backspace> 时，对应的 tab 宽度 [sts=softtabstop]
@@ -312,12 +312,12 @@ Plugin 'altercation/vim-colors-solarized'    "漂亮的主题
 " Plugin 'vim-airline/vim-airline'    "powerline 的 vim 版本
 " Plugin 'vim-airline/vim-airline-themes'
 Plugin 'lilydjwg/colorizer'    "修改 CSS 颜色值的背景色为对应颜色
-Plugin 'luochen1990/rainbow'    "彩虹括号
+" Plugin 'luochen1990/rainbow'    "彩虹括号
 Plugin 'nathanaelkane/vim-indent-guides'    "更漂亮的缩进
 " Plugin 'Yggdroot/indentLine'    "又一个漂亮的缩进
 Plugin 'yianwillis/vimcdoc'    "vim中文文档
-Plugin 'editorconfig/editorconfig-vim'    "Editor Config
 Plugin 'wakatime/vim-wakatime'    "统计写码时间 https://wakatime.com
+Plugin 'editorconfig/editorconfig-vim'    "Editor Config
 call vundle#end()
 
 filetype plugin indent on    "重新开启插件支持
@@ -340,6 +340,7 @@ let g:NERDDefaultAlign = 'start'    "注释插入到代码行最开始
 " let g:syntastic_javascript_checkers = ['eslint']
 
 " vim-nerdtree-tabs
+let NERDTreeShowHidden=1
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 " emmet
@@ -349,11 +350,14 @@ map <leader>n <plug>NERDTreeTabsToggle<CR>
 " let g:airline_powerline_fonts = 1    "airline 使用 powerline 字体
 
 " rainbow
-let g:rainbow_active = 1    "彩虹括号默认打开
+" let g:rainbow_active = 1    "彩虹括号默认打开
 
 " vim-indent-guides
+set nolist    "当开启这款插件时，就不需要再显示 list 了
 let g:indent_guides_enable_on_vim_startup = 1    "自动打开缩进线
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']    "在哪些场景下关闭缩进线
+let g:indent_guides_tab_guides = 1    "是否针对 Tab 缩进显示缩进线
+let g:indent_guides_space_guides = 0    "是否针对 Space 缩进显示缩进线
 
 " vim-colors-solarized
 if has("gui_running")

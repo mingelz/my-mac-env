@@ -1,6 +1,7 @@
 # alias
-alias la="ls -alhG"
+alias la="ls -AlhG"
 alias vim="mvim -v"
+alias please='sudo `fc -nl -1`'
 
 # editor
 export EDITOR=vim
