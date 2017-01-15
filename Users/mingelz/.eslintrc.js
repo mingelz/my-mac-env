@@ -79,7 +79,12 @@ module.exports = {
     "no-ex-assign": 2,                            // 不允许覆写 catch 语句的参数 `try {} catch (e) { e = 10 }`
     "no-extra-boolean-cast": 2,                   // 在条件判断语句中不允许使用不必要的布尔转换 `if (!!foo)`
     "no-extra-parens": [2,                        // 不允许多余的括号 `var foo = (1 + 2)`
-      "all",
+      "functions",                                // 仅检测函数表达式的多余括号，如果设置为 all，则可以在下边调整细节配置
+      {
+        "conditionalAssign": false,               // 条件表达式中
+        "returnAssign": false,                    // return 后的表达式
+        "nestedBinaryExpressions": false,         // 多个二元表达式连写的情况
+      },
     ],
     "no-extra-semi": 2,                           // 不允许多余的分号 `function foo {};`
     "no-func-assign": 2,                          // 不允许对函数名重新赋值
@@ -287,9 +292,11 @@ module.exports = {
     "no-unused-vars": [1,                         // 检测是否有未被使用的变量和函数
       {
         "vars": "all",                            // 检测所有的变量的使用情况，还是仅检测局部作用域下的变量
-        "args": "after-used",                     // 函数参数在未使用前也被认为是未使用变量
         "varsIgnorePattern": "^_",                // 可被忽略的未使用变量匹配正则
+        "args": "after-used",                     // 函数参数在未使用前也被认为是未使用变量
         "argsIgnorePattern": "^_",                // 可被忽略的未使用参数匹配正则
+        "caughtErrors": "none",                   // catch 参数
+        "caughtErrorsIgnorePattern": "",          // 可被忽略的未使用的 catch 参数匹配正则
       },
     ],
     "no-use-before-define": 2,                    // 变量与函数需要先定义再使用
@@ -415,10 +422,10 @@ module.exports = {
           "body": 1,
         },
         "CallExpression": {                       // 函数调用时的参数
-          "arguments": "first",                   // 函数调用的参数
+          "arguments": 1,                         // 函数调用的参数
         },
-        "ArrayExpression": "first",               // 数组多个项的缩进
-        "ObjectExpression": "first",              // 对象多个项的缩进
+        "ArrayExpression": 1,                     // 数组多个项的缩进
+        "ObjectExpression": 1,                    // 对象多个项的缩进
       },
     ],
     "jsx-quotes": [0,                             // jsx 语法倾向于使用哪一种括号
@@ -616,10 +623,10 @@ module.exports = {
       "always",
     ],
     "operator-linebreak": [2,                     // 操作符前后有换行时，操作符应该在前一行首，还是下一行尾
-      "after",
+      "before",
       {
         "overrides": {                            // 需要特殊处理的 case
-          "?": "after",
+          "?": "before",
           "+=": "none",
         },
       },
@@ -734,7 +741,7 @@ module.exports = {
     "no-class-assign": 2,                         // 不允许 class 定义的名称再被重新赋值
     "no-confusing-arrow": [2,                     // 不允许可能产生混淆的箭头函数，如 `let x = a => 1 ? 2 : 3;`
       {
-        "allowParens": false,                     // 是否允许通过括号分隔，如 `let x = (a <= 1 ? 2 : 3)`
+        "allowParens": true,                      // 是否允许通过括号分隔，如 `let x = (a <= 1 ? 2 : 3)`
       },
     ],
     "no-const-assign": 2,                         // 不允许对 const 变量再有赋值操作
@@ -775,7 +782,7 @@ module.exports = {
     "prefer-const": 0,                            // 如果 let 定义的变量未被修改过，提示使用 const
     "prefer-destructuring": [2,                   // 建议使用 数组/对象... 的解构语法
       {
-        "array": true,                            // 数组的解构，`var [foo, bar] = array`
+        "array": false,                           // 数组的解构，`var [foo, bar] = array`
         "object": true,                           // 对象的解构，`var {foo, bar} = object`
       },
       {
