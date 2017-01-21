@@ -1,7 +1,7 @@
 /**
  * docs: http://eslint.org/docs/rules/[rule-name]
- * applicable: eslint v3.13.1
- * update: 2017-1-15
+ * applicable: eslint v3.14.0
+ * update: 2017-1-21
  * author: mingelz
  */
 
@@ -242,6 +242,11 @@ module.exports = {
       },
     ],
     "no-with": 2,                                 // 不允许使用 with
+    "prefer-promise-reject-errors": [0,           // 建议调用 Promise.reject 时，返回的是 Error 对象，如 `Promise.reject(new Error('Foo'))`
+      {
+        "allowEmptyReject": false,                // 是否允许空的 `Promise.reject()`
+      },
+    ],
     "radix": 2,                                   // 必须传入 parseInt 的第2个参数
     "require-await": 2,                           // 对于 async 一定要有 await 语句
     "vars-on-top": 0,                             // 所有变量必须放在作用域顶部
@@ -555,6 +560,7 @@ module.exports = {
       },
     ],
     "no-mixed-spaces-and-tabs": 2,                // 不允许在缩进中 <space> 和 <tab> 混用
+    "no-multi-assign": 2,                         // 是否允许连续赋值多个变量，如 `var a = b = 1`
     "no-multiple-empty-lines": [2,                // 不允许连续多个空行
       {
         "max": 2,
