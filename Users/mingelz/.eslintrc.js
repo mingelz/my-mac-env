@@ -1,7 +1,7 @@
 /**
  * docs: http://eslint.org/docs/rules/[rule-name]
- * applicable: eslint v3.14.0
- * update: 2017-1-21
+ * applicable: eslint v3.15.0
+ * update: 2017-2-7
  * author: mingelz
  */
 
@@ -302,9 +302,16 @@ module.exports = {
         "argsIgnorePattern": "^_",                // 可被忽略的未使用参数匹配正则
         "caughtErrors": "none",                   // catch 参数
         "caughtErrorsIgnorePattern": "",          // 可被忽略的未使用的 catch 参数匹配正则
+        "ignoreRestSiblings": true,               // 参数解构时，同级变量是否判断为未定义，如 `var {foo, ...bar} = data`，此时 foo 为解构 bar 的同级变量
       },
     ],
-    "no-use-before-define": 2,                    // 变量与函数需要先定义再使用
+    "no-use-before-define": [2,                   // 变量与函数需要先定义再使用
+      {
+        "functions": true,                        // 分别针对函数、类、变量定义是否检查
+        "classes": true,
+        "variables": true,
+      },
+    ],
 
     // Node.js and CommonJS
     "callback-return": [2,                        // Node.js 编程中，建议回调函数调用后都通过 return 返回，要求的回调函数名称在下边数组中列出
@@ -715,6 +722,9 @@ module.exports = {
           "exceptions": ["*"],
         },
       },
+    ],
+    "template-tag-spacing": [2,                   // ES6 标签模板调用时，函数名与模板字符串中间是否要加空格
+      "never",
     ],
     "unicode-bom": [2,                            // 是否允许出现 BOM
       "never",
