@@ -10,7 +10,7 @@ My Mac Environment
 |-- Users/
 |   |-- mingelz/ ($HOME)
 |       |-- .bash_profile
-|       |-- .eslintrc
+|       |-- .eslintrc.js
 |       |-- .gemrc
 |       |-- .gitconfig
 |       |-- .mybin/
@@ -27,6 +27,7 @@ My Mac Environment
 |           |-- nginx/
 |               |-- gen-ssl-csr.sh
 |               |-- nginx.conf
+|-- .editorconfig
 |-- .gitignore
 ```
 
@@ -34,6 +35,7 @@ My Mac Environment
 
 + App Store
     + Dr.Cleaner
+    + Dr.Unarchiver
     + Evernote
     + iWork
         + Pages
@@ -41,22 +43,18 @@ My Mac Environment
         + Keynote
     + [MWeb / MWeb Lite](http://www.mweb.im/)
     + Pocket
-    + The Unarchiver
     + WeChat
     + Xcode
     + 网易云音乐
 + [brew](http://brew.sh/) & [cask](http://caskroom.io/)
-    + -- brew --
     + android-platform-tools (adb)
     + autojump (for oh-my-zsh)
     + ~~git~~ (installed with Xcode)
     + nginx
     + nvm & node
-        + adam
-        + npm
+        + npm & cnpm/tnpm
     + tree
     + ~~wget~~ (use curl)
-    + -- cask --
     + [flux](https://justgetflux.com/)
     + [iTerm2](https://www.iterm2.com/)
     + [MacVim](https://github.com/macvim-dev/macvim)
@@ -72,7 +70,8 @@ My Mac Environment
     + [Thunder](http://mac.xunlei.com/)
     + [Android File Transfer](https://www.android.com/filetransfer/)
     + [Shadowsock](https://shadowsocks.org/)
-    + [Atom](http://atom.io)
+    + [Atom](https://atom.io)
+    + [Visual Studio Code](https://code.visualstudio.com/)
     + [ImageAlpha](http://pngmini.com/)
     + [XnViewMP](http://www.xnview.com/en/xnviewmp/)
     + [BetterTouchTool](http://bettertouchtool.net/)

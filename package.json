@@ -1,0 +1,15 @@
+{
+  "name": "my-mac-env",
+  "version": "1.0.0",
+  "description": "My Mac Environment",
+  "author": "mingelz",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingelz/my-mac-env.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mingelz/my-mac-env/issues"
+  },
+  "homepage": "https://github.com/mingelz/my-mac-env#readme"
+}
