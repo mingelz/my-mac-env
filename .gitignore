@@ -14,10 +14,12 @@ node_modules/
 bower_components/
 .svn/
 .sass-cache/
+.nodejs-cache/
 npm-debug.log
 
 # Distribution
 coverage/
 dist/
 docs/
+logs/
 *.iml

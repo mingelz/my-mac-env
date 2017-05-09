@@ -34,7 +34,8 @@ My Mac Environment
 ## Software
 
 + App Store
-    + Dr.Cleaner
+    + Bear
+    + Dr.Cleaner Pro
     + Dr.Unarchiver
     + Evernote
     + iWork
@@ -46,8 +47,9 @@ My Mac Environment
     + WeChat
     + Xcode
     + 网易云音乐
+    + 优酷
+    + 爱奇艺
 + [brew](http://brew.sh/) & [cask](http://caskroom.io/)
-    + android-platform-tools (adb)
     + autojump (for oh-my-zsh)
     + ~~git~~ (installed with Xcode)
     + nginx
@@ -56,6 +58,7 @@ My Mac Environment
     + tree
     + ~~wget~~ (use curl)
     + [flux](https://justgetflux.com/)
+    + [LICEcap](http://www.cockos.com/licecap/)
     + [iTerm2](https://www.iterm2.com/)
     + [MacVim](https://github.com/macvim-dev/macvim)
     + [MPlayerX](http://mplayerx.org/)
@@ -63,20 +66,25 @@ My Mac Environment
 + Others
     + [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
     + [BaiduInput](http://srf.baidu.com/input/mac.html)
-    + [QQ](http://im.qq.com/macqq/)
     + [Google Chrome](https://www.google.com/chrome/)
-    + [AliWangwang](http://wangwang.taobao.com/)
+    + [QQ](http://im.qq.com/macqq/)
     + [Dingding](http://www.dingtalk.com/)
-    + [Thunder](http://mac.xunlei.com/)
-    + [Android File Transfer](https://www.android.com/filetransfer/)
-    + [Shadowsock](https://shadowsocks.org/)
+    + [AliWangwang](http://wangwang.taobao.com/)
+    + [Mubu](https://mubu.com)
     + [Atom](https://atom.io)
     + [Visual Studio Code](https://code.visualstudio.com/)
-    + [ImageAlpha](http://pngmini.com/)
-    + [XnViewMP](http://www.xnview.com/en/xnviewmp/)
-    + [BetterTouchTool](http://bettertouchtool.net/)
-    + [Charles Proxy](http://www.charlesproxy.com/)
-    + [Sketch](https://www.sketchapp.com/)
     + [IntelliJ IDEA](http://www.jetbrains.com/idea/)
+    + [Thunder](http://mac.xunlei.com/)
+    + [Baidu Netdisk](http://pan.baidu.com/)
+    + [XnViewMP](http://www.xnview.com/en/xnviewmp/)
+    + [ImageAlpha](http://pngmini.com/)
+    + [Android File Transfer](https://www.android.com/filetransfer/)
+    + [BetterTouchTool](http://bettertouchtool.net/)
+    + [Shadowsock](https://shadowsocks.org/)
+    + [Charles Proxy](http://www.charlesproxy.com/)
+    + [SourceTree](https://www.sourcetreeapp.com/)
+    + [Sketch](https://www.sketchapp.com/)
     + Adobe Photoshop
     + Microsoft Office
+    + Axure
+    + iHost

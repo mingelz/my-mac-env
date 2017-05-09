@@ -15,7 +15,7 @@ export NVM_DIR=~/.nvm
 source "/usr/local/opt/nvm/nvm.sh"
 
 # mybin path
-export PATH=~/.mybin:$PATH
+# export PATH=~/.mybin:$PATH
 
 # java, 修改最后的版本号实现切换 JAVA_HOME
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
