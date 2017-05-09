@@ -67,8 +67,8 @@ set scrolloff=2    "上下滚动时，总是预留 X 行，而不是光标到最
 if has("gui_running")    "当在 GUI 运行时
   set guioptions=eg    "定义 GUI 界面元素 (b:底部滚动条总是存在; e:标签栏; g:不可用的菜单项变灰; t:菜单栏可撕下; T:工具栏; m:菜单栏; r:右侧滚动条总是存在; R:如有垂直分割的窗口则右侧滚动条总是存在; l左侧滚动条总是存在; L如有垂直分割的窗口则左侧滚动条总是存在) [go=guioptions]
   set mousehide    "输入时隐藏光标
-  set cursorline    "高亮当前行
-  set cursorcolumn    "高亮当前列
+  "set cursorline    "高亮当前行
+  "set cursorcolumn    "高亮当前列
   "hi cursorline guibg=#333333    "当前行背景色
   "hi cursorcolumn guibg=#333333    "当前列背景色
   colo desert
@@ -298,7 +298,7 @@ call vundle#begin()    "必须将安装插件的命令放在 vundle#begin 和 vu
 " 格式为 `Plugin 'github-username/repo-name'`
 Plugin 'VundleVim/Vundle.vim'    "让 vundle 管理插件版本, 必须
 Plugin 'scrooloose/nerdtree'    "文件管理器
-Plugin 'scrooloose/nerdcommenter'    "通过 [count]<leader>ci 切换注释（cc添加，cu取消），更多快捷键详看帮助
+Plugin 'scrooloose/nerdcommenter'    "通过 [count]<leader>ci 切换注释（cn添加，cu取消，cc不考虑缩进切换，c<space>考虑缩进切换），更多快捷键详看帮助
 " Plugin 'scrooloose/syntastic'    "语法检查，scrooloose 太 TMD 高产了
 Plugin 'jistr/vim-nerdtree-tabs'    "给 NERDTree 添加自动开启
 Plugin 'terryma/vim-multiple-cursors'    "多光标支持，快捷键 <control-n>
@@ -327,7 +327,7 @@ source $VIMRUNTIME/macros/matchit.vim    "启用 vim 自带的 matchit 插件，
 " -- 插件设置，仅开启对应插件后有效 ---------{{{--
 " NERDCommenter
 let g:NERDSpaceDelims = 1    "NERDCommenter: 注释时在后边加空格
-let g:NERDDefaultAlign = 'start'    "注释插入到代码行最开始
+let g:NERDDefaultAlign = 'left'    "注释插入到代码行最开始
 
 " syntastic
 " set statusline+=%#warningmsg#
