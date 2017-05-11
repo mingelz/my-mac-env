@@ -1,0 +1,24 @@
+"*":
+  core:
+    openEmptyEditorOnStart: false
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontSize: 16
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "53fd9ef9-f628-4235-8535-c7c0a1ee661b"
+  "platformio-ide-terminal":
+    toggles:
+      autoClose: true
+  "vim-mode-plus":
+    useClipboardAsDefaultRegister: false
+    useSmartcaseForSearch: true
+    useSmartcaseForSearchCurrentWord: true
+  welcome:
+    showOnStartup: false

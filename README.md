@@ -9,6 +9,7 @@ My Mac Environment
 |
 |-- Users/
 |   |-- mingelz/ ($HOME)
+|       |-- .atom/
 |       |-- .bash_profile
 |       |-- .eslintrc.js
 |       |-- .gemrc

@@ -316,7 +316,7 @@ Plugin 'lilydjwg/colorizer'    "修改 CSS 颜色值的背景色为对应颜色
 Plugin 'nathanaelkane/vim-indent-guides'    "更漂亮的缩进
 " Plugin 'Yggdroot/indentLine'    "又一个漂亮的缩进
 Plugin 'yianwillis/vimcdoc'    "vim中文文档
-Plugin 'wakatime/vim-wakatime'    "统计写码时间 https://wakatime.com
+" Plugin 'wakatime/vim-wakatime'    "统计写码时间 https://wakatime.com
 Plugin 'editorconfig/editorconfig-vim'    "Editor Config
 call vundle#end()
 

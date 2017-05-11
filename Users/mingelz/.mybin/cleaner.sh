@@ -10,11 +10,13 @@ sudo find / -name ".DS_Store" -depth -exec rm {} \;
 sudo dot_clean -m /
 
 # vim
+rm -rf ~/.viminfo
 rm -rf ~/.vim/viminfo
 rm -rf ~/.vim/undo
 mkdir ~/.vim/undo
 
 # shell history
+rm -rf ~/.bash_sessions
 rm -rf ~/.bash_history
 rm -rf ~/.zsh_history
 

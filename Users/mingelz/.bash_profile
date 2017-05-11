@@ -1,6 +1,7 @@
 # alias
 alias la="ls -AlhG"
 alias vim="mvim -v"
+alias vimhuge="vim -u NONE -c 'set syntax=no filetype=text'"
 alias please='sudo `fc -nl -1`'
 
 # editor
@@ -18,7 +19,7 @@ source "/usr/local/opt/nvm/nvm.sh"
 # export PATH=~/.mybin:$PATH
 
 # java, 修改最后的版本号实现切换 JAVA_HOME
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 #export PATH=$JAVA_HOME/bin:$PATH
 
 # brew, 填入 github 管理后台生成的 token
