@@ -10,5 +10,7 @@
 fe80::1%lo0     localhost
 
 # dev
-127.0.0.1       shangzuo.com
+127.0.0.1 shangzuo.com
 
+# gfw
+192.30.255.113 gist.github.com

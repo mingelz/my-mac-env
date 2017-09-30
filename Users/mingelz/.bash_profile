@@ -3,6 +3,7 @@ alias la="ls -AlhG"
 alias vim="mvim -v"
 alias vimhuge="vim -u NONE -c 'set syntax=no filetype=text'"
 alias please='sudo `fc -nl -1`'
+alias dnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
 
 # editor
 export EDITOR=vim

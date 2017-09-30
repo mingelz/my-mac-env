@@ -287,6 +287,10 @@ function! SetGuiTabLabel()
 endfunction
 nmap <leader>tn :call SetGuiTabLabel()<CR>
 " -------------------------------------------}}}--
+
+" -- 当需要 sudo 时，可以使用 :w!! ----{{{--
+cmap w!! w !sudo tee % >/dev/null
+" -------------------------------------------}}}--
 " == }}}
 
 " == 插件 == {{{
@@ -301,10 +305,13 @@ Plugin 'scrooloose/nerdtree'    "文件管理器
 Plugin 'scrooloose/nerdcommenter'    "通过 [count]<leader>ci 切换注释（cn添加，cu取消，cc不考虑缩进切换，c<space>考虑缩进切换），更多快捷键详看帮助
 " Plugin 'scrooloose/syntastic'    "语法检查，scrooloose 太 TMD 高产了
 Plugin 'jistr/vim-nerdtree-tabs'    "给 NERDTree 添加自动开启
+Plugin 'ctrlpvim/ctrlp.vim'    "Ctrl+p 快速打开文件
 Plugin 'terryma/vim-multiple-cursors'    "多光标支持，快捷键 <control-n>
+Plugin 'godlygeek/tabular'    "强大的自动对齐能力
+Plugin 'airblade/vim-gitgutter'    "添加一个 git 状态槽
+Plugin 'tpope/vim-fugitive'    "提供 vim 环境下的 git 命令支持
 " Plugin 'mattn/emmet-vim'    "原来的 ZenCoding
-" Plugin 'jiangmiao/simple-javascript-indenter'    "更好的 Javascript 缩进
-Plugin 'othree/yajs.vim'    "更好的 Javascript 语法高亮
+" Plugin 'othree/yajs.vim'    "更好的 Javascript 语法高亮，性能不太好，默认关掉了
 Plugin 'cakebaker/scss-syntax.vim'    "Sass 语法高亮
 " Plugin 'digitaltoad/vim-jade'    "Jade 语法高亮
 Plugin 'altercation/vim-colors-solarized'    "漂亮的主题
@@ -313,8 +320,10 @@ Plugin 'altercation/vim-colors-solarized'    "漂亮的主题
 " Plugin 'vim-airline/vim-airline-themes'
 Plugin 'lilydjwg/colorizer'    "修改 CSS 颜色值的背景色为对应颜色
 " Plugin 'luochen1990/rainbow'    "彩虹括号
+" Plugin 'jiangmiao/simple-javascript-indenter'    "更好的 Javascript 缩进
 Plugin 'nathanaelkane/vim-indent-guides'    "更漂亮的缩进
 " Plugin 'Yggdroot/indentLine'    "又一个漂亮的缩进
+" Plugin 'ntpeters/vim-better-whitespace'    "显示行尾无用空白字符
 Plugin 'yianwillis/vimcdoc'    "vim中文文档
 " Plugin 'wakatime/vim-wakatime'    "统计写码时间 https://wakatime.com
 Plugin 'editorconfig/editorconfig-vim'    "Editor Config
@@ -341,7 +350,15 @@ let g:NERDDefaultAlign = 'left'    "注释插入到代码行最开始
 
 " vim-nerdtree-tabs
 let NERDTreeShowHidden=1
+" let g:nerdtree_tabs_open_on_console_startup=1    " 从 terminal 启动时，是否要开启 nerdtree
 map <leader>n <plug>NERDTreeTabsToggle<CR>
+
+" ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$|\v[\/](node_modules|dist)$',
+  \ 'file': '\v\.(exe|so|dll|DS_Store)|\vThumbs\.db$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " emmet
 " let g:user_emmet_expandabbr_key = '<c-e>'    "emmet 默认的快捷键是 <c-y>,
@@ -353,11 +370,11 @@ map <leader>n <plug>NERDTreeTabsToggle<CR>
 " let g:rainbow_active = 1    "彩虹括号默认打开
 
 " vim-indent-guides
-set nolist    "当开启这款插件时，就不需要再显示 list 了
+" set nolist    "当开启这款插件时，就不需要再显示 list 了
 let g:indent_guides_enable_on_vim_startup = 1    "自动打开缩进线
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']    "在哪些场景下关闭缩进线
 let g:indent_guides_tab_guides = 1    "是否针对 Tab 缩进显示缩进线
-let g:indent_guides_space_guides = 0    "是否针对 Space 缩进显示缩进线
+let g:indent_guides_space_guides = 1    "是否针对 Space 缩进显示缩进线
 
 " vim-colors-solarized
 if has("gui_running")
