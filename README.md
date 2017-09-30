@@ -11,7 +11,6 @@ My Mac Environment
 |   |-- mingelz/ ($HOME)
 |       |-- .atom/
 |       |-- .bash_profile
-|       |-- .eslintrc.js
 |       |-- .gemrc
 |       |-- .gitconfig
 |       |-- .mybin/
