@@ -1,4 +1,6 @@
 "*":
+  "autoclose-html":
+    makeNeverCloseSelfClosing: false
   core:
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
@@ -8,21 +10,16 @@
     ]
   editor:
     fontSize: 16
-    invisibles: {}
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
     userId: "53fd9ef9-f628-4235-8535-c7c0a1ee661b"
-  github:
-    viewChangesForCurrentFileDiffPaneSplitDirection: "right"
-  "platformio-ide-terminal":
-    toggles:
-      autoClose: true
+  "linter-ui-default":
+    useBusySignal: false
   "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     useClipboardAsDefaultRegister: false
     useSmartcaseForSearch: true
     useSmartcaseForSearchCurrentWord: true
-  "vim-mode-plus-ex-mode":
-    notifiedUseExMode: true
   welcome:
     showOnStartup: false
