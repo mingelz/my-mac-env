@@ -14,6 +14,7 @@
     br = branch
     ci = commit
     cl = clone
+    cm = commit -m
     co = checkout
     di = difftool
     mg = merge
