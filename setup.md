@@ -1,6 +1,6 @@
 # 重装 macOS 流程
 
-2017-05-12
+2017-11-26
 
 ## 制作安装盘
 
@@ -17,8 +17,8 @@
     * 通过 Spotlight 或 Launchpad 启动「终端」
     * 刚才下载的 macOS 会放在 `/Applications` 目录下，假设文件名为 `Install macOS Sierra.app`
     * 执行：`sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ Sierra.app`
-    * 会给出提示并需要确认，然后开始制作安装盘
-        * 在 `Copying installer files to disk...` 这一步时可能要多等一会儿
+    * 之后会给出提示并需要确认，然后开始制作安装盘
+        * 在 `Copying installer files to disk...` 这一步要多等一会儿（和电脑及U盘性能有关，我大概用了 70 分钟）
         * 最后会提示 `Copy complete. Done` 表示制作完成
 
 ## 系统安装
@@ -27,6 +27,7 @@
 * 保证整个过程联网，否则会提示「安装器有效负载签名检查失败」
 * 如果需要全新安装，需要先通过「磁盘工具」抹掉硬盘上的内容（做好备份），随后开始安装
 * 一定不要应用 FileVault 特性
+* 安装中会有几次重启，无需干预，整个过程大概 10 分钟
 
 ## 系统设置
 
@@ -44,7 +45,10 @@
 * 语言和地区
     * 【24小时制】
 * 显示器
-    * 【取消勾选】在菜单栏中显示镜像选项（可用时）
+    * 显示器
+        * 【取消勾选】在菜单栏中显示镜像选项（可用时）
+    * Night Shift
+        * 设定时间 => 日落到日出
 * 键盘
     * 文本
         * 【取消勾选】自动纠正拼写
@@ -84,7 +88,7 @@
         * 触控板选项
             * 【勾选】启用拖移【三指拖移】
 
-### Finder 编好设置
+### Finder 偏好设置
 
 * 通用
     * 【勾选】以下项目
@@ -93,7 +97,7 @@
     * 开启新 Finder 窗口时打开【<家目录>】
 * 边栏
     * 【勾选】以下项目，其他全部取消勾选
-        * 个人收藏 
+        * 个人收藏
             * iCloud Drive
             * AirDrop
             * 桌面
@@ -107,11 +111,21 @@
 
 ### 系统右侧通知栏
 
-* 保留：今天、计算器、提醒事项、日历、明天
+* 保留：今天、提醒事项、日历、计算器、明天
 
-### Terminal
+### Terminal 偏好设置
 
-* 【待补充】
+* 通用
+    * 使用描述文件新建窗口 => Homebrew
+* 描述文件
+    * Homebrew （因为前边选了 Homebrew，这里仅配置这一个主题）
+        * Shell
+            * 当 shell 退出时 => 关闭窗口
+
+### Safari 偏好设置
+
+* 高级
+    * 【勾选】在菜单栏中显示「开发」菜单
 
 ## 安装应用
 
@@ -119,55 +133,73 @@
 
 ### App Store
 
-* WeChat
+* Bear
+* Dr.Cleaner Pro
+* Dr.Unarchiver
+* Evernote
 * iWorks
     * Pages
     * Numbers
     * Keynote
-* Xcode
-* Dr. Cleaner Pro
-* Dr. Unarchiver
-* Evernote
 * MWeb
+* Pocket
+* WeChat
+* Xcode
 
 ### 下载
 
-可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建 `.localized` 文件。
+可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
 * 输入法
     * [Baidu Input](http://srf.baidu.com/input/mac.html)
+    * [Sogou Input](https://pinyin.sogou.com/mac/)
 * 沟通
     * [QQ](http://im.qq.com/macqq/)
     * [Dingtalk](https://www.dingtalk.com)
     * [Wangwang](http://wangwang.taobao.com)
 * 工具
-    * [Chrome](https://www.google.com/chrome/)
-        * 【勾选】退出前提示
+    * [Google Chrome](https://www.google.com/chrome/)
+    *   * 【勾选】退出前提示
     * [Mubu](https://mubu.com)
     * [XMind](http://www.xmind.net/)
     * [Baidu Netdisk](http://pan.baidu.com)
     * [Thunder](http://xunlei.com)
+    * [LICEcap](http://www.cockos.com/licecap/)
+    * [flux](https://justgetflux.com/)
+    * [XnViewMP](http://www.xnview.com/en/xnviewmp/)
+    * [ImageAlpha](http://pngmini.com/)
+    * [BetterTouchTool](http://bettertouchtool.net/)
+    * [Shadowsock](https://shadowsocks.org/)
 * 多媒体
     * [Netease Music](http://music.163.com)
     * [MplayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)
 * 开发
     * [iTerm](http://www.iterm2.com)
-    * [MacVim](https://github.com/macvim-dev/macvim/releases/tag/snapshot-133)
-    * [Atom](https://github.com/atom/atom/releases)
+    * [MacVim](https://github.com/macvim-dev/macvim/)
+    * [Atom](https://atom.io/)
+    * [Visual Studio Code](https://code.visualstudio.com/)
+    * [IntelliJ IDEA](http://www.jetbrains.com/idea/)
     * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+    * [SourceTree](https://www.sourcetreeapp.com/)
     * [Charles Proxy](http://www.charlesproxy.com/)
+    * [Sketch](https://www.sketchapp.com/)
     * Adobe Photoshop
+    * Axure
+    * Microsoft Office
     * iHosts
 
 ### 命令行安装
 
 建议不使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
 
-* [brew](http://brew.sh/)
-    * nvm
-        * node
-        * cnpm/tnpm
+* [brew](http://brew.sh/) & [cask](http://caskroom.io/)
     * autojump
+    * nvm & node & npm/cnpm
+    * ~~git~~ (installed with Xcode)
+    * nginx
+    * tree
+    * ~~wget~~ (use curl)
+    * [Android File Transfer](https://www.android.com/filetransfer/)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 ### 配置开发环境
@@ -181,17 +213,7 @@
 * Atom
     * 配置 Atom 可在命令行中执行：打开应用点击 【Install Shell Commands】
     * 复制 `my-mac-env/~/.atom` 目录
-    * 使用 `apm` 命令安装插件
-        * atom-language-xtpl
-        * editorconfig
-        * file-icons
-        * language-babel
-        * language-vue
-        * platformio-ide-terminal
-        * vim-mode-plus
-        * vim-mode-plus-ex-mode
-        * vim-mode-plus-keymaps-for-surround
-        * ~~wakatime~~
+    * 使用 `apm` 命令安装插件，常用插件列表可在使用 `sync-settings` 同步
 * SSH
     * 复制 `my-mac-env/~/.ssh` 目录
     * 使用 `ssh-keygen` 生成针对每个站点的 SSH key
@@ -202,4 +224,3 @@
     * 复制 `my-mac-env/usr/local/etc/nginx` 目录
     * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
     * 如需要支持 https，使用 `gen-ssl-csr.sh` 生成证书
-
