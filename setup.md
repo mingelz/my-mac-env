@@ -159,7 +159,6 @@
     * [Wangwang](http://wangwang.taobao.com)
 * 工具
     * [Google Chrome](https://www.google.com/chrome/)
-    *   * 【勾选】退出前提示
     * [Mubu](https://mubu.com)
     * [XMind](http://www.xmind.net/)
     * [Baidu Netdisk](http://pan.baidu.com)
@@ -202,25 +201,89 @@
     * [Android File Transfer](https://www.android.com/filetransfer/)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-### 配置开发环境
+### 软件配置
 
-* 复制 [my-mac-env](https://github.com/mingelz/my-mac-env) 相关的文件
-* MacVim
-    * 复制 `my-mac-env/~/.vimrc` 文件
-    * 配置 MacVim 可在命令行中执行：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
-    * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
-    * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `~/.vimrc` 中定义
+依赖的配置文件已经在此 Repo 中提供
+
+* Google Chrome
+    * 【勾选】退出前提示
+* Bash & Oh My ZSH
+    * 复制 `my-mac-env/~/.bash_profile` 及 `my-mac-env/~/.zshrc` 文件
+* iTerm2
+    * General
+        * Closing
+            * 【勾选】Quit when all windows are closed
+    * Appearance
+        * Tabs
+            * 【勾选】Show tab bar even when there is only one tab
+            * 【取消勾选】Show tab close buttons
+    * Profiles
+        * General
+            * Working Directory
+                * 【选中】Reuse previous session's directory
+        * Text
+            * Font
+                * 18pt Monaco
+                * 【勾选】Use a different font for non-ASCII text
+            * Non-ASCII Font
+                * 18pt 苹方-简 常规体
 * Atom
     * 配置 Atom 可在命令行中执行：打开应用点击 【Install Shell Commands】
-    * 复制 `my-mac-env/~/.atom` 目录
-    * 使用 `apm` 命令安装插件，常用插件列表可在使用 `sync-settings` 同步
-* SSH
-    * 复制 `my-mac-env/~/.ssh` 目录
-    * 使用 `ssh-keygen` 生成针对每个站点的 SSH key
-    * 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
-* Git
-    * 重新编辑 `~/.gitconfig` 中的用户信息
+    * 复制 `my-mac-env/~/.atom/config.cson` 文件
+    * 使用 `apm` 命令安装插件，常用插件：
+        * active-power-mode
+        * atom-beautify
+        * atom-ide-ui
+        * atom-language-xtpl
+        * autoclose-html
+        * docblockr
+        * editorconfig
+        * ex-mode
+        * file-icons
+        * git-time-machine
+        * ide-typescript
+        * intentions
+        * language-babel
+        * language-vue
+        * linter
+        * linter-eslint
+        * linter-ui-default
+        * minimap
+        * pigments
+        * platformio-ide-terminal
+        * split-diff
+        * sync-settings
+        * vim-mode-plus
+        * vim-mode-plus-keymaps-for-surround
+* MacVim
+    * 配置 MacVim 可在命令行中执行：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
+        * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
+    * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
+    * 复制 `my-mac-env/~/.vimrc` 文件
+    * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `~/.vimrc` 中定义
 * Nginx
     * 复制 `my-mac-env/usr/local/etc/nginx` 目录
     * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
     * 如需要支持 https，使用 `gen-ssl-csr.sh` 生成证书
+* Node & NPM/xNPM
+    * 创建 `~/.nvm` 目录
+    * 复制 `~/.cnpmrc` 文件
+        * 如有其他 xNPM，可根据情况创建各自的配置文件
+* Git
+    * 复制 `~/.gitconfig` 文件，并根据实际情况重新编辑其中的用户信息
+* SSH
+    * 复制 `my-mac-env/~/.ssh` 目录
+    * 使用 `ssh-keygen` 生成针对每个站点的 SSH key
+    * 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
+    * 在相应站点配置公钥
+
+### 私人信息
+
+以下目录或软件中可能存在私人信息，未体现在上述列表中，记得备份旧数据。
+
+* Bash & Oh My ZSH
+    * `~/.bash_profile` 中一些私人配置
+* SSH
+    * 如需保留之前的密钥，需要备份 `~/.ssh` 目录下的文件
+* 其他家目录下的配置文件
+* iHosts
