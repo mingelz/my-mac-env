@@ -261,6 +261,9 @@
     * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
     * 复制 `my-mac-env/~/.vimrc` 文件
     * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `~/.vimrc` 中定义
+    * 偏好设置
+        * General
+            * After last window closes => Quit MacVim
 * Nginx
     * 复制 `my-mac-env/usr/local/etc/nginx` 目录
     * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
