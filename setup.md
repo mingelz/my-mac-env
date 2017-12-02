@@ -113,12 +113,21 @@
 
 * 保留：今天、提醒事项、日历、计算器、明天
 
+### 系统状态栏
+
+* 电池
+    * 显示百分比
+
 ### Terminal 偏好设置
 
 * 通用
     * 使用描述文件新建窗口 => Homebrew
 * 描述文件
     * Homebrew （因为前边选了 Homebrew，这里仅配置这一个主题）
+        * 设置为默认
+        * 文本
+            * 字体
+                * Andale Mono 18 磅
         * Shell
             * 当 shell 退出时 => 关闭窗口
 
@@ -170,7 +179,7 @@
     * [BetterTouchTool](http://bettertouchtool.net/)
     * [Shadowsock](https://shadowsocks.org/)
 * 多媒体
-    * [Netease Music](http://music.163.com)
+    * [Netease Music](http://music.163.com)，AppStore 版无法使用键盘控制播放，官网下载安装的版本可以
     * [MplayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)
 * 开发
     * [iTerm](http://www.iterm2.com)
