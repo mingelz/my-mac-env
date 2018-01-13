@@ -30,8 +30,8 @@ rm -rf ~/.v8flags*
 rm -rf ~/.zcompdump-*
 
 # npm / tnpm
-npm cache clean
-tnpm cache clean
+npm cache clean --force
+tnpm cache clean --force
 
 # brew
 brew cleanup -n
