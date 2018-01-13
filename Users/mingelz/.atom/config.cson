@@ -14,6 +14,9 @@
     showInvisibles: true
   "exception-reporting":
     userId: "53fd9ef9-f628-4235-8535-c7c0a1ee661b"
+  "platformio-ide-terminal":
+    toggles:
+      autoClose: true
   "linter-ui-default":
     useBusySignal: false
   "vim-mode-plus":
