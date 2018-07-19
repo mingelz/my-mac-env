@@ -309,7 +309,7 @@ Plugin 'ctrlpvim/ctrlp.vim'    "Ctrl+p 快速打开文件
 Plugin 'terryma/vim-multiple-cursors'    "多光标支持，快捷键 <control-n>
 Plugin 'godlygeek/tabular'    "强大的自动对齐能力
 Plugin 'airblade/vim-gitgutter'    "添加一个 git 状态槽
-Plugin 'tpope/vim-fugitive'    "提供 vim 环境下的 git 命令支持
+" Plugin 'tpope/vim-fugitive'    "提供 vim 环境下的 git 命令支持
 " Plugin 'mattn/emmet-vim'    "原来的 ZenCoding
 " Plugin 'othree/yajs.vim'    "更好的 Javascript 语法高亮，性能不太好，默认关掉了
 Plugin 'cakebaker/scss-syntax.vim'    "Sass 语法高亮
