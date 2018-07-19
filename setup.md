@@ -142,6 +142,7 @@
 
 ### App Store
 
+* Agenda
 * Bear
 * Dr.Cleaner Pro
 * Dr.Unarchiver
@@ -150,6 +151,7 @@
     * Pages
     * Numbers
     * Keynote
+* Microsoft OneNote
 * MWeb
 * Pocket
 * WeChat
@@ -169,7 +171,7 @@
 * 工具
     * [Google Chrome](https://www.google.com/chrome/)
     * [Mubu](https://mubu.com)
-    * [XMind](http://www.xmind.net/)
+    * [XMind Zen](http://www.xmind.net/)
     * [Baidu Netdisk](http://pan.baidu.com)
     * [Thunder](http://xunlei.com)
     * [LICEcap](http://www.cockos.com/licecap/)
@@ -241,24 +243,15 @@
     * 复制 `my-mac-env/~/.atom/config.cson` 文件
     * 使用 `apm` 命令安装插件，常用插件：
         * active-power-mode
-        * atom-beautify
-        * atom-ide-ui
         * atom-language-xtpl
         * autoclose-html
         * docblockr
         * editorconfig
         * ex-mode
         * file-icons
-        * git-time-machine
-        * ide-typescript
-        * intentions
         * language-babel
         * language-vue
-        * linter
-        * linter-eslint
-        * linter-ui-default
         * minimap
-        * pigments
         * platformio-ide-terminal
         * split-diff
         * sync-settings

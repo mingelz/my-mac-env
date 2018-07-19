@@ -5,20 +5,25 @@ Desktop.ini
 
 # IDE
 .idea/
-.project
-*.swp
-*.swo
+.vscode/
+*.iml
+*.sw*
 
-# Dependency, Cache, Temporary
+# Dependency
 node_modules/
 bower_components/
-.svn/
-.sass-cache/
-.nodejs-cache/
-npm-debug.log
 
 # Distribution
 coverage/
 dist/
 docs/
-*.iml
+
+# Log, Cache, Temporary
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.nodejs-cache/
+
+# Others
+.svn/
