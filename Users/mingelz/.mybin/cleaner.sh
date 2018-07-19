@@ -21,6 +21,9 @@ rm -rf ~/.bash_history
 rm -rf ~/.zsh_history
 
 # user home
+rm -rf ~/.node-diamond-client-cache
+rm -rf ~/.node-gyp
+rm -rf ~/.node_repl_history
 rm -rf ~/.npm_updater.json
 rm -rf ~/.npminstall_tarball
 rm -rf ~/.oracle_jre_usage
@@ -28,11 +31,16 @@ rm -rf ~/.subversion
 rm -rf ~/.tnpm_tmp
 rm -rf ~/.v8flags*
 rm -rf ~/.zcompdump-*
+rm -rf ~/.VSCodeVim
+rm -rf ~/.cache
+rm -rf ~/.config
 
-# npm / tnpm
-npm cache clean --force
-tnpm cache clean --force
-
-# brew
+# app cache
 brew cleanup -n
 brew prune -n
+autojump --purge
+# npm cache clean --force
+# dnpm cache clean --force
+# tnpm cache clean --force
+rm -rf ~/.npm
+rm -rf ~/.tnpm

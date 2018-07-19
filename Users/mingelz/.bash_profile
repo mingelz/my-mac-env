@@ -5,6 +5,7 @@ alias vimhuge="vim -u NONE -c 'set syntax=no filetype=text'"
 alias please='sudo `fc -nl -1`'
 alias dnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
 alias cncu="ncu --registry=https://registry.npm.taobao.org"
+alias tncu="ncu --registry=http://registry.npm.alibaba-inc.com"
 
 # 默认 editor
 export EDITOR=vim
@@ -13,7 +14,7 @@ export EDITOR=vim
 export HISTCONTROL=ignorespace
 
 # java, 修改最后的版本号实现切换 JAVA_HOME
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 #export PATH=$JAVA_HOME/bin:$PATH
 
 # nvm

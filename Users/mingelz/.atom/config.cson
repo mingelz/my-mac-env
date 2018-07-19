@@ -17,10 +17,7 @@
   "platformio-ide-terminal":
     toggles:
       autoClose: true
-  "linter-ui-default":
-    useBusySignal: false
   "vim-mode-plus":
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     useClipboardAsDefaultRegister: false
     useSmartcaseForFind: true
     useSmartcaseForSearch: true
