@@ -11,11 +11,7 @@ max_line_length = off
 indent_style = space
 indent_size = 2
 
-[{package.json,.travis.yml,.eslintrc*}]
-indent_style = space
-indent_size = 2
-
-[*.md]
+[*.{md,diff}]
 max_line_length = off
 trim_trailing_whitespace = false
 
