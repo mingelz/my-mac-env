@@ -305,7 +305,7 @@ Plugin 'scrooloose/nerdtree'    "文件管理器
 Plugin 'scrooloose/nerdcommenter'    "通过 [count]<leader>ci 切换注释（cn添加，cu取消，cc不考虑缩进切换，c<space>考虑缩进切换），更多快捷键详看帮助
 " Plugin 'scrooloose/syntastic'    "语法检查，scrooloose 太 TMD 高产了
 Plugin 'jistr/vim-nerdtree-tabs'    "给 NERDTree 添加自动开启
-Plugin 'ctrlpvim/ctrlp.vim'    "Ctrl+p 快速打开文件
+" Plugin 'ctrlpvim/ctrlp.vim'    "Ctrl+p 快速打开文件
 Plugin 'terryma/vim-multiple-cursors'    "多光标支持，快捷键 <control-n>
 Plugin 'godlygeek/tabular'    "强大的自动对齐能力
 Plugin 'airblade/vim-gitgutter'    "添加一个 git 状态槽
@@ -354,11 +354,11 @@ let NERDTreeShowHidden=1
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 " ctrlp
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$|\v[\/](node_modules|dist)$',
-  \ 'file': '\v\.(exe|so|dll|DS_Store)|\vThumbs\.db$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\v[\/]\.(git|hg|svn)$|\v[\/](node_modules|dist)$',
+"   \ 'file': '\v\.(exe|so|dll|DS_Store)|\vThumbs\.db$',
+"   \ 'link': 'some_bad_symbolic_links',
+"   \ }
 
 " emmet
 " let g:user_emmet_expandabbr_key = '<c-e>'    "emmet 默认的快捷键是 <c-y>,
