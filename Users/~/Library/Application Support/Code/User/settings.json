@@ -1,0 +1,52 @@
+{
+    // Core
+    "editor.fontSize": 16,
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": true,
+    "editor.scrollBeyondLastLine": false,
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.colorTheme": "Solarized Dark",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "search.smartCase": true,
+    "terminal.integrated.fontSize": 14,
+    "terminal.external.osxExec": "iTerm.app",
+    "breadcrumbs.enabled": true,
+    "markdown.preview.fontSize": 16,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    // Builtin Extensions: Emmet
+    "emmet.triggerExpansionOnTab": true,
+
+    // Extensions: Vim
+    "vim.visualstar": true,
+
+    // Extensions: Settings Sync
+    // token: aacd41d1263a787fa56bc2a0a4757724ead37d89
+    "sync.gist": "036537c143d70fedf8126430a3687ee0",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.forceDownload": false,
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+
+    // Extensions: GitLens
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+
+    // Extensions: Auto Rename Tag
+    "auto-rename-tag.activationOnLanguage": [
+        "html",
+        "xml",
+        "javascript",
+    ],
+
+    // Extensions: Prettier - Code formatter
+    "prettier.eslintIntegration": true,
+}

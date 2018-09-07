@@ -2,13 +2,15 @@
 
 My Mac Environment
 
+[./setup.md](安装与配置一条龙)
+
 ## Tree
 
 ```
 / (Root Directory)
 |
 |-- Users/
-|   |-- mingelz/ ($HOME)
+|   |-- ~/ ($HOME)
 |       |-- .atom/
 |       |-- .bash_profile
 |       |-- .gemrc
