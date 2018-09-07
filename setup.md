@@ -1,6 +1,6 @@
-# 重装 macOS 流程
+# Mac 环境安装配置一条龙
 
-2017-11-26
+2018-09-06
 
 ## 制作安装盘
 
@@ -154,6 +154,7 @@
 * Microsoft OneNote
 * MWeb
 * Pocket
+* Reeder
 * WeChat
 * Xcode
 
@@ -168,21 +169,18 @@
     * [QQ](http://im.qq.com/macqq/)
     * [Dingtalk](https://www.dingtalk.com)
     * [Wangwang](http://wangwang.taobao.com)
-* 工具
+* 网络 & 多媒体
     * [Google Chrome](https://www.google.com/chrome/)
+    * [Thunder](http://xunlei.com)
+    * [Netease Music](http://music.163.com)，AppStore 版无法使用键盘控制播放，官网下载安装的版本可以
+    * [MplayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)，超强大的播放器，比 App Store 上的版本新
+* 生产力
     * [Mubu](https://mubu.com)
     * [XMind Zen](http://www.xmind.net/)
-    * [Baidu Netdisk](http://pan.baidu.com)
-    * [Thunder](http://xunlei.com)
-    * [LICEcap](http://www.cockos.com/licecap/)
-    * [flux](https://justgetflux.com/)
-    * [XnViewMP](http://www.xnview.com/en/xnviewmp/)
-    * [ImageAlpha](http://pngmini.com/)
-    * [BetterTouchTool](http://bettertouchtool.net/)
-    * [Shadowsock](https://shadowsocks.org/)
-* 多媒体
-    * [Netease Music](http://music.163.com)，AppStore 版无法使用键盘控制播放，官网下载安装的版本可以
-    * [MplayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)
+    * [Sketch](https://www.sketchapp.com/)
+    * Adobe Photoshop
+    * Axure
+    * Microsoft Office
 * 开发
     * [iTerm](http://www.iterm2.com)
     * [MacVim](https://github.com/macvim-dev/macvim/)
@@ -192,11 +190,16 @@
     * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     * [SourceTree](https://www.sourcetreeapp.com/)
     * [Charles Proxy](http://www.charlesproxy.com/)
-    * [Sketch](https://www.sketchapp.com/)
-    * Adobe Photoshop
-    * Axure
-    * Microsoft Office
     * iHosts
+* 小工具
+    * [Baidu Netdisk](http://pan.baidu.com)
+    * [LICEcap](http://www.cockos.com/licecap/)，录屏
+    * [flux](https://justgetflux.com/)，自动调整屏幕亮度及冷暖色
+    * [XnViewMP](http://www.xnview.com/en/xnviewmp/)，看图软件
+    * [ImageAlpha](http://pngmini.com/)，压缩图片
+    * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
+    * [Shadowsock](https://shadowsocks.org/)
+    * [Steam](https://www.steampowered.com/)
 
 ### 命令行安装
 
@@ -257,6 +260,22 @@
         * sync-settings
         * vim-mode-plus
         * vim-mode-plus-keymaps-for-surround
+* Visual Studio Code
+    * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
+    * 复制 `my-mac-env/~/Library/Application\ Support/Code/User/settings.json` 文件
+    * 常用插件：
+        * Auto Close Tag
+        * Auto Rename Tag
+        * Bracket Pair Colorize
+        * Chinese (Simplified) Language Pack
+        * Debugger for Chrome
+        * EditorConfig for VS Code
+        * GitLens — Git supercharged
+        * Prettier - Code formatter
+        * Settings Sync
+        * Vetur
+        * Vim
+        * xtemplate
 * MacVim
     * 配置 MacVim 可在命令行中执行：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
         * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
