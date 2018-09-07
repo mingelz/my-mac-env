@@ -2,7 +2,7 @@
 
 My Mac Environment
 
-[./setup.md](安装与配置一条龙)
+[Mac 环境安装配置一条龙](./setup.md)
 
 ## Tree
 
