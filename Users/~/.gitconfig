@@ -12,6 +12,9 @@
 [difftool "vimdiff"]
     # 默认的 diff.tool = vimdiff 会导致添加 -R (只读) 参数，所以需要专门指定一下 cmd
     cmd = "vimdiff $LOCAL $REMOTE"
+[pager]
+    # 从 git@2.16 开始 branch 使用 less 显示信息，不太习惯，改为传统方式
+    branch = false
 [alias]
     br = branch
     ci = commit
