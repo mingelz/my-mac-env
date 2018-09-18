@@ -11,6 +11,11 @@ My Mac Environment
 |
 |-- Users/
 |   |-- ~/ ($HOME)
+|       |-- Library
+|           |-- Application Support
+|               |-- Code
+|                   |-- User
+|                       |-- settings.json
 |       |-- .atom/
 |       |-- .bash_profile
 |       |-- .gemrc
