@@ -242,7 +242,7 @@
 * Google Chrome
     * 【勾选】退出前提示
 * Bash & Oh My ZSH
-    * 复制 `my-mac-env/~/.bash_profile` 及 `my-mac-env/~/.zshrc` 文件
+    * 复制 `my-mac-env/USERNAME/.bash_profile` 及 `my-mac-env/USERNAME/.zshrc` 文件
 * iTerm2
     * General
         * Closing
@@ -277,7 +277,7 @@
         * 仅保留「表情/符号」
 * Atom
     * 配置 Atom 可在命令行中启动：打开应用点击 【Install Shell Commands】
-    * 复制 `my-mac-env/~/.atom/config.cson` 文件
+    * 复制 `my-mac-env/USERNAME/.atom/config.cson` 文件
     * 使用 `apm` 命令安装插件，常用插件：
         * active-power-mode
         * atom-language-xtpl
@@ -296,7 +296,7 @@
         * vim-mode-plus-keymaps-for-surround
 * Visual Studio Code
     * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
-    * 复制 `my-mac-env/~/Library/Application\ Support/Code/User/settings.json` 文件
+    * 复制 `my-mac-env/USERNAME/Library/Application\ Support/Code/User/settings.json` 文件
     * 常用插件：
         * Auto Close Tag
         * Auto Rename Tag
@@ -314,8 +314,8 @@
     * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
         * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
     * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
-    * 复制 `my-mac-env/~/.vimrc` 文件
-    * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `~/.vimrc` 中定义
+    * 复制 `my-mac-env/Users/USERNAME/.vimrc` 文件
+    * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `.vimrc` 中定义
     * 偏好设置
         * General
             * After last window closes => Quit MacVim
@@ -325,12 +325,12 @@
     * 如需要支持 https，使用 `gen-ssl-csr.sh` 生成证书
 * Node & NPM/xNPM
     * 创建 `~/.nvm` 目录
-    * 复制 `~/.cnpmrc` 文件
+    * 复制 `my-mac-env/Users/USERNAME/.cnpmrc` 文件
         * 如有其他 xNPM，可根据情况创建各自的配置文件
 * Git
-    * 复制 `~/.gitconfig` 文件，并根据实际情况重新编辑其中的用户信息
+    * 复制 `my-mac-env/Users/USERNAME/.gitconfig` 文件，并根据实际情况重新编辑其中的用户信息
 * SSH
-    * 复制 `my-mac-env/~/.ssh` 目录
+    * 复制 `my-mac-env/Users/USERNAME/.ssh` 目录
     * 使用 `ssh-keygen` 生成针对每个站点的 SSH key
     * 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
     * 在相应站点配置公钥
