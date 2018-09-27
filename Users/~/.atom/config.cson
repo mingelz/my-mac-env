@@ -3,6 +3,9 @@
     makeNeverCloseSelfClosing: false
   core:
     openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "platformio-ide-terminal"
+    ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
