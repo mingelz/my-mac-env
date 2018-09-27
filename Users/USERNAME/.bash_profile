@@ -19,11 +19,11 @@ export HISTCONTROL=ignorespace
 
 # nvm
 export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/dist"
-export NVM_DIR=~/.nvm
+export NVM_DIR="$HOME/.nvm"
 source "/usr/local/opt/nvm/nvm.sh"
 
 # autojump
-[[ -s /usr/local/etc/profile.d/autojump.sh ]] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # brew, 填入 github 管理后台生成的 token
 export HOMEBREW_GITHUB_API_TOKEN=""
