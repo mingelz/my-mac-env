@@ -242,7 +242,7 @@
 * Google Chrome
     * 【勾选】退出前提示
 * Bash & Oh My ZSH
-    * 复制 `my-mac-env/USERNAME/.bash_profile` 及 `my-mac-env/USERNAME/.zshrc` 文件
+    * 复制 `my-mac-env/Users/USERNAME/.bash_profile` 及 `my-mac-env/Users/USERNAME/.zshrc` 文件
 * iTerm2
     * General
         * Closing
@@ -277,7 +277,7 @@
         * 仅保留「表情/符号」
 * Atom
     * 配置 Atom 可在命令行中启动：打开应用点击 【Install Shell Commands】
-    * 复制 `my-mac-env/USERNAME/.atom/config.cson` 文件
+    * 复制 `my-mac-env/Users/USERNAME/.atom/config.cson` 文件
     * 使用 `apm` 命令安装插件，常用插件：
         * active-power-mode
         * atom-language-xtpl
@@ -296,7 +296,7 @@
         * vim-mode-plus-keymaps-for-surround
 * Visual Studio Code
     * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
-    * 复制 `my-mac-env/USERNAME/Library/Application\ Support/Code/User/settings.json` 文件
+    * 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/settings.json` 文件
     * 常用插件：
         * Auto Close Tag
         * Auto Rename Tag
