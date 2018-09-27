@@ -6,27 +6,29 @@
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
 * 下载完成后，会弹出安装提示，不要理会
-* 找一个大于 8G 的 U盘
+* 找一个大于 8G 的U盘
 * 清空磁盘
     * 通过 Spotlight 或 Launchpad 启动「磁盘工具」，并点击「继续」
-    * 从左侧的列表中选择插入的 U盘，然后选择「抹掉」标签
+    * 从左侧的列表中选择插入的U盘，然后选择「抹掉」标签
     * 格式【Mac OS 扩展（日志式）】
     * 磁盘名称【MyVolume】（此名称可随便起，后边会用到）
     * 点击「抹掉」
 * 创建安装盘
     * 通过 Spotlight 或 Launchpad 启动「终端」
-    * 刚才下载的 macOS 会放在 `/Applications` 目录下，假设文件名为 `Install macOS Sierra.app`
-    * 执行：`sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ Sierra.app`
+    * 刚才下载的 macOS 会放在 `/Applications` 目录下，假设文件名为 `Install macOS Mojave.app`
+    * 执行：`sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ Mojave.app`
+        * 如果 macOS 大于 10.14，则不再需要 `--applicationpath` 参数
     * 之后会给出提示并需要确认，然后开始制作安装盘
-        * 在 `Copying installer files to disk...` 这一步要多等一会儿（和电脑及U盘性能有关，我大概用了 70 分钟）
+        * 在 `Copying installer files to disk...` 这一步要多等一会儿（和电脑及U盘性能有关，耗时约 30 ~ 70 分钟）
         * 最后会提示 `Copy complete. Done` 表示制作完成
 
 ## 系统安装
 
-* 重启电脑并按住 option 键，在启动菜单中选择刚刚制作的 U盘
-* 保证整个过程联网，否则会提示「安装器有效负载签名检查失败」
-* 如果需要全新安装，需要先通过「磁盘工具」抹掉硬盘上的内容（做好备份），随后开始安装
-* 一定不要应用 FileVault 特性
+* 重启电脑并按住 option 键，在启动菜单中选择刚刚制作的U盘
+* 建议整个安装过程联网，否则可能会提示「安装器有效负载签名检查失败」
+* 如果需要全新安装，在安装进程进行到「macOS 实用工具」时选择「磁盘工具」，抹掉硬盘上的内容（格式优先选择「APFS」）
+* 同样在「macOS 实用工具」选择「全新安装 macOS」开始安装系统
+* 一定不要应用 FileVault 特性（文件保险箱）
 * 安装中会有几次重启，无需干预，整个过程大概 10 分钟
 
 ## 系统设置
@@ -35,24 +37,26 @@
 
 ### 系统偏好设置
 
-* Dock
+* 通用
+    * 最近使用的项目 => 「0」
+* Dock（程序坞）
     * 调整 Dock 大小
     * 置于屏幕【左边】
-    * 【勾选】将窗口最小化为应用程序图标
-* Mission Control
+* Mission Control（调度中心）
     * 【取消勾选】根据最近的使用情况自动重新排列 Space
-    * Dashboard 【作为叠层】
+    * Dashboard（仪表盘） 【作为叠层】
 * 语言和地区
     * 【24小时制】
 * 显示器
     * 显示器
         * 【取消勾选】在菜单栏中显示镜像选项（可用时）
-    * Night Shift
+    * Night Shift（夜览）
         * 设定时间 => 日落到日出
 * 键盘
     * 文本
         * 【取消勾选】自动纠正拼写
         * 【取消勾选】自动大写字词的首字母
+        * 【取消勾选】连按两下空格键插入句号
     * 快捷键
         * 输入法 => 选择上一个输入法【Command + 空格键】
         * 输入法 => 【取消勾选】选择「输入法」菜单中的下一个输入法
@@ -65,11 +69,16 @@
     * 【勾选】在菜单栏中显示音量
 * iCloud
     * 【勾选】除「照片」与「回到我的 Mac」外的其他项
-* App Store
+* App Store（10.13及以下）
     * 【取消勾选】在后台下载新的可用更新
     * 免费下载【存储密码】
+* 软件更新（10.14及以上）
+    * 高级
+        * 【取消勾选】下载可用更新
 * 网络
     * 除「Wi-Fi」外，【停用】其他的连接方式（默认还有「蓝牙 PAN」和「Thunderbolt 网桥」）
+* 蓝牙
+    * 【勾选】在菜单栏中显示蓝牙
 * 扩展
     * 【取消勾选】无用的项，特别是「共享菜单」中的项
 * 共享
@@ -98,16 +107,19 @@
 * 边栏
     * 【勾选】以下项目，其他全部取消勾选
         * 个人收藏
-            * iCloud Drive
-            * AirDrop
+            * AirDrop（隔空投送）
             * 桌面
             * 文稿
             * 下载
             * <家目录>
-        * 设备
-            * 硬盘
+        * iCloud
+            * iCloud Drive（iCloud 云盘）
+        * 位置
+            * 当前电脑名
+            * 外置磁盘
 * 高级
     * 【勾选】显示所有文件的扩展名
+    * 【勾选】将以下位置的文件夹保持在顶部：按名称排序时的窗口中
 
 ### 系统右侧通知栏
 
@@ -133,7 +145,12 @@
 
 ### Safari 偏好设置
 
+* 工具栏
+    * 显示
+        * 【勾选】显示状态栏
 * 高级
+    * 智能搜索栏
+        * 【勾选】显示完整网站地址
     * 【勾选】在菜单栏中显示「开发」菜单
 
 ## 安装应用
@@ -151,6 +168,7 @@
     * Pages
     * Numbers
     * Keynote
+* Manico
 * Microsoft OneNote
 * MWeb
 * Pocket
@@ -205,7 +223,9 @@
 
 建议不使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
 
-* [brew](http://brew.sh/) & [cask](http://caskroom.io/)
+**建议安装 brew 前先执行 `xcode-select --install` 安装 Command Line Tools**
+
+* [brew](http://brew.sh/) & [cask](http://caskroom.io/)(已经与 brew 集成，无需额外安装)
     * autojump
     * nvm & node & npm/cnpm
     * ~~git~~ (installed with Xcode)
@@ -241,8 +261,22 @@
                 * 【勾选】Use a different font for non-ASCII text
             * Non-ASCII Font
                 * 18pt 苹方-简 常规体
+* 百度输入法
+    * 同步
+        * 登录账号，以下配置可在登录账号后通过「下载配置」直接应用
+    * 常用
+        * 状态指示：只勾选「浮动提示」和「QuickTip」
+    * 按键
+        * 翻页按键：只勾选「减号等号」
+    * 五笔
+        * 五笔基本设置：只取消勾选「开启五笔调频」
+    * 词库
+        * 删除所有分类词库
+        * 关闭个性短语
+    * QuickTip
+        * 仅保留「表情/符号」
 * Atom
-    * 配置 Atom 可在命令行中执行：打开应用点击 【Install Shell Commands】
+    * 配置 Atom 可在命令行中启动：打开应用点击 【Install Shell Commands】
     * 复制 `my-mac-env/~/.atom/config.cson` 文件
     * 使用 `apm` 命令安装插件，常用插件：
         * active-power-mode
@@ -277,7 +311,7 @@
         * Vim
         * xtemplate
 * MacVim
-    * 配置 MacVim 可在命令行中执行：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
+    * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
         * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
     * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
     * 复制 `my-mac-env/~/.vimrc` 文件
@@ -309,5 +343,7 @@
     * `~/.bash_profile` 中一些私人配置
 * SSH
     * 如需保留之前的密钥，需要备份 `~/.ssh` 目录下的文件
+* Nginx
+    * 一些 `nginx.conf` 的路径配置
 * 其他家目录下的配置文件
 * iHosts
