@@ -10,7 +10,7 @@ My Mac Environment
 / (Root Directory)
 |
 |-- Users/
-|   |-- ~/ ($HOME)
+|   |-- USERNAME/ ($HOME)
 |       |-- Library
 |           |-- Application Support
 |               |-- Code
