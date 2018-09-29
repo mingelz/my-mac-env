@@ -152,6 +152,8 @@
     * 智能搜索栏
         * 【勾选】显示完整网站地址
     * 【勾选】在菜单栏中显示「开发」菜单
+* 扩展（MAS 里上架的很少，可在[官网](https://safari-extensions.apple.com/)搜索更多）
+    * [QRify](https://safari-extensions.apple.com/details/?id=de.retiolum.safari.qrify-RSADU6MKX9)
 
 ## 安装应用
 
@@ -159,22 +161,25 @@
 
 ### App Store
 
-* Agenda
-* Bear
-* Dr.Cleaner Pro
-* Dr.Unarchiver
-* Evernote
-* iWorks
+* [Agenda](https://agenda.com/)
+* [Bear](https://bear.app/)
+* [Dingtalk](https://www.dingtalk.com)
+* [Dr.Cleaner Pro](https://www.drcleaner.com/)
+* [Dr.Unarchiver](https://www.drcleaner.com/dr-unarchiver/)
+* [Evernote](https://www.evernote.com)
+* [iWorks](https://www.apple.com/cn/iwork/)
     * Pages
     * Numbers
     * Keynote
-* Manico
-* Microsoft OneNote
-* MWeb
-* Pocket
-* Reeder
-* WeChat
-* Xcode
+* [Manico](https://manico.im/)
+* [Microsoft OneNote](https://www.onenote.com)
+* [MWeb](https://zh.mweb.im/)
+* [Pocket](https://getpocket.com/)
+* [QQ](http://im.qq.com/macqq/)
+* [Reeder](http://reederapp.com/)
+* [WeChat](https://weixin.qq.com/)
+* [Xcode](http://developer.apple.com/xcode)
+* [XMind Zen](http://www.xmind.net/)
 
 ### 下载
 
@@ -183,18 +188,16 @@
 * 输入法
     * [Baidu Input](http://srf.baidu.com/input/mac.html)
     * [Sogou Input](https://pinyin.sogou.com/mac/)
-* 沟通
-    * [QQ](http://im.qq.com/macqq/)
-    * [Dingtalk](https://www.dingtalk.com)
-    * [Wangwang](http://wangwang.taobao.com)
-* 网络 & 多媒体
+* 网络 & 娱乐
     * [Google Chrome](https://www.google.com/chrome/)
+    * [Wangwang](http://wangwang.taobao.com)
     * [Thunder](http://xunlei.com)
-    * [Netease Music](http://music.163.com)，AppStore 版无法使用键盘控制播放，官网下载安装的版本可以
+    * [Netease Music](http://music.163.com)，App Store 版无法使用键盘控制播放，官网下载安装的版本可以
     * [MplayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)，超强大的播放器，比 App Store 上的版本新
+    * [Baidu Netdisk](http://pan.baidu.com)
+    * [Steam](https://www.steampowered.com/)
 * 生产力
     * [Mubu](https://mubu.com)
-    * [XMind Zen](http://www.xmind.net/)
     * [Sketch](https://www.sketchapp.com/)
     * Adobe Photoshop
     * Axure
@@ -210,14 +213,12 @@
     * [Charles Proxy](http://www.charlesproxy.com/)
     * iHosts
 * 小工具
-    * [Baidu Netdisk](http://pan.baidu.com)
     * [LICEcap](http://www.cockos.com/licecap/)，录屏
     * [flux](https://justgetflux.com/)，自动调整屏幕亮度及冷暖色
     * [XnViewMP](http://www.xnview.com/en/xnviewmp/)，看图软件
     * [ImageAlpha](http://pngmini.com/)，压缩图片
     * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
     * [Shadowsock](https://shadowsocks.org/)
-    * [Steam](https://www.steampowered.com/)
 
 ### 命令行安装
 
