@@ -310,7 +310,7 @@
         * Settings Sync
         * Vetur
         * Vim
-        * xtemplate
+        * xtemplate (bakso)
 * MacVim
     * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
         * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
