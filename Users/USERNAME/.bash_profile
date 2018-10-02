@@ -3,9 +3,8 @@ alias la="ls -AlhG"
 alias vim="mvim -v"
 alias vimhuge="vim -u NONE -c 'set syntax=no filetype=text'"
 alias please='sudo `fc -nl -1`'
-alias dnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
+alias dnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/dnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.dnpmrc"
 alias cncu="ncu --registry=https://registry.npm.taobao.org"
-alias tncu="ncu --registry=http://registry.npm.alibaba-inc.com"
 
 # 默认 editor
 export EDITOR=vim
@@ -25,5 +24,9 @@ source "/usr/local/opt/nvm/nvm.sh"
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+
+## private 私人配置
+
 # brew, 填入 github 管理后台生成的 token
 export HOMEBREW_GITHUB_API_TOKEN=""
+
