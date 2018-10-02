@@ -2,6 +2,9 @@
   "autoclose-html":
     makeNeverCloseSelfClosing: false
   core:
+    disabledPackages: [
+      "spell-check"
+    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "platformio-ide-terminal"
