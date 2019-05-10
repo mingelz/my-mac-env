@@ -302,12 +302,12 @@ call vundle#begin()    "必须将安装插件的命令放在 vundle#begin 和 vu
 " 格式为 `Plugin 'github-username/repo-name'`
 Plugin 'VundleVim/Vundle.vim'    "让 vundle 管理插件版本, 必须
 Plugin 'scrooloose/nerdtree'    "文件管理器
-Plugin 'scrooloose/nerdcommenter'    "通过 [count]<leader>ci 切换注释（cn添加，cu取消，cc不考虑缩进切换，c<space>考虑缩进切换），更多快捷键详看帮助
+" Plugin 'scrooloose/nerdcommenter'    "通过 [count]<leader>ci 切换注释（cn添加，cu取消，cc不考虑缩进切换，c<space>考虑缩进切换），更多快捷键详看帮助
 " Plugin 'scrooloose/syntastic'    "语法检查，scrooloose 太 TMD 高产了
-Plugin 'jistr/vim-nerdtree-tabs'    "给 NERDTree 添加自动开启
+" Plugin 'jistr/vim-nerdtree-tabs'    "给 NERDTree 添加自动开启
 " Plugin 'ctrlpvim/ctrlp.vim'    "Ctrl+p 快速打开文件
 Plugin 'terryma/vim-multiple-cursors'    "多光标支持，快捷键 <control-n>
-Plugin 'godlygeek/tabular'    "强大的自动对齐能力
+" Plugin 'godlygeek/tabular'    "强大的自动对齐能力
 Plugin 'airblade/vim-gitgutter'    "添加一个 git 状态槽
 " Plugin 'tpope/vim-fugitive'    "提供 vim 环境下的 git 命令支持
 " Plugin 'mattn/emmet-vim'    "原来的 ZenCoding
