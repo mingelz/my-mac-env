@@ -1,0 +1,8 @@
+<code_scheme name="Default" version="173">
+  <codeStyleSettings language="JAVA">
+    <!-- 通过 `cmd + /` 添加注释时，从行的第一个非空位置起始 -->
+    <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
+    <!-- 添加注释时， // 后跟一个空格 -->
+    <option name="LINE_COMMENT_ADD_SPACE" value="true" />
+  </codeStyleSettings>
+</code_scheme>

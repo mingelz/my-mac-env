@@ -349,6 +349,17 @@
             * 安装后参考 [官网安装文档](https://github.com/VSCodeVim/Vim#mac-setup) 开启 key-repeating 能力
         * Visual Studio IntelliCode （微软官方提供的代码提示工具）
         * xtemplate (bakso) （xtpl 文件语法高亮）
+* IntelliJ IDEA
+    * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
+    * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/IdeaIC` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
+    * 解决安装插件慢的问题：添加 `127.0.0.1 hostname.local` 到 `/etc/hosts` 中
+        * 其中 `hostname.local` 是本地主机名，可以通过在终端下执行 `hostname` 获取，或者在【系统偏好设置 - 共享 - 电脑名称】查找带 .local 结尾的小字
+    * 常用插件：
+        * Alibaba Java Coding Guidelines：[阿里巴巴代码规约](https://github.com/alibaba/p3c)
+        * IdeaVim：Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
+        * Lombok Plugin：解析 Lombok 语法，否则开发时无法正确识别注解等特性
+        * Markdown support: 解析 Markdown，否则项目中的 `.md` 文件和 txt 似的，很不方便
+        * Rainbow Brackets: 彩虹括号，方便肉眼匹配
 * MacVim
     * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
         * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
