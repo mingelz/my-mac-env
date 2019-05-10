@@ -36,8 +36,7 @@ rm -rf ~/.cache
 rm -rf ~/.config
 
 # app cache
-brew cleanup -n
-brew prune -n
+brew cleanup
 autojump --purge
 # npm cache clean --force
 # dnpm cache clean --force
