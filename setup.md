@@ -1,11 +1,16 @@
 # Mac 环境安装配置一条龙
 
-2018-09-06
+2019-05-10
 
 ## 制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
-* 下载完成后，会弹出安装提示，不要理会
+    * [macOS Mojave 10.14](https://itunes.apple.com/cn/app/macos-mojave/id1398502828?mt=12)
+* 下载完成后，会弹出安装提示，不要理会。可以点击状态栏左上角「安装 macOS」-「退出安装 macOS」关闭安装
+* 接下来，根据你的实际情况，选择制作U盘安装盘，还是光盘安装盘
+
+### 制作U盘安装盘
+
 * 找一个大于 8G 的U盘
 * 清空磁盘
     * 通过 Spotlight 或 Launchpad 启动「磁盘工具」，并点击「继续」
@@ -16,11 +21,27 @@
 * 创建安装盘
     * 通过 Spotlight 或 Launchpad 启动「终端」
     * 刚才下载的 macOS 会放在 `/Applications` 目录下，假设文件名为 `Install macOS Mojave.app`
-    * 执行：`sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ Mojave.app`
-        * 如果 macOS 大于 10.14，则不再需要 `--applicationpath` 参数
+    * 执行：`sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+        * 如果 macOS 小于 10.14，还需要追加 `--applicationpath /Applications/Install\ macOS\ Mojave.app` 参数
     * 之后会给出提示并需要确认，然后开始制作安装盘
         * 在 `Copying installer files to disk...` 这一步要多等一会儿（和电脑及U盘性能有关，耗时约 30 ~ 70 分钟）
         * 最后会提示 `Copy complete. Done` 表示制作完成
+
+### 制作光盘安装盘（ISO文件）
+
+* 在 `/tmp` 下创建一个 8G 的虚拟磁盘：`hdiutil create -o /tmp/Mojave -size 8G -layout SPUD -fs HFS+J -type SPARSE`
+    * 制作的磁盘会默认有 `.sparseimage` 后缀
+* 将此盘挂载到系统中：`hdiutil attach /tmp/Mojave.sparseimage -noverify -mountpoint /Volumes/MyVolume`
+* 制作安装盘：`sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+* 取消挂载，否则磁盘被占用，无法执行后续操作：`hdiutil detach /Volumes/Install\ macOS\ Mojave/`
+* 将 `.sparseimage` 文件转为 ISO 文件：`hdiutil convert /tmp/Mojave.sparseimage -format UDTO -o /tmp/Mojave.iso`
+* 前一步生成的文件名会自动添加 `.cdr` 后缀，改回来放桌面：`mv /tmp/Mojave.iso.cdr ~/Desktop/Mojave.iso`
+* 最后删掉中间文件：`rm /tmp/Mojave.sparseimage`
+
+参考文档：
+
+* [VirtualBox: How to create a macOS High Sierra VM to run on a Mac host system](https://tobiwashere.de/2017/10/virtualbox-how-to-create-a-macos-high-sierra-vm-to-run-on-a-mac-host-system/)
+* [Creating a macOS High Sierra VM for VirtualBox (Mac Host)](https://blog.caffeinesecurity.com/creating-a-macos-high-sierra-vm-for-virtualbox-mac-host-bb67eada27af)
 
 ## 系统安装
 
@@ -163,10 +184,11 @@
 
 * [Agenda](https://agenda.com/)
 * [Bear](https://bear.app/)
+* [CotEditor](https://coteditor.com/)
 * [Dingtalk](https://www.dingtalk.com)
 * [Dr.Cleaner Pro](https://www.drcleaner.com/)
 * [Dr.Unarchiver](https://www.drcleaner.com/dr-unarchiver/)
-* [Evernote](https://www.evernote.com)
+* [Evernote](https://www.evernote.com)、[印象笔记](https://www.yinxiang.com/)
 * [iWorks](https://www.apple.com/cn/iwork/)
     * Pages
     * Numbers
@@ -176,8 +198,11 @@
 * [MWeb](https://zh.mweb.im/)
 * [Pocket](https://getpocket.com/)
 * [QQ](http://im.qq.com/macqq/)
+* QR Creator Mini
 * [Reeder](http://reederapp.com/)
+* [The Unarchiver](http://theunarchiver.com/)
 * [WeChat](https://weixin.qq.com/)
+* [WPS Office](http://www.wps.cn/product/wpsmac/)
 * [Xcode](http://developer.apple.com/xcode)
 * [XMind Zen](http://www.xmind.net/)
 
@@ -186,15 +211,17 @@
 可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
 * 输入法
-    * [Baidu Input](http://srf.baidu.com/input/mac.html)
+    * [Baidu Input](http://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法
     * [Sogou Input](https://pinyin.sogou.com/mac/)
 * 网络 & 娱乐
     * [Google Chrome](https://www.google.com/chrome/)
     * [Wangwang](http://wangwang.taobao.com)
     * [Thunder](http://xunlei.com)
-    * [Netease Music](http://music.163.com)，App Store 版无法使用键盘控制播放，官网下载安装的版本可以
-    * [MplayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)，超强大的播放器，比 App Store 上的版本新
+    * [Motrix](https://github.com/agalwood/Motrix)，国人开发的下载工具
     * [Baidu Netdisk](http://pan.baidu.com)
+    * [Netease Music](http://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
+    * [MplayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)，超强大的播放器，比 App Store 上的版本新
+    * [IINA](https://iina.io/)，华人开发的开源免费播放器
     * [Steam](https://www.steampowered.com/)
 * 生产力
     * [Mubu](https://mubu.com)
@@ -205,13 +232,14 @@
 * 开发
     * [iTerm](http://www.iterm2.com)
     * [MacVim](https://github.com/macvim-dev/macvim/)
-    * [Atom](https://atom.io/)
     * [Visual Studio Code](https://code.visualstudio.com/)
+    * [Atom](https://atom.io/)
     * [IntelliJ IDEA](http://www.jetbrains.com/idea/)
+    * [Android Studio](https://developer.android.com/studio/)
     * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     * [SourceTree](https://www.sourcetreeapp.com/)
     * [Charles Proxy](http://www.charlesproxy.com/)
-    * iHosts
+    * [SwitchHosts](https://github.com/oldj/SwitchHosts)
 * 小工具
     * [LICEcap](http://www.cockos.com/licecap/)，录屏
     * [flux](https://justgetflux.com/)，自动调整屏幕亮度及冷暖色
@@ -219,6 +247,7 @@
     * [ImageAlpha](http://pngmini.com/)，压缩图片
     * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
     * [Shadowsock](https://shadowsocks.org/)
+    * [https://www.irradiatedsoftware.com](https://www.irradiatedsoftware.com)，一个生产各种 Mac 小工具的开发商
 
 ### 命令行安装
 
@@ -256,6 +285,9 @@
         * General
             * Working Directory
                 * 【选中】Reuse previous session's directory
+        * Color
+            * Cursor Colors
+                * 【选中】Cursor guide
         * Text
             * Font
                 * 18pt Monaco
@@ -281,36 +313,42 @@
     * 复制 `my-mac-env/Users/USERNAME/.atom/config.cson` 文件
     * 使用 `apm` 命令安装插件，常用插件：
         * active-power-mode
-        * atom-language-xtpl
-        * autoclose-html
-        * docblockr
-        * editorconfig
-        * ex-mode
-        * file-icons
-        * language-babel
-        * language-vue
-        * minimap
-        * platformio-ide-terminal
-        * split-diff
-        * sync-settings
-        * vim-mode-plus
-        * vim-mode-plus-keymaps-for-surround
+        * atom-language-xtpl （xtpl 文件语法高亮）
+        * autoclose-html （自动闭合 HTML 标签）
+        * docblockr （自动生成注释文档）
+        * editorconfig （自动应用 .editorconfig 配置）
+        * ex-mode （Vim 的 ex-mode 模式）
+        * file-icons （给文件前添加图标）
+        * language-babel （使用 Babel 针对 ES6 文件做更专业的语法高亮）
+        * language-vue （vue 文件语法高亮）
+        * minimap （显示代码地图）
+        * platformio-ide-terminal （在编辑器中集成 Terminal 终端）
+        * split-diff （针对指定文件做 Diff）
+        * sync-settings （将配置项同步到个人的 gist 上）
+        * vim-mode-plus （Vim 模拟器）
+        * vim-mode-plus-keymaps-for-surround （支持 Vim 中的 Surround 能力）
 * Visual Studio Code
     * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
     * 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/settings.json` 文件
     * 常用插件：
-        * Auto Close Tag
-        * Auto Rename Tag
-        * Bracket Pair Colorize
-        * Chinese (Simplified) Language Pack
-        * Debugger for Chrome
-        * EditorConfig for VS Code
-        * GitLens — Git supercharged
-        * Prettier - Code formatter
-        * Settings Sync
-        * Vetur
-        * Vim
-        * xtemplate (bakso)
+        * Auto Close Tag （自动闭合 HTML 标签）
+        * Auto Rename Tag （修改 HTML 单侧标签时，自动修改对应的标签）
+        * Bracket Pair Colorize （彩虹括号）
+        * Chinese (Simplified) Language Pack （中文简体语言包）
+        * Debugger for Chrome （与 Chrome 联调）
+        * EditorConfig for VS Code （自动应用 .editorconfig 配置）
+        * ESLint （根据项目配置实时检查代码）
+        * GitLens — Git supercharged （异常强大的 Git 工具）
+        * PlantUML （写 PlantUML 时实时预览）
+        * Markdown Preview Enhanced （可自定义皮肤的 Markdown 预览）
+        * Prettier - Code formatter （格式化代码，可以按照你的 ESLint 配置进行格式化）
+        * Settings Sync （将配置项同步到个人的 gist 上）
+        * TODO Hightlight （高亮指定关键字）
+        * Vetur （Vue 文件语法高亮、格式化）
+        * Vim （Vim 模拟器）
+            * 安装后参考 [官网安装文档](https://github.com/VSCodeVim/Vim#mac-setup) 开启 key-repeating 能力
+        * Visual Studio IntelliCode （微软官方提供的代码提示工具）
+        * xtemplate (bakso) （xtpl 文件语法高亮）
 * MacVim
     * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
         * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
@@ -344,7 +382,8 @@
     * `~/.bash_profile` 中一些私人配置
 * SSH
     * 如需保留之前的密钥，需要备份 `~/.ssh` 目录下的文件
+    * 注意私钥的文件权限应该是 `600`
 * Nginx
     * 一些 `nginx.conf` 的路径配置
+* SwitchHosts
 * 其他家目录下的配置文件
-* iHosts
