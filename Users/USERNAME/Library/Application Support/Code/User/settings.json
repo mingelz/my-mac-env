@@ -1,19 +1,33 @@
 {
     // Core
+    "breadcrumbs.enabled": true,
+    "debug.toolBarLocation": "docked",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.fontSize": 16,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true,
+    },
     "editor.renderWhitespace": "boundary",
     "editor.renderControlCharacters": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
     "editor.scrollBeyondLastLine": false,
-    "workbench.startupEditor": "none",
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.colorTheme": "Solarized Dark",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "search.smartCase": true,
-    "terminal.integrated.fontSize": 14,
     "terminal.external.osxExec": "iTerm.app",
-    "breadcrumbs.enabled": true,
+    "terminal.integrated.fontSize": 14,
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.feedback.visible": false,
+
+    // Languages
     "markdown.preview.fontSize": 16,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
@@ -49,4 +63,15 @@
 
     // Extensions: Prettier - Code formatter
     "prettier.eslintIntegration": true,
+
+    // Extensions: TODO Highlight
+    // * https://github.com/JohnPostlethwait/fixme
+    // * https://github.com/atom/language-todo
+    "todohighlight.keywords": [
+        "TODO", "FIXME", "XXX", "NOTE", "OPTIMIZE", "HACK", "BUG",
+        "CHANGED", "IDEA", "REVIEW", "NB", "QUESTION", "COMBAK", "TEMP", "DEBUG", "WARNING",
+        "MOCK"
+    ],
+    // 这一项会覆盖上一项，是因为通过 \\b 来保证仅高亮完整单词，不包括如 todomvc 这种在单词中间的字
+    "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|IDEA|REVIEW|NB|QUESTION|COMBAK|TEMP|DEBUG|WARNING|MOCK)\\b",
 }
