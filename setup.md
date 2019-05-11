@@ -312,60 +312,65 @@
     * 配置 Atom 可在命令行中启动：打开应用点击 【Install Shell Commands】
     * 复制 `my-mac-env/Users/USERNAME/.atom/config.cson` 文件
     * 使用 `apm` 命令安装插件，常用插件：
-        * active-power-mode
-        * atom-language-xtpl （xtpl 文件语法高亮）
-        * autoclose-html （自动闭合 HTML 标签）
-        * docblockr （自动生成注释文档）
-        * editorconfig （自动应用 .editorconfig 配置）
-        * ex-mode （Vim 的 ex-mode 模式）
-        * file-icons （给文件前添加图标）
-        * language-babel （使用 Babel 针对 ES6 文件做更专业的语法高亮）
-        * language-vue （vue 文件语法高亮）
-        * minimap （显示代码地图）
-        * platformio-ide-terminal （在编辑器中集成 Terminal 终端）
-        * split-diff （针对指定文件做 Diff）
-        * sync-settings （将配置项同步到个人的 gist 上）
-        * vim-mode-plus （Vim 模拟器）
-        * vim-mode-plus-keymaps-for-surround （支持 Vim 中的 Surround 能力）
+        * active-power-mode: 装X工具
+        * atom-language-xtpl: `.xtpl` 文件语法支持
+        * autoclose-html: 自动闭合 HTML 标签
+        * docblockr: 自动生成注释文档
+        * editorconfig: 自动应用 .editorconfig 配置
+        * ex-mode: Vim 的 ex-mode 模式
+        * file-icons: 给文件前添加图标
+        * language-babel: 使用 Babel 针对 ES6 文件做更专业的语法高亮
+        * language-vue: vue 文件语法高亮
+        * minimap: 显示代码地图
+        * platformio-ide-terminal: 在编辑器中集成 Terminal 终端
+        * split-diff: 针对指定文件做 Diff
+        * sync-settings: 将配置项同步到个人的 gist 上
+        * vim-mode-plus: Vim 模拟器
+        * vim-mode-plus-keymaps-for-surround: 支持 Vim 中的 Surround 能力
 * Visual Studio Code
     * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
     * 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/settings.json` 文件
     * 常用插件：
-        * Auto Close Tag （自动闭合 HTML 标签）
-        * Auto Rename Tag （修改 HTML 单侧标签时，自动修改对应的标签）
-        * Bracket Pair Colorize （彩虹括号）
-        * Chinese (Simplified) Language Pack （中文简体语言包）
-        * Debugger for Chrome （与 Chrome 联调）
-        * EditorConfig for VS Code （自动应用 .editorconfig 配置）
-        * ESLint （根据项目配置实时检查代码）
-        * GitLens — Git supercharged （异常强大的 Git 工具）
-        * PlantUML （写 PlantUML 时实时预览）
-        * Markdown Preview Enhanced （可自定义皮肤的 Markdown 预览）
-        * Prettier - Code formatter （格式化代码，可以按照你的 ESLint 配置进行格式化）
-        * Settings Sync （将配置项同步到个人的 gist 上）
-        * TODO Hightlight （高亮指定关键字）
-        * Vetur （Vue 文件语法高亮、格式化）
-        * Vim （Vim 模拟器）
+        * Auto Close Tag: 自动闭合 HTML 标签
+        * Auto Rename Tag: 修改 HTML 单侧标签时，自动修改对应的标签
+        * Bracket Pair Colorize: 彩虹括号
+        * Chinese (Simplified) Language Pack: 中文简体语言包
+        * Debugger for Chrome: 与 Chrome 联调
+        * EditorConfig for VS Code: 自动应用 .editorconfig 配置
+        * ESLint: 根据项目配置实时检查代码
+        * GitLens — Git supercharged: 非常强大的 Git 工具
+        * PlantUML: 写 PlantUML 时实时预览
+        * Markdown Preview Enhanced: 可自定义皮肤的 Markdown 预览
+        * Prettier - Code formatter: 格式化代码，可以按照你的 ESLint 配置进行格式化
+        * Settings Sync: 将配置项同步到个人的 gist 上
+        * TODO Hightlight: 高亮指定关键字
+        * Vetur: Vue 文件语法支持、格式化
+        * Vim: Vim 模拟器
             * 安装后参考 [官网安装文档](https://github.com/VSCodeVim/Vim#mac-setup) 开启 key-repeating 能力
-        * Visual Studio IntelliCode （微软官方提供的代码提示工具）
-        * xtemplate (bakso) （xtpl 文件语法高亮）
+        * Visual Studio IntelliCode: 微软官方提供的代码提示工具
+        * xtemplate (bakso): `.xtpl` 文件语法支持
 * IntelliJ IDEA
     * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
     * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/IdeaIC` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
     * 解决安装插件慢的问题：添加 `127.0.0.1 hostname.local` 到 `/etc/hosts` 中
         * 其中 `hostname.local` 是本地主机名，可以通过在终端下执行 `hostname` 获取，或者在【系统偏好设置 - 共享 - 电脑名称】查找带 .local 结尾的小字
     * 常用插件：
-        * Alibaba Java Coding Guidelines：[阿里巴巴代码规约](https://github.com/alibaba/p3c)
-        * IdeaVim：Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
-        * Lombok Plugin：解析 Lombok 语法，否则开发时无法正确识别注解等特性
-        * Markdown support: 解析 Markdown，否则项目中的 `.md` 文件和 txt 似的，很不方便
+        * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
+        * GenerateAllSetter: 生成实例时指生成 Setter 方法
+        * GsonFormat: 根据 JSON 生成 Bean
+        * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
+        * Lombok: 使用注解完成 Getter/Setter，省略大量代码的同时，也降低了后期维护成本
+        * Markdown support: 解析 Markdown，否则项目中的 `.md` 文件和 txt 似的，很不方便（貌似 Ultimate 默认支持）
+        * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
+        * MyBatisCodeHelperPro: MyBatis 支持插件，大部分功能可免费使用
         * Rainbow Brackets: 彩虹括号，方便肉眼匹配
+        * String Manipulation: 各种字符串转换
 * MacVim
     * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
         * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
+    * 复制 `my-mac-env/Users/USERNAME/.vim` 目录
     * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
-    * 复制 `my-mac-env/Users/USERNAME/.vimrc` 文件
-    * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `.vimrc` 中定义
+    * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
     * 偏好设置
         * General
             * After last window closes => Quit MacVim
