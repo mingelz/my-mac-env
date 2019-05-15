@@ -5,4 +5,20 @@
   <component name="EditorSettings">
     <option name="IS_WHITESPACES_SHOWN" value="true" />
   </component>
+  <component name="TodoConfiguration">
+    <pattern pattern="\btodo\b.*" />
+    <pattern pattern="\bfixme\b.*" />
+    <pattern pattern="\bxxx\b.*" />
+    <pattern pattern="\bnote\b.*" />
+    <pattern pattern="\boptimize\b.*" />
+    <pattern pattern="\bhack\b.*" />
+    <pattern pattern="\bbug\b.*" />
+    <pattern pattern="\bchanged\b.*" />
+    <pattern pattern="\breview\b.*" />
+    <pattern pattern="\bquestion\b.*" />
+    <pattern pattern="\btemp\b.*" />
+    <pattern pattern="\bdebug\b.*" />
+    <pattern pattern="\bwarning\b.*" />
+    <pattern pattern="\bmock\b.*" />
+  </component>
 </application>
