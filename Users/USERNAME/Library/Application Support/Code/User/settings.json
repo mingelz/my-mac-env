@@ -23,6 +23,12 @@
     "search.smartCase": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontSize": 14,
+    // workbench.colorCustomizations 服务于 vim.statusBarColors
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f00",
+        "statusBar.noFolderBackground": "#005f00",
+        "statusBar.debuggingBackground": "#005f00"
+    },
     "workbench.colorTheme": "Solarized Dark",
     "workbench.startupEditor": "none",
     "workbench.statusBar.feedback.visible": false,
@@ -36,7 +42,12 @@
     "emmet.triggerExpansionOnTab": true,
 
     // Extensions: Vim
+    "vim.hlsearch": true,
+    "vim.statusBarColorControl": true,
     "vim.visualstar": true,
+    // vim.statusBarColors 需要 workbench.colorCustomizations 配合才能生效
+    "vim.statusBarColors.replace": "#000000",
+    "vim.statusBarColors.visualline": "#005f00",
 
     // Extensions: Settings Sync
     // token: aacd41d1263a787fa56bc2a0a4757724ead37d89
@@ -69,9 +80,9 @@
     // * https://github.com/atom/language-todo
     "todohighlight.keywords": [
         "TODO", "FIXME", "XXX", "NOTE", "OPTIMIZE", "HACK", "BUG",
-        "CHANGED", "IDEA", "REVIEW", "NB", "QUESTION", "COMBAK", "TEMP", "DEBUG", "WARNING",
+        "CHANGED", "REVIEW", "QUESTION", "TEMP", "DEBUG", "WARNING",
         "MOCK"
     ],
     // 这一项会覆盖上一项，是因为通过 \\b 来保证仅高亮完整单词，不包括如 todomvc 这种在单词中间的字
-    "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|IDEA|REVIEW|NB|QUESTION|COMBAK|TEMP|DEBUG|WARNING|MOCK)\\b",
+    "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
 }
