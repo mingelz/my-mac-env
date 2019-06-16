@@ -17,6 +17,8 @@
         120
     ],
     "editor.scrollBeyondLastLine": false,
+    // 这个配置是为 vsintellicode.modify.editor.suggestSelection 服务的
+    "editor.suggestSelection": "first",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
@@ -85,4 +87,7 @@
     ],
     // 这一项会覆盖上一项，是因为通过 \\b 来保证仅高亮完整单词，不包括如 todomvc 这种在单词中间的字
     "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
+
+    // Extensions: Visual Studio IntelliCode
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }

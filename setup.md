@@ -356,6 +356,7 @@
         * 其中 `hostname.local` 是本地主机名，可以通过在终端下执行 `hostname` 获取，或者在【系统偏好设置 - 共享 - 电脑名称】查找带 .local 结尾的小字
     * 常用插件：
         * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
+        * CodeGlance: 代码 Minimap
         * GenerateAllSetter: 生成实例时指生成 Setter 方法
         * GsonFormat: 根据 JSON 生成 Bean
         * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
