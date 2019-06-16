@@ -18,7 +18,8 @@
 [alias]
     br = branch
     ci = commit
-    cm = commit -m
+    cim = commit -m
+    cim = commit --no-verify -m
     cl = clone
     co = checkout
     di = difftool
@@ -30,4 +31,4 @@
     #        图形    简短hash        相对时间        装饰ref    30条 显示格式: %h 短哈希, %ar 相对提交时间, %s 提交说明, %an 作者, %d 引用信息, %n 换行
     lg = log --graph --abbrev-commit --relative-date --decorate -n30 --pretty=format:'%C(red)%h%C(reset) - %C(cyan)(%ar)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
     # 在 lg 的基础上，列出所有 branchs/stash 的分支情况，并把条数放大到 500
-    la = log --graph --abbrev-commit --relative-date --decorate -n500 --all --pretty=format:'%C(red)%h%C(reset) - %C(cyan)(%ar)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
+    la = lg --all -n500
