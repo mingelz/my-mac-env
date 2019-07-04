@@ -1,71 +1,40 @@
 {
     // Core
-    "breadcrumbs.enabled": true,
     "debug.toolBarLocation": "docked",
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.fontSize": 16,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80,
+        120
+    ],
     "editor.quickSuggestions": {
         "other": true,
         "comments": true,
         "strings": true,
     },
-    "editor.renderWhitespace": "boundary",
-    "editor.renderControlCharacters": true,
-    "editor.rulers": [
-        80,
-        120
-    ],
     "editor.scrollBeyondLastLine": false,
-    // 这个配置是为 vsintellicode.modify.editor.suggestSelection 服务的
     "editor.suggestSelection": "first",
+    "editor.suggest.shareSuggestSelections": true,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "search.showLineNumbers": true,
     "search.smartCase": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontSize": 14,
-    // workbench.colorCustomizations 服务于 vim.statusBarColors
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f00",
-        "statusBar.noFolderBackground": "#005f00",
-        "statusBar.debuggingBackground": "#005f00"
-    },
-    "workbench.colorTheme": "Solarized Dark",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
     "workbench.startupEditor": "none",
-    "workbench.statusBar.feedback.visible": false,
 
     // Languages
+    "css.lint.duplicateProperties": "warning",
+    "css.lint.zeroUnits": "warning",
     "markdown.preview.fontSize": 16,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-
-    // Builtin Extensions: Emmet
-    "emmet.triggerExpansionOnTab": true,
-
-    // Extensions: Vim
-    "vim.hlsearch": true,
-    "vim.statusBarColorControl": true,
-    "vim.visualstar": true,
-    // vim.statusBarColors 需要 workbench.colorCustomizations 配合才能生效
-    "vim.statusBarColors.replace": "#000000",
-    "vim.statusBarColors.visualline": "#005f00",
-
-    // Extensions: Settings Sync
-    // token: aacd41d1263a787fa56bc2a0a4757724ead37d89
-    "sync.gist": "036537c143d70fedf8126430a3687ee0",
-    "sync.autoDownload": false,
-    "sync.autoUpload": false,
-    "sync.forceDownload": false,
-    "sync.quietSync": false,
-    "sync.askGistName": false,
-    "sync.removeExtensions": true,
-    "sync.syncExtensions": true,
-
-    // Extensions: GitLens
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
 
     // Extensions: Auto Rename Tag
     "auto-rename-tag.activationOnLanguage": [
@@ -87,6 +56,10 @@
     ],
     // 这一项会覆盖上一项，是因为通过 \\b 来保证仅高亮完整单词，不包括如 todomvc 这种在单词中间的字
     "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
+
+    // Extensions: Vim
+    "vim.hlsearch": true,
+    "vim.visualstar": true,
 
     // Extensions: Visual Studio IntelliCode
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",

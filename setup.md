@@ -240,6 +240,7 @@
     * [SourceTree](https://www.sourcetreeapp.com/)
     * [Charles Proxy](http://www.charlesproxy.com/)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
+    * [Postman](https://www.getpostman.com)
 * 小工具
     * [LICEcap](http://www.cockos.com/licecap/)，录屏
     * [flux](https://justgetflux.com/)，自动调整屏幕亮度及冷暖色
@@ -331,7 +332,7 @@
     * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
     * 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/settings.json` 文件
     * 常用插件：
-        * Auto Close Tag: 自动闭合 HTML 标签
+        * ~~Auto Close Tag: 自动闭合 HTML 标签~~，VSCode 自带闭合标签功能，感觉用不到这个插件了
         * Auto Rename Tag: 修改 HTML 单侧标签时，自动修改对应的标签
         * Bracket Pair Colorize: 彩虹括号
         * Chinese (Simplified) Language Pack: 中文简体语言包
@@ -339,6 +340,7 @@
         * EditorConfig for VS Code: 自动应用 .editorconfig 配置
         * ESLint: 根据项目配置实时检查代码
         * GitLens — Git supercharged: 非常强大的 Git 工具
+        * Partial Diff: 支持各种 Diff 对比
         * PlantUML: 写 PlantUML 时实时预览
         * Markdown Preview Enhanced: 可自定义皮肤的 Markdown 预览
         * Prettier - Code formatter: 格式化代码，可以按照你的 ESLint 配置进行格式化
