@@ -332,7 +332,7 @@
     * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
     * 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/settings.json` 文件
     * 常用插件：
-        * ~~Auto Close Tag: 自动闭合 HTML 标签~~，VSCode 自带闭合标签功能，感觉用不到这个插件了
+        * Auto Close Tag: 自动闭合 HTML 标签，VSCode 自带闭合标签功能，这个工具主要针对非 HTML 文件（比如`.vue`）
         * Auto Rename Tag: 修改 HTML 单侧标签时，自动修改对应的标签
         * Bracket Pair Colorize: 彩虹括号
         * Chinese (Simplified) Language Pack: 中文简体语言包
