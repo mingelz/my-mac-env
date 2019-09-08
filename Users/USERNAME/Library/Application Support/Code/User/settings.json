@@ -58,6 +58,7 @@
     "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
 
     // Extensions: Vim
+    "vim.foldfix": true,
     "vim.hlsearch": true,
     "vim.visualstar": true,
 
