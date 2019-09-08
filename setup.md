@@ -1,6 +1,6 @@
 # Mac 环境安装配置一条龙
 
-2019-05-10
+2019-09-08
 
 ## 制作安装盘
 
@@ -224,6 +224,7 @@
     * [IINA](https://iina.io/)，华人开发的开源免费播放器
     * [Steam](https://www.steampowered.com/)
 * 生产力
+    * [Alfred](https://www.alfredapp.com/)
     * [Mubu](https://mubu.com)
     * [Sketch](https://www.sketchapp.com/)
     * Adobe Photoshop
@@ -345,6 +346,7 @@
         * Markdown Preview Enhanced: 可自定义皮肤的 Markdown 预览
         * Prettier - Code formatter: 格式化代码，可以按照你的 ESLint 配置进行格式化
         * Settings Sync: 将配置项同步到个人的 gist 上
+        * TabNine: 强大的代码自动完成工具，感觉不用装 Visual Studio IntelliCode 了
         * TODO Hightlight: 高亮指定关键字
         * Vetur: Vue 文件语法支持、格式化
         * Vim: Vim 模拟器
@@ -359,13 +361,13 @@
     * 常用插件：
         * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
         * CodeGlance: 代码 Minimap
-        * GenerateAllSetter: 生成实例时指生成 Setter 方法
+        * Free MyBatis Plugin: 在左侧槽中生成 mapper 与 xml 的对应跳转
+        * GenerateAllSetter: 快速生成实例的全部 Setter 方法
         * GsonFormat: 根据 JSON 生成 Bean
         * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
         * Lombok: 使用注解完成 Getter/Setter，省略大量代码的同时，也降低了后期维护成本
         * Markdown support: 解析 Markdown，否则项目中的 `.md` 文件和 txt 似的，很不方便（貌似 Ultimate 默认支持）
         * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
-        * MyBatisCodeHelperPro: MyBatis 支持插件，大部分功能可免费使用
         * Rainbow Brackets: 彩虹括号，方便肉眼匹配
         * String Manipulation: 各种字符串转换
 * MacVim
