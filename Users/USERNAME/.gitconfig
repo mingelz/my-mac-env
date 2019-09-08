@@ -19,7 +19,7 @@
     br = branch
     ci = commit
     cim = commit -m
-    cim = commit --no-verify -m
+    cin = commit --no-verify -m
     cl = clone
     co = checkout
     di = difftool
