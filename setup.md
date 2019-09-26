@@ -253,11 +253,11 @@
 
 ### 命令行安装
 
-建议不使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
+个人建议不使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
 
 **建议安装 brew 前先执行 `xcode-select --install` 安装 Command Line Tools**
 
-* [brew](http://brew.sh/) & [cask](http://caskroom.io/)(已经与 brew 集成，无需额外安装)
+* [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
     * autojump
     * nvm & node & npm/cnpm
     * ~~git~~ (installed with Xcode)
