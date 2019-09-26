@@ -359,6 +359,7 @@
     * 解决安装插件慢的问题：添加 `127.0.0.1 hostname.local` 到 `/etc/hosts` 中
         * 其中 `hostname.local` 是本地主机名，可以通过在终端下执行 `hostname` 获取，或者在【系统偏好设置 - 共享 - 电脑名称】查找带 .local 结尾的小字
     * 常用插件：
+        * .ignore: 高亮 `.*ignore` 文件、在文件列表中隐藏/显示 ignore 文件等
         * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
         * CodeGlance: 代码 Minimap
         * Free MyBatis Plugin: 在左侧槽中生成 mapper 与 xml 的对应跳转
