@@ -249,6 +249,7 @@
     * [ImageAlpha](http://pngmini.com/)，压缩图片
     * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
     * [Shadowsock](https://shadowsocks.org/)
+    * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具
     * [https://www.irradiatedsoftware.com](https://www.irradiatedsoftware.com)，一个生产各种 Mac 小工具的开发商
 
 ### 命令行安装
@@ -335,7 +336,7 @@
     * 常用插件：
         * Auto Close Tag: 自动闭合 HTML 标签，VSCode 自带闭合标签功能，这个工具主要针对非 HTML 文件（比如`.vue`）
         * Auto Rename Tag: 修改 HTML 单侧标签时，自动修改对应的标签
-        * Bracket Pair Colorize: 彩虹括号
+        * Bracket Pair Colorize 2: 彩虹括号，认准 v2 性能更优
         * Chinese (Simplified) Language Pack: 中文简体语言包
         * Debugger for Chrome: 与 Chrome 联调
         * EditorConfig for VS Code: 自动应用 .editorconfig 配置
