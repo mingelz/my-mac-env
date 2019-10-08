@@ -5,7 +5,8 @@
 ## 制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
-    * [macOS Mojave 10.14](https://itunes.apple.com/cn/app/macos-mojave/id1398502828?mt=12)
+    * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314)
+* 从 10.14 开始系统安装从 App Store 转到 「系统偏好设置」-「软件更新」中了，点击【现在升级】即可
 * 下载完成后，会弹出安装提示，不要理会。可以点击状态栏左上角「安装 macOS」-「退出安装 macOS」关闭安装
 * 接下来，根据你的实际情况，选择制作U盘安装盘，还是光盘安装盘
 
@@ -20,23 +21,23 @@
     * 点击「抹掉」
 * 创建安装盘
     * 通过 Spotlight 或 Launchpad 启动「终端」
-    * 刚才下载的 macOS 会放在 `/Applications` 目录下，假设文件名为 `Install macOS Mojave.app`
-    * 执行：`sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
-        * 如果 macOS 小于 10.14，还需要追加 `--applicationpath /Applications/Install\ macOS\ Mojave.app` 参数
+    * 刚才下载的 macOS 会放在 `/Applications` 目录下，假设文件名为 `Install macOS Catalina.app`
+    * 执行：`sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+        * 如果 macOS 小于 10.14，还需要追加 `--applicationpath /Applications/Install\ macOS\ Catalina.app` 参数
     * 之后会给出提示并需要确认，然后开始制作安装盘
         * 在 `Copying installer files to disk...` 这一步要多等一会儿（和电脑及U盘性能有关，耗时约 30 ~ 70 分钟）
         * 最后会提示 `Copy complete. Done` 表示制作完成
 
 ### 制作光盘安装盘（ISO文件）
 
-* 在 `/tmp` 下创建一个 8G 的虚拟磁盘：`hdiutil create -o /tmp/Mojave -size 8G -layout SPUD -fs HFS+J -type SPARSE`
+* 在 `/tmp` 下创建一个 8G 的虚拟磁盘：`hdiutil create -o /tmp/Catalina -size 8G -layout SPUD -fs HFS+J -type SPARSE`
     * 制作的磁盘会默认有 `.sparseimage` 后缀
-* 将此盘挂载到系统中：`hdiutil attach /tmp/Mojave.sparseimage -noverify -mountpoint /Volumes/MyVolume`
-* 制作安装盘：`sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
-* 取消挂载，否则磁盘被占用，无法执行后续操作：`hdiutil detach /Volumes/Install\ macOS\ Mojave/`
-* 将 `.sparseimage` 文件转为 ISO 文件：`hdiutil convert /tmp/Mojave.sparseimage -format UDTO -o /tmp/Mojave.iso`
-* 前一步生成的文件名会自动添加 `.cdr` 后缀，改回来放桌面：`mv /tmp/Mojave.iso.cdr ~/Desktop/Mojave.iso`
-* 最后删掉中间文件：`rm /tmp/Mojave.sparseimage`
+* 将此盘挂载到系统中：`hdiutil attach /tmp/Catalina.sparseimage -noverify -mountpoint /Volumes/MyVolume`
+* 制作安装盘：`sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+* 取消挂载，否则磁盘被占用，无法执行后续操作：`hdiutil detach /Volumes/Install\ macOS\ Catalina/`
+* 将 `.sparseimage` 文件转为 ISO 文件：`hdiutil convert /tmp/Catalina.sparseimage -format UDTO -o /tmp/Catalina.iso`
+* 前一步生成的文件名会自动添加 `.cdr` 后缀，改回来放桌面：`mv /tmp/Catalina.iso.cdr ~/Desktop/Catalina.iso`
+* 最后删掉中间文件：`rm /tmp/Catalina.sparseimage`
 
 参考文档：
 
