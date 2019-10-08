@@ -199,6 +199,7 @@
 * [Pocket](https://getpocket.com/)
 * [QQ](http://im.qq.com/macqq/)
 * QR Creator Mini
+* QSpace
 * [Reeder](http://reederapp.com/)
 * [The Unarchiver](http://theunarchiver.com/)
 * [WeChat](https://weixin.qq.com/)
@@ -220,7 +221,7 @@
     * [Motrix](https://github.com/agalwood/Motrix)，国人开发的下载工具
     * [Baidu Netdisk](http://pan.baidu.com)
     * [Netease Music](http://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
-    * [MplayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)，超强大的播放器，比 App Store 上的版本新
+    * [MPlayerX](https://github.com/niltsh/MPlayerX-Deploy/releases)，超强大的播放器，比 App Store 上的版本新
     * [IINA](https://iina.io/)，华人开发的开源免费播放器
     * [Steam](https://www.steampowered.com/)
 * 生产力
@@ -342,6 +343,7 @@
         * EditorConfig for VS Code: 自动应用 .editorconfig 配置
         * ESLint: 根据项目配置实时检查代码
         * GitLens — Git supercharged: 非常强大的 Git 工具
+        * Language Support for Java(TM) by Red Hat: Java 语法支持
         * Partial Diff: 支持各种 Diff 对比
         * PlantUML: 写 PlantUML 时实时预览
         * Markdown Preview Enhanced: 可自定义皮肤的 Markdown 预览
