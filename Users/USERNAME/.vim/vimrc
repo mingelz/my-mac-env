@@ -306,7 +306,7 @@ Plugin 'scrooloose/nerdtree'    "文件管理器
 " Plugin 'scrooloose/syntastic'    "语法检查，scrooloose 太 TMD 高产了
 " Plugin 'jistr/vim-nerdtree-tabs'    "给 NERDTree 添加自动开启
 " Plugin 'ctrlpvim/ctrlp.vim'    "Ctrl+p 快速打开文件
-Plugin 'terryma/vim-multiple-cursors'    "多光标支持，快捷键 <control-n>
+" Plugin 'terryma/vim-multiple-cursors'    "多光标支持，快捷键 <control-n>
 " Plugin 'godlygeek/tabular'    "强大的自动对齐能力
 Plugin 'airblade/vim-gitgutter'    "添加一个 git 状态槽
 " Plugin 'tpope/vim-fugitive'    "提供 vim 环境下的 git 命令支持
@@ -335,8 +335,8 @@ source $VIMRUNTIME/macros/matchit.vim    "启用 vim 自带的 matchit 插件，
 
 " -- 插件设置，仅开启对应插件后有效 ---------{{{--
 " NERDCommenter
-let g:NERDSpaceDelims = 1    "NERDCommenter: 注释时在后边加空格
-let g:NERDDefaultAlign = 'left'    "注释插入到代码行最开始
+" let g:NERDSpaceDelims = 1    "NERDCommenter: 注释时在后边加空格
+" let g:NERDDefaultAlign = 'left'    "注释插入到代码行最开始
 
 " syntastic
 " set statusline+=%#warningmsg#
@@ -349,9 +349,9 @@ let g:NERDDefaultAlign = 'left'    "注释插入到代码行最开始
 " let g:syntastic_javascript_checkers = ['eslint']
 
 " vim-nerdtree-tabs
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 " let g:nerdtree_tabs_open_on_console_startup=1    " 从 terminal 启动时，是否要开启 nerdtree
-map <leader>n <plug>NERDTreeTabsToggle<CR>
+" map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 " ctrlp
 " let g:ctrlp_custom_ignore = {

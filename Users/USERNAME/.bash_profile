@@ -3,7 +3,7 @@ alias la="ls -AlhG"
 alias vim="mvim -v"
 alias vimhuge="vim -u NONE -c 'set syntax=no filetype=text'"
 alias please='sudo `fc -nl -1`'
-alias dnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/dnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.dnpmrc"
+alias cnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist"
 alias cncu="ncu --registry=https://registry.npm.taobao.org"
 
 # 默认 editor
@@ -19,10 +19,7 @@ export HISTCONTROL=ignorespace
 # nvm, 用 brew 安装的 nvm 需要手动添加环境变量，同时使用 cnpm 源以加快速度
 export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/dist"
 export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
-
-# autojump, 已通过 oh-my-zsh 的 autojump 插件自动加载
-#[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 
 ## private 私人配置
