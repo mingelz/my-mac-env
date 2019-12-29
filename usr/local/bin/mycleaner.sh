@@ -9,37 +9,36 @@ sudo find / -name ".DS_Store" -depth -exec rm {} \;
 # clean ._ file
 sudo dot_clean -m /
 
-# vim
+# app cache
+brew cleanup
+autojump --purge
+
+# HOME - vim
 rm -rf ~/.viminfo
 rm -rf ~/.vim/viminfo
 rm -rf ~/.vim/undo
 mkdir ~/.vim/undo
 
-# shell history
+# HOME - shell
 rm -rf ~/.bash_sessions
 rm -rf ~/.bash_history
 rm -rf ~/.zsh_history
+rm -rf ~/.zcompdump-*
 
-# user home
+# HOME - node & npm
 rm -rf ~/.node-diamond-client-cache
 rm -rf ~/.node-gyp
 rm -rf ~/.node_repl_history
 rm -rf ~/.npm_updater.json
 rm -rf ~/.npminstall_tarball
+rm -rf ~/.npm
+rm -rf ~/.?npm
+rm -rf ~/.?npm_tmp
+rm -rf ~/.v8flags*
+
+# HOME - misc
+rm -rf ~/.VSCodeVim
 rm -rf ~/.oracle_jre_usage
 rm -rf ~/.subversion
-rm -rf ~/.tnpm_tmp
-rm -rf ~/.v8flags*
-rm -rf ~/.zcompdump-*
-rm -rf ~/.VSCodeVim
 rm -rf ~/.cache
-rm -rf ~/.config
-
-# app cache
-brew cleanup
-autojump --purge
-# npm cache clean --force
-# dnpm cache clean --force
-# tnpm cache clean --force
-rm -rf ~/.npm
-rm -rf ~/.tnpm
+# rm -rf ~/.config
