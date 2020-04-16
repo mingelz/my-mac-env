@@ -202,6 +202,7 @@
 * [Agenda](https://agenda.com/)
 * [Bear](https://bear.app/)
 * [CotEditor](https://coteditor.com/)
+* Caffeinated
 * [Dingtalk](https://www.dingtalk.com)
 * [Dr.Cleaner Pro](https://www.drcleaner.com/)
 * [Dr.Unarchiver](https://www.drcleaner.com/dr-unarchiver/)
@@ -363,8 +364,10 @@
         * Debugger for Chrome: 与 Chrome 联调
         * EditorConfig for VS Code: 自动应用 .editorconfig 配置
         * ESLint: 根据项目配置实时检查代码
+        * file-icons: 给文件前加更符合文件类型的图标，个人习惯了 Atom 的图标，所以没有用另一个更大众的 vscode-icons
         * GitLens — Git supercharged: 非常强大的 Git 工具
         * Language Support for Java(TM) by Red Hat: Java 语法支持
+        * One Dark Pro: Atom 上好看的主题，VSCode 上也可以用上了
         * Partial Diff: 支持各种 Diff 对比
         * PlantUML: 写 PlantUML 时实时预览
         * Markdown Preview Enhanced: 可自定义皮肤的 Markdown 预览
@@ -404,6 +407,7 @@
     * 常用插件：
         * .ignore: 高亮 `.*ignore` 文件、在文件列表中隐藏/显示 ignore 文件等
         * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
+        * Chinese (Simplified) Language Pack: 中文语法包
         * CodeGlance: 代码 Minimap
         * Free MyBatis Plugin: 在左侧槽中生成 mapper 与 xml 的对应跳转
         * GenerateAllSetter: 快速生成实例的全部 Setter 方法
@@ -412,6 +416,7 @@
         * Lombok: 使用注解完成 Getter/Setter，省略大量代码的同时，也降低了后期维护成本
         * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
         * Rainbow Brackets: 彩虹括号，方便肉眼匹配
+        * SpotBugs: 可以分析出当前项目或文件中潜在的问题
         * String Manipulation: 各种字符串转换
 * Nginx
     * 复制 `my-mac-env/usr/local/etc/nginx` 目录
