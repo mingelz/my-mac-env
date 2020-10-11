@@ -30,10 +30,13 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "workbench.startupEditor": "none",
+    // "workbench.colorTheme": "One Dark Pro",
+    // "workbench.iconTheme": "file-icons",
 
     // Languages
     "css.lint.duplicateProperties": "warning",
     "css.lint.zeroUnits": "warning",
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
     "markdown.preview.fontSize": 16,
 
     // Extensions: Auto Rename Tag
@@ -44,16 +47,16 @@
     ],
 
     // Extensions: Prettier - Code formatter
-    "prettier.eslintIntegration": true,
+    // "prettier.eslintIntegration": true,
 
     // Extensions: TODO Highlight
     // * https://github.com/JohnPostlethwait/fixme
     // * https://github.com/atom/language-todo
-    "todohighlight.keywords": [
-        "TODO", "FIXME", "XXX", "NOTE", "OPTIMIZE", "HACK", "BUG",
-        "CHANGED", "REVIEW", "QUESTION", "TEMP", "DEBUG", "WARNING",
-        "MOCK"
-    ],
+    // "todohighlight.keywords": [
+    //     "TODO", "FIXME", "XXX", "NOTE", "OPTIMIZE", "HACK", "BUG",
+    //     "CHANGED", "REVIEW", "QUESTION", "TEMP", "DEBUG", "WARNING",
+    //     "MOCK"
+    // ],
     // 这一项会覆盖上一项，是因为通过 \\b 来保证仅高亮完整单词，不包括如 todomvc 这种在单词中间的字
     "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
 
@@ -63,5 +66,5 @@
     "vim.visualstar": true,
 
     // Extensions: Visual Studio IntelliCode
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }

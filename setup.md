@@ -2,7 +2,7 @@
 
 2019-10-10
 
-## 制作安装盘
+## 一、制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
     * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314)
@@ -10,7 +10,7 @@
 * 下载完成后，会弹出安装提示，不要理会。可以点击状态栏左上角「安装 macOS」-「退出安装 macOS」关闭安装
 * 接下来，根据你的实际情况，选择制作U盘安装盘，还是光盘安装盘
 
-### 制作U盘安装盘
+### 1.1 制作U盘安装盘
 
 * 找一个大于 8G 的U盘
 * 清空磁盘
@@ -28,7 +28,7 @@
         * 在 `Copying installer files to disk...` 这一步要多等一会儿（和电脑及U盘性能有关，耗时约 30 ~ 70 分钟）
         * 最后会提示 `Copy complete. Done` 表示制作完成
 
-### 制作光盘安装盘（ISO文件）
+### 1.2 制作光盘安装盘（ISO文件）
 
 * 在 `/tmp` 下创建一个 8G 的虚拟磁盘：`hdiutil create -o /tmp/Catalina -size 8G -layout SPUD -fs HFS+J -type SPARSE`
     * 制作的磁盘会默认有 `.sparseimage` 后缀
@@ -44,7 +44,7 @@
 * [VirtualBox: How to create a macOS High Sierra VM to run on a Mac host system](https://tobiwashere.de/2017/10/virtualbox-how-to-create-a-macos-high-sierra-vm-to-run-on-a-mac-host-system/)
 * [Creating a macOS High Sierra VM for VirtualBox (Mac Host)](https://blog.caffeinesecurity.com/creating-a-macos-high-sierra-vm-for-virtualbox-mac-host-bb67eada27af)
 
-## 系统安装
+## 二、系统安装
 
 * 重启电脑并按住 option 键，在启动菜单中选择刚刚制作的U盘
 * 建议整个安装过程联网，否则可能会提示「安装器有效负载签名检查失败」
@@ -52,11 +52,11 @@
 * 同样在「macOS 实用工具」选择「全新安装 macOS」开始安装系统
 * 安装中会有几次重启，无需干预，整个过程大概 10 分钟
 
-## 系统设置
+## 三、系统设置
 
 以下流程，基于 Catalina 的设置界面排序，且在安装时已联网并登录 iCloud 账号，所以可能会缺少一些关于 iCloud 的配置细节。
 
-### 系统偏好设置
+### 3.1 系统偏好设置
 
 * 通用
     * 外观 => 【自动】
@@ -135,7 +135,7 @@
     * 媒体与购买项目
         * 免费下载 => 【始终不需要】
 
-### Finder 偏好设置
+### 3.2 Finder 偏好设置
 
 * 通用
     * 【勾选】以下项目
@@ -159,16 +159,16 @@
     * 【勾选】显示所有文件的扩展名
     * 【勾选】将以下位置的文件夹保持在顶部：按名称排序时的窗口中
 
-### 系统右侧通知栏
+### 3.3 系统右侧通知栏
 
 * 保留：今天、提醒事项、日历、计算器、明天
 
-### 系统状态栏
+### 3.4 系统状态栏
 
 * 电池
     * 显示百分比
 
-### Safari 偏好设置
+### 3.5 Safari 偏好设置
 
 * 工具栏
     * 显示
@@ -180,7 +180,7 @@
 * 扩展（MAS 里上架的很少，可在[官网](https://safari-extensions.apple.com/)搜索更多）
     * [QRify](https://safari-extensions.apple.com/details/?id=de.retiolum.safari.qrify-RSADU6MKX9)
 
-### Terminal 偏好设置
+### 3.6 Terminal 偏好设置
 
 * 通用
     * 使用描述文件新建窗口 => Homebrew
@@ -193,18 +193,18 @@
         * Shell
             * 当 shell 退出时 => 关闭窗口
 
-## 安装应用
+## 四、安装应用
 
 安装应用后，对应的要针对每个应用做配置。
 
-### App Store
+### 4.1 App Store
 
 * [Agenda](https://agenda.com/)
 * [Bear](https://bear.app/)
+* [Cleaner One](https://helpcenter.trendmicro.com/en-us/product-support/cleaner-one/)
 * [CotEditor](https://coteditor.com/)
 * Caffeinated
 * [Dingtalk](https://www.dingtalk.com)
-* [Dr.Cleaner Pro](https://www.drcleaner.com/)
 * [Dr.Unarchiver](https://www.drcleaner.com/dr-unarchiver/)
 * [Evernote](https://www.evernote.com)、[印象笔记](https://www.yinxiang.com/)
 * [iWorks](https://www.apple.com/cn/iwork/)
@@ -225,7 +225,7 @@
 * [Xcode](http://developer.apple.com/xcode)
 * [XMind Zen](http://www.xmind.net/)
 
-### 下载
+### 4.2 下载
 
 可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
@@ -266,12 +266,13 @@
     * [flux](https://justgetflux.com/)，自动调整屏幕亮度及冷暖色
     * [XnViewMP](http://www.xnview.com/en/xnviewmp/)，看图软件
     * [ImageAlpha](http://pngmini.com/)，压缩图片
+    * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
     * [Shadowsock](https://shadowsocks.org/)
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具
     * [https://www.irradiatedsoftware.com](https://www.irradiatedsoftware.com)，一个生产各种 Mac 小工具的开发商
 
-### 命令行安装
+### 4.3 命令行安装
 
 个人建议不使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
 
@@ -287,7 +288,7 @@
     * [Android File Transfer](https://www.android.com/filetransfer/)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-### 软件配置
+### 4.4 软件配置
 
 依赖的配置文件已经在此 Repo 中提供
 
@@ -407,7 +408,7 @@
     * 常用插件：
         * .ignore: 高亮 `.*ignore` 文件、在文件列表中隐藏/显示 ignore 文件等
         * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
-        * Chinese (Simplified) Language Pack: 中文语法包
+        * Chinese (Simplified) Language Pack: 中文语言包
         * CodeGlance: 代码 Minimap
         * Free MyBatis Plugin: 在左侧槽中生成 mapper 与 xml 的对应跳转
         * GenerateAllSetter: 快速生成实例的全部 Setter 方法
@@ -434,7 +435,7 @@
     * 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
     * 在相应站点配置公钥
 
-### 私人信息
+### 4.5 私人信息
 
 以下目录或软件中可能存在私人信息，未体现在上述列表中，记得备份旧数据。
 
