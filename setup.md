@@ -402,23 +402,40 @@
         * vim-mode-plus-keymaps-for-surround: 支持 Vim 中的 Surround 能力
 * IntelliJ IDEA
     * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
-    * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/IdeaIC` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
-    * 解决安装插件慢的问题：添加 `127.0.0.1 hostname.local` 到 `/etc/hosts` 中
-        * 其中 `hostname.local` 是本地主机名，可以通过在终端下执行 `hostname` 获取，或者在【系统偏好设置 - 共享 - 电脑名称】查找带 .local 结尾的小字
-    * 常用插件：
+    * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/Idea` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
+    * 编辑器自带插件推荐（除了以下列出的，我都禁用了）：
+        * Maven
+        * Maven Extension (Ultimate only)
+        * Database Tools and SQL (Ultimate only)
+        * HTML Tools (Ultimate only)
+        * JavaScript and TypeScript (Ultimate only)
+        * Java SQL Libraries (Ultimate only)
+        * Markdown
+        * Properties
+        * Shell Script
+        * CSS (Ultimate only)
+        * Sass (Ultimate only)
+        * Lombok (built-in at v2020.3)
+        * Git
+        * EditorConfig
+        * IntelliLang
+        * Terminal
+    * 常用插件推荐：
         * .ignore: 高亮 `.*ignore` 文件、在文件列表中隐藏/显示 ignore 文件等
         * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
-        * Chinese (Simplified) Language Pack: 中文语言包
+        * Chinese (Simplified) Language Pack: 中文语言包，仅建议纯新手前期安装，后续还是应该使用英文版
         * CodeGlance: 代码 Minimap
-        * Free MyBatis Plugin: 在左侧槽中生成 mapper 与 xml 的对应跳转
+        * Free MyBatis Plugin: 在左侧槽中生成 mapper 与 xml 的对应跳转，相比后边介绍的 MyBatisCodeHelperPro 功能比较简单
         * GenerateAllSetter: 快速生成实例的全部 Setter 方法
         * GsonFormat: 根据 JSON 生成 Bean
         * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
         * Lombok: 使用注解完成 Getter/Setter，省略大量代码的同时，也降低了后期维护成本
         * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
+        * MyBatisCodeHelperPro: 更强大的 mybatis 插件，如果上收费版，那就更强了
         * Rainbow Brackets: 彩虹括号，方便肉眼匹配
         * SpotBugs: 可以分析出当前项目或文件中潜在的问题
         * String Manipulation: 各种字符串转换
+        * Vue.js: 只在 Ultimate 版才提供，支持 Vue.js 的语法规则
 * Nginx
     * 复制 `my-mac-env/usr/local/etc/nginx` 目录
     * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
