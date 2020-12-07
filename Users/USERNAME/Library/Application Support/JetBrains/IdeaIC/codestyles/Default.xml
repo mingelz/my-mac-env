@@ -9,12 +9,12 @@
     <!-- 添加注释时， // 后跟一个空格 -->
     <option name="LINE_COMMENT_ADD_SPACE" value="true" />
     <!-- else 前换行  -->
-    <option name="ELSE_ON_NEW_LINE" value="true" />
+    <!-- <option name="ELSE_ON_NEW_LINE" value="true" /> -->
     <!-- while 前换行  -->
-    <option name="WHILE_ON_NEW_LINE" value="true" />
+    <!-- <option name="WHILE_ON_NEW_LINE" value="true" /> -->
     <!-- catch 前换行  -->
-    <option name="CATCH_ON_NEW_LINE" value="true" />
+    <!-- <option name="CATCH_ON_NEW_LINE" value="true" /> -->
     <!-- finally 前换行  -->
-    <option name="FINALLY_ON_NEW_LINE" value="true" />
+    <!-- <option name="FINALLY_ON_NEW_LINE" value="true" /> -->
   </codeStyleSettings>
 </code_scheme>

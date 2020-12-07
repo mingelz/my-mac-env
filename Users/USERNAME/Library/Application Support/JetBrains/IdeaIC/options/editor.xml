@@ -1,14 +1,18 @@
 <application>
   <component name="CodeInsightSettings">
+    <!-- 自动 import 无歧义的类 -->
     <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
   </component>
   <component name="DefaultFont">
+    <!-- 编辑器中的字体大小 -->
     <option name="FONT_SIZE" value="18" />
   </component>
   <component name="EditorSettings">
+    <!-- 展示空白字符 -->
     <option name="IS_WHITESPACES_SHOWN" value="true" />
   </component>
   <component name="TodoConfiguration">
+    <!-- todo 关键字高亮显示规则 -->
     <pattern pattern="\b(todo|fixme)\b.*" />
     <pattern pattern="\b(xxx|note|warning|bug|mock|debug)\b" />
   </component>
