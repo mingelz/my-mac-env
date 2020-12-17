@@ -40,7 +40,6 @@ com.intellij.gradle
 com.intellij.guice
 com.intellij.helidon
 com.intellij.hibernate
-com.intellij.java-i18n
 com.intellij.javaee
 com.intellij.javaee.app.servers.integration
 com.intellij.javaee.batch
@@ -58,9 +57,7 @@ com.intellij.microservices.java.clients
 com.intellij.properties.bundle.editor
 com.intellij.quarkus
 com.intellij.reactivestreams
-com.intellij.spring
 com.intellij.spring.batch
-com.intellij.spring.boot
 com.intellij.spring.data
 com.intellij.spring.integration
 com.intellij.spring.messaging
@@ -97,7 +94,6 @@ org.jetbrains.android
 org.jetbrains.debugger.streams
 org.jetbrains.idea.eclipse
 org.jetbrains.idea.gradle.ext
-org.jetbrains.java.decompiler
 org.jetbrains.kotlin
 org.jetbrains.plugins.github
 org.jetbrains.plugins.haml
@@ -111,3 +107,4 @@ spy-js
 tanvd.grazi
 training
 tslint
+
