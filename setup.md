@@ -410,6 +410,8 @@
         * HTML Tools (Ultimate only)
         * JavaScript and TypeScript (Ultimate only)
         * Java SQL Libraries (Ultimate only)
+        * Spring (Ultimate only)
+        * Spring Boot (Ultimate only)
         * Markdown
         * Properties
         * Shell Script
@@ -419,6 +421,8 @@
         * Git
         * EditorConfig
         * IntelliLang
+        * Java Bytecode Decompiler
+        * Java Internationalization
         * Terminal
     * 常用插件推荐：
         * .ignore: 高亮 `.*ignore` 文件、在文件列表中隐藏/显示 ignore 文件等
