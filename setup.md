@@ -267,6 +267,7 @@
     * [XnViewMP](http://www.xnview.com/en/xnviewmp/)，看图软件
     * [ImageAlpha](http://pngmini.com/)，压缩图片
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
+    * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
     * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
     * [Shadowsock](https://shadowsocks.org/)
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具
