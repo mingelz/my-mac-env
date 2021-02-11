@@ -432,6 +432,7 @@
         * CodeGlance: 代码 Minimap
         * Free MyBatis Plugin: 在左侧槽中生成 mapper 与 xml 的对应跳转，相比后边介绍的 MyBatisCodeHelperPro 功能比较简单
         * GenerateAllSetter: 快速生成实例的全部 Setter 方法
+        * GitToolBox: 在编辑器中实时显示行级 Git 信息，与 VSCode 的 GitLens 插件功能类似
         * GsonFormat: 根据 JSON 生成 Bean
         * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
         * Lombok: 使用注解完成 Getter/Setter，省略大量代码的同时，也降低了后期维护成本
