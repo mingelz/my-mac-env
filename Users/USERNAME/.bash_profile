@@ -25,4 +25,5 @@ export NVM_DIR="$HOME/.nvm"
 ## private 私人配置
 
 # brew, 填入 github 管理后台生成的 token
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
 export HOMEBREW_GITHUB_API_TOKEN=""

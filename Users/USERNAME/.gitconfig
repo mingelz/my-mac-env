@@ -3,6 +3,9 @@
     email = mingelz@gmail.com
 [push]
     default = simple
+[pull]
+    # 给 git pull 默认添加 --rebase 参数，避免因 merge 导致的分叉
+    rebase = true
 [diff]
     tool = vimdiff
 [difftool]
