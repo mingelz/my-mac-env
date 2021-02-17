@@ -5,6 +5,7 @@
 ## 一、制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
+    * [macOS Big Sur 11.2](https://apps.apple.com/cn/app/macos-big-sur/id1526878132)
     * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314)
 * 从 10.14 开始系统安装从 App Store 转到 「系统偏好设置」-「软件更新」中了，点击【现在升级】即可
 * 下载完成后，会弹出安装提示，不要理会。可以点击状态栏左上角「安装 macOS」-「退出安装 macOS」关闭安装
@@ -201,6 +202,7 @@
 
 * [Agenda](https://agenda.com/)
 * [Bear](https://bear.app/)
+* Boop
 * [Cleaner One](https://helpcenter.trendmicro.com/en-us/product-support/cleaner-one/)
 * [CotEditor](https://coteditor.com/)
 * Caffeinated
@@ -220,6 +222,7 @@
 * QSpace
 * [Reeder](http://reederapp.com/)
 * [The Unarchiver](http://theunarchiver.com/)
+* [Trello](https://trello.com/)
 * [WeChat](https://weixin.qq.com/)
 * [WPS Office](http://www.wps.cn/product/wpsmac/)
 * [Xcode](http://developer.apple.com/xcode)
@@ -280,10 +283,11 @@
 **brew 依赖 Xcode，且安装 brew 前要先执行 `xcode-select --install` 安装 Command Line Tools**
 
 * [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
-    * autojump
-    * nvm & node & npm/cnpm
+    * [autojump](https://github.com/wting/autojump)，brew 上的 autojump 被配置为强制依赖 Python@3.9，而 MacOS 最新版目前带的是 Python@2.7.16 和 Python@3.8.2，为了不至于再装额外的 Python，目前建议按照 autojump 官网文档安装，而不是用 brew 装
     * ~~git~~ (installed with Xcode)
+    * lame
     * nginx
+    * nvm & node & npm/cnpm
     * tree
     * ~~wget~~ (use curl)
     * [Android File Transfer](https://www.android.com/filetransfer/)
