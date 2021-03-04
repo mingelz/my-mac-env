@@ -1,70 +1,63 @@
 {
-    // Core
-    "debug.toolBarLocation": "docked",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.fontSize": 16,
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "boundary",
-    "editor.rulers": [
-        80,
-        120
-    ],
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true,
-    },
-    "editor.scrollBeyondLastLine": false,
-    "editor.suggestSelection": "first",
-    "editor.suggest.shareSuggestSelections": true,
-    "extensions.ignoreRecommendations": true,
-    "extensions.showRecommendationsOnlyOnDemand": true,
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "search.showLineNumbers": true,
-    "search.smartCase": true,
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontSize": 14,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "workbench.startupEditor": "none",
-    // "workbench.colorTheme": "One Dark Pro",
-    // "workbench.iconTheme": "file-icons",
-
-    // Languages
-    "css.lint.duplicateProperties": "warning",
-    "css.lint.zeroUnits": "warning",
-    "javascript.implicitProjectConfig.experimentalDecorators": true,
-    "markdown.preview.fontSize": 16,
-
-    // Extensions: Auto Rename Tag
-    "auto-rename-tag.activationOnLanguage": [
-        "html",
-        "xml",
-        "javascript",
-    ],
-
-    // Extensions: Prettier - Code formatter
-    // "prettier.eslintIntegration": true,
-
-    // Extensions: TODO Highlight
-    // * https://github.com/JohnPostlethwait/fixme
-    // * https://github.com/atom/language-todo
-    // "todohighlight.keywords": [
-    //     "TODO", "FIXME", "XXX", "NOTE", "OPTIMIZE", "HACK", "BUG",
-    //     "CHANGED", "REVIEW", "QUESTION", "TEMP", "DEBUG", "WARNING",
-    //     "MOCK"
-    // ],
-    // 这一项会覆盖上一项，是因为通过 \\b 来保证仅高亮完整单词，不包括如 todomvc 这种在单词中间的字
-    "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
-
-    // Extensions: Vim
-    "vim.foldfix": true,
-    "vim.hlsearch": true,
-    "vim.visualstar": true,
-
-    // Extensions: Visual Studio IntelliCode
-    // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // Core
+  "debug.toolBarLocation": "docked",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.fontSize": 16,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true,
+  },
+  "editor.scrollBeyondLastLine": false,
+  "editor.suggestSelection": "first",
+  "editor.suggest.shareSuggestSelections": true,
+  "extensions.ignoreRecommendations": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontSize": 14,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.startupEditor": "none",
+  // "workbench.colorTheme": "One Dark Pro",
+  // "workbench.iconTheme": "file-icons",
+  // Languages
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.zeroUnits": "warning",
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "markdown.preview.fontSize": 16,
+  // Extensions: Auto Rename Tag
+  "auto-rename-tag.activationOnLanguage": [
+    "html",
+    "xml",
+    "javascript",
+  ],
+  // Extensions: Prettier - Code formatter
+  // "prettier.eslintIntegration": true,
+  // Extensions: TODO Highlight
+  // * https://github.com/JohnPostlethwait/fixme
+  // * https://github.com/atom/language-todo
+  // "todohighlight.keywords": [
+  //     "TODO", "FIXME", "XXX", "NOTE", "OPTIMIZE", "HACK", "BUG",
+  //     "CHANGED", "REVIEW", "QUESTION", "TEMP", "DEBUG", "WARNING",
+  //     "MOCK"
+  // ],
+  // 这一项会覆盖上一项，是因为通过 \\b 来保证仅高亮完整单词，不包括如 todomvc 这种在单词中间的字
+  "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
+  // Extensions: Vim
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.visualstar": true,
+  // Extensions: Visual Studio IntelliCode
+  // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
