@@ -1,0 +1,10 @@
+<application>
+  <component name="UISettings">
+    <!-- 隐藏工具栏 [Appearence & Behavior/Appearance/Tool Windows/Show tool window bar] -->
+    <option name="HIDE_TOOL_STRIPES" value="true" />
+    <!-- 被修改的文件 Tab 上用星号 * 标记 [Editor/General/Editor Tabs/Appearance/Mark modified (*)] -->
+    <option name="MARK_MODIFIED_TABS_WITH_ASTERISK" value="true" />
+    <!-- 启用预览窗口（单击文件时复用同一个预览 Tab，多次单击不同文件不会打开多个 Tab） [Editor/General/Editor Tabs/Opening Policy/Enable preview tab] -->
+    <option name="OPEN_IN_PREVIEW_TAB_IF_POSSIBLE" value="true" />
+  </component>
+</application>

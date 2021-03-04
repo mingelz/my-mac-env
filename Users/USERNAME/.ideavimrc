@@ -1,0 +1,105 @@
+" IdeaVimrc
+" mingelz <mingelz@gmail.com>
+
+" == 通用设置 == {{{
+"set clipboard+=ideaput    "配置复制时的寄存器，如果使用 unnamed 将和系统粘贴板共享 [cb=clipboard]
+"set digraph    "二合字母的处理方式 [dg=digraph]
+"set gdefault    "在执行 `:s` 时默认添加 `/g` 修饰 [gd=gdefault]
+"set history    "在命令行中最多记录多少项 [hi=history]
+set hlsearch    "高亮搜索结果 [hls=hlsearch]
+set ignorecase    "搜索时忽略大小写 [ic=ignorecase]
+"set iskeyword    "识别哪些是关键字 [isk=iskeyword]
+set incsearch    "搜索时实时定位到搜索位置 [is=incsearch]
+"set keymodel=continueselect,stopselect    "打开特殊的键功能 [km=keymodel]
+"set matchpairs=(:),{:},[:]    "在执行 % 时可识别的配对字符 [mps=matchpairs]
+"set maxmapdepth=1000    "最大映射次数 [mmd=maxmapdepth]
+"set more    "是否用 more 来渲染列表，即屏幕被填充满时暂停
+"set nrformats=bin,octal,hex    "可对哪种格式数据执行 ctrl-a/ctrl-x 自动加减 [nf=nrformats]
+"set number    "显示行号 [nu=number]
+"set relativenumber    "显示相对行号 [rnu=number]
+"set scroll=15    "在执行 ctrl-u 和 ctrl-d 时翻的行数 [scr=scroll]
+"set scrolljump=1    "纵向滚动当光标超过可视范围时，要调整的行数量 [sj=scrolljump]
+set scrolloff=3    "纵向滚动时光标上下要预留的行数 [so=scrolloff]
+"set selection=inclusive    "在选择模式时的行为 [sel=selection]
+"set selectmode=    "指定进入 select 模式的触发方式 (mouse:使用鼠标时; key:使用特殊键时; cmd:使用 v/V/ctrl-v 时; ideaselection: Idea 独有的，用于由 IDE 提供了 selection 时) [slm=selectmode]
+"set showmode    "在状态栏显示当前模式 [smd=showmode]
+"set showcmd    "在状态栏显示执行的命令（部分） [sc=showcmd]
+"set sidescroll=0    "横向滚动且光标超过可视范围时，要调整的列数量，0表示把光标调整到屏幕中间 [ss=sidescroll]
+"set sidescrolloff=0    "横向滚动时光标左右要预留的列数 [siso=sidescrolloff]
+set smartcase    "如果搜索时键入了大写字母，则不再执行 ignorecase [scs=smartcase]
+"set timeout    "是否对绑定键判定超时 [to=timeout]
+"set timeoutlen=1000    "执行绑定键的超时时间 [tm=timeoutlen]
+"set undolevels=1000    "最多能执行多少次 undo [ul=undolevels]
+"set viminfo=    "viminfo 文件记录配置 [vi=viminfo]
+"set visualbell    "使用可视的小铃铛代替蜂鸣声 [vb=visualbell]
+"set wrapscan    "搜索时到文件尾后自动从头搜索 [ws=wrapscan]
+" == }}}
+
+" == IdeaVIM 专有设置 == {{{
+set ideamarks    "创建 Vim 的标签（通过 `m`）将同步创建 IDE 编辑器中的标签，反之亦然
+set idearefactormode=select    "在代码 refactoring 时进入哪个模式 (keep:保持执行 refactor 时的模式; select:进入 select 模式; visual:进入 visual 模式)，注意仅在 normal/insert/replace 模式执行 refactor 时起作用，select/visual 会保持原有模式
+set ideajoin    "启用 IDE 特有的多行合并特性，详情见 https://github.com/JetBrains/ideavim/wiki/%22ideajoin%22-examples
+set ideastatusicon=enabled    "定义 IdeaVim 在状态栏的图标 (enabled:使用彩色图标; gray:使用灰色图标; disabled:隐藏状态栏图标)
+set ideawrite=all    "在执行 `:w` 命令时的行为 (all:执行`:w`实际执行的`:wa`，即保存所有文件; file:执行`:w`只保存当前文件)
+"set lookupkeys=     "哪些键在自动完成列表弹出时可直接透给编辑器处理（不被自动完成列表识别），没看明白怎么设置
+set ideavimsupport=dialog    " 可以在哪些额外区域启用 IdeaVim (dialog:对话框中; singleline:单行编辑器中，官方不推荐)
+" == }}}
+
+" == 快捷键绑定 Mappings == {{{
+" + 可以通过 `:actionlist` 查看所有支持的动作，以及对应的键绑定信息
+" + 定义键绑定有两种方式，`:action {action_id}<CR>`(这种可以用 noremap) 或 `<Action>({action_id})`(这种只能用 map)
+
+"let mapleader=";"    "Map leader 快捷键绑定前缀，默认是 \
+map <leader>c <Action>(CopyReference)
+map <leader>i <Action>(Maven.Reimport)
+map <leader>m <Action>(XDebugger.MuteBreakpoints)
+map <leader>s <Action>(SelectInProjectView)
+map <leader>x <Action>(CloseAllEditorsButActive)
+map gb <Action>(ViewBreakpoints)
+map gc <Action>(ParameterInfo)
+"map gd <Action>(GotoDeclaration)    "IdeaVim 默认的，方法定义与方法调用之间跳转
+map gf <Action>(HighlightUsagesInFile)
+map gi <Action>(GotoImplementation)
+map gr <Action>(RenameElement)
+map gs <Action>(GotoSuperMethod)
+map gv <Action>(ShowUsages)
+"map gv <Action>(FindUsages)
+map gw <Action>(Vcs.ShowTabbedFileHistory)
+map gx <Action>(ActivateDatabaseToolWindow)
+map gy <Action>(ActivateMavenToolWindow)
+map gz <Action>(ActivateTerminalToolWindow)
+map g[ <Action>(MethodUp)
+map g] <Action>(MethodDown)
+" == }}}
+
+" == 插件 == {{{
+" 插件列表 https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+"set easymotion    "快速跳转，需要额外安装另两个依赖的插件
+"set NERDTree    "NERDTree 就不多介绍了，另可额外参考 https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+set surround    "快速处理字符包围
+" set multiple-cursors    "多光标支持
+" set commentary    "代码注释增强
+" set ReplaceWithRegister    "使用寄存器中的内容替换
+set argtextobj    "添加一个叫 'a' (argument) 的文本对象，在函数参数中可以方便的处理各个参数
+" set exchange    "两个文本做交换
+" set textobj-entire    "将缓冲区作为文本对象
+set highlightedyank    "复制后高亮复制的内容
+" == }}}
+
+" == 插件设置，仅开启对应插件后有效 == {{{
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" let g:highlightedyank_highlight_duration="1000"    "高亮时间，用 -1 表示一直高亮
+" let g:highlightedyank_highlight_color="rgba(160, 160, 160, 155)"    "高亮背景色
+" == }}}
+
+" == 参考 & 引用 == {{{
+" + IdeaVim 官网: https://github.com/JetBrains/ideavim
+" + IdeaVim Wiki: https://github.com/JetBrains/ideavim/wiki
+" + IdeaVim 默认键绑定（键索引）: https://github.com/JetBrains/ideavim/blob/master/src/com/maddyhome/idea/vim/package-info.java
+" + IdeaVim 默认键绑定（行为索引）: https://github.com/JetBrains/ideavim/blob/master/resources/META-INF/includes/VimActions.xml
+" + A(option), C(control), M(command), S(shift), <ESC>(escape), <BS>(backspace), <CR>(return)
+" == }}}
+
+" XXX: 最后一行为 模式行，请勿修改，可参考 modelines
+" vim:set et ts=2 sts=2 sw=2 fdm=marker:

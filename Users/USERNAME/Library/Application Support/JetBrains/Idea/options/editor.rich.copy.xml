@@ -1,0 +1,6 @@
+<application>
+  <!-- 复制代码时，一并复制富文本信息 [Editor/General/Rich-Text Copy/Copy as rich text] -->
+  <component name="EditorRichCopySettings">
+    <option name="enabled" value="false" />
+  </component>
+</application>

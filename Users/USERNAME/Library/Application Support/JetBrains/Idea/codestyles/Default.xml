@@ -1,20 +1,22 @@
 <code_scheme name="Default" version="173">
+  <!-- 列号辅助线位置 [Editor/Code Style/General/Visual guides] -->
+  <option name="SOFT_MARGINS" value="80,120" />
+
+  <!-- 以下是我写 Javascript 时的习惯，暂时不带到 Java 中 -->
   <codeStyleSettings language="JAVA">
-    <!-- 添加列号辅助线 -->
-    <option name="SOFT_MARGINS" value="80,100" />
-    <!-- 通过 `cmd + /` 添加注释时，从行的第一个非空位置起始 -->
-    <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
-    <!-- 块注释从行的第一个非空位置起始 -->
-    <option name="BLOCK_COMMENT_AT_FIRST_COLUMN" value="false" />
-    <!-- 添加注释时， // 后跟一个空格 -->
-    <option name="LINE_COMMENT_ADD_SPACE" value="true" />
-    <!-- else 前换行  -->
+    <!-- 行注释从行首开始，false 则从第一个非空位置开始 [Editor/Code Style/Java/Code Generation/Comment Code/Line comment at first column] -->
+    <!-- <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" /> -->
+    <!-- 行注释 // 后跟一个空格 [Editor/Code Style/Java/Code Generation/Comment Code/Add a space at comment start] -->
+    <!-- <option name="LINE_COMMENT_ADD_SPACE" value="true" /> -->
+    <!-- 块注释从行首开始，false 则从第一个非空位置开始 [Editor/Code Style/Java/Code Generation/Comment Code/Block comment at first column] -->
+    <!-- <option name="BLOCK_COMMENT_AT_FIRST_COLUMN" value="false" /> -->
+    <!-- else 前换行 [Editor/Code Style/Java/Wrapping and Braces/'if()' statement/'else' on new line] -->
     <!-- <option name="ELSE_ON_NEW_LINE" value="true" /> -->
-    <!-- while 前换行  -->
+    <!-- while 前换行 [Editor/Code Style/Java/Wrapping and Braces/'do ... while()' statement/'while' on new line] -->
     <!-- <option name="WHILE_ON_NEW_LINE" value="true" /> -->
-    <!-- catch 前换行  -->
+    <!-- catch 前换行 [Editor/Code Style/Java/Wrapping and Braces/'try' statement/'catch' on new line] -->
     <!-- <option name="CATCH_ON_NEW_LINE" value="true" /> -->
-    <!-- finally 前换行  -->
+    <!-- finally 前换行 [Editor/Code Style/Java/Wrapping and Braces/'try' statement/'finally' on new line] -->
     <!-- <option name="FINALLY_ON_NEW_LINE" value="true" /> -->
   </codeStyleSettings>
 </code_scheme>
