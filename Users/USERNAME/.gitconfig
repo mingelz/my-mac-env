@@ -35,3 +35,4 @@
     lg = log --graph --abbrev-commit --relative-date --decorate -n30 --pretty=format:'%C(red)%h%C(reset) - %C(cyan)(%ar)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
     # 在 lg 的基础上，列出所有 branchs/stash 的分支情况，并把条数放大到 500
     la = lg --all -n500
+    who = shortlog -sn
