@@ -1,0 +1,6 @@
+<application>
+  <!-- 快捷键管理 [Keymap] -->
+  <component name="KeymapManager">
+    <active_keymap name="macOS-mz" />
+  </component>
+</application>

@@ -1,5 +1,6 @@
 <application>
   <component name="EditorColorsManagerImpl">
+    <!-- 颜色主题方案 [Editor/Color Scheme] -->
     <global_color_scheme name="Darcula" />
   </component>
 </application>

@@ -1,0 +1,11 @@
+<keymap version="1" name="macOS-mz" parent="Mac OS X 10.5+">
+  <action id="MoveEditorToOppositeTabGroup">
+    <keyboard-shortcut first-keystroke="alt m" />
+  </action>
+  <action id="MoveTabRight">
+    <keyboard-shortcut first-keystroke="alt l" />
+  </action>
+  <action id="OpenEditorInOppositeTabGroup">
+    <keyboard-shortcut first-keystroke="alt o" />
+  </action>
+</keymap>

@@ -99,6 +99,7 @@ org.jetbrains.plugins.github
 org.jetbrains.plugins.haml
 org.jetbrains.plugins.javaFX
 org.jetbrains.plugins.less
+org.jetbrains.plugins.sass
 org.jetbrains.plugins.stylus
 org.jetbrains.plugins.textmate
 org.jetbrains.plugins.yaml
@@ -107,4 +108,3 @@ spy-js
 tanvd.grazi
 training
 tslint
-

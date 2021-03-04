@@ -1,0 +1,46 @@
+<application>
+  <component name="VimEditorSettings">
+    <editor>
+      <!-- 按下某键不松时，是否持续输出按下的信号 -->
+      <key-repeat enabled="true" />
+    </editor>
+  </component>
+  <component name="VimKeySettings">
+    <!--
+      IdeaVim 与 Idea 按键冲突时，使用哪个版本
+      + ⌃B: Y3RybCBwcmVzc2VkIEI=
+      + ⌃N: Y3RybCBwcmVzc2VkIE4=
+      + ⌃P: Y3RybCBwcmVzc2VkIFA=
+      + ⌃R: Y3RybCBwcmVzc2VkIFI=
+      + ⌃T: Y3RybCBwcmVzc2VkIFQ=
+      + ⌃V: Y3RybCBwcmVzc2VkIFY=
+    -->
+    <shortcut-conflicts>
+      <shortcut-conflict owner="vim">
+        <text encoding="base64">Y3RybCBwcmVzc2VkIE4=</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text encoding="base64">Y3RybCBwcmVzc2VkIFA=</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text encoding="base64">Y3RybCBwcmVzc2VkIEI=</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text encoding="base64">Y3RybCBwcmVzc2VkIFY=</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text encoding="base64">Y3RybCBwcmVzc2VkIFI=</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text encoding="base64">Y3RybCBwcmVzc2VkIFQ=</text>
+      </shortcut-conflict>
+    </shortcut-conflicts>
+  </component>
+  <component name="VimSettings">
+    <state version="7" enabled="true" />
+    <notifications>
+      <idea-join enabled="true" />
+      <idea-put enabled="false" />
+    </notifications>
+  </component>
+</application>
