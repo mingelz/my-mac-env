@@ -1,6 +1,6 @@
 # Mac 环境安装配置一条龙
 
-2019-10-10
+2021-02-18
 
 ## 一、制作安装盘
 
@@ -55,21 +55,29 @@
 
 ## 三、系统设置
 
-以下流程，基于 Catalina 的设置界面排序，且在安装时已联网并登录 iCloud 账号，所以可能会缺少一些关于 iCloud 的配置细节。
+以下流程，基于 Big Sur 的设置界面排序，且在安装时已联网并登录 iCloud 账号，所以可能会缺少一些关于 iCloud 的配置细节。
 
 ### 3.1 系统偏好设置
 
 * 通用
     * 外观 => 【自动】
-    * 【勾选】退出App时关闭窗口
-    * 最近使用的项目 => 【0】
+    * 最近使用的项目 => 【5】
 * 桌面与屏幕保护程序
-* Dock（程序坞）
-    * 调整 Dock 大小
-    * 置于屏幕【左边】
+    * 桌面
+        * 动态
+* Dock（程序坞与菜单栏）
+    * 程序坞与菜单栏
+        * 调整 Dock 大小
+        * 置于屏幕上的位置 =>【左边】。因为普遍屏幕比较宽，横向位置够用而纵向稀缺
+        * 【取消勾选】在程序坞中显示最近使用的应用程序
+    * 电池
+        * 【勾选】显示百分比
+    * 时钟
+        * 【勾选】使用24小时格式时钟
 * Mission Control（调度中心）
     * 【取消勾选】根据最近的使用情况自动重新排列 Space
 * Siri
+    * 【取消勾选】启用“询问Siri”
     * 【取消勾选】在菜单栏中显示 Siri
 * Spotlight（聚焦）
 * 语言和地区
@@ -106,14 +114,18 @@
     * 【勾选】在菜单栏中显示音量
 * 键盘
     * 键盘
+        * 【勾选】将 F1、F2等键用作标准功能键
         * 修饰键
-            * 大写锁定键 => 【Control】 （个人喜好，请慎重选择）
+            * 中/英键（大写锁定键） => 【Control】 （个人喜好，请慎重选择）
     * 文本
         * 【取消勾选】自动纠正拼写
         * 【取消勾选】自动大写字词的首字母
         * 【取消勾选】连按两下空格键插入句号
     * 快捷键
         * 根据自己的喜好做修改
+        * 可以将 反转颜色 设置为 【⌘Q】。这样当在某些 App 中不小心按了 ⌘Q 时就不至于直接退出应用
+    * 听写
+        * 快捷键 => 关闭
 * 触控板
     * 全部勾选
     * 光标与点按
@@ -125,11 +137,8 @@
     * Night Shift（夜览）
         * 设定时间 => 日落到日出
 * Sidecar（随航）
-* 节能
+* 电池
 * 日期与时间
-    * 时钟
-        * 【勾选】显示星期
-        * 【勾选】显示日期
 * 共享
     * 修改【电脑名称】（点【编辑】进行修改）
 * Apple ID
@@ -158,18 +167,15 @@
             * 外置磁盘
 * 高级
     * 【勾选】显示所有文件的扩展名
-    * 【勾选】将以下位置的文件夹保持在顶部：按名称排序时的窗口中
+    * 将以下位置的文件夹保持在顶部：
+        * 【勾选】按名称排序时的窗口中
+        * 【勾选】桌面上
 
 ### 3.3 系统右侧通知栏
 
-* 保留：今天、提醒事项、日历、计算器、明天
+* 根据喜好配置
 
-### 3.4 系统状态栏
-
-* 电池
-    * 显示百分比
-
-### 3.5 Safari 偏好设置
+### 3.4 Safari 偏好设置
 
 * 工具栏
     * 显示
@@ -181,7 +187,7 @@
 * 扩展（MAS 里上架的很少，可在[官网](https://safari-extensions.apple.com/)搜索更多）
     * [QRify](https://safari-extensions.apple.com/details/?id=de.retiolum.safari.qrify-RSADU6MKX9)
 
-### 3.6 Terminal 偏好设置
+### 3.5 Terminal 偏好设置
 
 * 通用
     * 使用描述文件新建窗口 => Homebrew
@@ -283,7 +289,6 @@
 **brew 依赖 Xcode，且安装 brew 前要先执行 `xcode-select --install` 安装 Command Line Tools**
 
 * [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
-    * [autojump](https://github.com/wting/autojump)，brew 上的 autojump 被配置为强制依赖 Python@3.9，而 MacOS 最新版目前带的是 Python@2.7.16 和 Python@3.8.2，为了不至于再装额外的 Python，目前建议按照 autojump 官网文档安装，而不是用 brew 装
     * ~~git~~ (installed with Xcode)
     * lame
     * nginx
@@ -292,6 +297,8 @@
     * ~~wget~~ (use curl)
     * [Android File Transfer](https://www.android.com/filetransfer/)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [autojump](https://github.com/wting/autojump)，软件本身是支持 Python@ 和 @3 的，但 brew 上的 autojump 被配置为强制依赖 Python@3.9，而 macOS 最新版自带的是 Python@2.7.16 和 Python@3.8.2，为了不至于再安装第3个 Python，我没有使用 brew 装，而是按照 autojump 官网文档安装的。
+    * 建议将 autojump 装在 `~/.autojump/autojump` 中
 
 ### 4.4 软件配置
 
@@ -340,8 +347,7 @@
         * 【勾选】中文时使用成对符号（需要添加辅助功能授权）
     * 按键
         * 翻页按键：只勾选「减号等号」
-    * 五笔
-        * 五笔基本设置：只取消勾选「开启五笔调频」
+        * 切换按键：取消所有勾选
     * 词库
         * 删除所有分类词库
         * 关闭个性短语
