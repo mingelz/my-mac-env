@@ -44,5 +44,5 @@
 
 ### 插件
 
-+ `disabled_plugins.txt` 中即我不禁用的插件项，可通过复制此文件达到直接禁用的效果。
++ `disabled_plugins.txt` 中即被禁用的插件项，可通过复制此文件达到直接禁用的效果。
 + 对于 IdeaVim 插件，除了 `options/vim_settings.xml` 外，注意还有家目录下的 `.ideavimrc`
