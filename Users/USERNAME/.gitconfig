@@ -4,8 +4,8 @@
 [push]
     default = simple
 [pull]
-    # 给 git pull 默认添加 --rebase 参数，避免因 merge 导致的分叉
-    rebase = true
+    # git pull 默认记录 merge 分叉，如果希望不分叉就使用后边定义的 pr 命令
+    rebase = false
 [diff]
     tool = vimdiff
 [difftool]
@@ -35,4 +35,6 @@
     lg = log --graph --abbrev-commit --relative-date --decorate -n30 --pretty=format:'%C(red)%h%C(reset) - %C(cyan)(%ar)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
     # 在 lg 的基础上，列出所有 branchs/stash 的分支情况，并把条数放大到 500
     la = lg --all -n500
+    # 添加 --rebase 参数，在 merge 的时候不会分叉
+    pr = pull --rebase
     who = shortlog -sn
