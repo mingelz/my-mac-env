@@ -1,0 +1,7 @@
+<application>
+  <!-- 提示信息 [Appearence & Behavior/Notifications] -->
+  <component name="NotificationConfiguration">
+    <!-- 不提示插件推荐 -->
+    <notification groupId="Plugins Suggestion" displayType="NONE" />
+  </component>
+</application>
