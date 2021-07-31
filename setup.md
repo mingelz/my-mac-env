@@ -5,7 +5,7 @@
 ## 一、制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
-    * [macOS Big Sur 11.2](https://apps.apple.com/cn/app/macos-big-sur/id1526878132)
+    * [macOS Big Sur 11.4](https://apps.apple.com/cn/app/macos-big-sur/id1526878132)
     * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314)
 * 从 10.14 开始系统安装从 App Store 转到 「系统偏好设置」-「软件更新」中了，点击【现在升级】即可
 * 下载完成后，会弹出安装提示，不要理会。可以点击状态栏左上角「安装 macOS」-「退出安装 macOS」关闭安装
@@ -115,6 +115,7 @@
 * 键盘
     * 键盘
         * 【勾选】将 F1、F2等键用作标准功能键
+        * 按下Fn键时 => 不执行任何操作
         * 修饰键
             * 中/英键（大写锁定键） => 【Control】 （个人喜好，请慎重选择）
     * 文本
@@ -122,7 +123,7 @@
         * 【取消勾选】自动大写字词的首字母
         * 【取消勾选】连按两下空格键插入句号
     * 快捷键
-        * 根据自己的喜好做修改
+        * 根据自己的喜好做修改，我基本取消了所有勾选项，仅保留「选择上一个输入法」、「反转颜色」两项
         * 可以将 反转颜色 设置为 【⌘Q】。这样当在某些 App 中不小心按了 ⌘Q 时就不至于直接退出应用
     * 听写
         * 快捷键 => 关闭
@@ -224,6 +225,7 @@
 * [MWeb](https://zh.mweb.im/)
 * [Pocket](https://getpocket.com/)
 * [QQ](http://im.qq.com/macqq/)
+* QR Journal
 * QR Creator Mini
 * QSpace
 * [Reeder](http://reederapp.com/)
@@ -277,6 +279,7 @@
     * [ImageAlpha](http://pngmini.com/)，压缩图片
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
+    * [Vanilla](https://matthewpalmer.net/vanilla/)，隐藏菜单栏图标
     * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
     * [Shadowsock](https://shadowsocks.org/)
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具
@@ -336,9 +339,26 @@
         * Terminal
             * Scrollback Buffer
                 * 【勾选】Unlimited scrollback
+    * Keys
+        * Hotkey
+            * 【勾选】Show/hide all windows with a system-wide hotkey => Control+Options+Shift+Command+I
     * 菜单栏
         * iTerm2
             * Make iTerm2 Default Term
+* Karabiner-Elements
+    * Simple Modifications
+        * caps_lock -> left_control
+        * left_control -> caps_lock
+    * Complex Modifications
+        * Change caps_lock to command+control+option+shift.
+        * Ctrl+p/Ctrl+n to arrow up/down
+        * Left ctrl + hjkl to arrow keys Vim
+        * Command + Esc to Command + Tilda
+        * Shift + Esc to ~
+* Rectangle
+    * 最大化 => Control+Options+Shift+Command+X
+    * 恢复 => Control+Options+Shift+Command+Z
+    * 下一个显示器 => Control+Options+Shift+Command+M
 * 百度输入法
     * 同步
         * 登录账号，以下配置可在登录账号后通过「下载配置」直接应用
@@ -388,6 +408,7 @@
         * TabNine: 强大的代码自动完成工具，感觉不用装 Visual Studio IntelliCode 了
         * TODO Hightlight: 高亮指定关键字
         * Vetur: Vue 文件语法支持、格式化
+        * Volar: Vue3 推出后，新推荐的 Vue 文件语法支持插件
         * Vim: Vim 模拟器
             * 安装后参考 [官网安装文档](https://github.com/VSCodeVim/Vim#mac) 开启 key-repeating 能力
         * Visual Studio IntelliCode: 微软官方提供的代码提示工具
