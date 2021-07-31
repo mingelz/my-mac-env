@@ -2,7 +2,7 @@
 " mingelz <mingelz@gmail.com>
 
 " == 通用设置 == {{{
-"set clipboard+=ideaput    "配置复制时的寄存器，如果使用 unnamed 将和系统粘贴板共享 [cb=clipboard]
+"set clipboard+=ideaput    "配置复制时的寄存器，如果使用 unnamed 将和系统剪贴板共享 [cb=clipboard]，ideaput 是 IDEA 对系统剪贴板的支持
 "set digraph    "二合字母的处理方式 [dg=digraph]
 "set gdefault    "在执行 `:s` 时默认添加 `/g` 修饰 [gd=gdefault]
 "set history    "在命令行中最多记录多少项 [hi=history]

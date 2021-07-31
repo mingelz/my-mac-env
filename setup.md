@@ -418,23 +418,19 @@
         * Maven
         * Maven Extension (Ultimate only)
         * Database Tools and SQL (Ultimate only)
-        * HTML Tools (Ultimate only)
-        * JavaScript and TypeScript (Ultimate only)
         * Java SQL Libraries (Ultimate only)
         * Spring (Ultimate only)
         * Spring Boot (Ultimate only)
         * Markdown
         * Properties
         * Shell Script
-        * CSS (Ultimate only)
-        * Sass (Ultimate only)
         * Lombok (built-in at v2020.3)
         * Git
         * EditorConfig
         * IntelliLang
         * Java Bytecode Decompiler
         * Java Internationalization
-        * Terminal
+        * TextMate Bundles
     * 常用插件推荐：
         * .ignore: 高亮 `.*ignore` 文件、在文件列表中隐藏/显示 ignore 文件等
         * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)

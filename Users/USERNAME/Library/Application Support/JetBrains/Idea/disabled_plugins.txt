@@ -40,6 +40,7 @@ com.intellij.drools
 com.intellij.dsm
 com.intellij.freemarker
 com.intellij.gradle
+com.intellij.grpc
 com.intellij.guice
 com.intellij.helidon
 com.intellij.hibernate
@@ -57,6 +58,7 @@ com.intellij.jsp
 com.intellij.laf.macos
 com.intellij.micronaut
 com.intellij.microservices.java.clients
+com.intellij.microservices.ui
 com.intellij.properties.bundle.editor
 com.intellij.quarkus
 com.intellij.reactivestreams
@@ -89,7 +91,9 @@ cucumber-groovy
 cucumber-java
 gherkin
 hg4idea
+idea.plugin.protoeditor
 intellij.indexing.shared
+intellij.ktor
 intellij.recommenders
 intellij.webp
 org.coffeescript
@@ -106,9 +110,12 @@ org.jetbrains.plugins.javaFX
 org.jetbrains.plugins.less
 org.jetbrains.plugins.sass
 org.jetbrains.plugins.stylus
+org.jetbrains.plugins.terminal
+org.jetbrains.plugins.vue
 org.jetbrains.plugins.yaml
 org.jetbrains.settingsRepository
 spy-js
 tanvd.grazi
 training
+training.git
 tslint
