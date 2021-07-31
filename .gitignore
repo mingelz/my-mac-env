@@ -6,19 +6,8 @@ Desktop.ini
 # IDE
 .idea/
 .vscode/
-.project
 *.sw?
 
-# Dependency, Cache, Temporary
-node_modules/
-bower_components/
-.svn/
-.sass-cache/
-.nodejs-cache/
-npm-debug.log
-
-# Distribution
-coverage/
-dist/
-docs/
-*.iml
+# Distribution, Cache, Temporary
+*.log
+TODOs.md
