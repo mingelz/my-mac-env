@@ -269,7 +269,7 @@
     * [Android Studio](https://developer.android.com/studio/)
     * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     * [SourceTree](https://www.sourcetreeapp.com/)
-    * [Charles Proxy](http://www.charlesproxy.com/)
+    * [Charles Proxy](http://www.charlesproxy.com/)，商业软件，如果想用免费软件可以尝试 [whistle](https://github.com/avwo/whistle)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
     * [Postman](https://www.getpostman.com)
 * 小工具
@@ -279,6 +279,7 @@
     * [ImageAlpha](http://pngmini.com/)，压缩图片
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
+    * [Mos](https://github.com/Caldis/Mos)，鼠标增强，分别处理解控板和鼠标的滚动方向
     * [Vanilla](https://matthewpalmer.net/vanilla/)，隐藏菜单栏图标
     * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
     * [Shadowsock](https://shadowsocks.org/)
