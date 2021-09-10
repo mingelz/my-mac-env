@@ -279,7 +279,7 @@
     * [ImageAlpha](http://pngmini.com/)，压缩图片
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
-    * [Mos](https://github.com/Caldis/Mos)，鼠标增强，分别处理解控板和鼠标的滚动方向
+    * [Mos](https://github.com/Caldis/Mos)，鼠标增强，分别处理解控板和鼠标的滚动方向（如果用的罗技鼠标，建议选用官方的[Logi Options](https://www.logitech.com.cn/zh-cn/product/options)，功能更强一些）
     * [Vanilla](https://matthewpalmer.net/vanilla/)，隐藏菜单栏图标
     * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
     * [Shadowsock](https://shadowsocks.org/)
