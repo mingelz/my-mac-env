@@ -15,6 +15,12 @@
 [difftool "vimdiff"]
     # 默认的 diff.tool = vimdiff 会导致添加 -R (只读) 参数，所以需要专门指定一下 cmd
     cmd = "vimdiff $LOCAL $REMOTE"
+[merge]
+    # merge 时只允许 Fast Forward 方式处理，否则建议使用 rebase
+    #ff = only
+[status]
+    # 未 git add 的目录，也显式列出其下的所有文件
+    showUntrackedFiles = all
 [pager]
     # 从 git@2.16 开始 branch 使用 less 显示信息，不太习惯，改为传统方式
     branch = false
@@ -28,6 +34,7 @@
     di = difftool
     # diff 最后一次提交的内容
     dl = "!f() { rev=${1-HEAD}; git difftool $rev^ $rev; }; f"
+    fc = fetch -p
     mg = merge
     st = status
     # http://git-scm.com/docs/git-log
@@ -37,4 +44,12 @@
     la = lg --all -n500
     # 添加 --rebase 参数，在 merge 的时候不会分叉
     pr = pull --rebase
+    # 撤销 commit 但保留暂存记录
+    # HEAD是指向当前版本的指针，HEAD^指向上个版本，HEAD^^指向上上个版本，注意还有HEAD~，可以自行搜索详细讲解
+    # --soft保留修改及暂存记录，--mixed保留修改但取消暂存，--hard删除修改完全恢复文件
+    undo = reset --soft HEAD^
+    # 统计有哪些人提交过，及每人提交次数
     who = shortlog -sn
+    # 统计每人提交行数
+    cnt = "!f() { printf \"     total        add        del author\\n%s\\n\" \"--------------------------------------------\"; git log --no-merges --pretty=format:%an --numstat | awk '/./ && !author { author = $0; next } author { ins[author] += $1; del[author] += $2 } /^$/ { author = \"\"; next } END { for (a in ins) { printf \"%10d %10d %10d %s\\n\", ins[a] - del[a], ins[a], del[a], a } }' | sort -rn; }; f"
+
