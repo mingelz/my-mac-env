@@ -222,11 +222,11 @@
     * Keynote
 * [Manico](https://manico.im/)
 * [Microsoft OneNote](https://www.onenote.com)
-* [MWeb](https://zh.mweb.im/)
 * [Pocket](https://getpocket.com/)
 * [QQ](http://im.qq.com/macqq/)
-* QR Journal
+* QR Capture
 * QR Creator Mini
+* QR Journal
 * QSpace
 * [Reeder](http://reederapp.com/)
 * [The Unarchiver](http://theunarchiver.com/)
@@ -254,7 +254,7 @@
     * [IINA](https://iina.io/)，华人开发的开源免费播放器
     * [Steam](https://www.steampowered.com/)
 * 生产力
-    * [Alfred](https://www.alfredapp.com/)
+    * [Alfred](https://www.alfredapp.com/)，竞品有 [Raycast](https://www.raycast.com/)，及国人开发的 [uTools](http://www.u.tools/)
     * [Mubu](https://mubu.com)
     * [Sketch](https://www.sketchapp.com/)
     * Adobe Photoshop
@@ -281,14 +281,15 @@
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
     * [Mos](https://github.com/Caldis/Mos)，鼠标增强，分别处理解控板和鼠标的滚动方向（如果用的罗技鼠标，建议选用官方的[Logi Options](https://www.logitech.com.cn/zh-cn/product/options)，功能更强一些）
     * [Vanilla](https://matthewpalmer.net/vanilla/)，隐藏菜单栏图标
-    * [BetterTouchTool](http://bettertouchtool.net/)，触控板增强
-    * [Shadowsock](https://shadowsocks.org/)
+    * [BetterTouchTool](https://folivora.ai/)，触控板增强
+    * [Better And Better](https://www.better365.cn/bab2.html)，国人开发的触控板增强
+    * [Shadowsock](https://shadowsocks.org/), [ClashX](https://github.com/yichengchen/clashX)
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具
     * [https://www.irradiatedsoftware.com](https://www.irradiatedsoftware.com)，一个生产各种 Mac 小工具的开发商
 
 ### 4.3 命令行安装
 
-个人建议不使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
+个人不喜欢使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
 
 **brew 依赖 Xcode，且安装 brew 前要先执行 `xcode-select --install` 安装 Command Line Tools**
 
@@ -300,8 +301,11 @@
     * tree
     * ~~wget~~ (use curl)
     * [Android File Transfer](https://www.android.com/filetransfer/)
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-* [autojump](https://github.com/wting/autojump)，软件本身是支持 Python@ 和 @3 的，但 brew 上的 autojump 被配置为强制依赖 Python@3.9，而 macOS 最新版自带的是 Python@2.7.16 和 Python@3.8.2，为了不至于再安装第3个 Python，我没有使用 brew 装，而是按照 autojump 官网文档安装的。
+* [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+    * omz 的插件建议放在 omz 安装目录下的 `custom/plugins` 中，一般为 `~/.oh-my-zsh/custom/plugins`
+    * 语法高亮插件 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)
+    * 命令补全插件 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+* [autojump](https://github.com/wting/autojump)，软件本身是支持 Python@2 和 @3 的，但 brew 上的 autojump 被配置为强制依赖 Python@3 最新版，而 macOS 自带的 Python 无法达到要求，因为目前我对 Python 无诉求，所以没有使用 brew 装，而是按照 autojump 官网文档安装的。
     * 建议将 autojump 装在 `~/.autojump/autojump` 中
 
 ### 4.4 软件配置
@@ -328,9 +332,12 @@
         * General
             * Working Directory
                 * 【选中】Reuse previous session's directory
-        * Color
+        * Colors
             * Cursor Colors
                 * 【选中】Cursor guide
+            * Color Presets
+                * 【选中】Solarized Dark
+                    * 这个本色下目录颜色有些浅，可以通过修改 Cyan 的 Bright 颜色来解决
         * Text
             * Font
                 * Monaco, Regular, 18pt
@@ -446,7 +453,7 @@
         * Markdown
         * Properties
         * Shell Script
-        * Lombok (built-in at v2020.3)
+        * Lombok (built-in since v2020.3)
         * Git
         * EditorConfig
         * IntelliLang
@@ -463,9 +470,9 @@
         * GitToolBox: 在编辑器中实时显示行级 Git 信息，与 VSCode 的 GitLens 插件功能类似
         * GsonFormat: 根据 JSON 生成 Bean
         * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
-        * Lombok: 使用注解完成 Getter/Setter，省略大量代码的同时，也降低了后期维护成本
+        * Lombok: 使用注解完成 Getter/Setter，省略大量代码的同时，也降低了后期维护成本，最新的 IDEA 已经内置了此插件，就不用额外装了
         * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
-        * MyBatisCodeHelperPro: 更强大的 mybatis 插件，如果上收费版，那就更强了
+        * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版
         * Rainbow Brackets: 彩虹括号，方便肉眼匹配
         * SpotBugs: 可以分析出当前项目或文件中潜在的问题
         * String Manipulation: 各种字符串转换

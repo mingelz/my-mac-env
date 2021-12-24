@@ -30,13 +30,15 @@
     cim = commit -m
     cin = commit --no-verify -m
     cl = clone
+    cn = checkout -b
     co = checkout
+    cp = cherry-pick
     di = difftool
     # diff 最后一次提交的内容
     dl = "!f() { rev=${1-HEAD}; git difftool $rev^ $rev; }; f"
     fc = fetch -p
     mg = merge
-    sh = stash
+    sl = stash list
     sv = stash save -u
     st = status
     # http://git-scm.com/docs/git-log
@@ -49,7 +51,7 @@
     # 撤销 commit 但保留暂存记录
     # HEAD是指向当前版本的指针，HEAD^指向上个版本，HEAD^^指向上上个版本，注意还有HEAD~，可以自行搜索详细讲解
     # --soft保留修改及暂存记录，--mixed保留修改但取消暂存，--hard删除修改完全恢复文件
-    undo = reset --soft HEAD^
+    undo = reset --mixed HEAD^
     # 统计有哪些人提交过，及每人提交次数
     who = shortlog -sn
     # 统计每人提交行数
