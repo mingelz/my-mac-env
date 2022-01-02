@@ -62,6 +62,7 @@ com.intellij.microservices.ui
 com.intellij.properties.bundle.editor
 com.intellij.quarkus
 com.intellij.reactivestreams
+com.intellij.searcheverywhere.ml
 com.intellij.spring.batch
 com.intellij.spring.data
 com.intellij.spring.integration
@@ -81,7 +82,9 @@ com.intellij.velocity
 com.jetbrains.changeReminder
 com.jetbrains.codeWithMe
 com.jetbrains.filePrediction
+com.jetbrains.gateway
 com.jetbrains.jax.ws
+com.jetbrains.packagesearch.intellij-plugin
 com.jetbrains.performancePlugin
 com.jetbrains.plugins.webDeployment
 com.jetbrains.restClient
@@ -99,6 +102,7 @@ intellij.webp
 org.coffeescript
 org.intellij.grails
 org.intellij.groovy
+org.intellij.qodana
 org.jetbrains.android
 org.jetbrains.debugger.streams
 org.jetbrains.idea.eclipse

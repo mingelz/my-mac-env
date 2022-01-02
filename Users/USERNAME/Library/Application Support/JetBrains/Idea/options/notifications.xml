@@ -1,6 +1,8 @@
 <application>
   <!-- 提示信息 [Appearence & Behavior/Notifications] -->
   <component name="NotificationConfiguration">
+    <!-- 不提示本地化语言插件推荐 -->
+    <notification groupId="Language Plugins Notifications" displayType="NONE" shouldLog="false" />
     <!-- 不提示插件推荐 -->
     <notification groupId="Plugins Suggestion" displayType="NONE" shouldLog="false" />
   </component>

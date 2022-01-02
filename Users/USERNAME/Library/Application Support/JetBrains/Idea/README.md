@@ -22,7 +22,11 @@
     * Java
       * Serialization issues
         * [x] Non-serializable class with 'serialVersionUID'
-        * [x] Serializable class without 'serialVersionUID'
+        * [x] Serializable non-static inner class without 'serialVersionUID'
+  * File Encodings
+    * Properties Files (*.properties)
+      * Default encoding for properties files: `UTF-8`
+      * [x] Transparent native-to-ascii conversion
 * Version Control
   * Commit
     * [x] Clear initial commit message
@@ -44,5 +48,5 @@
 
 ### 插件
 
-+ `disabled_plugins.txt` 中即被禁用的插件项，可通过复制此文件达到直接禁用的效果。
++ `disabled_plugins.txt` 是被禁用的插件项，可通过复制此文件达到直接禁用的效果。
 + 对于 IdeaVim 插件，除了 `options/vim_settings.xml` 外，注意还有家目录下的 `.ideavimrc`

@@ -3,10 +3,6 @@
     <!-- 自动 import 无歧义的类 [Editor/General/Auto Import/Java/Add unambiguous imports on the fly] -->
     <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
   </component>
-  <component name="DefaultFont">
-    <!-- 默认的编辑器字体大小 [Editor/Font/Size] -->
-    <option name="FONT_SIZE" value="18" />
-  </component>
   <component name="EditorSettings">
     <!-- 保存文件时，保留光标所在行的末尾空白字符 [Editor/General/On Save/Keep trailing spaces on caret line] -->
     <option name="KEEP_TRAILING_SPACE_ON_CARET_LINE" value="false" />
