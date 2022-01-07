@@ -48,6 +48,7 @@ com.intellij.javaee
 com.intellij.javaee.app.servers.integration
 com.intellij.javaee.batch
 com.intellij.javaee.ejb
+com.intellij.javaee.el
 com.intellij.javaee.extensions
 com.intellij.javaee.jpa
 com.intellij.javaee.web

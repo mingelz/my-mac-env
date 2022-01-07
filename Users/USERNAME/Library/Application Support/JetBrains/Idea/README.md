@@ -22,7 +22,8 @@
     * Java
       * Serialization issues
         * [x] Non-serializable class with 'serialVersionUID'
-        * [x] Serializable non-static inner class without 'serialVersionUID'
+    * JVM languages
+      * [x] Serializable class without 'serialVersionUID'
   * File Encodings
     * Properties Files (*.properties)
       * Default encoding for properties files: `UTF-8`
