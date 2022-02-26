@@ -306,7 +306,9 @@
 
 个人不喜欢使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
 
-**brew 依赖 Xcode，且安装 brew 前要先执行 `xcode-select --install` 安装 Command Line Tools**
+> **注意**
+> 1. **brew 依赖 Xcode，且安装 brew 前要先执行 `xcode-select --install` 安装 Command Line Tools**
+> 2. **x86与M1版本安装路径不同**
 
 * [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
     * ~~git~~ (installed with Xcode)
@@ -369,19 +371,9 @@
         * iTerm2
             * Make iTerm2 Default Term
 * Karabiner-Elements
-    * Simple Modifications
-        * caps_lock -> left_control
-        * left_control -> caps_lock
-    * Complex Modifications
-        * Change caps_lock to command+control+option+shift.
-        * Ctrl+p/Ctrl+n to arrow up/down
-        * Left ctrl + hjkl to arrow keys Vim
-        * Command + Esc to Command + Tilda
-        * Shift + Esc to ~
+    * 复制 `my-mac-env/Users/USERNAME/.config/karabiner` 目录下的文件
 * Rectangle
-    * 最大化 => Control+Options+Shift+Command+X
-    * 恢复 => Control+Options+Shift+Command+Z
-    * 下一个显示器 => Control+Options+Shift+Command+M
+    * 导入 `my-mac-env/Users/USERNAME/backup/rectangle-config.json`
 * 百度输入法
     * 同步
         * 登录账号，以下配置可在登录账号后通过「下载配置」直接应用
@@ -395,7 +387,7 @@
         * 【取消勾选】开启五笔调频
     * 词库
         * 删除所有分类词库
-        * 删除默认个性短语，重新导入
+        * 删除默认个性短语，重新导入 `my-mac-env/Users/USERNAME/backup/baidu-ime-phrase.txt`
     * QuickTip
         * 仅保留「表情/符号」
     * 高级
@@ -404,8 +396,8 @@
 * MacVim
     * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
         * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
-    * 复制 `my-mac-env/Users/USERNAME/.vim` 目录
     * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
+    * 复制 `my-mac-env/Users/USERNAME/.vim` 目录
     * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
     * 偏好设置
         * General
@@ -494,6 +486,41 @@
         * SpotBugs: 可以分析出当前项目或文件中潜在的问题
         * String Manipulation: 各种字符串转换
         * Vue.js: 只在 Ultimate 版才提供，支持 Vue.js 的语法规则
+* Alfred
+    * General
+        * Alfred Hotkey: Command + Space
+    * Features
+        * Default Results
+            * Essentials: 只选 Preferences
+            * Fallbacks: 设置兜底搜索 Setup fallback results
+        * File Search
+            * Navigation
+                * Previous Path: 取消快捷键，这个功能不太用的上
+        * Universal Actions
+            * General
+                * Selection Hotkey: 取消快捷键，这个功能不太用的上
+        * Web Search
+            * 【勾选】Only show enabled searches
+            * 根据需要自行配置
+        * Web Bookmarks
+            * Sources: 勾选需要查询收藏夹的浏览器
+        * Clipboard History
+            * History
+                * Clipboard History: 勾选文本和图片，有效期都是24小时
+                * Viewer Hotkey: Control + Command + C
+        * Snippets
+            * 根据需要自行配置
+        * Contacts
+            * Contacts
+                * 【取消勾选】Open Contacts in Alfred
+            * Email
+                * 【取消勾选】Email a contact
+        * Music
+            * General
+                * Mini Player: 取消快捷键，取消 Keyword
+        * Terminal
+            * Application
+                * 选择 Custom，将应用名从 `Terminal` 换成 `iTerm2`
 * Nginx
     * 复制 `my-mac-env/usr/local/etc/nginx` 目录
     * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
