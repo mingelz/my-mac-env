@@ -1,1 +1,2 @@
-registry=http://registry.npm.taobao.org
+registry=https://registry.npmmirror.com
+disturl=https://npmmirror.com/mirrors/node
