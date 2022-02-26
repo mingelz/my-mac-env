@@ -22,6 +22,7 @@ mkdir ~/.vim/undo
 # HOME - shell
 rm -rf ~/.bash_sessions
 rm -rf ~/.bash_history
+rm -rf ~/.zsh_sessions
 rm -rf ~/.zsh_history
 rm -rf ~/.zcompdump-*
 
@@ -37,8 +38,6 @@ rm -rf ~/.?npm_tmp
 rm -rf ~/.v8flags*
 
 # HOME - misc
-rm -rf ~/.VSCodeVim
 rm -rf ~/.oracle_jre_usage
 rm -rf ~/.subversion
 rm -rf ~/.cache
-# rm -rf ~/.config
