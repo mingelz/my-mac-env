@@ -38,10 +38,16 @@
   * Build Tools
     * Maven
       * [x] Always update snapshots
+  * Compiler
+    * Annotation Processors
+      * [x] Enable annotation processing
 * Languages & Frameworks
   * Spring
     * Common
       * [x] Allow to auto-configure application contexts
+  * SQL Dialects
+    * Global SQL Dialect: `MySQL`
+    * Project SQL Dialect: `MySQL`
 
 ### 快捷键
 

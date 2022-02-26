@@ -5,6 +5,7 @@
 ## 一、制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
+    * [macOS Monterey 12.2](https://apps.apple.com/cn/app/macos-monterey/id1576738294)
     * [macOS Big Sur 11.4](https://apps.apple.com/cn/app/macos-big-sur/id1526878132)
     * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314)
 * 从 10.14 开始系统安装从 App Store 转到 「系统偏好设置」-「软件更新」中了，点击【现在升级】即可
@@ -22,12 +23,13 @@
     * 点击「抹掉」
 * 创建安装盘
     * 通过 Spotlight 或 Launchpad 启动「终端」
-    * 刚才下载的 macOS 会放在 `/Applications` 目录下，假设文件名为 `Install macOS Catalina.app`
-    * 执行：`sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+    * 刚才下载的 macOS 会放在 `/Applications` 目录下，假设文件名为 `Install macOS Monterey.app`
+    * 执行：`sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
         * 如果 macOS 小于 10.14，还需要追加 `--applicationpath /Applications/Install\ macOS\ Catalina.app` 参数
-    * 之后会给出提示并需要确认，然后开始制作安装盘
-        * 在 `Copying installer files to disk...` 这一步要多等一会儿（和电脑及U盘性能有关，耗时约 30 ~ 70 分钟）
-        * 最后会提示 `Copy complete. Done` 表示制作完成
+    * 之后会给出提示并输入【Y】确认，然后开始制作安装盘，分三步：
+        * 清空磁盘 `Erasing disk`，只需几秒
+        * 制作引导盘 `Making disk bootable`，需几分钟（貌似只在 MacOS 12 中见到了）
+        * 复制文件 `Copying to disk`，时间较长，约 30 ~ 70 分钟
 
 ### 1.2 制作光盘安装盘（ISO文件）
 
@@ -47,7 +49,7 @@
 
 ## 二、系统安装
 
-* 重启电脑并按住 option 键，在启动菜单中选择刚刚制作的U盘
+* Intel 版本重启电脑并按住 option 键，在启动菜单中选择刚刚制作的U盘；M1 版本关机后，长按开机键真到显示启动菜单
 * 建议整个安装过程联网，否则可能会提示「安装器有效负载签名检查失败」
 * 如果需要全新安装，在安装进程进行到「macOS 实用工具」时选择「磁盘工具」，抹掉硬盘上的内容（格式优先选择「APFS」）
 * 同样在「macOS 实用工具」选择「全新安装 macOS」开始安装系统
@@ -55,7 +57,7 @@
 
 ## 三、系统设置
 
-以下流程，基于 Big Sur 的设置界面排序，且在安装时已联网并登录 iCloud 账号，所以可能会缺少一些关于 iCloud 的配置细节。
+以下流程，基于 Monterey 的设置界面排序，且在安装时已联网并登录 iCloud 账号，所以可能会缺少一些关于 iCloud 的配置细节。
 
 ### 3.1 系统偏好设置
 
@@ -69,6 +71,7 @@
     * 程序坞与菜单栏
         * 调整 Dock 大小
         * 置于屏幕上的位置 =>【左边】。因为普遍屏幕比较宽，横向位置够用而纵向稀缺
+        * 【勾选】自动隐藏和显示程序坞
         * 【取消勾选】在程序坞中显示最近使用的应用程序
     * 电池
         * 【勾选】显示百分比
@@ -76,18 +79,23 @@
         * 【勾选】使用24小时格式时钟
 * Mission Control（调度中心）
     * 【取消勾选】根据最近的使用情况自动重新排列 Space
+    * 触发角
+        * 目前用不到还容易误触，先都取消吧
 * Siri
     * 【取消勾选】启用“询问Siri”
     * 【取消勾选】在菜单栏中显示 Siri
 * Spotlight（聚焦）
 * 语言和地区
     * 时间格式 => 【24小时制】
-* 通知
+* 通知与专注模式
+    * 允许通知
+        * 【取消勾选】当屏幕锁定时
 * 互联网账户
     * iCloud
         * 【勾选】除「照片」与「股市」外的其他项
         * iCloud云盘：选项
             * 仅勾选需要的 App
+* 密码
 * 用户与群组
     * 【停用】客人用户
     * 登录项 =>【删除】无用的登录项目
@@ -109,12 +117,11 @@
 * 网络
     * 除「Wi-Fi」外，【停用】其他的连接方式（默认还有「蓝牙 PAN」和「Thunderbolt 网桥」）
 * 蓝牙
-    * 【勾选】在菜单栏中显示蓝牙
 * 声音
-    * 【勾选】在菜单栏中显示音量
+* 解控ID
 * 键盘
     * 键盘
-        * 【勾选】将 F1、F2等键用作标准功能键
+        * 【勾选】将 F1、F2等键用作标准功能键（个人喜好）
         * 按下Fn键时 => 不执行任何操作
         * 修饰键
             * 中/英键（大写锁定键） => 【Control】 （个人喜好，请慎重选择）
@@ -128,23 +135,28 @@
     * 听写
         * 快捷键 => 关闭
 * 触控板
-    * 全部勾选
     * 光标与点按
         * 查询与数据检测器 => 【三指轻点】
+        * 【勾选】轻点来点按 => 【单指轻点】
     * 更多手势
         * 【取消勾选】在页面之间轻扫
 * 鼠标
 * 显示器
     * Night Shift（夜览）
         * 设定时间 => 日落到日出
+* 打印机与扫描仪
 * Sidecar（随航）
 * 电池
 * 日期与时间
 * 共享
     * 修改【电脑名称】（点【编辑】进行修改）
+* 时间机器
+* 启动磁盘
 * Apple ID
     * 媒体与购买项目
+        * 【勾选】使用触控ID购物
         * 免费下载 => 【始终不需要】
+* 家人共享
 
 ### 3.2 Finder 偏好设置
 
@@ -165,7 +177,10 @@
             * iCloud Drive（iCloud 云盘）
         * 位置
             * 当前电脑名
+            * 硬盘（保持部分勾选不要动）
             * 外置磁盘
+            * CD、DVD 和 iOS 设备
+            * 云端存储空间
 * 高级
     * 【勾选】显示所有文件的扩展名
     * 将以下位置的文件夹保持在顶部：
@@ -376,9 +391,11 @@
     * 按键
         * 翻页按键：只勾选「减号等号」
         * 切换按键：取消所有勾选
+    * 五笔
+        * 【取消勾选】开启五笔调频
     * 词库
         * 删除所有分类词库
-        * 关闭个性短语
+        * 删除默认个性短语，重新导入
     * QuickTip
         * 仅保留「表情/符号」
     * 高级

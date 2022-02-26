@@ -2,7 +2,6 @@
   <!-- 列号辅助线位置 [Editor/Code Style/General/Visual guides] -->
   <option name="SOFT_MARGINS" value="80,120" />
 
-  <!-- 以下是我写 Javascript 时的习惯，暂时不带到 Java 中 -->
   <codeStyleSettings language="JAVA">
     <!-- 行注释从行首开始，false 则从第一个非空位置开始 [Editor/Code Style/Java/Code Generation/Comment Code/Line comment at first column] -->
     <!-- <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" /> -->
@@ -18,5 +17,9 @@
     <!-- <option name="CATCH_ON_NEW_LINE" value="true" /> -->
     <!-- finally 前换行 [Editor/Code Style/Java/Wrapping and Braces/'try' statement/'finally' on new line] -->
     <!-- <option name="FINALLY_ON_NEW_LINE" value="true" /> -->
+    <!-- 方法定义参数过多时换行，且每个参数一行 [Editor/Code Style/Java/Wrapping and Braces/Method declaration parameters/Chop down if long] -->
+    <!-- <option name="METHOD_PARAMETERS_WRAP" value="5" /> -->
+    <!-- 链式调用过多时换行，且每个链一行 [Editor/Code Style/Java/Wrapping and Braces/Chained method calls/Chop down if long] -->
+    <!-- <option name="METHOD_CALL_CHAIN_WRAP" value="5" /> -->
   </codeStyleSettings>
 </code_scheme>

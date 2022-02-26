@@ -72,7 +72,14 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump brew)
+plugins=(
+  autojump
+  brew
+  copyfile
+  copypath
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
 # Plugin Settings
 #VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
