@@ -5,8 +5,8 @@
 ## 一、制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
-    * [macOS Monterey 12.2](https://apps.apple.com/cn/app/macos-monterey/id1576738294)
-    * [macOS Big Sur 11.4](https://apps.apple.com/cn/app/macos-big-sur/id1526878132)
+    * [macOS Monterey 12](https://apps.apple.com/cn/app/macos-monterey/id1576738294)
+    * [macOS Big Sur 11](https://apps.apple.com/cn/app/macos-big-sur/id1526878132)
     * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314)
 * 从 10.14 开始系统安装从 App Store 转到 「系统偏好设置」-「软件更新」中了，点击【现在升级】即可
 * 下载完成后，会弹出安装提示，不要理会。可以点击状态栏左上角「安装 macOS」-「退出安装 macOS」关闭安装
@@ -49,7 +49,7 @@
 
 ## 二、系统安装
 
-* Intel 版本重启电脑并按住 option 键，在启动菜单中选择刚刚制作的U盘；M1 版本关机后，长按开机键真到显示启动菜单
+* Intel 版本重启电脑并按住 option 键，在启动菜单中选择刚刚制作的U盘；M1 版本关机后，长按开机键直到显示启动菜单
 * 建议整个安装过程联网，否则可能会提示「安装器有效负载签名检查失败」
 * 如果需要全新安装，在安装进程进行到「macOS 实用工具」时选择「磁盘工具」，抹掉硬盘上的内容（格式优先选择「APFS」）
 * 同样在「macOS 实用工具」选择「全新安装 macOS」开始安装系统
@@ -121,8 +121,8 @@
 * 解控ID
 * 键盘
     * 键盘
+        * 按下Fn键时 => 不执行任何操作。我在输入法中将Fn设置为切换临时拼音，所以就不需要这个键切输入法了
         * 【勾选】将 F1、F2等键用作标准功能键（个人喜好）
-        * 按下Fn键时 => 不执行任何操作
         * 修饰键
             * 中/英键（大写锁定键） => 【Control】 （个人喜好，请慎重选择）
     * 文本
@@ -130,8 +130,10 @@
         * 【取消勾选】自动大写字词的首字母
         * 【取消勾选】连按两下空格键插入句号
     * 快捷键
-        * 根据自己的喜好做修改，我基本取消了所有勾选项，仅保留「选择上一个输入法」、「反转颜色」两项
-        * 可以将 反转颜色 设置为 【⌘Q】。这样当在某些 App 中不小心按了 ⌘Q 时就不至于直接退出应用
+        * 根据自己的喜好做修改，我基本取消了所有勾选项，仅保留：
+            * 键盘 - 将焦点移到新窗口：【Command+`】
+            * 输入法 - 选择上一个输入法: 【Option+空格】。因为我把 Control 键移到了 Caps_lock 键上，导致原来的快捷键切输入法不方便
+            * 辅助功能 - 反转颜色：【Command+Q】。这样当在某些 App 中不小心按了 ⌘Q 时就不至于直接退出应用
     * 听写
         * 快捷键 => 关闭
 * 触控板
@@ -296,6 +298,7 @@
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
     * [Mos](https://github.com/Caldis/Mos)，鼠标增强，分别处理解控板和鼠标的滚动方向（如果用的罗技鼠标，建议选用官方的[Logi Options](https://www.logitech.com.cn/zh-cn/product/options)，功能更强一些）
     * [Vanilla](https://matthewpalmer.net/vanilla/)，隐藏菜单栏图标
+    * [Shottr](https://shottr.cc/)，截屏工具，目前是免费的
     * [BetterTouchTool](https://folivora.ai/)，触控板增强
     * [Better And Better](https://www.better365.cn/bab2.html)，国人开发的触控板增强
     * [Shadowsock](https://shadowsocks.org/), [ClashX](https://github.com/yichengchen/clashX)
@@ -324,6 +327,7 @@
     * 命令补全插件 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * [autojump](https://github.com/wting/autojump)，软件本身是支持 Python@2 和 @3 的，但 brew 上的 autojump 被配置为强制依赖 Python@3 最新版，而 macOS 自带的 Python 无法达到要求，因为目前我对 Python 无诉求，所以没有使用 brew 装，而是按照 autojump 官网文档安装的。
     * 建议将 autojump 装在 `~/.autojump/autojump` 中
+    * 从 MacOS 12.3 开始系统不再提供 python@2，只保留 `python3` 命令，所以需要编辑 `~/.autojump/bin/autojump` 文件，将 shebang 中的 `python` 修改为 `python3`
 
 ### 4.4 软件配置
 
@@ -498,6 +502,7 @@
                 * Previous Path: 取消快捷键，这个功能不太用的上
         * Universal Actions
             * General
+                * Show Actions: 只保留向右箭头
                 * Selection Hotkey: 取消快捷键，这个功能不太用的上
         * Web Search
             * 【勾选】Only show enabled searches
@@ -521,6 +526,9 @@
         * Terminal
             * Application
                 * 选择 Custom，将应用名从 `Terminal` 换成 `iTerm2`
+    * Apperance
+        * 左下角 Options
+            * Show Alfred on: active screen 在活动窗口中唤出 alfred，当使用外接屏幕时比较有用
 * Nginx
     * 复制 `my-mac-env/usr/local/etc/nginx` 目录
     * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
