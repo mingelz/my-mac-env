@@ -11,13 +11,21 @@ My Mac Environment
 |
 |-- Users/
 |   |-- USERNAME/ ($HOME)
+|       |-- backup
+|       |   |-- baidu-ime-pharse.txt
+|       |   |-- rectangle-config.json
 |       |-- Library
-|           |-- Application Support
-|               |-- Code
-|                   |-- User
-|                       |-- settings.json
+|       |   |-- Application Support
+|       |       |-- Code
+|       |       |   |-- User
+|       |       |       |-- keybindings.json
+|       |       |       |-- settings.json
+|       |       |-- JetBrains
+|       |           |-- Idea
+|       |               |-- README.md
 |       |-- .atom/
 |       |-- .bash_profile
+|       |-- .config
 |       |-- .gemrc
 |       |-- .gitconfig
 |       |-- .npmrc
@@ -35,7 +43,7 @@ My Mac Environment
 |           |-- nginx/
 |               |-- gen-ssl-csr.sh
 |               |-- nginx.conf
+|-- setup.md
 |-- .editorconfig
 |-- .gitignore
-|-- setup.md
 ```
