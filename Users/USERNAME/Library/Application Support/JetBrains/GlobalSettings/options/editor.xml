@@ -3,16 +3,21 @@
     <!-- 自动 import 无歧义的类 [Editor/General/Auto Import/Java/Add unambiguous imports on the fly] -->
     <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
   </component>
+
   <component name="EditorSettings">
     <!-- 保存文件时，保留光标所在行的末尾空白字符 [Editor/General/On Save/Keep trailing spaces on caret line] -->
     <option name="KEEP_TRAILING_SPACE_ON_CARET_LINE" value="false" />
+
     <!-- 保存文件时，移除文件末尾多余的空行 [Editor/General/On Save/Remove trailing blank lines at the end of saved files] -->
     <option name="REMOVE_TRAILING_BLANK_LINES" value="true" />
+
     <!-- 保存文件时，文件末尾要有一个换行 [Editor/General/On Save/Ensure every saved file ends with a line break] -->
     <option name="IS_ENSURE_NEWLINE_AT_EOF" value="true" />
+
     <!-- 展示空白字符 [Editor/General/Appearance/Show whitespaces] -->
     <option name="IS_WHITESPACES_SHOWN" value="true" />
   </component>
+
   <!-- TODO 关键字高亮正则 [Editor/TODO/Patterns]-->
   <component name="TodoConfiguration">
     <pattern pattern="\b(todo|fixme)\b.*" />

@@ -1,10 +1,13 @@
 <keymap version="1" name="macOS-mz" parent="Mac OS X 10.5+">
+  <!-- 将标签移动到另一窗口组 [Keymap/Move To Opposite Group] -->
   <action id="MoveEditorToOppositeTabGroup">
     <keyboard-shortcut first-keystroke="alt m" />
   </action>
+  <!-- 在右侧新建窗口组并将标签移动过去 [Keymap/Split and Move Right] -->
   <action id="MoveTabRight">
     <keyboard-shortcut first-keystroke="alt l" />
   </action>
+  <!-- 将标签在另一窗口组打开（原窗口组中的保留） [Keymap/Open In Opposite Group] -->
   <action id="OpenEditorInOppositeTabGroup">
     <keyboard-shortcut first-keystroke="alt o" />
   </action>

@@ -2,9 +2,11 @@
   <component name="GeneralSettings">
     <!-- 自动保存文件 [Appearance & Behavior/System Settings/Autosave/Save files when switching to a different application] -->
     <option name="autoSaveFiles" value="false" />
+
     <!-- 修改前备份文件 [Appearance & Behavior/System Settings/Autosave/Back up files before saving] -->
     <option name="useSafeWrite" value="false" />
-    <!-- 通过 Open Recent 打开项目时，不提示使用新窗口或 Tab 打开 [未在配置中体现]-->
+
+    <!-- 使用新窗口打开项目 [Appearance & Behavior/System Settings/Project/Open project in: New window]-->
     <option name="confirmOpenNewProject2" value="0" />
   </component>
 </application>

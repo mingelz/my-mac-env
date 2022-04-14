@@ -460,7 +460,8 @@
         * Maven
         * Maven Extension (Ultimate only)
         * Database Tools and SQL (Ultimate only)
-        * Java SQL Libraries (Ultimate only)
+        * AOP Pointcut Language
+        * JVM Microservices Frameworks
         * Spring (Ultimate only)
         * Spring Boot (Ultimate only)
         * Markdown
@@ -472,6 +473,7 @@
         * IntelliLang
         * Java Bytecode Decompiler
         * Java Internationalization
+        * Shared Project Indexes
         * TextMate Bundles
     * 常用插件推荐：
         * .ignore: 高亮 `.*ignore` 文件、在文件列表中隐藏/显示 ignore 文件等

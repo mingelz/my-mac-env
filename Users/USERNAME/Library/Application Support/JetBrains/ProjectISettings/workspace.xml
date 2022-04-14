@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CodeInsightWorkspaceSettings">
+    <!-- 自动 import 时优化引用类 [Editor/General/Auto Import/Java/Optimize imports on the fly] -->
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <!-- 始终更新 SNAPSHOT 包 [Build, Execution, Deployment/Build Tools/Maven/Always update snapshots] -->
+        <option name="alwaysUpdateSnapshots" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+
+  <component name="ProjectLevelVcsManager">
+    <!-- 新增文件时不自动提交 [Version Control/Confirmation/When files are created] -->
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+
+  <component name="SpringGeneralSettings">
+    <!-- 自动配置 Spring [Languages & Frameworks/Spring/Common/Allow to auto-configure] -->
+    <option name="allowAutoConfigurationMode" value="true" />
+  </component>
+
+  <component name="VcsManagerConfiguration">
+    <!-- 不允许提交空信息 [Version Control/Commit/Force non-empty commit comments] -->
+    <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
+
+    <!-- 清空上一次的提交信息 [Version Control/Commit/Clear initial commit message] -->
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-defaults>
+        <!-- 断点仅应用到线程级 [Breakpoints/Java Exception Breakpoints/Suspend] -->
+        <breakpoint suspend="THREAD" type="java-exception" />
+        <!-- 断点仅应用到线程级 [Breakpoints/Java Line Breakpoints/Suspend] -->
+        <breakpoint suspend="THREAD" type="java-line" />
+      </breakpoints-defaults>
+    </breakpoint-manager>
+  </component>
+</project>

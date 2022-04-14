@@ -5,20 +5,28 @@
   <codeStyleSettings language="JAVA">
     <!-- 行注释从行首开始，false 则从第一个非空位置开始 [Editor/Code Style/Java/Code Generation/Comment Code/Line comment at first column] -->
     <!-- <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" /> -->
-    <!-- 行注释 // 后跟一个空格 [Editor/Code Style/Java/Code Generation/Comment Code/Add a space at comment start] -->
+
+    <!-- 行注释 // 后跟一个空格 [Editor/Code Style/Java/Code Generation/Comment Code/Add a space at line comment start] -->
     <!-- <option name="LINE_COMMENT_ADD_SPACE" value="true" /> -->
+
     <!-- 块注释从行首开始，false 则从第一个非空位置开始 [Editor/Code Style/Java/Code Generation/Comment Code/Block comment at first column] -->
     <!-- <option name="BLOCK_COMMENT_AT_FIRST_COLUMN" value="false" /> -->
+
     <!-- else 前换行 [Editor/Code Style/Java/Wrapping and Braces/'if()' statement/'else' on new line] -->
     <!-- <option name="ELSE_ON_NEW_LINE" value="true" /> -->
+
     <!-- while 前换行 [Editor/Code Style/Java/Wrapping and Braces/'do ... while()' statement/'while' on new line] -->
     <!-- <option name="WHILE_ON_NEW_LINE" value="true" /> -->
+
     <!-- catch 前换行 [Editor/Code Style/Java/Wrapping and Braces/'try' statement/'catch' on new line] -->
     <!-- <option name="CATCH_ON_NEW_LINE" value="true" /> -->
+
     <!-- finally 前换行 [Editor/Code Style/Java/Wrapping and Braces/'try' statement/'finally' on new line] -->
     <!-- <option name="FINALLY_ON_NEW_LINE" value="true" /> -->
+
     <!-- 方法定义参数过多时换行，且每个参数一行 [Editor/Code Style/Java/Wrapping and Braces/Method declaration parameters/Chop down if long] -->
     <!-- <option name="METHOD_PARAMETERS_WRAP" value="5" /> -->
+
     <!-- 链式调用过多时换行，且每个链一行 [Editor/Code Style/Java/Wrapping and Braces/Chained method calls/Chop down if long] -->
     <!-- <option name="METHOD_CALL_CHAIN_WRAP" value="5" /> -->
   </codeStyleSettings>

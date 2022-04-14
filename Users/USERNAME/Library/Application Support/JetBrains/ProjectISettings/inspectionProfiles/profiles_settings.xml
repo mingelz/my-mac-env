@@ -1,0 +1,9 @@
+<component name="InspectionProjectProfileManager">
+  <!-- 项目 Inspection 配置 -->
+  <settings>
+    <!-- 将项目 Inspection 配置指向全局配置 [Editor/Inspections/Profile] -->
+    <option name="PROJECT_PROFILE" value="Default" />
+    <option name="USE_PROJECT_PROFILE" value="false" />
+    <version value="1.0" />
+  </settings>
+</component>
