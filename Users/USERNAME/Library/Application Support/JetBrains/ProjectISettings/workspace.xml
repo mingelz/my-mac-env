@@ -19,6 +19,16 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
 
+  <!-- Project窗口配置，点击右上角齿轮图标进行配置 -->
+  <component name="ProjectViewState">
+    <!-- 打平没文件的包 [Tree Appearance/Compact Middle Packages]-->
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <!-- 显示被 Git 排除的文件 [Tree Appearance/Show Excluded Files]-->
+    <option name="showExcludedFiles" value="false" />
+    <!-- 文件列表按类型排序（先按类型再按名称） [Tree Appearance/Sort by Type]-->
+    <option name="sortByType" value="true" />
+  </component>
+
   <component name="SpringGeneralSettings">
     <!-- 自动配置 Spring [Languages & Frameworks/Spring/Common/Allow to auto-configure] -->
     <option name="allowAutoConfigurationMode" value="true" />
