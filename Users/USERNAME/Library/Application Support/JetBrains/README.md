@@ -70,10 +70,10 @@
           * [x] 'finally' on new line _finally 前换行_
       * Code Generation
         * Comment Code
-          * [ ] Line comment at first column _行注释从行首开始还是第一个非空位置开始_
+          * [ ] Line comment at first column _行注释从行首开始，如果反选则从第一个非空位置开始_
           * [x] Add a space at line comment start _行注释后跟一个空格_
           * [x] Enforce on reformat _格式化代码时调整注释格式_
-          * [ ] Block comment at first column _块注释从行首开始还是第一个非空位置开始_
+          * [ ] Block comment at first column _块注释从行首开始，如果反选则从第一个非空位置开始_
   * File and Code Templates
     * Includes
       * File Header _文件头信息_
@@ -99,17 +99,13 @@
 ### 配置细则
 
 * Editor
-  * General
-    * Auto Import
-      * Java
-        * [x] Optimize imports on the fly _自动 import 时优化引用类_
   * Inspections
     * JVM languages
       * [x] Serializable class without 'serialVersionUID' _检查 serialVersionUID_
   * File Encodings
     * Properties Files (*.properties)
       * Default encoding for properties files: `UTF-8` _*.properties 文件编码_
-      * [x] Transparent native-to-ascii conversion _转换 UTF-8 字符为转义形式_
+      * [ ] Transparent native-to-ascii conversion _转换 UTF-8 字符为转义形式_
 * Version Control
   * Commit
     * [x] Clear initial commit message _清空上一次的提交信息_
@@ -135,3 +131,8 @@
     * Suspend: `Thread`
   * Java Exception Breakpoints
     * Suspend: `Thread`
+* Project Window _项目窗口配置，点击右上角齿轮图标进行配置_
+  * Tree Appearance
+    * [x] Compact Middle Packages
+    * [ ] Show Excluded Files
+    * [x] Sort by Type
