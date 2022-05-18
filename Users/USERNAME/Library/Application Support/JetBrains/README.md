@@ -96,6 +96,8 @@
 
 项目配置仅会应用在具体项目中，在 Idea 配置面板中会提示 **For new projects** 或 **For current project**， 相关配置备份在 `ProjectSettings` 中，可将其中的文件复制到项目根目录的 `.idea` 路径下。
 
+注意 `dictionaries` 目录下是项目级字典，文件名默认是登录用户的名字，复制后需要修改，同时也要修改文件中的 `name` 值。
+
 ### 配置细则
 
 * Editor
