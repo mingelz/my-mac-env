@@ -323,11 +323,9 @@
     * [Android File Transfer](https://www.android.com/filetransfer/)
 * [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
     * omz 的插件建议放在 omz 安装目录下的 `custom/plugins` 中，一般为 `~/.oh-my-zsh/custom/plugins`
+    * omz 自带的 z 插件可以完全代替 autojump，所以无需再额外安装 autojump 了，如果实在习惯用 `j` 命令，就加个指向 `z` 的 alias
     * 语法高亮插件 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)
     * 命令补全插件 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-* [autojump](https://github.com/wting/autojump)，软件本身是支持 Python@2 和 @3 的，但 brew 上的 autojump 被配置为强制依赖 Python@3 最新版，而 macOS 自带的 Python 无法达到要求，因为目前我对 Python 无诉求，所以没有使用 brew 装，而是按照 autojump 官网文档安装的。
-    * 建议将 autojump 装在 `~/.autojump/autojump` 中
-    * 从 MacOS 12.3 开始系统不再提供 python@2，只保留 `python3` 命令，所以需要编辑 `~/.autojump/bin/autojump` 文件，将 shebang 中的 `python` 修改为 `python3`
 
 ### 4.4 软件配置
 

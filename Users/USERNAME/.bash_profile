@@ -4,6 +4,7 @@ alias la="ls -AlhG"
 alias vimhuge="vim -u NONE -c 'set syntax=no filetype=text'"
 alias please='sudo `fc -nl -1`'
 alias cnpm="npm --registry=https://registry.npmmirror.com --cache=$HOME/.npm/.cache/cnpm --disturl=https://npmmirror.com/mirrors/node --userconfig=$HOME/.cnpmrc"
+alias j="z"
 
 # 默认 editor
 export EDITOR=vim
