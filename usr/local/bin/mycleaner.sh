@@ -11,7 +11,7 @@ sudo dot_clean -m /
 
 # app cache
 brew cleanup
-autojump --purge
+#autojump --purge
 
 # HOME - vim
 rm -rf ~/.viminfo
