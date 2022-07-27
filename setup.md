@@ -195,15 +195,19 @@
 
 ### 3.4 Safari 偏好设置
 
-* 工具栏
-    * 显示
-        * 【勾选】显示状态栏
+* 通用
+    * 【取消勾选】下载后打开「安全」文件
+* 标签页
+    * 标签页布局：紧凑
+* 扩展
+    * [Vimari](https://github.com/televator-apps/vimari)，VIM快捷键
 * 高级
     * 智能搜索栏
         * 【勾选】显示完整网站地址
     * 【勾选】在菜单栏中显示「开发」菜单
-* 扩展（MAS 里上架的很少，可在[官网](https://safari-extensions.apple.com/)搜索更多）
-    * [QRify](https://safari-extensions.apple.com/details/?id=de.retiolum.safari.qrify-RSADU6MKX9)
+* 工具栏
+    * 显示
+        * 【勾选】显示状态栏
 
 ### 3.5 Terminal 偏好设置
 
