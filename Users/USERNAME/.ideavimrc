@@ -12,11 +12,11 @@ set ignorecase    "搜索时忽略大小写 [ic=ignorecase]
 set incsearch    "搜索时实时定位到搜索位置 [is=incsearch]
 "set keymodel=continueselect,stopselect    "打开特殊的键功能 [km=keymodel]
 "set matchpairs=(:),{:},[:]    "在执行 % 时可识别的配对字符 [mps=matchpairs]
-"set maxmapdepth=1000    "最大映射次数 [mmd=maxmapdepth]
+"set maxmapdepth=1000    "最大映射数量 [mmd=maxmapdepth]
 "set more    "是否用 more 来渲染列表，即屏幕被填充满时暂停
 "set nrformats=bin,octal,hex    "可对哪种格式数据执行 ctrl-a/ctrl-x 自动加减 [nf=nrformats]
 "set number    "显示行号 [nu=number]
-"set relativenumber    "显示相对行号 [rnu=number]
+"set relativenumber    "显示相对行号 [rnu=relativenumber]
 "set scroll=15    "在执行 ctrl-u 和 ctrl-d 时翻的行数 [scr=scroll]
 "set scrolljump=1    "纵向滚动当光标超过可视范围时，要调整的行数量 [sj=scrolljump]
 set scrolloff=3    "纵向滚动时光标上下要预留的行数 [so=scrolloff]
@@ -97,7 +97,6 @@ map g] <Action>(MethodDown)
 " 插件列表 https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
 "Plug 'easymotion/vim-easymotion'    "快速跳转，需要额外在插件管理器中安装 IdeaVim-EasyMotion 和 AceJump 两个插件
 "Plug 'preservim/nerdtree'    "NERDTree 就不多介绍了，另可额外参考 https://github.com/JetBrains/ideavim/wiki/NERDTree-support
-set NERDTree
 "Plug 'tpope/vim-surround'    "快速处理字符包围
 "Plug 'terryma/vim-multiple-cursors'    "多光标支持
 "Plug 'tpope/vim-commentary'    "代码注释增强
