@@ -21,6 +21,7 @@ W3Validators
 XPathView
 XSLT-Debugger
 ZKM
+com.android.tools.design
 com.android.tools.idea.smali
 com.intellij.CloudConfig
 com.intellij.beanValidation
