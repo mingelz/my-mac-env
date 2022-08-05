@@ -285,9 +285,7 @@
     * [iTerm](http://www.iterm2.com)
     * [MacVim](https://github.com/macvim-dev/macvim/)
     * [Visual Studio Code](https://code.visualstudio.com/)
-    * [Atom](https://atom.io/)
     * [IntelliJ IDEA](http://www.jetbrains.com/idea/)
-    * [Android Studio](https://developer.android.com/studio/)
     * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     * [SourceTree](https://www.sourcetreeapp.com/)
     * [Charles Proxy](http://www.charlesproxy.com/)，商业软件，如果想用免费软件可以尝试 [whistle](https://github.com/avwo/whistle)
@@ -436,25 +434,6 @@
             * 安装后参考 [官网安装文档](https://github.com/VSCodeVim/Vim#mac) 开启 key-repeating 能力
         * Visual Studio IntelliCode: 微软官方提供的代码提示工具
         * xtemplate (bakso): `.xtpl` 文件语法支持
-* Atom
-    * 配置 Atom 可在命令行中启动：打开应用点击 【Install Shell Commands】
-    * 复制 `my-mac-env/Users/USERNAME/.atom/config.cson` 文件
-    * 使用 `apm` 命令安装插件，常用插件：
-        * active-power-mode: 装X工具
-        * atom-language-xtpl: `.xtpl` 文件语法支持
-        * autoclose-html: 自动闭合 HTML 标签
-        * docblockr: 自动生成注释文档
-        * editorconfig: 自动应用 .editorconfig 配置
-        * ex-mode: Vim 的 ex-mode 模式
-        * file-icons: 给文件前添加图标
-        * language-babel: 使用 Babel 针对 ES6 文件做更专业的语法高亮
-        * language-vue: vue 文件语法高亮
-        * minimap: 显示代码地图
-        * platformio-ide-terminal: 在编辑器中集成 Terminal 终端
-        * split-diff: 针对指定文件做 Diff
-        * sync-settings: 将配置项同步到个人的 gist 上
-        * vim-mode-plus: Vim 模拟器
-        * vim-mode-plus-keymaps-for-surround: 支持 Vim 中的 Surround 能力
 * IntelliJ IDEA
     * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
     * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/Idea` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中

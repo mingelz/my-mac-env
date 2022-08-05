@@ -23,7 +23,6 @@ My Mac Environment
 |       |       |-- JetBrains
 |       |           |-- Idea
 |       |               |-- README.md
-|       |-- .atom/
 |       |-- .bash_profile
 |       |-- .config
 |       |-- .gemrc
