@@ -303,6 +303,7 @@
     * [Shottr](https://shottr.cc/)，截屏工具，目前是免费的
     * [BetterTouchTool](https://folivora.ai/)，触控板增强
     * [Better And Better](https://www.better365.cn/bab2.html)，国人开发的触控板增强
+    * [SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
     * [Shadowsock](https://shadowsocks.org/), [ClashX](https://github.com/yichengchen/clashX)
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具
     * [https://www.irradiatedsoftware.com](https://www.irradiatedsoftware.com)，一个生产各种 Mac 小工具的开发商
