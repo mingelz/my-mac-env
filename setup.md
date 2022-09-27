@@ -303,7 +303,7 @@
     * [Shottr](https://shottr.cc/)，截屏工具，目前是免费的
     * [BetterTouchTool](https://folivora.ai/)，触控板增强
     * [Better And Better](https://www.better365.cn/bab2.html)，国人开发的触控板增强
-    * [SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
+    * [xbar(bitbar)](https://github.com/matryer/xbar)、[SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
     * [Shadowsock](https://shadowsocks.org/), [ClashX](https://github.com/yichengchen/clashX)
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具
     * [https://www.irradiatedsoftware.com](https://www.irradiatedsoftware.com)，一个生产各种 Mac 小工具的开发商
@@ -474,6 +474,19 @@
         * SpotBugs: 可以分析出当前项目或文件中潜在的问题
         * String Manipulation: 各种字符串转换
         * Vue.js: 只在 Ultimate 版才提供，支持 Vue.js 的语法规则
+* Xcode
+    * Preferences
+        * Text Editing
+            * Display
+                * Show
+                    * 【勾选】Code folding ribbon
+                    * 【勾选】Page guide at column: 80
+            * Editing
+                * While Editing
+                    * 【勾选】Including whitespcing-only lines
+    * Editor
+        * 【勾选】Vim Mode (自从 v13 开始，Xcode 原生提供了 Vim Mode)
+        * 【勾选】Invisibles
 * Alfred
     * General
         * Alfred Hotkey: Command + Space
