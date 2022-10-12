@@ -10,10 +10,6 @@ COMPLETION_WAITING_DOTS="true" #Waiting状态
 # 安装 oh-my-zsh 的路径
 export ZSH="$HOME/.oh-my-zsh"
 
-# 外部配置
-source ~/.bash_profile
-source $ZSH/oh-my-zsh.sh
-
 # 插件，默认插件在 $ZSH/plugins/，自定义插件在 $ZSH_CUSTOM/plugins/，更多插件可以参考 https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 plugins=(
   brew
@@ -27,3 +23,7 @@ plugins=(
 # 插件设置
 #VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 #VI_MODE_SET_CURSOR=true
+
+# 外部配置
+source ~/.bash_profile
+source $ZSH/oh-my-zsh.sh
