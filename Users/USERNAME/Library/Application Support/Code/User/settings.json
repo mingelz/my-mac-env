@@ -33,11 +33,8 @@
   "search.smartCase": true,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontSize": 14,
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   "workbench.startupEditor": "none",
-  // "workbench.colorTheme": "One Dark Pro",
-  // "workbench.iconTheme": "file-icons",
 
   // Languages
   "css.lint.duplicateProperties": "warning",
@@ -51,9 +48,6 @@
     "xml",
     "javascript",
   ],
-
-  // Extensions: Prettier - Code formatter
-  // "prettier.eslintIntegration": true,
 
   // Extensions: TODO Highlight
   // * https://github.com/JohnPostlethwait/fixme

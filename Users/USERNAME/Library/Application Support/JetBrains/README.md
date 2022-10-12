@@ -138,3 +138,26 @@
     * [x] Compact Middle Packages
     * [ ] Show Excluded Files
     * [x] Sort by Type
+
+## 插件
+
+编辑器自带插件推荐（除了以下列出的，我都禁用了，可以参考 `./GlobalSettings/disabled_plugins.txt` 文件）
+
+* Maven
+* Maven Extension (Ultimate only)
+* Database Tools and SQL (Ultimate only)
+* AOP Pointcut Language
+* JVM Microservices Frameworks
+* Spring (Ultimate only)
+* Spring Boot (Ultimate only)
+* Markdown
+* Properties
+* Shell Script
+* Lombok (built-in since v2020.3)
+* Git
+* EditorConfig
+* IntelliLang
+* Java Bytecode Decompiler
+* Java Internationalization
+* Shared Project Indexes
+* TextMate Bundles
