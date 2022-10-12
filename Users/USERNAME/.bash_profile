@@ -17,7 +17,7 @@ export HISTCONTROL=ignorespace
 #export PATH=$JAVA_HOME/bin:$PATH
 
 # brew
-# arm 系统安装的 brew 需要手动指定环境变量
+# ARM 系统安装的 brew 需要手动指定环境变量
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # 提供 bottle 路径，加快安装速度
 #export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
@@ -25,8 +25,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # nvm, 用 brew 安装的 nvm 需要手动添加环境变量，同时使用 cnpm 源以加快速度
 export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node"
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # for x86
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh" # for arm brew
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # for X86
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh" # for ARM
 
 
 ## private 私人配置
