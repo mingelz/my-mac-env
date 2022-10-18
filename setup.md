@@ -1,6 +1,6 @@
 # Mac 环境安装配置一条龙
 
-2021-02-18
+2022-10-12
 
 ## 一、制作安装盘
 
@@ -266,11 +266,12 @@
 
 ### 4.3 命令行安装
 
-个人不喜欢使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装。
+#### Brew
 
-> **Brew 注意**
+> **注意**
 > 1. brew 依赖 Xcode Command Line Tools，安装 brew 时会自动执行 `xcode-select --install` 进行安装
 > 2. ARM 版本安装路径在 `/opt/`，X86 版本安装路径为 `/usr/bin/`
+> 3. 个人不喜欢使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装
 
 * [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
     * git，安装 Xcode Command Line Tools 后已经带了 git，如果希望使用中文版，可以用 brew 重新装一个
@@ -278,8 +279,13 @@
     * nginx
     * nvm & node
     * tree
+
+#### Oh My Zsh
+
+> **注意**
+> 1. omz 的插件建议放在 omz 安装目录下的 `custom/plugins` 中，一般为 `~/.oh-my-zsh/custom/plugins`
+
 * [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-    * omz 的插件建议放在 omz 安装目录下的 `custom/plugins` 中，一般为 `~/.oh-my-zsh/custom/plugins`
     * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
     * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)，命令补全插件
 
@@ -299,10 +305,14 @@
 
 导入 `my-mac-env/Users/USERNAME/backup/rectangle-config.json` 文件
 
+#### Microsoft Edge
+
+* 登录 MSN 账号，配置已同步
+
 #### Google Chrome
 
 * 【勾选】退出前提示
-* 登录 Google 账号
+* 登录 Google 账，配置已同步
 
 #### iTerm2
 
