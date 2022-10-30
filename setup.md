@@ -5,9 +5,10 @@
 ## 一、制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
-    * [macOS Monterey 12](https://apps.apple.com/cn/app/macos-monterey/id1576738294)
-    * [macOS Big Sur 11](https://apps.apple.com/cn/app/macos-big-sur/id1526878132)
-    * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314)
+    * [macOS Ventura 13](https://apps.apple.com/us/app/macos-ventura/id1638787999?mt=12)
+    * [macOS Monterey 12](https://apps.apple.com/cn/app/macos-monterey/id1576738294?mt=12)
+    * [macOS Big Sur 11](https://apps.apple.com/cn/app/macos-big-sur/id1526878132?mt=12)
+    * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314?mt=12)
 * 从 10.14 开始系统安装从 App Store 转到 「系统偏好设置」-「软件更新」中了，点击【现在升级】即可
 * 下载完成后，会弹出安装提示，不要理会。可以点击状态栏左上角「安装 macOS」-「退出安装 macOS」关闭安装
 * 接下来，根据你的实际情况，选择制作U盘安装盘，还是光盘安装盘
