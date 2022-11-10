@@ -12,11 +12,11 @@ set ignorecase    "搜索时忽略大小写 [ic=ignorecase]
 set incsearch    "搜索时实时定位到搜索位置 [is=incsearch]
 "set keymodel=continueselect,stopselect    "打开特殊的键功能 [km=keymodel]
 "set matchpairs=(:),{:},[:]    "在执行 % 时可识别的配对字符 [mps=matchpairs]
-"set maxmapdepth=1000    "最大映射数量 [mmd=maxmapdepth]
+"set maxmapdepth=1000    "最大映射次数 [mmd=maxmapdepth]
 "set more    "是否用 more 来渲染列表，即屏幕被填充满时暂停
 "set nrformats=bin,octal,hex    "可对哪种格式数据执行 ctrl-a/ctrl-x 自动加减 [nf=nrformats]
 "set number    "显示行号 [nu=number]
-"set relativenumber    "显示相对行号 [rnu=relativenumber]
+"set relativenumber    "显示相对行号 [rnu=number]
 "set scroll=15    "在执行 ctrl-u 和 ctrl-d 时翻的行数 [scr=scroll]
 "set scrolljump=1    "纵向滚动当光标超过可视范围时，要调整的行数量 [sj=scrolljump]
 set scrolloff=3    "纵向滚动时光标上下要预留的行数 [so=scrolloff]
@@ -122,6 +122,7 @@ let g:argtextobj_pairs="[:],(:),<:>"
 " == 参考 & 引用 == {{{
 " + IdeaVim 官网: https://github.com/JetBrains/ideavim
 " + IdeaVim Wiki: https://github.com/JetBrains/ideavim/wiki
+" + Share your ~/.ideavimrc: https://github.com/JetBrains/ideavim/discussions/303
 " + IdeaVim 默认键绑定（键索引）: https://github.com/JetBrains/ideavim/blob/master/src/main/java/com/maddyhome/idea/vim/package-info.java
 " + IdeaVim 默认键绑定（行为索引）: https://github.com/JetBrains/ideavim/blob/master/src/main/resources/META-INF/includes/VimActions.xml
 " + A(option), C(control), M(command), S(shift), <ESC>(escape), <BS>(backspace), <CR>(return)

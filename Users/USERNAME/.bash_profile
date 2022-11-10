@@ -1,6 +1,6 @@
 # alias
 alias la="ls -AlhG"
-#alias vim="mvim -v" #从 MacOS 12 开始系统自带的 vim 已经 +clipboard，不需要额外安装 MacVim 了
+#alias vim="mvim -v" #从 macOS 12 开始系统自带的 vim 已经 +clipboard，不需要额外安装 MacVim 了
 alias vimhuge="vim -u NONE -c 'set syntax=no filetype=text'"
 alias plz='sudo `fc -nl -1`'
 alias cnpm="npm --registry=https://registry.npmmirror.com --cache=$HOME/.npm/.cache/cnpm --disturl=https://npmmirror.com/mirrors/node --userconfig=$HOME/.cnpmrc"
