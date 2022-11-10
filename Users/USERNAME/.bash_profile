@@ -16,6 +16,11 @@ export HISTCONTROL=ignorespace
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 #export PATH=$JAVA_HOME/bin:$PATH
 
+# gem, 为避免安装 gems 时使用 sudo，已在 .gemrc 中通过设置 --user-install 将安装目录调整到用户目录，于是需要引入对应 bin 目录到 PATH 变量保证 gems 可执行
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 # brew
 # ARM 系统安装的 brew 需要手动指定环境变量
 eval "$(/opt/homebrew/bin/brew shellenv)"

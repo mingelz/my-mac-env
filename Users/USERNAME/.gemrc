@@ -1,3 +1,4 @@
+# .gemrc 配置参数说明见： https://guides.rubygems.org/command-reference/#gem-environment
 # 切换 gems 源，详细文档请查阅： https://gems.ruby-china.com/
 ---
 :backtrace: false
@@ -7,5 +8,5 @@
 :update_sources: true
 :verbose: true
 
-# 切换 gems 的安装路径，避免 sudo
-gem: "-n/usr/local/bin"
+# 切换 gems 的安装路径，避免 sudo，即默认安装到用户目录下，切换后需要配合在 .bash_profile 中设置 bin 目录
+install: --user-install
