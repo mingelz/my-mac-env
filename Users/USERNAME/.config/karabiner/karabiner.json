@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Ctrl + p/n to arrow up/down",
+                        "description": "CONTROL + p/n to arrow up/down",
                         "manipulators": [
                             {
                                 "from": {
@@ -46,7 +46,7 @@
                         ]
                     },
                     {
-                        "description": "Left_ctrl + h/j/k/l to arrow keys",
+                        "description": "LEFT_CONTROL + h/j/k/l to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
@@ -127,7 +127,7 @@
                         ]
                     },
                     {
-                        "description": "Caps_lock to Command + Control + Option + Shift",
+                        "description": "CAPS_LOCK to COMMAND + CONTROL + OPTION + SHIFT",
                         "manipulators": [
                             {
                                 "from": {
@@ -153,7 +153,46 @@
                         ]
                     },
                     {
-                        "description": "[Keychone K6] Command + Esc to Command + Tilda(~)",
+                        "description": "LEFT_SHIFT enhance (short press to switch input sources)",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "left_shift",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 200,
+                                    "basic.to_if_held_down_threshold_milliseconds": 200
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_shift"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[Keychron K6] COMMAND + ESC to COMMAND + Tilda(~)",
                         "manipulators": [
                             {
                                 "from": {
@@ -177,7 +216,7 @@
                         ]
                     },
                     {
-                        "description": "[Keychone K6] Shift + Esc to Tilda(~)",
+                        "description": "[Keychron K6] SHIFT + ESC to Tilda(~)",
                         "manipulators": [
                             {
                                 "from": {
