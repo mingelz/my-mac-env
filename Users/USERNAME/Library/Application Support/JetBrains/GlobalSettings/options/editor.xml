@@ -23,4 +23,9 @@
     <pattern pattern="\b(todo|fixme)\b.*" />
     <pattern pattern="\b(xxx|note|warning|bug|mock|debug)\b" />
   </component>
+
+  <component name="XmlEditorOptions">
+    <!-- 通过背景色方式显示 CSS 颜色 [Editor/General/Appearance/Show CSS color preview as background]-->
+    <option name="showCssInlineColorPreview" value="true" />
+  </component>
 </application>

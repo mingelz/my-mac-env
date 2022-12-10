@@ -25,9 +25,9 @@
     <!-- <option name="FINALLY_ON_NEW_LINE" value="true" /> -->
 
     <!-- 方法定义参数过多时换行，且每个参数一行 [Editor/Code Style/Java/Wrapping and Braces/Method declaration parameters/Chop down if long] -->
-    <!-- <option name="METHOD_PARAMETERS_WRAP" value="5" /> -->
+    <option name="METHOD_PARAMETERS_WRAP" value="5" />
 
     <!-- 链式调用过多时换行，且每个链一行 [Editor/Code Style/Java/Wrapping and Braces/Chained method calls/Chop down if long] -->
-    <!-- <option name="METHOD_CALL_CHAIN_WRAP" value="5" /> -->
+    <option name="METHOD_CALL_CHAIN_WRAP" value="5" />
   </codeStyleSettings>
 </code_scheme>

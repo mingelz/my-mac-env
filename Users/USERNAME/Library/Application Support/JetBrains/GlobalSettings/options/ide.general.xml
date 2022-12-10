@@ -8,5 +8,8 @@
 
     <!-- 使用新窗口打开项目 [Appearance & Behavior/System Settings/Project/Open project in: New window]-->
     <option name="confirmOpenNewProject2" value="0" />
+
+    <!-- 打开编辑器时显示每日技巧 [MENU/Help/Tip of the Day]-->
+    <option name="showTipsOnStartup" value="false" />
   </component>
 </application>

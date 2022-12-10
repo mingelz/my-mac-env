@@ -18,8 +18,6 @@
   <component name="ProjectViewState">
     <!-- 打平没文件的包 [Tree Appearance/Compact Middle Packages]-->
     <option name="hideEmptyMiddlePackages" value="true" />
-    <!-- 显示被 Git 排除的文件 [Tree Appearance/Show Excluded Files]-->
-    <option name="showExcludedFiles" value="false" />
     <!-- 文件列表按类型排序（先按类型再按名称） [Tree Appearance/Sort by Type]-->
     <option name="sortByType" value="true" />
   </component>
@@ -30,9 +28,6 @@
   </component>
 
   <component name="VcsManagerConfiguration">
-    <!-- 不允许提交空信息 [Version Control/Commit/Force non-empty commit comments] -->
-    <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-
     <!-- 清空上一次的提交信息 [Version Control/Commit/Clear initial commit message] -->
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

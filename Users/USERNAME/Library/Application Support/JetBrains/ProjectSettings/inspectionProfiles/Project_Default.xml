@@ -2,7 +2,6 @@
   <profile version="1.0">
     <!-- 项目 Inspection 配置 -->
     <option name="myName" value="Project Default" />
-
     <!-- 检查 serialVersionUID [Editor/Inspections/JVM languages/Serializable class without 'serialVersionUID'] -->
     <inspection_tool class="SerializableHasSerialVersionUIDField" enabled="true" level="WARNING" enabled_by_default="true" />
   </profile>

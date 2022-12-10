@@ -1,5 +1,9 @@
 # Intellij IDEA 配置
 
+Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开发，当开发语言主要是 Java + JavaScript 时，可以只依赖一个编辑器即可。
+
+以下配置即同时考虑了 Java 和 JavaScript 的开发。如果你的配置页面没有对应项目，大概率是没有启用对应插件导致的。
+
 ## 全局配置
 
 ### 说明
@@ -26,11 +30,20 @@
       * [ ] Back up files before saving _修改前是否备份文件_
   * Notifications
     * Recommended language plugin available _本地化语言插件推荐_
+      * `No Pupup`
+      * [ ] Show in tool window
     * Plugin suggestings available _插件插件_
+      * `No Pupup`
+      * [ ] Show in tool window
 * Keymap
-  * Split and Move Right: `alt+l` _在右侧新建窗口组并将标签移动过去_
-  * Move To Opposite Group: `alt+m` _将标签移动到另一窗口组_
-  * Open In Opposite Group: `alt+o` _将标签在另一窗口组打开（原窗口组中的保留）_
+  * Main Menu
+    * Window
+      * Editor Tabs
+        * Split and Move Right: `option+l`(`alt+l`) _在右侧新建窗口组并将标签移动过去_
+  * Other
+    * Tabs
+      * Move To Opposite Group: `option+m`(`alt+m`) _将标签移动到另一窗口组_
+      * Open In Opposite Group: `option+o`(`alt+o`) _将标签在另一窗口组打开（原窗口组中的保留）_
 * Editor
   * General
     * Rich-Text Copy
@@ -42,8 +55,11 @@
     * Auto Import
       * Java
         * [x] Add unambiguous imports on the fly _自动 import 无歧义的类_
+      * TypeScript / JavaScript
+        * [x] Unambiguous imports on the fly _自动 import 无歧义的类_
     * Appearance
       * [x] Show whitespaces _展示空白字符_
+      * [x] Show CSS color preview as background _通过背景色方式显示 CSS 颜色_
     * Editor Tabs
       * Appearance
         * [x] Hide tabs if there is no space _此项无需修改，记下来是因为表述与实际不太相符。勾选后所有 Tabs 都会保留；不勾选则只显示最近 10 条 Tabs_
@@ -96,7 +112,9 @@
 
 项目配置仅会应用在具体项目中，在 Idea 配置面板中会提示 **For new projects** 或 **For current project**， 相关配置备份在 `ProjectSettings` 中，可将其中的文件复制到项目根目录的 `.idea` 路径下。
 
-注意 `dictionaries` 目录下是项目级字典，文件名默认是登录用户的名字，复制后需要修改，同时也要修改文件中的 `name` 值。
+NOTE 1: 从 2022.3 开始，Idea 可以通过全局配置的 `project.default.xml` 文件自动生成项目配置，所以只要提前把文件复制好，下边的配置就无需再每个项目配置一遍了。
+
+NOTE 2: `dictionaries` 目录下是项目级字典，文件名默认是登录用户的名字，复制后需要修改，同时也要修改文件中的 `name` 值。另外这个目录貌似在 2022.3 中已经失效了。
 
 ### 配置细则
 
@@ -111,7 +129,6 @@
 * Version Control
   * Commit
     * [x] Clear initial commit message _清空上一次的提交信息_
-    * [x] Force non-empty commit comments _不允许提交空信息_
   * Confirmation
     * When files are created: `Do not add` _新增文件时不自动提交_
 * Build, Execution, Deployment
@@ -125,9 +142,6 @@
   * Spring
     * Common
       * [x] Allow to auto-configure application contexts _自动配置 Spring_
-  * SQL Dialects _SQL方言配置，打开项目才会看到这个入口_
-    * Global SQL Dialect: `MySQL`
-    * Project SQL Dialect: `MySQL`
 * Breakpoints _Breakpoints配置_
   * Java Line Breakpoints
     * Suspend: `Thread`
@@ -135,29 +149,52 @@
     * Suspend: `Thread`
 * Project Window _项目窗口配置，点击右上角齿轮图标进行配置_
   * Tree Appearance
-    * [x] Compact Middle Packages
-    * [ ] Show Excluded Files
-    * [x] Sort by Type
+    * [x] Sort by Type _文件列表按类型排序（先按类型再按名称）_
 
 ## 插件
 
 编辑器自带插件推荐（除了以下列出的，我都禁用了，可以参考 `./GlobalSettings/disabled_plugins.txt` 文件）
+
+### Common
+
+* Markdown
+* Shell Script
+* YAML
+* Git
+* EditorConfig
+* Grazie
+* IntelliLang
+* Machine Learning Code Completion
+* Machine Learning in Search Everywhere
+* TextMate Bundles
+
+### Java
 
 * Maven
 * Maven Extension (Ultimate only)
 * Database Tools and SQL (Ultimate only)
 * AOP Pointcut Language
 * JVM Microservices Frameworks
+* Lombok (built-in since v2020.3)
 * Spring (Ultimate only)
 * Spring Boot (Ultimate only)
-* Markdown
 * Properties
-* Shell Script
-* Lombok (built-in since v2020.3)
-* Git
-* EditorConfig
-* IntelliLang
 * Java Bytecode Decompiler
 * Java Internationalization
 * Shared Project Indexes
-* TextMate Bundles
+
+### Frontend
+
+* HTML Tools
+* JavaScript and TypeScript
+* JavaScript Debugger
+* JavaScript Intention Power Pack
+* Node.js
+* TSLint
+* Vite
+* Vue.js
+* Webpack
+* CSS
+* Less
+* Sass
+* Styled Components & Styled JSX
