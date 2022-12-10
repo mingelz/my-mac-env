@@ -1,70 +1,86 @@
 {
-  // Core
-  "debug.toolBarLocation": "docked",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.cursorStyle": "line",
-  "editor.fontSize": 16,
-  "editor.insertSpaces": false,
-  "editor.lineNumbers": "on",
-  "editor.renderControlCharacters": true,
+  // Text Editor
+  "editor.foldingImportsByDefault": true,
+  "editor.guides.bracketPairs": "active",
   "editor.renderWhitespace": "boundary",
+  "editor.scrollBeyondLastLine": false,
+  // Text Editor - Font
+  "editor.fontSize": 18,
   "editor.rulers": [
     80,
     120
   ],
-  "editor.tabSize": 8,
+  // Text Editor - Formatting
+  "editor.formatOnPaste": true,
+  // Text Editor - Diff Editor
+  "diffEditor.ignoreTrimWhitespace": false,
+  // Text Editor - Suggestions
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.quickSuggestions": {
-    "other": true,
-    "comments": true,
-    "strings": true,
+    "comments": "on",
+    "strings": "on"
   },
-  "editor.scrollBeyondLastLine": false,
-  "editor.suggestSelection": "first",
   "editor.suggest.shareSuggestSelections": true,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  "extensions.ignoreRecommendations": true,
+  // Text Editor - Files
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "search.showLineNumbers": true,
-  "search.smartCase": true,
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.fontSize": 14,
-  "telemetry.telemetryLevel": "off",
+  // Workbench
   "workbench.startupEditor": "none",
-
-  // Languages
+  // Workbench - Breadcrumbs
+  "breadcrumbs.enabled": false,
+  // Workbench - Zen Mode
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideTabs": false,
+  // Features - Explorer
+  "explorer.autoReveal": "focusNoScroll",
+  // Features - Search
+  "search.smartCase": true,
+  // Features - Extensions
+  "extensions.ignoreRecommendations": true,
+  // Features - Terminal
+  "terminal.integrated.fontSize": 14,
+  // Application - Telemetry
+  "telemetry.telemetryLevel": "off",
+  // Extensions - CSS Language Features - CSS
+  "css.format.spaceAroundSelectorSeparator": true,
   "css.lint.duplicateProperties": "warning",
   "css.lint.zeroUnits": "warning",
-  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  // Extensions - CSS Language Features - LESS
+  "less.format.spaceAroundSelectorSeparator": true,
+  "less.lint.duplicateProperties": "warning",
+  "less.lint.zeroUnits": "warning",
+  // Extensions - CSS Language Features - SCSS (Sass)
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.zeroUnits": "warning",
+  // Extensions - Git
+  "git.branchProtection": [
+    "master",
+    "main"
+  ],
+  // Extensions - Markdown
   "markdown.preview.fontSize": 16,
 
-  // Extensions: Auto Rename Tag
-  "auto-rename-tag.activationOnLanguage": [
-    "html",
-    "xml",
-    "javascript",
-  ],
+  // == Third Part Extensions ==
 
-  // Extensions: TODO Highlight
+  // Extensions(3rd): TODO Highlight
   // * https://github.com/JohnPostlethwait/fixme
   // * https://github.com/atom/language-todo
+  // 要高亮的关键字，只要注释中包含关键字就会高亮，不管位置。比如 TODOMVC 这个单词中的 TODO 也会被高亮
   // "todohighlight.keywords": [
-  //     "TODO", "FIXME", "XXX", "NOTE", "OPTIMIZE", "HACK", "BUG",
-  //     "CHANGED", "REVIEW", "QUESTION", "TEMP", "DEBUG", "WARNING",
-  //     "MOCK"
+  //   "TODO", "FIXME", "XXX", "NOTE", "OPTIMIZE", "HACK", "BUG",
+  //   "CHANGED", "REVIEW", "QUESTION", "TEMP", "DEBUG", "WARNING",
+  //   "MOCK"
   // ],
-  // 这一项会覆盖上一项，是因为通过 \\b 来保证仅高亮完整单词，不包括如 todomvc 这种在单词中间的字
-  "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
+  // 通过正则匹配关键字，优先级比上一项高。通过 \\b 保证仅高亮完整单词，从而 TODOMVC 这个单词中的 TODO 将不再被高亮
+  // "todohighlight.keywordsPattern": "^\\s+?\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
 
-  // Extensions: Vim
-  "vim.foldfix": true,
-  "vim.hlsearch": true,
-  "vim.visualstar": true,
+  // Extensions(3rd) - Vim
+  // "vim.foldfix": true,
+  // "vim.hlsearch": true,
+  // "vim.visualstar": true,
 
-  // Extensions: Visual Studio IntelliCode
+  // Extensions(3rd) - Visual Studio IntelliCode
   // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }

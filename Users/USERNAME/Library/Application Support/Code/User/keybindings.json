@@ -1,18 +1,8 @@
 [
     {
         "key": "ctrl+s",
-        "when": "isInDiffEditor && editorTextFocus",
         "command": "git.stageSelectedRanges",
-    },
-    {
-        "key": "shift+cmd+j",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.focusNext"
-    },
-    {
-        "key": "shift+cmd+k",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.focusPrevious"
+        "when": "isInDiffEditor && editorTextFocus"
     },
     {
         "key": "cmd+i",

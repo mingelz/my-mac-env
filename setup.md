@@ -435,7 +435,7 @@
     * Chinese (Simplified) Language Pack: 中文简体语言包
     * EditorConfig for VS Code: 自动应用 .editorconfig 配置
     * GitLens — Git supercharged: 非常强大的 Git 工具
-    * TabNine: 强大的代码自动完成工具，感觉不用装 Visual Studio IntelliCode 了
+    * TabNine: 强大的代码提示工具，强于 Visual Studio IntelliCode，就是有点吃资源容易卡
     * TODO Hightlight: 高亮指定关键字
     * Vim: Vim 模拟器
         * 安装后参考 [官网安装文档](https://github.com/VSCodeVim/Vim#mac) 开启 key-repeating 能力
