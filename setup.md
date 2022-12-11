@@ -247,7 +247,7 @@
 * 基础工具
     * [Baidu Input](http://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法
     * [Google Chrome](https://www.google.com/chrome/)、[Microsoft Edge](https://www.microsoft/edge)
-    * [Alfred](https://www.alfredapp.com/)，竞品有 [Raycast](https://www.raycast.com/) 及国人开发的 [uTools](http://www.u.tools/)
+    * [Alfred](https://www.alfredapp.com/)，竞品有 [Raycast](https://www.raycast.com/) 及国人开发的 [uTools](http://www.u.tools/)。个人已经倒戈至 Raycast。
 * 小工具
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
@@ -424,6 +424,25 @@
 * 偏好设置
     * General
         * After last window closes => Quit MacVim
+
+#### Raycast
+
+* 常用配置
+    * Clipboard History
+        * Hotkey: `Command + Control + C`
+    * Quicklinks
+        * Search Google: `https://www.google.com/search?q={Query}`, Alias: `gg`
+        * Search Bing: `https://global.bing.com/search?q={Query}`, Alias: `bn`
+        * Search Baidu: `https://www.baidu.com/s?wd={Query}`, Alias: `bd`
+    * Window Management
+        * Maximize: HotKey: `Command + Control + Option + Shift + Enter`
+        * Next Display: HotKey: `Command + Control + Option + Shift + M`
+        * Restore: HotKey: `Command + Control + Option + Shift + \`
+* 常用插件
+    * [Coffee](https://www.raycast.com/mooxl/coffee), 阻止系统进入睡眠模式
+    * [battery-health](https://www.raycast.com/o1y/battery-health)，查看电池状态
+    * [timers](https://www.raycast.com/ThatNerd/timers)，简单的番茄钟
+    * [ihosts](https://www.raycast.com/JinShi/ihosts)，hosts 管理
 
 #### Visual Studio Code
 
