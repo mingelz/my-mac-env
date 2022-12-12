@@ -234,6 +234,18 @@
                         "description": "[Keychron K6] COMMAND + ESC to COMMAND + Tilda(~)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "description": "Keychron K6 Only",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 591,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
@@ -258,6 +270,18 @@
                         "description": "[Keychron K6] SHIFT + ESC to Tilda(~)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "description": "Keychron K6 Only",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 591,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
