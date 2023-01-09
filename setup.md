@@ -5,15 +5,14 @@
 ## 一、制作安装盘
 
 * 在 App Store 中搜索最新版的 macOS，并点击「下载」
-    * [macOS Ventura 13](https://apps.apple.com/us/app/macos-ventura/id1638787999?mt=12)
-    * [macOS Monterey 12](https://apps.apple.com/cn/app/macos-monterey/id1576738294?mt=12)
-    * [macOS Big Sur 11](https://apps.apple.com/cn/app/macos-big-sur/id1526878132?mt=12)
-    * [macOS Catalina 10.15](https://apps.apple.com/cn/app/macos-catalina/id1466841314?mt=12)
+    * 或者访问苹果官网 [如何下载 macOS](https://support.apple.com/zh-cn/HT211683) 找需要的版本
 * 从 10.14 开始系统安装从 App Store 转到 「系统偏好设置」-「软件更新」中了，点击【现在升级】即可
 * 下载完成后，会弹出安装提示，不要理会。可以点击状态栏左上角「安装 macOS」-「退出安装 macOS」关闭安装
 * 接下来，根据你的实际情况，选择制作U盘安装盘，还是光盘安装盘
 
 ### 1.1 制作U盘安装盘
+
+参考苹果官网文档 [创建可引导的 macOS 安装器](https://support.apple.com/zh-cn/HT201372)
 
 * 找一个大于 8G 的U盘
 * 清空磁盘
@@ -52,7 +51,7 @@
 
 * ARM(Apple Silicon) 版本关机后，长按开机键直到显示启动菜单; X86(Intel) 版本重启电脑并按住 option 键，在启动菜单中选择刚刚制作的U盘
 * 建议整个安装过程联网，否则可能会提示「安装器有效负载签名检查失败」
-* 如果需要全新安装，在安装进程进行到「macOS 实用工具」时选择「磁盘工具」，抹掉硬盘上的内容（格式优先选择「APFS」）
+* 如果需要全新安装，在安装进程进行到「macOS 实用工具」时选择「磁盘工具」，抹掉硬盘上的内容（格式请选择「APFS」）
 * 同样在「macOS 实用工具」选择「全新安装 macOS」开始安装系统
 * 安装中会有几次重启，无需干预，整个过程大概 10 分钟
 
@@ -466,7 +465,7 @@
 * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/Idea` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
 * 常用插件推荐：
     * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
-    * Chinese (Simplified) Language Pack: 中文语言包，仅建议纯新手前期安装，后续还是应该使用英文版
+    * Chinese (Simplified) Language Pack/中文语言包: 建议新手安装，快速熟悉编辑器
     * GenerateAllSetter: 快速生成实例的全部 Setter 方法
     * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
     * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
