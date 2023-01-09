@@ -1,6 +1,5 @@
 {
   // Text Editor
-  "editor.foldingImportsByDefault": true,
   "editor.guides.bracketPairs": "active",
   "editor.renderWhitespace": "boundary",
   "editor.scrollBeyondLastLine": false,
