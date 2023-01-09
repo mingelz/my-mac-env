@@ -59,7 +59,6 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
         * [x] Unambiguous imports on the fly _自动 import 无歧义的类_
     * Appearance
       * [x] Show whitespaces _展示空白字符_
-      * [x] Show CSS color preview as background _通过背景色方式显示 CSS 颜色_
     * Editor Tabs
       * Appearance
         * [x] Hide tabs if there is no space _此项无需修改，记下来是因为表述与实际不太相符。勾选后所有 Tabs 都会保留；不勾选则只显示最近 10 条 Tabs_

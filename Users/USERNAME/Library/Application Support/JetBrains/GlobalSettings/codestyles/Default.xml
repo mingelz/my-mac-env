@@ -2,6 +2,10 @@
   <!-- 列号辅助线位置 [Editor/Code Style/General/Visual guides] -->
   <option name="SOFT_MARGINS" value="80,120" />
 
+  <!--
+    == Java 配置
+    -->
+
   <codeStyleSettings language="JAVA">
     <!-- 行注释从行首开始，false 则从第一个非空位置开始 [Editor/Code Style/Java/Code Generation/Comment Code/Line comment at first column] -->
     <!-- <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" /> -->
@@ -30,4 +34,77 @@
     <!-- 链式调用过多时换行，且每个链一行 [Editor/Code Style/Java/Wrapping and Braces/Chained method calls/Chop down if long] -->
     <option name="METHOD_CALL_CHAIN_WRAP" value="5" />
   </codeStyleSettings>
+
+
+  <!--
+    == Javascript 配置
+    -->
+
+  <JSCodeStyleSettings version="0">
+    <!-- 语句末尾是否要加分号 [Editor/Code Style/JavaScript/Punctuation] -->
+    <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
+
+    <!-- 已经存在的语句是否强制添加/删除分号 [Editor/Code Style/JavaScript/Punctuation] -->
+    <option name="FORCE_SEMICOLON_STYLE" value="true" />
+
+    <!-- 使用单引号还是双引号 [Editor/Code Style/JavaScript/Punctuation] -->
+    <option name="USE_DOUBLE_QUOTES" value="false" />
+
+    <!-- 已经存在的语句是否强制修改引号 [Editor/Code Style/JavaScript/Punctuation] -->
+    <option name="FORCE_QUOTE_STYlE" value="true" />
+
+    <!-- 语句末尾是否添加逗号 [Editor/Code Style/JavaScript/Punctuation] -->
+    <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+  </JSCodeStyleSettings>
+
+  <codeStyleSettings language="JavaScript">
+    <!-- else 前换行 [Editor/Code Style/JavaScript/Wrapping and Braces/'if()' statement/'else' on new line] -->
+    <option name="ELSE_ON_NEW_LINE" value="true" />
+
+    <!-- while 前换行 [Editor/Code Style/JavaScript/Wrapping and Braces/'do ... while()' statement/'while' on new line] -->
+    <option name="WHILE_ON_NEW_LINE" value="true" />
+
+    <!-- catch 前换行 [Editor/Code Style/JavaScript/Wrapping and Braces/'try' statement/'catch' on new line] -->
+    <option name="CATCH_ON_NEW_LINE" value="true" />
+
+    <!-- finally 前换行 [Editor/Code Style/JavaScript/Wrapping and Braces/'try' statement/'finally' on new line] -->
+    <option name="FINALLY_ON_NEW_LINE" value="true" />
+  </codeStyleSettings>
+
+
+  <!--
+    == TypeScript 配置
+    -->
+
+  <TypeScriptCodeStyleSettings version="0">
+    <!-- 语句末尾是否要加分号 [Editor/Code Style/TypeScript/Punctuation] -->
+    <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
+
+    <!-- 已经存在的语句是否强制添加/删除分号 [Editor/Code Style/TypeScript/Punctuation] -->
+    <option name="FORCE_SEMICOLON_STYLE" value="true" />
+
+    <!-- 使用单引号还是双引号 [Editor/Code Style/TypeScript/Punctuation] -->
+    <option name="USE_DOUBLE_QUOTES" value="false" />
+
+    <!-- 已经存在的语句是否强制修改引号 [Editor/Code Style/TypeScript/Punctuation] -->
+    <option name="FORCE_QUOTE_STYlE" value="true" />
+
+    <!-- 语句末尾是否添加逗号 [Editor/Code Style/TypeScript/Punctuation] -->
+    <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+  </TypeScriptCodeStyleSettings>
+
+  <codeStyleSettings language="TypeScript">
+    <!-- else 前换行 [Editor/Code Style/TypeScript/Wrapping and Braces/'if()' statement/'else' on new line] -->
+    <option name="ELSE_ON_NEW_LINE" value="true" />
+
+    <!-- while 前换行 [Editor/Code Style/TypeScript/Wrapping and Braces/'do ... while()' statement/'while' on new line] -->
+    <option name="WHILE_ON_NEW_LINE" value="true" />
+
+    <!-- catch 前换行 [Editor/Code Style/TypeScript/Wrapping and Braces/'try' statement/'catch' on new line] -->
+    <option name="CATCH_ON_NEW_LINE" value="true" />
+
+    <!-- finally 前换行 [Editor/Code Style/TypeScript/Wrapping and Braces/'try' statement/'finally' on new line] -->
+    <option name="FINALLY_ON_NEW_LINE" value="true" />
+  </codeStyleSettings>
+
 </code_scheme>
