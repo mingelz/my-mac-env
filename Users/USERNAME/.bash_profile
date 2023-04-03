@@ -6,6 +6,14 @@ alias plz='sudo `fc -nl -1`'
 alias cnpm="npm --registry=https://registry.npmmirror.com --cache=$HOME/.npm/.cache/cnpm --disturl=https://npmmirror.com/mirrors/node --userconfig=$HOME/.cnpmrc"
 alias j="z"
 
+# function
+# 执行 grep 时会有换行，再定义一个 grep 不换行的命令，超出部分截断
+function sgrep {
+  tput rmam;
+  command grep "$@";
+  tput smam;
+}
+
 # 默认 editor
 export EDITOR=vim
 
