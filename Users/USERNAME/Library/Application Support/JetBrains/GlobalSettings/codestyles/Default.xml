@@ -1,6 +1,18 @@
 <code_scheme name="Default" version="173">
+  <!-- 支持通过 Tag 注释控制是否要格式化对应代码 [Editor/Code Style/Formatter/Turn formatter on/off with markers in code comments] -->
+  <option name="FORMATTER_TAGS_ENABLED" value="true" />
+
   <!-- 列号辅助线位置 [Editor/Code Style/General/Visual guides] -->
   <option name="SOFT_MARGINS" value="80,120" />
+
+  <!--
+    == HTML 配置
+    -->
+
+  <HTMLCodeStyleSettings>
+    <!-- 空标签闭合时是否要加空格 [Editor/Code Style/HTML/Other/In empty Tag] -->
+    <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+  </HTMLCodeStyleSettings>
 
   <!--
     == Java 配置
@@ -55,6 +67,12 @@
 
     <!-- 语句末尾是否添加逗号 [Editor/Code Style/JavaScript/Punctuation] -->
     <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+
+    <!-- 对象大括号是否加空格 [Editor/Code Style/JavaScript/Space/Within/Object literal braces] -->
+    <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
+
+    <!-- import/export 语句大括号是否加空格 [Editor/Code Style/JavaScript/Space/Within/ES6 import/export braces] -->
+    <option name="SPACES_WITHIN_IMPORTS" value="true" />
   </JSCodeStyleSettings>
 
   <codeStyleSettings language="JavaScript">
@@ -91,6 +109,12 @@
 
     <!-- 语句末尾是否添加逗号 [Editor/Code Style/TypeScript/Punctuation] -->
     <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+
+    <!-- 对象大括号是否加空格 [Editor/Code Style/TypeScript/Space/Within/Object literal braces] -->
+    <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
+
+    <!-- import/export 语句大括号是否加空格 [Editor/Code Style/TypeScript/Space/Within/ES6 import/export braces] -->
+    <option name="SPACES_WITHIN_IMPORTS" value="true" />
   </TypeScriptCodeStyleSettings>
 
   <codeStyleSettings language="TypeScript">
