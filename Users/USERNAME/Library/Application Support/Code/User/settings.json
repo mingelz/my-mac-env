@@ -2,13 +2,17 @@
   // Text Editor
   "editor.guides.bracketPairs": "active",
   "editor.renderWhitespace": "boundary",
-  "editor.scrollBeyondLastLine": false,
-  // Text Editor - Font
-  "editor.fontSize": 18,
   "editor.rulers": [
     80,
     120
   ],
+  "editor.scrollBeyondLastLine": false,
+  "editor.unicodeHighlight.allowedLocales": {
+      "zh-hans": true
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  // Text Editor - Font
+  "editor.fontSize": 18,
   // Text Editor - Formatting
   "editor.formatOnPaste": true,
   // Text Editor - Diff Editor
@@ -26,13 +30,13 @@
   "files.trimTrailingWhitespace": true,
   // Workbench
   "workbench.startupEditor": "none",
+  // Workbench - Appearance
+  // "workbench.iconTheme": "material-icon-theme",
   // Workbench - Breadcrumbs
   "breadcrumbs.enabled": false,
   // Workbench - Zen Mode
   "zenMode.hideLineNumbers": false,
   "zenMode.hideTabs": false,
-  // Features - Explorer
-  "explorer.autoReveal": "focusNoScroll",
   // Features - Search
   "search.smartCase": true,
   // Features - Extensions
