@@ -25,14 +25,16 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
     * Tool Windows
       * [ ] Show tool window bars _是否显示工具栏_
   * System Settings
+    * Project
+      * Open project in: `New window`
     * Autosave
       * [ ] Save files when switching to a different application or a built-in terminal _是否自动保存文件_
       * [ ] Back up files before saving _修改前是否备份文件_
   * Notifications
-    * Recommended language plugin available _本地化语言插件推荐_
+    * Plugin suggestings available _推荐插件_
       * `No Pupup`
       * [ ] Show in tool window
-    * Plugin suggestings available _插件插件_
+    * Recommended language plugin available _本地化语言插件推荐_
       * `No Pupup`
       * [ ] Show in tool window
 * Keymap
@@ -61,7 +63,6 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
       * [x] Show whitespaces _展示空白字符_
     * Editor Tabs
       * Appearance
-        * [x] Hide tabs if there is no space _此项无需修改，记下来是因为表述与实际不太相符。勾选后所有 Tabs 都会保留；不勾选则只显示最近 10 条 Tabs_
         * [x] Mark modified (*) _被修改的文件 Tab 上用星号 * 标记_
       * Opening Policy
         * [x] Enable preview tab _启用预览窗口（单击文件时复用同一个预览 Tab，多次单击不同文件不会打开多个 Tab，双击文件独占一个 Tab）_
@@ -89,6 +90,49 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
           * [x] Add a space at line comment start _行注释后跟一个空格_
           * [x] Enforce on reformat _格式化代码时调整注释格式_
           * [ ] Block comment at first column _块注释从行首开始，如果反选则从第一个非空位置开始_
+    * HTML
+      * Other
+        * Spaces
+          * [x] In empty tag _在空标签结束斜线前加空格，如 `<br_/>`_
+    * JavaScript
+      * Spaces
+        * Within
+          * [x] Object literal braces _对象大括号内加空格_
+          * [x] ES6 import/export braces _ES6 在 import/export 的大括号内加空格_
+      * Wrapping and Braces
+        * Function declaration parameters: `Chop down if long` _方法定义参数过多时换行，且每个参数一行_
+        * Chained method calls: `Chop down if long` _链式调用过多时换行，且每个链一行_
+        * 'if()' statement
+          * [x] 'else' on new line _else 前换行_
+        * 'do ... while()' statement
+          * [x] 'while' on new line _while 前换行_
+        * 'try' statement
+          * [x] 'catch' on new line _catch 前换行_
+          * [x] 'finally' on new line _finally 前换行_
+      * Punctuation
+        * `Don't use` semicolon to terminate statement `always`.
+          Use `single` quotes `always`.
+          Trailling comma: `Add when multiline`
+    * TypeScript
+      * Spaces
+        * Within
+          * [x] Object literal braces _对象大括号内加空格_
+          * [x] ES6 import/export braces _ES6 在 import/export 的大括号内加空格_
+        * Function declaration parameters: `Chop down if long` _方法定义参数过多时换行，且每个参数一行_
+        * Chained method calls: `Chop down if long` _链式调用过多时换行，且每个链一行_
+        * 'if()' statement
+          * [x] 'else' on new line _else 前换行_
+        * 'do ... while()' statement
+          * [x] 'while' on new line _while 前换行_
+        * 'try' statement
+          * [x] 'catch' on new line _catch 前换行_
+          * [x] 'finally' on new line _finally 前换行_
+      * Punctuation
+        * `Don't use` semicolon to terminate statement `always`.
+          Use `single` quotes `always`.
+          Trailling comma: `Add when multiline`
+  * Inspections
+    * Profile: `Default` _将 Inspections 配置保存到 IDE，就不需要每个项目都设置一遍了_
   * File and Code Templates
     * Includes
       * File Header _文件头信息_
@@ -99,6 +143,10 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
 * Build, Execution, Deployment
   * Trusted Locations _信任的路径_
     * `$USER_HOME$/workspace/repos`
+  * Debugger
+    * Remove breakpoint:
+      * [x] Drag to the editor or click with middle mouse button _通过拖拽或鼠标右键点击删除断点_
+      * [x] Confirm removal of conditional or logging breakpoints _删除带表达式或日志配置的断点时需要确认_
 * Tools
   * Shared Indexes
     * Public Shared Indexes _下载共享索引，减少项目打开时间_
@@ -152,48 +200,4 @@ NOTE 2: `dictionaries` 目录下是项目级字典，文件名默认是登录用
 
 ## 插件
 
-编辑器自带插件推荐（除了以下列出的，我都禁用了，可以参考 `./GlobalSettings/disabled_plugins.txt` 文件）
-
-### Common
-
-* Markdown
-* Shell Script
-* YAML
-* Git
-* EditorConfig
-* Grazie
-* IntelliLang
-* Machine Learning Code Completion
-* Machine Learning in Search Everywhere
-* TextMate Bundles
-
-### Java
-
-* Maven
-* Maven Extension (Ultimate only)
-* Database Tools and SQL (Ultimate only)
-* AOP Pointcut Language
-* JVM Microservices Frameworks
-* Lombok (built-in since v2020.3)
-* Spring (Ultimate only)
-* Spring Boot (Ultimate only)
-* Properties
-* Java Bytecode Decompiler
-* Java Internationalization
-* Shared Project Indexes
-
-### Frontend
-
-* HTML Tools
-* JavaScript and TypeScript
-* JavaScript Debugger
-* JavaScript Intention Power Pack
-* Node.js
-* TSLint
-* Vite
-* Vue.js
-* Webpack
-* CSS
-* Less
-* Sass
-* Styled Components & Styled JSX
+编辑器自带插件非常全，根据实际情况选择禁用部分插件，可以适当提高编辑器的性能。

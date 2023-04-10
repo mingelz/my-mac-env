@@ -471,6 +471,7 @@
     * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
     * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版
     * SpotBugs: 可以分析出当前项目或文件中潜在的问题
+* IntelliJ IDEA 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 https://www.jetbrains.com/products/compare/ 页面进行对比查看。
 
 #### Xcode
 
