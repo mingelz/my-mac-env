@@ -1,6 +1,8 @@
 [user]
     name = mingelz
     email = mingelz@gmail.com
+[init]
+    defaultBranch = master
 [push]
     default = simple
 [pull]
@@ -37,23 +39,25 @@
     # diff 最后一次提交的内容
     dl = "!f() { rev=${1-HEAD}; git difftool $rev^ $rev; }; f"
     fc = fetch -p
-    mg = merge
-    sl = stash list
-    sv = stash save -u
-    st = status
     # http://git-scm.com/docs/git-log
     #        图形    简短hash        相对时间        装饰ref    30条 显示格式: %h 短哈希, %ar 相对提交时间, %s 提交说明, %an 作者, %d 引用信息, %n 换行
     lg = log --graph --abbrev-commit --relative-date --decorate -n30 --pretty=format:'%C(red)%h%C(reset) - %C(cyan)(%ar)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
     # 在 lg 的基础上，列出所有 branchs/stash 的分支情况，并把条数放大到 500
     la = lg --all -n500
+    mg = merge
     # 添加 --rebase 参数，在 merge 的时候不会分叉
     pr = pull --rebase
+    # 使用交互式 rebase 工具压缩 git 提交（squash）
+    ri = rebase -i
+    # stash 列表也可以像 log 列表一下展示信息
+    sl = stash list --abbrev-commit --pretty=format:'%C(magenta)%gd%C(reset) - %C(red)%h%C(reset) - %C(cyan)(%ai)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
+    sv = stash save -u
+    st = status
     # 撤销 commit 但保留暂存记录
     # HEAD是指向当前版本的指针，HEAD^指向上个版本，HEAD^^指向上上个版本，注意还有HEAD~，可以自行搜索详细讲解
     # --soft保留修改及暂存记录，--mixed保留修改但取消暂存，--hard删除修改完全恢复文件
     undo = reset --mixed HEAD^
     # 统计有哪些人提交过，及每人提交次数
-    who = shortlog -sn
+    who = shortlog -sn --all --no-merges
     # 统计每人提交行数
     cnt = "!f() { printf \"     total        add        del author\\n%s\\n\" \"--------------------------------------------\"; git log --no-merges --pretty=format:%an --numstat | awk '/./ && !author { author = $0; next } author { ins[author] += $1; del[author] += $2 } /^$/ { author = \"\"; next } END { for (a in ins) { printf \"%10d %10d %10d %s\\n\", ins[a] - del[a], ins[a], del[a], a } }' | sort -rn; }; f"
-
