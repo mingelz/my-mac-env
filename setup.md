@@ -191,6 +191,10 @@
 ### 3.3 系统右侧通知栏
 
 * 根据喜好配置
+* 个人配置：
+    * 提醒事项
+    * 日历
+    * 天气 + 时钟
 
 ### 3.4 Safari 偏好设置
 
@@ -272,18 +276,22 @@
 > 1. brew 依赖 Xcode Command Line Tools，安装 brew 时会自动执行 `xcode-select --install` 进行安装
 > 2. ARM 版本安装路径在 `/opt/`，X86 版本安装路径为 `/usr/bin/`
 > 3. 个人不喜欢使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装
+> 4. 鉴于国内网络环境，可以使用 [Homebrew TUNA 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
 
 * [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
     * git，安装 Xcode Command Line Tools 后已经带了 git，如果希望使用中文版，可以用 brew 重新装一个
     * lame，mp3 编解码、压缩
     * nginx
     * nvm & node
+        * 虽然 NVM 官方不推荐使用 brew 安装，但个人仍觉得这是最方便的方式，只需安装后参考给出的提示进行配置（我已在 `~/.bash_profile` 添加）
+        * 复制 `my-mac-env/Users/USERNAME/.cnpmrc` 文件
     * tree
 
 #### Oh My Zsh
 
 > **注意**
 > 1. omz 的插件建议放在 omz 安装目录下的 `custom/plugins` 中，一般为 `~/.oh-my-zsh/custom/plugins`
+> 2. 鉴于国内网络环境，可以使用 [OhMyZsh TUNA 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/)
 
 * [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
     * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
@@ -291,7 +299,7 @@
 
 ### 4.4 软件配置
 
-依赖的配置文件已经在此 Repo 中提供
+下文中依赖的配置文件已经在此 Repo 中提供
 
 #### Bash & Oh My ZSH
 
@@ -413,17 +421,6 @@
     * 左下角 Options
         * Show Alfred on: active screen 在活动窗口中唤出 alfred，当使用外接屏幕时比较有用
 
-#### MacVim
-
-* 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
-    * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
-* 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
-* 复制 `my-mac-env/Users/USERNAME/.vim` 目录
-* 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
-* 偏好设置
-    * General
-        * After last window closes => Quit MacVim
-
 #### Raycast
 
 * 常用配置
@@ -442,6 +439,21 @@
     * [battery-health](https://www.raycast.com/o1y/battery-health)，查看电池状态
     * [timers](https://www.raycast.com/ThatNerd/timers)，简单的番茄钟
     * [ihosts](https://www.raycast.com/JinShi/ihosts)，hosts 管理
+
+#### Vim & MacVim
+
+##### Vim + MacVim
+* 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
+* 复制 `my-mac-env/Users/USERNAME/.vim` 目录
+* 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
+
+##### MacVim only
+* 注意：从 macOS 12 开始系统自带的 vim 已经 +clipboard，如果不使用图形界面就不需要额外安装 MacVim 了
+* 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
+    * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
+* 偏好设置
+    * General
+        * After last window closes => Quit MacVim
 
 #### Visual Studio Code
 
@@ -463,7 +475,7 @@
 
 * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
 * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/Idea` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
-* 常用插件推荐：
+* 常用插件：
     * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
     * Chinese (Simplified) Language Pack/中文语言包: 建议新手安装，快速熟悉编辑器
     * GenerateAllSetter: 快速生成实例的全部 Setter 方法
@@ -471,7 +483,7 @@
     * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
     * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版
     * SpotBugs: 可以分析出当前项目或文件中潜在的问题
-* IntelliJ IDEA 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 https://www.jetbrains.com/products/compare/ 页面进行对比查看。
+* IntelliJ IDEA Ultimate 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 [JetBrains Products Comparison](https://www.jetbrains.com/products/compare/) 页面进行对比查看。所以理论上有了 IDEA Ultimate 就不需要再安装 WebStorm、PHPStorm、PyCharm 等产品了。
 
 #### Xcode
 
@@ -493,12 +505,6 @@
 * 复制 `my-mac-env/usr/local/etc/nginx` 目录
 * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
 * 如需要支持 https，使用 `gen-ssl-csr.sh` 生成证书
-
-#### Node & NPM/xNPM
-
-* 创建 `~/.nvm` 目录
-* 复制 `my-mac-env/Users/USERNAME/.cnpmrc` 文件
-    * 如有其他 xNPM，可根据情况创建各自的配置文件
 
 #### Git
 
