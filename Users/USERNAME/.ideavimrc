@@ -62,19 +62,25 @@ sethandler n:vim i:ide
 
 
 " == 快捷键绑定 Mappings == {{{
-" + 可以通过 `:actionlist` 查看所有支持的动作，以及对应的键绑定信息
+" + 可以通过 `:actionlist` 查看所有支持的动作及对应的键绑定信息，或者在 https://gist.github.com/zchee/9c78f91cc5ad771c1f5d 查询
+" + 可以通过 `:actionlist $keyword_or_keymap` 进行搜索
+"   + 例1: `:actionlist rename` 查询名称包含 rename 的动作
+"   + 例2: `:actionlist <C-M>` 查询绑定了 C-M (Ctrl+m) 键的动作
 " + 定义键绑定有两种方式，`:action {action_id}<CR>`(这种可以用 noremap) 或 `<Action>({action_id})`(这种只能用 map)
 " + 整体思路：g 定义的键不中断代码编写，焦点始终留在编辑器；<leader> 定义的键会中断代码编写，将焦点移出编辑器
 " + 注意：注释不能跟在 map 命令尾部，会影响命令执行！！！
 
 "let mapleader=";"    "Map leader 快捷键绑定前缀，默认是 \
 map <leader>b <Action>(ViewBreakpoints)
+map <leader>c <Action>(editRunConfigurations)
 map <leader>d <Action>(ActivateDatabaseToolWindow)
 map <leader>f <Action>(SelectInProjectView)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>m <Action>(ActivateMavenToolWindow)
+map <leader>r <Action>(RunConfiguration)
 map <leader>s <Action>(FileStructurePopup)
 map <leader>t <Action>(ActivateTerminalToolWindow)
+map ga <Action>(Annotate)
 map gc <Action>(CopyReference)
 map gd <Action>(GotoDeclaration)
 map gf <Action>(HighlightUsagesInFile)

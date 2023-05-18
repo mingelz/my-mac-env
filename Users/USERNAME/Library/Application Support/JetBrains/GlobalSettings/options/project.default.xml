@@ -17,6 +17,17 @@
           <option name="myName" value="Project Default" />
           <!-- 检查 serialVersionUID [Editor/Inspectioins/JVM languages/Serializable class without 'serialVersionUID']-->
           <inspection_tool class="SerializableHasSerialVersionUIDField" enabled="true" level="WARNING" enabled_by_default="true" />
+          <!-- 检查冗余的 if 语句 [Editor/Inspectioins/Java/Control flow issues/Redundant 'if' statement]-->
+          <inspection_tool class="TrivialIf" enabled="true" level="WARNING" enabled_by_default="true">
+          <!-- 忽略链式 if 语句，可以更好的保证风格统一性-->
+            <option name="ignoreChainedIf" value="true" />
+          <!-- 忽略带有简单 assert 的 if 语句，因为可能引起语义变化-->
+            <option name="ignoreAssertStatements" value="true" />
+          </inspection_tool>
+          <!-- 报告 ESLint 检查到的问题 [Editor/Inspectioins/JavaScript and TypeScript/Qode quality tools/ESLint]-->
+          <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+          <!-- 报告 TSLint 检查到的问题 [Editor/Inspectioins/JavaScript and TypeScript/Qode quality tools/TSLint]-->
+          <inspection_tool class="TsLint" enabled="true" level="WARNING" enabled_by_default="true" />
         </profile>
         <version value="1.0" />
       </component>

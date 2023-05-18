@@ -448,7 +448,7 @@
 * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
 
 ##### MacVim only
-* 注意：从 macOS 12 开始系统自带的 vim 已经 +clipboard，如果不使用图形界面就不需要额外安装 MacVim 了
+* 注意：从 macOS 12 开始系统自带的 vim 已经 `+clipboard`，如果不使用图形界面就不需要额外安装 MacVim 了
 * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
     * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
 * 偏好设置
@@ -476,13 +476,18 @@
 * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
 * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/Idea` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
 * 常用插件：
+    * arthas idea: 快速生成 Arthas 命令
     * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
     * Chinese (Simplified) Language Pack/中文语言包: 建议新手安装，快速熟悉编辑器
     * GenerateAllSetter: 快速生成实例的全部 Setter 方法
+    * GitToolBox: 在每行代码后追加 Git Blame 信息
     * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
     * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
     * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版
+    * Rainbow Variable: 每个变量使用不同颜色，找变量方便了
+    * Sequence Diagram: 根据代码生成调用流程图
     * SpotBugs: 可以分析出当前项目或文件中潜在的问题
+    * Stack trace to UML: 根据错误堆栈信息生成流程图
 * IntelliJ IDEA Ultimate 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 [JetBrains Products Comparison](https://www.jetbrains.com/products/compare/) 页面进行对比查看。所以理论上有了 IDEA Ultimate 就不需要再安装 WebStorm、PHPStorm、PyCharm 等产品了。
 
 #### Xcode
