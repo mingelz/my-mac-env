@@ -34,6 +34,7 @@ export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottle
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+alias bldeps="brew leaves | xargs brew deps --include-build --tree" # 列出安装项目的依赖关系，omz的插件中没提供，只好自己加一个
 
 ## Java
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8) # 当安装了多个 Java 版本时，可以通过修改最后的版本号实现切换版本
