@@ -256,6 +256,7 @@
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
     * [xbar(bitbar)](https://github.com/matryer/xbar)、[SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具，同时此开发者还有其他一些 Mac 小工具
+    * [Snipaste](https://zh.snipaste.com/)，截图+贴图
 * 开发
     * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     * [Visual Studio Code](https://code.visualstudio.com/)
@@ -424,12 +425,13 @@
 #### Raycast
 
 * 常用配置
-    * Clipboard History
-        * Hotkey: `Command + Control + C`
+    * Clipboard History: Hotkey: `Command + Control + C`
     * Quicklinks
         * Search Google: `https://www.google.com/search?q={Query}`, Alias: `gg`
         * Search Bing: `https://global.bing.com/search?q={Query}`, Alias: `bn`
         * Search Baidu: `https://www.baidu.com/s?wd={Query}`, Alias: `bd`
+    * Snippets
+        * Search Snippets: Hotkey: `Command + Control + S`
     * Window Management
         * Maximize: HotKey: `Command + Control + Option + Shift + Enter`
         * Next Display: HotKey: `Command + Control + Option + Shift + M`
@@ -476,7 +478,6 @@
 * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
 * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/Idea` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
 * 常用插件：
-    * arthas idea: 快速生成 Arthas 命令
     * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
     * Chinese (Simplified) Language Pack/中文语言包: 建议新手安装，快速熟悉编辑器
     * GenerateAllSetter: 快速生成实例的全部 Setter 方法
