@@ -61,6 +61,69 @@
 
 ### 3.1 系统偏好设置
 
+* Apple ID
+    * 使用触控ID购物：打开
+* 网络
+    * 关闭雷雳网桥
+    * 启用防火墙
+* 屏幕使用时间
+    * 关闭
+* 通用
+    * 关于本机
+        * 名称：修改本机名称
+    * 软件更新
+        * 自动更新：全都打开
+    * 存储空间
+        * 存储在 iCloud 中
+            * 把一些不需要的关掉
+* 外观
+    * 在滚动条中点按
+        * 跳到点按的位置
+* 辅助功能
+    * 指针控制
+        * 触控板选项
+            * 使用触控板进行拖移：打开
+            * 拖移样式：三批拖移
+* 桌面与程序坞
+    * 大小：最小
+    * 放大：看情况
+    * 置于屏幕上的位置：左侧
+    * 在程序坞中显示最近使用的应用程序：关闭
+    * 根据最近的使用情况自动重新排列空间：关闭
+    * 触发角：关闭所有
+* 显示器
+    * 夜览
+        * 定时：日出到日落
+* 键盘
+    * 键盘快捷键
+        * 启动台与程序坞：关闭所有
+        * 显示器：关闭所有
+        * 调度中心：关闭所有
+        * 键盘：仅保留以下
+            * 将焦点移到下一窗口：Command+`
+        * 输入法：仅保留以下
+            * 选择上一个输入法
+        * 截屏：仅保留以下
+            * 截屏和录制选项
+        * 服务：关闭所有
+        * 聚焦：关闭所有
+        * 辅助功能：仅保留以下
+            * 反转颜色
+        * App快捷键：关闭所有
+        * 修饰键：调换 大写锁定和Control
+    * 输入法
+        * 编辑
+            * 自动纠正拼写：关闭
+            * 自动大写字词的首字母：关闭
+            * 连按两下空格键插入句号：关闭
+* 触控板
+    * 查询与数据检测器：三指轻点
+    * 轻点来点按：打开
+    * 在页面之间轻扫：关闭
+    * App Expose：四指向下轻扫
+
+<details>
+  <summary>原 macOS 11 中的配置</summary>
 * 通用
     * 外观: 【自动】
     * 最近使用的项目: 【5】
@@ -158,6 +221,7 @@
         * 【勾选】使用触控ID购物
         * 免费下载: 【始终不需要】
 * 家人共享
+</details>
 
 ### 3.2 Finder 偏好设置
 
@@ -259,7 +323,7 @@
     * [Snipaste](https://zh.snipaste.com/)，截图+贴图
 * 开发
     * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-    * [Visual Studio Code](https://code.visualstudio.com/)
+    * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可参考 https://zhuanlan.zhihu.com/p/536236143 ，即将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn`
     * [IntelliJ IDEA](http://www.jetbrains.com/idea/)
     * [iTerm](http://www.iterm2.com)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
@@ -343,16 +407,31 @@
         * Cursor Colors
             * 【选中】Cursor guide
         * Color Presets
-            * 【选中】Solarized Dark。这个配色下目录颜色有些浅，可以通过修改 Cyan 的 Bright 颜色来解决
+            * 【选中】Solarized Dark。这个配色下目录颜色有些浅，可以通过修改 Cyan 的 Bright 颜色来解决（比如 `#99ffff`）
     * Text
         * Font
             * Monaco, Regular, 18pt
             * 【勾选】Use a different font for non-ASCII text
         * Non-ASCII Font
             * PingFang SC (苹方-简), Regular, 18pt
+    * Window
+        * Settings for New Windows。新开窗口的大小，默认的略小
+            * Columns: 100
+            * Rows: 28
     * Terminal
         * Scrollback Buffer
             * 【勾选】Unlimited scrollback
+    * Keys
+        * Key Mappings
+            * `Sent ^[[1;5D`: `^b` ，使用 Control+b 向后（左）移动一个单词
+            * `Sent ^[[1;5C`: `^f` ，使用 Control+f 向前（右）移动一个单词
+            * 额外的，默认配置中一些有用的快捷键：
+                * `^a`: 移动到行首
+                * `^e`/`^k`: 移动到行尾
+                * `^d`: 删除光标下的字符
+                * `^w`: 向后（左）删除一个单词
+                * `^q`/`^u`: 清空当前行
+                * `^t`: 交换最后两个字母
 * Keys
     * Hotkey
         * 【勾选】Show/hide all windows with a system-wide hotkey: Control+Options+Shift+Command+I
