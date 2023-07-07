@@ -355,7 +355,7 @@
 #### Oh My Zsh
 
 > **注意**
-> 1. omz 的插件建议放在 omz 安装目录下的 `custom/plugins` 中，一般为 `~/.oh-my-zsh/custom/plugins`
+> 1. omz 的插件建议使用 brew 维护，方便升级。如果自己安装则放在 omz 安装目录下的 `custom/plugins` 中，一般为 `~/.oh-my-zsh/custom/plugins`
 > 2. 鉴于国内网络环境，可以使用 [OhMyZsh TUNA 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/)
 
 * [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
