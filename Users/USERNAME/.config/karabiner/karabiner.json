@@ -303,6 +303,72 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Map Command-Shift-Option-Control-Period to f17 (avoid System Diagnostics)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "f19"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Map Command-Shift-Option-Control-Comma to f18 (avoid System Diagnostics View)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "f18"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Map Command-Shift-Option-Control-w to f17 (avoid Wifi Diagnostics)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "f17"
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
