@@ -60,6 +60,7 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
       * TypeScript / JavaScript
         * [x] Unambiguous imports on the fly _自动 import 无歧义的类_
     * Appearance
+      * [x] Show method separators _展示方法分隔线_
       * [x] Show whitespaces _展示空白字符_
     * Editor Tabs
       * Appearance

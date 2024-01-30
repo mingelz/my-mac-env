@@ -4,6 +4,11 @@
     <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
   </component>
 
+  <component name="DaemonCodeAnalyzerSettings">
+    <!-- 展示方法分隔线 [Editor/General/Appearance/Show method separators] -->
+    <option name="SHOW_METHOD_SEPARATORS" value="true" />
+  </component>
+
   <component name="EditorSettings">
     <!-- 保存文件时，保留光标所在行的末尾空白字符 [Editor/General/On Save/Keep trailing spaces on caret line] -->
     <option name="KEEP_TRAILING_SPACE_ON_CARET_LINE" value="false" />
