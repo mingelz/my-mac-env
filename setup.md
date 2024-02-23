@@ -306,6 +306,7 @@
 * [WeChat](https://weixin.qq.com/)
 * [Xcode](http://developer.apple.com/xcode)
 * [XMind Zen](http://www.xmind.net/)
+* iOCR，[宁波上官](https://www.better365.cn/) 有很多优秀的产品
 
 ### 4.2 下载
 
@@ -326,8 +327,9 @@
     * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可参考 https://zhuanlan.zhihu.com/p/536236143 ，即将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn`
     * [IntelliJ IDEA](http://www.jetbrains.com/idea/)
     * [iTerm](http://www.iterm2.com)
+    * [Fork](https://fork.dev/)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
-    * [DB Browser for SQLite](https://sqlitebrowser.org/)，SQLite 浏览器
+    * [SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio), [DB Browser for SQLite](https://sqlitebrowser.org/)，SQLite 管理器
     * [Charles Proxy](http://www.charlesproxy.com/)，商业软件，如果想用免费软件可以尝试 [whistle](https://github.com/avwo/whistle)
 * 娱乐
     * [Netease Music](http://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
