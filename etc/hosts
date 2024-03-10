@@ -9,5 +9,34 @@
 ::1             localhost
 fe80::1%lo0     localhost
 
-# gfw, https://github.com/googlehosts/hosts
+# GFW
+## https://asm.ca.com/zh_cn/ping.php
+## https://github.com/googlehosts/hosts
+## google
+# 127.0.0.1 fonts.googleapis.com
+# 127.0.0.1 ajax.googleapis.com
+## github
 192.30.255.113 gist.github.com
+## bing
+204.79.197.200 global.bing.com
+## medium
+104.16.122.127 medium.com
+104.16.119.145 cdn-static-1.medium.com
+104.16.119.145 cdn-images-1.medium.com
+104.16.119.145 cdn-images-2.medium.com
+104.16.119.145 glyph.medium.com
+## reddit
+151.101.65.140 reddit.com
+151.101.65.140 www.reddit.com
+151.101.29.140 www.redditmedia.com
+151.101.29.140 styles.redditmedia.com
+151.101.29.140 a.thumbs.redditmedia.com
+151.101.29.140 b.thumbs.redditmedia.com
+## quora
+54.82.245.144 quora.com
+54.82.245.144 www.quora.com
+## discourse-cdn
+199.254.199.17 global.discourse-cdn.com
+199.254.199.17 sea2.discourse-cdn.com
+## ms edge
+20.166.2.191 msedge.api.cdp.microsoft.com
