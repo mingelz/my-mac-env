@@ -1,6 +1,13 @@
 [user]
     name = mingelz
     email = mingelz@gmail.com
+# 当你同时维护多个账号时，建议使用 includeIf 分别配置账号信息 https://git-scm.com/docs/git-config#_conditional_includes
+# 在某个路径下使用另一套配置（一般只需配置 user.name 和 user.email）
+#[includeIf "gitdir/i:/path/to/dir/"]
+#    path = .gitconfig_foo
+# 在某个域下使用另一套配置，对应的域路径像这样 https://github.com/**/** 或 git@gitlab.com:**/**
+#[includeIf "hasconfig:remote.*.url:https://example.com/**/**"]
+#    path = .gitconfig_foo
 [init]
     defaultBranch = master
 [push]
@@ -27,37 +34,72 @@
     # 从 git@2.16 开始 branch 使用 less 显示信息，不太习惯，改为传统方式
     branch = false
 [alias]
+    # -- branch --
     br = branch
+
+    # -- commit --
     ci = commit
     cim = commit -m
     cin = commit --no-verify -m
+
+    # -- clone --
     cl = clone
+
+    # -- checkout --
     cn = checkout -b
     co = checkout
+
+    # -- cherry-pick --
     cp = cherry-pick
+
+    # -- diff --
     di = difftool
     # diff 最后一次提交的内容
     dl = "!f() { rev=${1-HEAD}; git difftool $rev^ $rev; }; f"
+
+    # -- fetch --
     fc = fetch -p
+
+    # -- log --
     # http://git-scm.com/docs/git-log
     #        图形    简短hash        相对时间        装饰ref    30条 显示格式: %h 短哈希, %ar 相对提交时间, %s 提交说明, %an 作者, %d 引用信息, %n 换行
     lg = log --graph --abbrev-commit --relative-date --decorate -n30 --pretty=format:'%C(red)%h%C(reset) - %C(cyan)(%ar)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
     # 在 lg 的基础上，列出所有 branchs/stash 的分支情况，并把条数放大到 500
     la = lg --all -n500
+
+    # -- merge --
     mg = merge
+
+    # -- pull --
     # 添加 --rebase 参数，在 merge 的时候不会分叉
     pr = pull --rebase
+
+    # -- rebase --
     # 使用交互式 rebase 工具压缩 git 提交（squash）
     ri = rebase -i
+
+    # -- stash --
     # stash 列表也可以像 log 列表一下展示信息
     sl = stash list --abbrev-commit --pretty=format:'%C(magenta)%gd%C(reset) - %C(red)%h%C(reset) - %C(cyan)(%ai)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
+    # stash 指定文件，从 git@2.13 开始支持，命令格式 git stash push [-m <message>] [--] [<pathspec>...]
+    sp = stash pop
+    spush = stash push --
     sv = stash save -u
+
+    # -- status --
     st = status
+
+    # -- reset --
     # 撤销 commit 但保留暂存记录
     # HEAD是指向当前版本的指针，HEAD^指向上个版本，HEAD^^指向上上个版本，注意还有HEAD~，可以自行搜索详细讲解
     # --soft保留修改及暂存记录，--mixed保留修改但取消暂存，--hard删除修改完全恢复文件
     undo = reset --mixed HEAD^
+
+    # -- 统计 --
     # 统计有哪些人提交过，及每人提交次数
     who = shortlog -sn --all --no-merges
-    # 统计每人提交行数
-    cnt = "!f() { printf \"     total        add        del author\\n%s\\n\" \"--------------------------------------------\"; git log --no-merges --pretty=format:%an --numstat | awk '/./ && !author { author = $0; next } author { ins[author] += $1; del[author] += $2 } /^$/ { author = \"\"; next } END { for (a in ins) { printf \"%10d %10d %10d %s\\n\", ins[a] - del[a], ins[a], del[a], a } }' | sort -rn; }; f"
+    # 统计每人提交行数，支持跟一个参数（值为 1/2/3)，含义：1:按total排序（默认）; 2:按add排序; 3:按delete排序
+    cnt = "!f() { si=\"${1:-1}\"; printf \"     total        add     delete  author\\n%s\\n\" \"---------------------------------------------\"; git log --no-merges --pretty=format:%an --numstat | awk '/./ && !author { author = $0; next } author { ins[author] += $1; del[author] += $2 } /^$/ { author = \"\"; next } END { for (a in ins) { printf \"%d:%d:%d:%s\\n\", ins[a] - del[a], del[a], ins[a], a } }' | sort -rn -t : -k $si | awk -F: '{ printf \"%10d %10d %10d  %s\\n\", $1, $2, $3, $4}'; }; f"
+    cnt1 = cnt 1
+    cnt2 = cnt 2
+    cnt3 = cnt 3
