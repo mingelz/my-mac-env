@@ -2,10 +2,10 @@
     name = mingelz
     email = mingelz@gmail.com
 # 当你同时维护多个账号时，建议使用 includeIf 分别配置账号信息 https://git-scm.com/docs/git-config#_conditional_includes
-# 在某个路径下使用另一套配置（一般只需配置 user.name 和 user.email）
+# 例1: 在某个路径下使用另一套配置（一般只需配置 user.name 和 user.email）
 #[includeIf "gitdir/i:/path/to/dir/"]
 #    path = .gitconfig_foo
-# 在某个域下使用另一套配置，对应的域路径像这样 https://github.com/**/** 或 git@gitlab.com:**/**
+# 例2: 在某个域下使用另一套配置，对应的域路径像这样 https://github.com/**/** 或 git@gitlab.com:**/**
 #[includeIf "hasconfig:remote.*.url:https://example.com/**/**"]
 #    path = .gitconfig_foo
 [init]
