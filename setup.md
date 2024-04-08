@@ -561,6 +561,7 @@
 * 常用插件：
     * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
     * Chinese (Simplified) Language Pack/中文语言包: 建议新手安装，快速熟悉编辑器
+    * Easy Code Screenshots: 根据选中的代码生成截图
     * GenerateAllSetter: 快速生成实例的全部 Setter 方法
     * GitToolBox: 在每行代码后追加 Git Blame 信息
     * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
