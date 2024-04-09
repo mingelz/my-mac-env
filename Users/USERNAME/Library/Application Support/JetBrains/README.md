@@ -24,6 +24,8 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
   * Appearance
     * Tool Windows
       * [ ] Show tool window bars _是否显示工具栏_
+  * New UI
+    * [x] Compact mode _紧凑模式_
   * System Settings
     * Project
       * Open project in: `New window`
@@ -55,6 +57,8 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
       * [x] Remove trailing blank lines at the end of saved files _保存文件时是否移除文件末尾多余的空行-
       * [x] Ensure every saved file ends with a line break _保存文件时是否文件末尾要有一个换行_
     * Auto Import
+      * XML
+        * [ ] Show auto-import tooltip _编辑pom文件时因依赖较多容易卡住_
       * Java
         * [x] Add unambiguous imports on the fly _自动 import 无歧义的类_
       * TypeScript / JavaScript
@@ -65,8 +69,12 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
     * Editor Tabs
       * Appearance
         * [x] Mark modified (*) _被修改的文件 Tab 上用星号 * 标记_
+        * [x] Show pinned tabs in a separate row _将所有PIN住的Tab单独放在一行_
       * Opening Policy
         * [x] Enable preview tab _启用预览窗口（单击文件时复用同一个预览 Tab，多次单击不同文件不会打开多个 Tab，双击文件独占一个 Tab）_
+  * Code Editing
+    * Highlight on Caret Movement
+      * [x] Current scope _高亮当前层级的缩进线_
   * Font
     * Size: `18` _编辑器字体大小_
   * Color Schema
@@ -142,17 +150,23 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
       * `\b(todo|fixme)\b.*`
       * `\b(xxx|note|warning|bug|mock|debug)\b`
 * Build, Execution, Deployment
-  * Trusted Locations _信任的路径_
-    * `$USER_HOME$/workspace/repos`
   * Debugger
     * Remove breakpoint:
       * [x] Drag to the editor or click with middle mouse button _通过拖拽或鼠标右键点击删除断点_
       * [x] Confirm removal of conditional or logging breakpoints _删除带表达式或日志配置的断点时需要确认_
+    * Data Views
+      * [x] Sort values alphabetically _数据排序展示_
+  * Trusted Locations _信任的路径_
+    * `$USER_HOME$/workspace/repos`
 * Tools
   * Shared Indexes
-    * Public Shared Indexes _下载共享索引，减少项目打开时间_
+    * Public Shared Indexes _下载共享索引，减少项目打开时间（2024.1修改了此配置规则，不需要配置了）_
       * JDKs: `Download automatically`
       * Maven Libraries: `Download automatically`
+* Project Structure for New Projects （未打开项目时按 Command+; 唤出）
+  * Project Settings
+    * Project
+      * SDK: `选择新项目默认JDK`
 
 ## 项目配置
 
@@ -171,9 +185,8 @@ NOTE 2: `dictionaries` 目录下是项目级字典，文件名默认是登录用
     * JVM languages
       * [x] Serializable class without 'serialVersionUID' _检查 serialVersionUID_
   * File Encodings
-    * Properties Files (*.properties)
-      * Default encoding for properties files: `UTF-8` _*.properties 文件编码_
-      * [ ] Transparent native-to-ascii conversion _转换 UTF-8 字符为转义形式_
+    * Default encoding for properties files: `UTF-8` _*.properties 文件编码_
+      * [ ] Transparent native-to-ascii conversion _将 UTF-8 字符转义保存_
 * Version Control
   * Commit
     * [x] Clear initial commit message _清空上一次的提交信息_
@@ -187,8 +200,14 @@ NOTE 2: `dictionaries` 目录下是项目级字典，文件名默认是登录用
     * Annotation Processors
       * [x] Enable annotation processing _开启注解处理_
 * Languages & Frameworks
+  * JavaScript
+    * Code Quality Tools
+      * ESLint
+        * [x] Automatic ESLint configuration _自动启用ESLint配置_
+  * Markdown
+    * Default layout: `Editor` _.md文件默认只显示编辑页_
   * Spring
-    * Common
+    * Common _2024.1取消了此配置_
       * [x] Allow to auto-configure application contexts _自动配置 Spring_
 * Breakpoints _Breakpoints配置_
   * Java Line Breakpoints
@@ -202,3 +221,27 @@ NOTE 2: `dictionaries` 目录下是项目级字典，文件名默认是登录用
 ## 插件
 
 编辑器自带插件非常全，根据实际情况选择禁用部分插件，可以适当提高编辑器的性能。
+
+### IdeaVim
+
+安装 IdeaVim 插件后，记得复制 `my-mac-env/Users/USERNAME/.ideavimrc` 文件
+
+### GitToolBox
+
+* Version Control
+  * GitToolBox
+    * General
+      * [ ] Show Project View decoration _在项目名称后追加Git信息_
+    * Blame
+      * [ ] Show 'Blame' in status bar _在状态栏添加当前行Blame信息_
+    * Auto Fetch _自动fetch_
+      * [ ] Auto fetch () minutes
+      * [ ] Auto fetch on branch switch
+    * Commit
+      * Commit Message Validation
+        * [x] Check pattern match _提交信息时校验格式_
+        * Pattern: `(?:fix|chore|docs|feat|refactor|style|test|wip)(?:\(.*\))?: .*(\s#\d+)?`
+        * Test Input: `fix: 修复问题`
+    * Branch
+      * Outdated Branches Cleanup _自动清理分支_
+        * [ ] Auto cleanup () hours

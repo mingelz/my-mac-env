@@ -567,6 +567,7 @@
     * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
     * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
     * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版
+    * Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色
     * Rainbow Variable: 每个变量使用不同颜色，找变量方便了
     * Sequence Diagram: 根据代码生成调用流程图
     * SpotBugs: 可以分析出当前项目或文件中潜在的问题
