@@ -301,38 +301,40 @@
 * [Caffeinated](https://apps.apple.com/cn/app/id1362171212?mt=12)
 * [Dingtalk](https://www.dingtalk.com)
 * [iWorks](https://www.apple.com/cn/iwork/): Pages, Numbers, Keynote
+* [Longshot](https://longshot.chitaner.com/)
 * [QQ](http://im.qq.com/macqq/)
 * [The Unarchiver](http://theunarchiver.com/)
 * [WeChat](https://weixin.qq.com/)
 * [Xcode](http://developer.apple.com/xcode)
 * [XMind Zen](http://www.xmind.net/)
-* iOCR，[宁波上官](https://www.better365.cn/) 有很多优秀的产品
+* iShot/iOCR，[宁波上官](https://www.better365.cn/) 有很多优秀的产品
 
 ### 4.2 下载
 
 可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
 * 基础工具
-    * [Baidu Input](http://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法
-    * [Google Chrome](https://www.google.com/chrome/)、[Microsoft Edge](https://www.microsoft/edge)
-    * [Alfred](https://www.alfredapp.com/)，竞品有 [Raycast](https://www.raycast.com/) 及国人开发的 [uTools](http://www.u.tools/)。个人已经倒戈至 Raycast。
+    * [Baidu Input](https://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法
+    * [Google Chrome](https://www.google.com/chrome/)、[Microsoft Edge](https://www.microsoft/edge)、[Arc](https://arc.net/)，浏览器
+    * [Alfred](https://www.alfredapp.com/)、[Raycast](https://www.raycast.com/)、[uTools](http://www.u.tools/)，效率工具，个人已经倒戈至 Raycast。
 * 小工具
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
     * [xbar(bitbar)](https://github.com/matryer/xbar)、[SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具，同时此开发者还有其他一些 Mac 小工具
-    * [Snipaste](https://zh.snipaste.com/)，截图+贴图
-* 开发
-    * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-    * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可参考 https://zhuanlan.zhihu.com/p/536236143 ，即将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn`
-    * [IntelliJ IDEA](http://www.jetbrains.com/idea/)
-    * [iTerm](http://www.iterm2.com)
+    * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot
+* 生产力
+    * [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+    * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn` （[参考](https://zhuanlan.zhihu.com/p/536236143)）
+    * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+    * [draw.io](https://www.drawio.com/)
+    * [iTerm](https://www.iterm2.com)
     * [Fork](https://fork.dev/)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
     * [SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio), [DB Browser for SQLite](https://sqlitebrowser.org/)，SQLite 管理器
-    * [Charles Proxy](http://www.charlesproxy.com/)，商业软件，如果想用免费软件可以尝试 [whistle](https://github.com/avwo/whistle)
+    * [Charles Proxy](https://www.charlesproxy.com/)，商业软件，如果想用免费软件可以尝试 [whistle](https://github.com/avwo/whistle)
 * 娱乐
-    * [Netease Music](http://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
+    * [Netease Music](https://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
     * [Steam](https://www.steampowered.com/)
 
 ### 4.3 命令行安装
@@ -509,8 +511,17 @@
     * Clipboard History: Hotkey: `Command + Control + C`
     * Quicklinks
         * Search Google: `https://www.google.com/search?q={Query}`, Alias: `gg`
-        * Search Bing: `https://global.bing.com/search?q={Query}`, Alias: `bn`
+        * Search Bing Global: `https://global.bing.com/search?q={query}`, Alias: `bg`
+        * Search Bing CN: `https://cn.bing.com/search?q={query}`, Alias: `bc`
         * Search Baidu: `https://www.baidu.com/s?wd={Query}`, Alias: `bd`
+        * 百度翻译（英译中）: `https://fanyi.baidu.com/#en/zh/{query}`, Alias: `bdtc`
+        * 百度翻译（中译英）: `https://fanyi.baidu.com/#zh/en/{query}`, Alias: `bdte`
+        * DeepL（英译中）: `https://www.deepl.com/translator#en/zh/{query}`, Alias: `dltc`
+        * DeepL（中译英）: `https://www.deepl.com/translator#zh/en/{query}`, Alias: `dlte`
+        * MVN Repository: `https://mvnrepository.com/search?q={query}`, Alias: `mvn`
+        * NPM Package: `https://www.npmjs.com/package/{query}`, Alias: `npm`
+        * NPM Mirror Package: `https://npmmirror.com/package/{query}`, Alias: `cnpm`
+        * RunKit: `https://npm.runkit.com/{query}`, Alias: `rk`
     * Snippets
         * Search Snippets: Hotkey: `Command + Control + S`
     * Window Management
