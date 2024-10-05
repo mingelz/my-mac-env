@@ -315,7 +315,7 @@
 
 * 基础工具
     * [Baidu Input](https://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法
-    * [Google Chrome](https://www.google.com/chrome/)、[Microsoft Edge](https://www.microsoft/edge)、[Arc](https://arc.net/)，浏览器
+    * [Google Chrome](https://www.google.com/chrome/)、[Microsoft Edge](https://www.microsoft.com/edge)、[Arc](https://arc.net/)，浏览器
     * [Alfred](https://www.alfredapp.com/)、[Raycast](https://www.raycast.com/)、[uTools](http://www.u.tools/)，效率工具，个人已经倒戈至 Raycast。
 * 小工具
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
@@ -323,6 +323,8 @@
     * [xbar(bitbar)](https://github.com/matryer/xbar)、[SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具，同时此开发者还有其他一些 Mac 小工具
     * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot
+    * [BackgroundMusic](https://github.com/kyleneideck/BackgroundMusic)，为每个App设置不同的音量
+    * [ImageOptim](https://imageoptim.com/mac)，图片压缩，[pngquant](https://pngquant.org/) 的 Mac UI 版
 * 生产力
     * [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
     * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn` （[参考](https://zhuanlan.zhihu.com/p/536236143)）
@@ -533,6 +535,7 @@
     * [battery-health](https://www.raycast.com/o1y/battery-health)，查看电池状态
     * [timers](https://www.raycast.com/ThatNerd/timers)，简单的番茄钟
     * [ihosts](https://www.raycast.com/JinShi/ihosts)，hosts 管理
+    * [Easy Dictionary](https://www.raycast.com/isfeng/easydict)，翻译
 
 #### Vim & MacVim
 
