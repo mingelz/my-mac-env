@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# ref: https://stackoverflow.com/a/24584976
+# usage: git cct commit_id datetime
+# example: git cct 2132bfdb "YYYY-mm-dd HH:MM:SS"
+
+commit="$1" datecal="$2"
+
+if [[ -z "$commit" ]]; then
+  echo "[ERR] commit id required!"
+  exit 1
+fi
+
+if [[ -z "$datecal" ]]; then
+  echo "[ERR] datetime string required"
+  exit 1
+fi
+
+rebasing_branch="__rebasing-branch__"
+current_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [[ -z "$current_branch" ]]; then
+  echo "[ERR] please run on a git repository"
+  exit 1
+fi
+
+datecal_timestamp=$(date -j -f "%Y-%m-%d %H:%M:%S" "$datecal" +%s)
+
+if [[ -z "$datecal_timestamp" ]]; then
+  echo "[ERR] invalid datetime format"
+  exit 1
+fi
+
+git checkout -b "$rebasing_branch" "$commit"
+GIT_COMMITTER_DATE="$datecal_timestamp" GIT_AUTHOR_DATE="$datecal_timestamp" git commit --amend --no-edit --date "$datecal_timestamp"
+git checkout "$current_branch"
+git rebase --autostash --committer-date-is-author-date "$commit" --onto "$rebasing_branch"
+git branch -d "$rebasing_branch"
+
