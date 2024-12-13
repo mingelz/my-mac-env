@@ -1,13 +1,49 @@
-# OS
+### MacOS ###
 .DS_Store
-Thumbs.db
-Desktop.ini
+._*
 
-# IDE
+### Windows ###
+$RECYCLE.BIN/
+Thumbs.db
+[Dd]esktop.ini
+*.lnk
+
+### IntelliJ IDEA ###
 .idea/
+.ipr
+.iws
+.iml
+
+### VS Code ###
 .vscode/
+!.vscode/extensions.json
+
+### VIM ###
 *.sw?
 
-# Distribution, Cache, Temporary
+### CVS ###
+.svn/
+
+### Deployment, Distribution, Cache, Temporary ###
+build/
+target/
+dist/
+out/
+logs/
 *.log
+
+### Java, Maven, Gradle ###
+pom.xml.*
+*.class
+*.jar
+*.tar.gz
+
+### Node.js, npm, yarn ###
+node_modules/
+npm*.log*
+pnpm*.log*
+yarn*.log*
+.eslintcache
+
+### Others ###
 TODOs.md

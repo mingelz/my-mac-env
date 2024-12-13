@@ -1,6 +1,5 @@
 # editorconfig.org
-# https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig
-# ij_ 开头的是 Intellij IDEA 独有的配置
+# ij_ 开头的是 Intellij IDEA 独有的配置 https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig
 
 root = true
 
@@ -14,12 +13,17 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 ij_continuation_indent_size = 8
-# ij_visual_guides = 80,100,120
+ij_visual_guides = 80,100,120
 ij_wrap_on_typing = false
 
-[{*.js,*.es,*ts}]
+[{*.js,*.jsx,*ts,*.tsx,*.es,*.ms}]
 indent_size = 2
 ij_continuation_indent_size = 4
 
-[{*.markdown,*.md}]
-trim_trailing_whitespace = false
+[{*.swift}]
+indent_size = 2
+ij_continuation_indent_size = 4
+
+[{*.java}]
+indent_size = 4
+ij_continuation_indent_size = 8

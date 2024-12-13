@@ -34,6 +34,7 @@ export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottle
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_NO_ENV_HINTS=1
 alias bldeps="brew leaves | xargs brew deps --include-build --tree" # 列出安装项目的依赖关系，omz的插件中没提供，只好自己加一个
 
 ## Java
@@ -46,7 +47,7 @@ export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 # 使用 cnpm 源提高 npm 包的查询和下载速度
-alias cnpm="npm --registry=https://registry.npmmirror.com --cache=$HOME/.npm/.cache/cnpm --disturl=https://npmmirror.com/mirrors/node --userconfig=$HOME/.cnpmrc"
+alias cnpm="npm --registry=https://registry.npmmirror.com --disturl=https://npmmirror.com/mirrors/node --cache=$HOME/.npm/.cache/cnpm"
 alias cncu="ncu --registry=https://registry.npmmirror.com" # ncu 命令由 [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) 提供
 
 ## Ruby & Gem

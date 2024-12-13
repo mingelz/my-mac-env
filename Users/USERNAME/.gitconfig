@@ -1,3 +1,6 @@
+[core]
+    # 不追踪快捷方式
+    symlinks = false
 [user]
     name = mingelz
     email = mingelz@gmail.com
@@ -44,6 +47,7 @@
 
     # -- clone --
     cl = clone
+    cl1 = clone --depth 1
 
     # -- checkout --
     cn = checkout -b
@@ -99,7 +103,7 @@
     # 统计有哪些人提交过，及每人提交次数
     who = shortlog -sn --all --no-merges
     # 统计每人提交行数，支持跟一个参数（值为 1/2/3)，含义：1:按total排序（默认）; 2:按add排序; 3:按delete排序
-    cnt = "!f() { si=\"${1:-1}\"; printf \"     total        add     delete  author\\n%s\\n\" \"---------------------------------------------\"; git log --no-merges --pretty=format:%an --numstat | awk '/./ && !author { author = $0; next } author { ins[author] += $1; del[author] += $2 } /^$/ { author = \"\"; next } END { for (a in ins) { printf \"%d:%d:%d:%s\\n\", ins[a] - del[a], del[a], ins[a], a } }' | sort -rn -t : -k $si | awk -F: '{ printf \"%10d %10d %10d  %s\\n\", $1, $2, $3, $4}'; }; f"
+    cnt = "!f() { si=\"${1:-1}\"; printf \"     total        add     delete  author\\n%s\\n\" \"---------------------------------------------\"; git log --no-merges --pretty=format:%an --numstat | awk '/./ && !author { author = $0; next } author { ins[author] += $1; del[author] += $2 } /^$/ { author = \"\"; next } END { for (a in ins) { printf \"%d:%d:%d:%s\\n\", ins[a] - del[a], ins[a], del[a], a } }' | sort -rn -t : -k $si | awk -F: '{ printf \"%10d %10d %10d  %s\\n\", $1, $2, $3, $4}'; }; f"
     cnt1 = cnt 1
     cnt2 = cnt 2
     cnt3 = cnt 3
