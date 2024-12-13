@@ -4,27 +4,65 @@
 # localhost is used to configure the loopback interface
 # when the system is booting.  Do not change this entry.
 ##
+
+# localhost
+# ------------------------------------------------------------------------------
 127.0.0.1       localhost
 255.255.255.255 broadcasthost
 ::1             localhost
 fe80::1%lo0     localhost
 
 # GFW
-## https://asm.ca.com/zh_cn/ping.php
-## https://github.com/googlehosts/hosts
+# https://asm.ca.com/zh_cn/ping.php
+# https://github.com/googlehosts/hosts
+# ------------------------------------------------------------------------------
+
 ## google
 # 127.0.0.1 fonts.googleapis.com
 # 127.0.0.1 ajax.googleapis.com
-## github
-192.30.255.113 gist.github.com
+
 ## bing
 204.79.197.200 global.bing.com
+
+## github
+185.199.110.154   github.githubassets.com
+140.82.112.22     central.github.com
+185.199.109.133   desktop.githubusercontent.com
+185.199.109.153   assets-cdn.github.com
+185.199.108.133   camo.githubusercontent.com
+185.199.108.133   github.map.fastly.net
+146.75.37.194     github.global.ssl.fastly.net
+140.82.113.3      gist.github.com
+185.199.111.153   github.io
+140.82.113.3      github.com
+140.82.112.6      api.github.com
+185.199.111.133   raw.githubusercontent.com
+185.199.109.133   user-images.githubusercontent.com
+185.199.108.133   favicons.githubusercontent.com
+185.199.108.133   avatars5.githubusercontent.com
+185.199.108.133   avatars4.githubusercontent.com
+185.199.111.133   avatars3.githubusercontent.com
+185.199.109.133   avatars2.githubusercontent.com
+185.199.108.133   avatars1.githubusercontent.com
+185.199.108.133   avatars0.githubusercontent.com
+185.199.109.133   avatars.githubusercontent.com
+140.82.112.10     codeload.github.com
+3.5.25.19         github-cloud.s3.amazonaws.com
+3.5.29.163        github-com.s3.amazonaws.com
+3.5.29.222        github-production-release-asset-2e65be.s3.amazonaws.com
+52.217.171.57     github-production-user-asset-6210df.s3.amazonaws.com
+3.5.30.87         github-production-repository-file-5c1aeb.s3.amazonaws.com
+185.199.109.153   githubstatus.com
+140.82.112.18     github.community
+185.199.110.133   media.githubusercontent.com
+
 ## medium
 104.16.122.127 medium.com
 104.16.119.145 cdn-static-1.medium.com
 104.16.119.145 cdn-images-1.medium.com
 104.16.119.145 cdn-images-2.medium.com
 104.16.119.145 glyph.medium.com
+
 ## reddit
 151.101.65.140 reddit.com
 151.101.65.140 www.reddit.com
@@ -32,11 +70,14 @@ fe80::1%lo0     localhost
 151.101.29.140 styles.redditmedia.com
 151.101.29.140 a.thumbs.redditmedia.com
 151.101.29.140 b.thumbs.redditmedia.com
+
 ## quora
 54.82.245.144 quora.com
 54.82.245.144 www.quora.com
+
 ## discourse-cdn
 199.254.199.17 global.discourse-cdn.com
 199.254.199.17 sea2.discourse-cdn.com
+
 ## ms edge
 20.166.2.191 msedge.api.cdp.microsoft.com
