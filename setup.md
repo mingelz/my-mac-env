@@ -325,6 +325,7 @@
     * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot
     * [BackgroundMusic](https://github.com/kyleneideck/BackgroundMusic)，为每个App设置不同的音量
     * [ImageOptim](https://imageoptim.com/mac)，图片压缩，[pngquant](https://pngquant.org/) 的 Mac UI 版
+    * [Topit](https://github.com/lihaoyun6/Topit)，将任意窗口置顶
 * 生产力
     * [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
     * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn` （[参考](https://zhuanlan.zhihu.com/p/536236143)）
