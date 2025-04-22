@@ -289,7 +289,7 @@
         * Shell
             * 当 shell 退出时: 关闭窗口
 
-## 四、安装及配置应用
+## 四、应用安装
 
 应用软件查找及下载参考 [Awesome Mac](https://github.com/jaywcjlove/awesome-mac)，以下仅列出本人较常用应用
 
@@ -369,32 +369,32 @@
     * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
     * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)，命令补全插件
 
-### 4.4 软件配置
+## 五 应用配置
 
 下文中依赖的配置文件已经在此 Repo 中提供
 
-#### Bash & Oh My ZSH
+### Bash & Oh My ZSH
 
 复制 `my-mac-env/Users/USERNAME/.bash_profile` 及 `my-mac-env/Users/USERNAME/.zshrc` 文件
 
-#### Karabiner-Elements
+### Karabiner-Elements
 
 复制 `my-mac-env/Users/USERNAME/.config/karabiner` 下的文件
 
-#### Rectangle
+### Rectangle
 
 导入 `my-mac-env/Users/USERNAME/backup/rectangle-config.json` 文件
 
-#### Microsoft Edge
+### Microsoft Edge
 
 * 登录 MSN 账号，配置已同步
 
-#### Google Chrome
+### Google Chrome
 
 * 【勾选】退出前提示
 * 登录 Google 账，配置已同步
 
-#### iTerm2
+### iTerm2
 
 * General
     * Closing
@@ -446,7 +446,7 @@
     * iTerm2
         * Make iTerm2 Default Term
 
-#### 百度输入法
+### 百度输入法
 
 * 同步
     * 登录账号，以下配置可在登录账号后通过「下载配置」直接应用
@@ -467,7 +467,7 @@
     * 不启用「自动切换英文」
     * 不启用「翻译选中文本」
 
-#### Alfred
+### Alfred
 
 * General
     * Alfred Hotkey: Command + Space
@@ -508,7 +508,7 @@
     * 左下角 Options
         * Show Alfred on: active screen 在活动窗口中唤出 alfred，当使用外接屏幕时比较有用
 
-#### Raycast
+### Raycast
 
 * 常用配置
     * Clipboard History: Hotkey: `Command + Control + C`
@@ -538,38 +538,34 @@
     * [ihosts](https://www.raycast.com/JinShi/ihosts)，hosts 管理
     * [Easy Dictionary](https://www.raycast.com/isfeng/easydict)，翻译
 
-#### Vim & MacVim
+### Vim & MacVim
 
-##### Vim + MacVim
+注意：从 macOS 12 开始系统自带的 vim 已经 `+clipboard`，如果不使用图形界面就不需要额外安装 MacVim 了
+
+#### Vim + MacVim
 * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
 * 复制 `my-mac-env/Users/USERNAME/.vim` 目录
 * 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
 
-##### MacVim only
-* 注意：从 macOS 12 开始系统自带的 vim 已经 `+clipboard`，如果不使用图形界面就不需要额外安装 MacVim 了
+#### MacVim only
 * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
     * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
 * 偏好设置
     * General
         * After last window closes => Quit MacVim
 
-#### Visual Studio Code
+### Visual Studio Code
 
 * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
 * 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/` 下的文件
 * 常用插件：
-    * Auto Close Tag: 自动闭合 HTML 标签，VSCode 自带闭合标签功能，这个工具主要针对非 HTML 文件（比如`.vue`）
-    * Auto Rename Tag: 修改 HTML 单侧标签时，自动修改对应的标签
-    * Chinese (Simplified) Language Pack: 中文简体语言包
     * EditorConfig for VS Code: 自动应用 .editorconfig 配置
     * GitLens — Git supercharged: 非常强大的 Git 工具
-    * TabNine: 强大的代码提示工具，强于 Visual Studio IntelliCode，就是有点吃资源容易卡
     * TODO Hightlight: 高亮指定关键字
     * Vim: Vim 模拟器
         * 安装后参考 [官网安装文档](https://github.com/VSCodeVim/Vim#mac) 开启 key-repeating 能力
-    * Visual Studio IntelliCode: 微软官方提供的代码提示工具
 
-#### IntelliJ IDEA
+### IntelliJ IDEA
 
 * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
 * 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/Idea` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
@@ -581,15 +577,12 @@
     * GitToolBox: 在每行代码后追加 Git Blame 信息
     * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
     * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
-    * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版
-    * Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色
-    * Rainbow Variable: 每个变量使用不同颜色，找变量方便了
-    * Sequence Diagram: 根据代码生成调用流程图
+    * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
+    * Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色（或使用 Rainbow Variable 专门处理变量）
     * SpotBugs: 可以分析出当前项目或文件中潜在的问题
-    * Stack trace to UML: 根据错误堆栈信息生成流程图
 * IntelliJ IDEA Ultimate 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 [JetBrains Products Comparison](https://www.jetbrains.com/products/compare/) 页面进行对比查看。所以理论上有了 IDEA Ultimate 就不需要再安装 WebStorm、PHPStorm、PyCharm 等产品了。
 
-#### Xcode
+### Xcode
 
 * Preferences
     * Text Editing
@@ -604,24 +597,24 @@
     * 【勾选】Vim Mode (自从 v13 开始，Xcode 原生提供了 Vim Mode)
     * 【勾选】Invisibles
 
-#### Nginx
+### Nginx
 
 * 复制 `my-mac-env/usr/local/etc/nginx` 目录
 * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
 * 如需要支持 https，使用 `gen-ssl-csr.sh` 生成证书
 
-#### Git
+### Git
 
 复制 `my-mac-env/Users/USERNAME/.gitconfig` 文件，并根据实际情况重新编辑其中的用户信息
 
-#### SSH
+### SSH
 
 * 复制 `my-mac-env/Users/USERNAME/.ssh` 目录
 * 使用 `ssh-keygen` 生成针对每个站点的 SSH key
 * 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
 * 在相应站点配置公钥
 
-### 4.5 私人信息
+## 六 私人信息
 
 以下目录或软件中可能存在私人信息，未体现在上述列表中，记得备份旧数据。
 
