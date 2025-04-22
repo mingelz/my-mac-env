@@ -267,7 +267,8 @@
 * 标签页
     * 标签页布局：紧凑
 * 扩展
-    * [Vimari](https://github.com/televator-apps/vimari)，VIM快捷键
+    * [Vimari](https://github.com/televator-apps/vimari)，VIM快捷键，另在 MAS 中有 Vimlike, Vimkey 可选
+    * JSON Peep for Safari （通过 MAS 安装），格式化 JSON 数据
 * 高级
     * 智能搜索栏
         * 【勾选】显示完整网站地址
@@ -303,42 +304,45 @@
 * [iWorks](https://www.apple.com/cn/iwork/): Pages, Numbers, Keynote
 * [Longshot](https://longshot.chitaner.com/)
 * [QQ](http://im.qq.com/macqq/)
+* 无线鼠标(Remote Mouse)，手机安装同名软件可以将手机变身为翻页笔
+* 屏幕画笔(Screen Brush Ultra)
 * [The Unarchiver](http://theunarchiver.com/)
 * [WeChat](https://weixin.qq.com/)
 * [Xcode](http://developer.apple.com/xcode)
-* [XMind Zen](http://www.xmind.net/)
+* [XMind](http://www.xmind.net/)
 * iShot/iOCR，[宁波上官](https://www.better365.cn/) 有很多优秀的产品
 
 ### 4.2 下载
 
 可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
-* 基础工具
-    * [Baidu Input](https://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法
-    * [Google Chrome](https://www.google.com/chrome/)、[Microsoft Edge](https://www.microsoft.com/edge)、[Arc](https://arc.net/)，浏览器
-    * [Alfred](https://www.alfredapp.com/)、[Raycast](https://www.raycast.com/)、[uTools](http://www.u.tools/)，效率工具，个人已经倒戈至 Raycast。
-* 小工具
-    * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
+* 必备
+    * [Baidu Input](https://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法。我现在改用系统自带的五笔输入法了，完全够用
+    * [Microsoft Edge](https://www.microsoft.com/edge)、[Google Chrome](https://www.google.com/chrome/)、[Arc](https://arc.net/)
+* 效率
+    * [Raycast](https://www.raycast.com/)、[Alfred](https://www.alfredapp.com/)、[uTools](http://www.u.tools/)，效率工具，个人已倒戈至 Raycast
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
-    * [xbar(bitbar)](https://github.com/matryer/xbar)、[SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
-    * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具，同时此开发者还有其他一些 Mac 小工具
+    * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot
-    * [BackgroundMusic](https://github.com/kyleneideck/BackgroundMusic)，为每个App设置不同的音量
-    * [ImageOptim](https://imageoptim.com/mac)，图片压缩，[pngquant](https://pngquant.org/) 的 Mac UI 版
     * [Topit](https://github.com/lihaoyun6/Topit)，将任意窗口置顶
 * 生产力
-    * [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+    * [draw.io](https://www.drawio.com/)
     * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn` （[参考](https://zhuanlan.zhihu.com/p/536236143)）
     * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-    * [draw.io](https://www.drawio.com/)
     * [iTerm](https://www.iterm2.com)
     * [Fork](https://fork.dev/)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
-    * [SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio), [DB Browser for SQLite](https://sqlitebrowser.org/)，SQLite 管理器
+    * [DB Browser for SQLite](https://sqlitebrowser.org/)、[SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio)，SQLite 管理器
     * [Charles Proxy](https://www.charlesproxy.com/)，商业软件，如果想用免费软件可以尝试 [whistle](https://github.com/avwo/whistle)
+    * [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * 娱乐
     * [Netease Music](https://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
     * [Steam](https://www.steampowered.com/)
+* 未归类
+    * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具，同时此开发者还有其他一些 Mac 小工具
+    * [BackgroundMusic](https://github.com/kyleneideck/BackgroundMusic)，为每个App设置不同的音量
+    * [xbar(bitbar)](https://github.com/matryer/xbar)、[SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
+    * [ImageOptim](https://imageoptim.com/mac)，图片压缩，[pngquant](https://pngquant.org/) 的 Mac UI 版
 
 ### 4.3 命令行安装
 
