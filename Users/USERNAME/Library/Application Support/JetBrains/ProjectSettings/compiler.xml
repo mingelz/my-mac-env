@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="CompilerConfiguration">
-    <!-- 开启注解处理 [Build, Execution, Deployment/Compiler/Annotation Processors/Enable annotation processing] -->
-    <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
-    </annotationProcessing>
-  </component>
-</project>

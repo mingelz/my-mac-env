@@ -1,34 +1,28 @@
 # Intellij IDEA 配置
 
-Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开发，当开发语言主要是 Java + JavaScript 时，可以只依赖一个编辑器即可。
+Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开发，当开发语言主要是 Java + JavaScript(JS/ES/TS) 时，可以只依赖一个编辑器即可。
 
-以下配置即同时考虑了 Java 和 JavaScript 的开发。如果你的配置页面没有对应项目，大概率是没有启用对应插件导致的。
+以下配置同时考虑了 Java 和 JavaScript 的开发场景。如果你的配置页面没有对应项目，大概率是没有启用对应插件导致的。
 
-## 全局配置
+配置文件存储路径：
+* Ultimate 版路径为 `$USER_HOME$/Library/Application Support/JetBrains/IntellijIdea{版本号}`
+* Community 版路径为 `$USER_HOME$/Library/Application Support/JetBrains/IdeaIC{版本号}`
 
-### 说明
 
-全局配置应用于所有项目，相关配置备份在 `GlobalSettings` 中，可将其中的文件复制到对应的配置路径：
+## 配置细则
 
-+ Ultimate 版路径为 `$USER_HOME$/Library/Application Support/JetBrains/IntellijIdea{版本号}`
-+ Community 版路径为 `$USER_HOME$/Library/Application Support/JetBrains/IdeaIC{版本号}`
-
-其中：
-
-+ 快捷键以 Idea 默认的 macOS 为基础，被命名为 `keymaps/macOS-mz.xml`
-+ 对于 IdeaVim 插件，除了 `options/vim_settings.xml` 外，注意还有家目录下的 `.ideavimrc`
-
-### 配置细则
+说明：️🛄 表示对应配置为项目级，仅会应用于具体项目中。从 2022.3 开始，Idea 可以通过全局配置的 `project.default.xml` 文件自动生成项目配置，所以只要提前配置好就无需为每个项目配置一遍了。
 
 * Appearance & Behavior
   * Appearance
+    * UI Options
+      * [x] Compact mode _紧凑模式_
     * Tool Windows
       * [ ] Show tool window bars _是否显示工具栏_
-  * New UI
-    * [x] Compact mode _紧凑模式_
   * System Settings
     * Project
-      * Open project in: `New window`
+      * [ ] Reopen projects on startup _启动时打开关闭前的项目_
+      * Open project in: `New window` _在新窗口打开项目_
     * Autosave
       * [ ] Save files when switching to a different application or a built-in terminal _是否自动保存文件_
       * [ ] Back up files before saving _修改前是否备份文件_
@@ -39,11 +33,15 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
     * Recommended language plugin available _本地化语言插件推荐_
       * `No Pupup`
       * [ ] Show in tool window
+  * Trusted Locations _信任的路径_
+    * `$USER_HOME$/workspace/repos`
 * Keymap
   * Main Menu
     * Window
       * Editor Tabs
         * Split and Move Right: `option+l`(`alt+l`) _在右侧新建窗口组并将标签移动过去_
+  * Tool Window
+    * Terminal: `option+1`(`alt+1`) _切换 Terminal 窗口的显示隐藏_
   * Other
     * Tabs
       * Move To Opposite Group: `option+m`(`alt+m`) _将标签移动到另一窗口组_
@@ -66,12 +64,19 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
     * Appearance
       * [x] Show method separators _展示方法分隔线_
       * [x] Show whitespaces _展示空白字符_
+    * Code Folding
+      * Java
+        * [ ] One-line methods _不自动折叠只有一行的方法体_
     * Editor Tabs
       * Appearance
-        * [x] Mark modified (*) _被修改的文件 Tab 上用星号 * 标记_
         * [x] Show pinned tabs in a separate row _将所有PIN住的Tab单独放在一行_
+        * [x] Mark modified _被修改的文件 Tab 上用星号 * 标记_
       * Opening Policy
         * [x] Enable preview tab _启用预览窗口（单击文件时复用同一个预览 Tab，多次单击不同文件不会打开多个 Tab，双击文件独占一个 Tab）_
+    * Smart Keys
+      * Markdown
+        * Lists
+          * [x] Renumber list when typing _自动更新列表序号_
   * Code Editing
     * Highlight on Caret Movement
       * [x] Current scope _高亮当前层级的缩进线_
@@ -97,7 +102,7 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
         * Comment Code
           * [ ] Line comment at first column _行注释从行首开始，如果反选则从第一个非空位置开始_
           * [x] Add a space at line comment start _行注释后跟一个空格_
-          * [x] Enforce on reformat _格式化代码时调整注释格式_
+            * [x] Enforce on reformat _格式化代码时调整注释格式_
           * [ ] Block comment at first column _块注释从行首开始，如果反选则从第一个非空位置开始_
     * HTML
       * Other
@@ -123,82 +128,38 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
           Use `single` quotes `always`.
           Trailling comma: `Add when multiline`
     * TypeScript
-      * Spaces
-        * Within
-          * [x] Object literal braces _对象大括号内加空格_
-          * [x] ES6 import/export braces _ES6 在 import/export 的大括号内加空格_
-        * Function declaration parameters: `Chop down if long` _方法定义参数过多时换行，且每个参数一行_
-        * Chained method calls: `Chop down if long` _链式调用过多时换行，且每个链一行_
-        * 'if()' statement
-          * [x] 'else' on new line _else 前换行_
-        * 'do ... while()' statement
-          * [x] 'while' on new line _while 前换行_
-        * 'try' statement
-          * [x] 'catch' on new line _catch 前换行_
-          * [x] 'finally' on new line _finally 前换行_
-      * Punctuation
-        * `Don't use` semicolon to terminate statement `always`.
-          Use `single` quotes `always`.
-          Trailling comma: `Add when multiline`
-  * Inspections
+      * 与 JavaScript 配置保持一致
+  * 🛄 Inspections
     * Profile: `Default` _将 Inspections 配置保存到 IDE，就不需要每个项目都设置一遍了_
+    * JVM languages
+      * [x] Serializable class without 'serialVersionUID' _检查 serialVersionUID_
   * File and Code Templates
     * Includes
-      * File Header _文件头信息_
+      * File Header _文件头信息，参考 [File Header.java](./File%20Header.java) 文件_
+  * 🛄 File Encodings
+    * Default encoding for properties files: `UTF-8` _*.properties 文件编码_
+      * [ ] Transparent native-to-ascii conversion _将 UTF-8 字符转义保存_
   * TODO
     * Patterns _TODO关键字高亮正则_
       * `\b(todo|fixme)\b.*`
       * `\b(xxx|note|warning|bug|mock|debug)\b`
-* Build, Execution, Deployment
-  * Debugger
-    * Remove breakpoint:
-      * [x] Drag to the editor or click with middle mouse button _通过拖拽或鼠标右键点击删除断点_
-      * [x] Confirm removal of conditional or logging breakpoints _删除带表达式或日志配置的断点时需要确认_
-    * Data Views
-      * [x] Sort values alphabetically _数据排序展示_
-  * Trusted Locations _信任的路径_
-    * `$USER_HOME$/workspace/repos`
-* Tools
-  * Shared Indexes
-    * Public Shared Indexes _下载共享索引，减少项目打开时间（2024.1修改了此配置规则，不需要配置了）_
-      * JDKs: `Download automatically`
-      * Maven Libraries: `Download automatically`
-* Project Structure for New Projects （未打开项目时按 Command+; 唤出）
-  * Project Settings
-    * Project
-      * SDK: `选择新项目默认JDK`
-
-## 项目配置
-
-### 说明
-
-项目配置仅会应用在具体项目中，在 Idea 配置面板中会提示 **For new projects** 或 **For current project**， 相关配置备份在 `ProjectSettings` 中，可将其中的文件复制到项目根目录的 `.idea` 路径下。
-
-NOTE 1: 从 2022.3 开始，Idea 可以通过全局配置的 `project.default.xml` 文件自动生成项目配置，所以只要提前把文件复制好，下边的配置就无需再每个项目配置一遍了。
-
-NOTE 2: `dictionaries` 目录下是项目级字典，文件名默认是登录用户的名字，复制后需要修改，同时也要修改文件中的 `name` 值。另外这个目录貌似在 2022.3 中已经失效了。
-
-### 配置细则
-
-* Editor
-  * Inspections
-    * JVM languages
-      * [x] Serializable class without 'serialVersionUID' _检查 serialVersionUID_
-  * File Encodings
-    * Default encoding for properties files: `UTF-8` _*.properties 文件编码_
-      * [ ] Transparent native-to-ascii conversion _将 UTF-8 字符转义保存_
-* Version Control
+* 🛄 Version Control
   * Commit
     * [x] Clear initial commit message _清空上一次的提交信息_
   * Confirmation
     * When files are created: `Do not add` _新增文件时不自动提交_
 * Build, Execution, Deployment
-  * Build Tools
+  * 🛄 Build Tools
     * Maven
       * [x] Always update snapshots _始终更新 SNAPSHOT 包_
-  * Compiler
+  * 🛄 Compiler
     * Annotation Processors
       * [x] Enable annotation processing _开启注解处理_
+  * Debugger
+    * Remove breakpoint:
+      * [x] Confirm removal of conditional or logging breakpoints _删除带表达式或日志配置的断点时需要确认_
+    * Data Views
+      * [x] Sort values alphabetically _数据排序展示_
 * Languages & Frameworks
   * JavaScript
     * Code Quality Tools
@@ -206,34 +167,82 @@ NOTE 2: `dictionaries` 目录下是项目级字典，文件名默认是登录用
         * [x] Automatic ESLint configuration _自动启用ESLint配置_
   * Markdown
     * Default layout: `Editor` _.md文件默认只显示编辑页_
-  * Spring
-    * Common _2024.1取消了此配置_
-      * [x] Allow to auto-configure application contexts _自动配置 Spring_
-* Breakpoints _Breakpoints配置_
+* Advanced Settings
+  * Startup
+    * [ ] Open README.md file if there are no open files on project startup _项目启动时如无其他需打开的文件则默认打开 README.md_
+* Project Structure for New Projects （未打开项目时按 Command+; 唤出）
+  * Project Settings
+    * Project
+      * SDK: `选择新项目默认JDK`
+* 🛄 Project Window _项目窗口配置，点击右上角齿轮图标进行配置。（无法在设置界面直接访问，可直接复制 [project.default.xml](./project.default.xml) 文件中的对应内容）_
+  * Tree Appearance
+    * [x] Sort by Type _文件列表按类型排序（先按类型再按名称）_
+* 🛄 Breakpoints _断点配置（无法在设置界面直接访问，可直接复制 [project.default.xml](./project.default.xml) 文件中的对应内容）_
   * Java Line Breakpoints
     * Suspend: `Thread`
   * Java Exception Breakpoints
     * Suspend: `Thread`
-* Project Window _项目窗口配置，点击右上角齿轮图标进行配置_
-  * Tree Appearance
-    * [x] Sort by Type _文件列表按类型排序（先按类型再按名称）_
 
 ## 插件
 
-编辑器自带插件非常全，根据实际情况选择禁用部分插件，可以适当提高编辑器的性能。
+### 自带插件
 
-### IdeaVim
+编辑器默认启用了所有自带插件，禁用掉不需要的插件可以适当提升能。以下是我开启的自带插件：
+
+* Build Tools
+  * Maven
+* Database
+  * Database Tools and SQL
+* Deployment
+  * Docker _提供 `Dockerfile` 文件语法高亮支持_
+* JavaScript Frameworks and Tools
+  * JavaScript and TypeScript
+  * React
+* JVM Frameworks
+  * AOP Pointcut Language _支持方法/类与对应切面的相互跳转_
+  * Jakarta EE Platform _(被 Spring Web 依赖)_
+  * Jakarta EE: Web/Servlets _(被 Spring Web 依赖)_
+  * JVM Microservices Frameworks
+  * Lombok
+  * Spring _(被 Spring Boot/Spring Web 依赖)_
+  * Spring Boot _支持通过 `@Resource`/`@Autowired` 图标跳转对应依赖_
+  * Spring Initializr _(被 Spring Boot 依赖)_
+  * Spring Web
+* Languages
+  * Markdown
+  * Properties
+  * Shell Script
+* Microservices
+  * Endpoints _支持通过 Web 路径搜索对应方法（需要启用 Spring Web 插件才生效）_
+* Style Sheets
+  * CSS
+  * Less
+* Test Tools
+  * JUnit
+* Version Controls
+  * Git
+* Other Tools
+  * EditorConfig
+  * IntelliLang
+  * Java Bytecode Decompiler
+  * Java Internationalization
+  * Terminal
+
+### IdeaVim 配置
 
 安装 IdeaVim 插件后，记得复制 `my-mac-env/Users/USERNAME/.ideavimrc` 文件
 
-### GitToolBox
+### GitToolBox 配置
 
 * Version Control
   * GitToolBox
     * General
+      * [ ] Show 'Git Stat' in status bar
+      * [ ] Show 'Changed' in status bar
       * [ ] Show Project View decoration _在项目名称后追加Git信息_
-    * Blame
-      * [ ] Show 'Blame' in status bar _在状态栏添加当前行Blame信息_
+      * [ ] Show promotional information
+      * Behind tracker
+        * [ ] Behind tracker
     * Auto Fetch _自动fetch_
       * [ ] Auto fetch () minutes
       * [ ] Auto fetch on branch switch
@@ -242,6 +251,8 @@ NOTE 2: `dictionaries` 目录下是项目级字典，文件名默认是登录用
         * [x] Check pattern match _提交信息时校验格式_
         * Pattern: `(?:fix|chore|docs|feat|refactor|style|test|wip)(?:\(.*\))?: .*(\s#\d+)?`
         * Test Input: `fix: 修复问题`
+    * Blame
+      * [ ] Show 'Blame' in status bar _在状态栏添加当前行Blame信息_
     * Branch
       * Outdated Branches Cleanup _自动清理分支_
         * [ ] Auto cleanup () hours

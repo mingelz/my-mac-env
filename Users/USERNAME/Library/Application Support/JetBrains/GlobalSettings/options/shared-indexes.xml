@@ -1,9 +1,0 @@
-<application>
-  <!-- 是否下载共享索引，减少打开项目的时间 [Tools/Shared Indexes/Public Shared Indexes] -->
-  <component name="download-consent">
-    <option name="consentItems">
-      <item download="ALLOWED" kind="jdk" url="https://index-cdn.jetbrains.com/v2/jdk" />
-      <item download="ALLOWED" kind="mvn" url="https://index-cdn.jetbrains.com/v2/mvn" />
-    </option>
-  </component>
-</application>

@@ -1,0 +1,23 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <!-- Project Window 配置 -->
+      <component name="ProjectViewState">
+        <!-- 文件列表按类型排序（先按类型再按名称） [Tree Appearance/Sort by Type]-->
+        <option name="sortByType" value="true" />
+      </component>
+
+      <!-- Breakpoints 配置 -->
+      <component name="XDebuggerManager">
+        <breakpoint-manager>
+          <breakpoints-defaults>
+            <!-- 断点仅应用到线程级 [Breakpoints/Java Exception Breakpoints/Suspend] -->
+            <breakpoint suspend="THREAD" type="java-exception" />
+            <!-- 断点仅应用到线程级 [Breakpoints/Java Line Breakpoints/Suspend] -->
+            <breakpoint suspend="THREAD" type="java-line" />
+          </breakpoints-defaults>
+        </breakpoint-manager>
+      </component>
+    </defaultProject>
+  </component>
+</application>
