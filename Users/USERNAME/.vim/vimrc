@@ -21,6 +21,9 @@ source $VIMRUNTIME/vimrc_example.vim    "Vim 格式化脚本
 if has("win32")
   source $VIMRUNTIME/mswin.vim    "设置快捷键为 Windows 方式
   behave mswin    "设置快捷键为 Windows 方式
+elseif has("mac")    "Vim on Mac, or MacVim
+  " 解决打开 Typescript 文件会卡住的问题，ref: https://vi.stackexchange.com/questions/25086/vim-hangs-when-i-open-a-typescript-file
+  set regexpengine=0    "语法匹配引擎 (0:自动选择; 1:旧引擎; 2: NFA引擎) [re=regexpengine]
 endif
 "指定 viminfo 的位置，使用 set viminfo 的方式只能跟字符串，为了合适变量，需要用 let &viminfo
 if has('nvim')
