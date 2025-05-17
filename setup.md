@@ -385,6 +385,8 @@
 
 复制 `my-mac-env/Users/USERNAME/.config/karabiner` 下的文件
 
+在绑定快捷键时，由于系统占用了 `Command+Option+Shift+Control+,` 和 `Command+Option+Shift+Control+.` 两个快捷键（参考[这里](https://discussions.apple.com/thread/254787050)），所以这两项会绑定不成功。
+
 ### Rectangle
 
 导入 `my-mac-env/Users/USERNAME/backup/rectangle-config.json` 文件
