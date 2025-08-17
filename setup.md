@@ -538,9 +538,7 @@
         * Next Display: HotKey: `Command + Control + Option + Shift + M`
         * Restore: HotKey: `Command + Control + Option + Shift + \`
 * 常用插件
-    * [Coffee](https://www.raycast.com/mooxl/coffee), 阻止系统进入睡眠模式
     * [battery-health](https://www.raycast.com/o1y/battery-health)，查看电池状态
-    * [timers](https://www.raycast.com/ThatNerd/timers)，简单的番茄钟
     * [ihosts](https://www.raycast.com/JinShi/ihosts)，hosts 管理
     * [Easy Dictionary](https://www.raycast.com/isfeng/easydict)，翻译
 
