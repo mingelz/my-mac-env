@@ -190,11 +190,16 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
 编辑器默认启用了所有自带插件，禁用掉不需要的插件可以适当提升能。以下是我开启的自带插件：
 
 * Build Tools
+  * Artifacts Repository Search _被 Maven 依赖_
   * Maven
 * Database
   * Database Tools and SQL
 * Deployment
   * Docker _提供 `Dockerfile` 文件语法高亮支持_
+* IDE Settings
+  * EditorConfig
+  * IntelliLang
+  * Java IDE Customization
 * JavaScript Frameworks and Tools
   * JavaScript and TypeScript
   * React
@@ -208,10 +213,18 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
   * Spring Boot _支持通过 `@Resource`/`@Autowired` 图标跳转对应依赖_
   * Spring Initializr _(被 Spring Boot 依赖)_
   * Spring Web
+* JVM Tools
+  * Java Bytecode Decompiler
+  * Java Internationalization
+  * Java Stream Debugger
 * Languages
   * Markdown
   * Properties
   * Shell Script
+* Local AI/ML Tools
+  * Full Line Code Completion
+  * Machine Learning Code Completion
+  * Turbo Complete _关闭：暂只适用于 Kotlin_
 * Microservices
   * Endpoints _支持通过 Web 路径搜索对应方法（需要启用 Spring Web 插件才生效）_
 * Style Sheets
@@ -222,10 +235,6 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
 * Version Controls
   * Git
 * Other Tools
-  * EditorConfig
-  * IntelliLang
-  * Java Bytecode Decompiler
-  * Java Internationalization
   * Terminal
 
 ### IdeaVim 配置
