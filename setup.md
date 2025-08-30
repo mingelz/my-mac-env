@@ -49,11 +49,17 @@
 
 ## 二、系统安装
 
+### 2.1 通过U盘安装
+
 * ARM(Apple Silicon) 版本关机后，长按开机键直到显示启动菜单; X86(Intel) 版本重启电脑并按住 option 键，在启动菜单中选择刚刚制作的U盘
 * 建议整个安装过程联网，否则可能会提示「安装器有效负载签名检查失败」
 * 如果需要全新安装，在安装进程进行到「macOS 实用工具」时选择「磁盘工具」，抹掉硬盘上的内容（格式请选择「APFS」）
 * 同样在「macOS 实用工具」选择「全新安装 macOS」开始安装系统
 * 安装中会有几次重启，无需干预，整个过程大概 10 分钟
+
+### 2.2 通过网络安装
+
+针对 ARM(Apple Silicon) 版本，与【2.1 通过U盘安装】一致，没插入U盘时，选择「全新安装 macOS」就会从网络下载并进行安装。
 
 ## 三、系统设置
 
@@ -61,54 +67,71 @@
 
 ### 3.1 系统偏好设置
 
-* Apple ID
-    * 使用触控ID购物：打开
 * 网络
     * 关闭雷雳网桥
     * 启用防火墙
-* 屏幕使用时间
-    * 关闭
 * 通用
     * 关于本机
         * 名称：修改本机名称
     * 软件更新
         * 自动更新：全都打开
-    * 存储空间
-        * 存储在 iCloud 中
-            * 把一些不需要的关掉
-* 外观
-    * 在滚动条中点按
-        * 跳到点按的位置
+    * 储存空间
+        * 存储在 iCloud 中：在【iCloud】中统一设置，不需要在这里管理了
+    * 登录项与扩展
+        * 酌情关闭不需要的项目
 * 辅助功能
     * 指针控制
         * 触控板选项
             * 使用触控板进行拖移：打开
             * 拖移样式：三批拖移
+* 外观
+    * 在滚动条中点按
+        * 跳到点按的位置
+* 控制中心
+    * 其他模块
+        * 电池
+            * 显示百分比：打开
 * 桌面与程序坞
-    * 大小：最小
-    * 放大：看情况
-    * 置于屏幕上的位置：左侧
-    * 在程序坞中显示最近使用的应用程序：关闭
-    * 根据最近的使用情况自动重新排列空间：关闭
+    * 程序坞
+        * 大小：最小
+        * 放大：看情况
+        * 置于屏幕上的位置：左侧
+        * 在程序坞中显示建议App和最近使用的App：关闭
+        * 根据最近的使用情况自动重新排列空间：关闭
+    * 桌面与台前调度
+        * 占按墙纸以显示桌面：仅在台前调度中
     * 触发角：关闭所有
 * 显示器
     * 夜览
         * 定时：日出到日落
+* 屏幕保护程序
+    * 随机播放航拍：全部随机
+* 聚焦
+    * 关闭所有
+    * 帮助Apple改进搜索：关闭
+* 声音
+    * 提醒音量：适当调整
+* 锁定屏幕
+    * 只有「启动屏幕保护」时间小于「关闭显示器」时间，才能正常启动屏保
+* iCloud
+    * 关闭不希望同步的项目
 * 键盘
     * 键盘快捷键
         * 启动台与程序坞：关闭所有
         * 显示器：关闭所有
         * 调度中心：关闭所有
+        * 窗口：保留「通用-居中」和「二等分」，其他关闭
         * 键盘：仅保留以下
             * 将焦点移到下一窗口：Command+`
         * 输入法：仅保留以下
-            * 选择上一个输入法
+            * 选择上一个输入法：Option+Space
         * 截屏：仅保留以下
             * 截屏和录制选项
+        * 演讲者前置：关闭所有
         * 服务：关闭所有
         * 聚焦：关闭所有
         * 辅助功能：仅保留以下
-            * 反转颜色
+            * 反转颜色，并将快捷键设置为 Command+Q
         * App快捷键：关闭所有
         * 修饰键：调换 大写锁定和Control
     * 输入法
@@ -119,109 +142,8 @@
 * 触控板
     * 查询与数据检测器：三指轻点
     * 轻点来点按：打开
-    * 在页面之间轻扫：关闭
+    * 轻扫切换页面：关闭
     * App Expose：四指向下轻扫
-
-<details>
-  <summary>原 macOS 11 中的配置</summary>
-* 通用
-    * 外观: 【自动】
-    * 最近使用的项目: 【5】
-* 桌面与屏幕保护程序
-    * 桌面
-        * 动态
-* 程序坞与菜单栏（Dock）
-    * 程序坞与菜单栏
-        * 调整 Dock 大小
-        * 置于屏幕上的位置: 【左边】。因为普遍屏幕比较宽，横向位置够用而纵向稀缺
-        * 【勾选】自动隐藏和显示程序坞
-        * 【取消勾选】在程序坞中显示最近使用的应用程序
-    * 电池
-        * 【勾选】显示百分比
-    * 时钟
-        * 【勾选】使用24小时格式时钟
-* 调度中心（Mission Control）
-    * 【取消勾选】根据最近的使用情况自动重新排列 Space
-    * 触发角
-        * 目前用不到还容易误触，先都取消吧
-* Siri
-    * 【取消勾选】启用“询问Siri”
-    * 【取消勾选】在菜单栏中显示 Siri
-* 聚焦（Spotlight）
-* 语言和地区
-    * 时间格式: 【24小时制】
-* 通知与专注模式
-    * 允许通知
-        * 【取消勾选】当屏幕锁定时
-* 互联网账户
-    * iCloud
-        * 【勾选】除「照片」与「股市」外的其他项
-        * iCloud云盘 - 选项: 仅勾选需要的 App
-* 密码
-* 用户与群组
-    * 【停用】客人用户
-    * 登录项: 【删除】无用的登录项目
-* 辅助功能
-    * 指针控制
-        * 触控板选项
-            * 【勾选】启用拖移【三指拖移】
-* 屏幕使用时间
-* 扩展
-    * 【取消勾选】无用的项，特别是「共享菜单」中的项
-* 安全性和隐私
-    * 防火墙
-        * 【打开防火墙】
-    * 隐私
-        * 调整相关软件的隐私策略，特别是在安装并运行软件后，可以在这里 Review
-* 软件更新
-    * 高级
-        * 【取消勾选】下载可用更新
-* 网络
-    * 除「Wi-Fi」外，【停用】其他的连接方式（默认还有「蓝牙 PAN」和「Thunderbolt 网桥」）
-* 蓝牙
-* 声音
-* 解控ID
-* 键盘
-    * 键盘
-        * 按下地球(Fn)键时: 不执行任何操作。我在输入法中将Fn设置为切换临时拼音，所以就不需要这个键切输入法了
-        * 修饰键
-            * 中/英键（大写锁定键）: 【Control】 （个人喜好，请慎重选择）
-    * 文本
-        * 【取消勾选】自动纠正拼写
-        * 【取消勾选】自动大写字词的首字母
-        * 【取消勾选】连按两下空格键插入句号
-    * 快捷键
-        * 根据自己的喜好做修改，我基本取消了所有勾选项，仅保留：
-            * 键盘 - 将焦点移到新窗口: 【Command+`】
-            * 输入法 - 选择上一个输入法: 【Option+空格】。因为我把 Control 键移到了 Caps_lock 键上，导致原来的快捷键切输入法不方便
-            * 截屏 - 截屏和录制选项: 【Shift+Command+5】
-            * 辅助功能 - 反转颜色: 【Command+Q】。这样当在某些 App 中不小心按了 ⌘Q 时就不至于直接退出应用
-    * 听写
-        * 快捷键: 关闭
-* 触控板
-    * 光标与点按
-        * 查询与数据检测器: 【三指轻点】
-        * 【勾选】轻点来点按: 【单指轻点】
-    * 更多手势
-        * 【取消勾选】在页面之间轻扫
-* 鼠标
-* 显示器
-    * 夜览（Night Shift）
-        * 设定时间: 日落到日出
-* 打印机与扫描仪
-* 随航（Sidecar）
-* 电池
-* 日期与时间
-* 共享
-    * 修改【电脑名称】（点【编辑】进行修改）
-* 时间机器
-* 启动磁盘
-* Apple ID
-    * 媒体与购买项目
-        * 【勾选】使用触控ID购物
-        * 免费下载: 【始终不需要】
-* 家人共享
-</details>
 
 ### 3.2 Finder 偏好设置
 
@@ -252,15 +174,7 @@
         * 【勾选】按名称排序时的窗口中
         * 【勾选】桌面上
 
-### 3.3 系统右侧通知栏
-
-* 根据喜好配置
-* 个人配置：
-    * 提醒事项
-    * 日历
-    * 天气 + 时钟
-
-### 3.4 Safari 偏好设置
+### 3.3 Safari 偏好设置
 
 * 通用
     * 【取消勾选】下载后打开「安全」文件
@@ -277,7 +191,7 @@
     * 显示
         * 【勾选】显示状态栏
 
-### 3.5 Terminal 偏好设置
+### 3.4 Terminal 偏好设置
 
 * 通用
     * 使用描述文件新建窗口: Homebrew
@@ -289,6 +203,28 @@
                 * Andale Mono 18 磅
         * Shell
             * 当 shell 退出时: 关闭窗口
+
+### 3.5 系统顶部菜单栏
+
+* 按住 Command 可拖动
+* 右向左顺序：时间、控制中心、聚焦搜索、电池、Wifi、输入法
+
+### 3.6 系统 Docker 栏
+
+* 保留：Finder、日历、iPhone镜像、浏览器、iTerm、Editor
+
+### 3.7 系统右侧通知栏
+
+* 根据喜好配置
+* 个人配置：
+    * 提醒事项
+    * 日历
+    * 天气 + 时钟
+
+### 3.8 启动台
+
+* 保留：Safari、App Store
+* 其他都放在两个文件夹中：工具、其他
 
 ## 四、应用安装
 
@@ -334,7 +270,7 @@
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
     * [DB Browser for SQLite](https://sqlitebrowser.org/)、[SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio)，SQLite 管理器
     * [Charles Proxy](https://www.charlesproxy.com/)，商业软件，如果想用免费软件可以尝试 [whistle](https://github.com/avwo/whistle)
-    * [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+    * [JDK](https://www.oracle.com/java/technologies/downloads/)
 * 娱乐
     * [Netease Music](https://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
     * [Steam](https://www.steampowered.com/)
@@ -349,25 +285,23 @@
 #### Brew
 
 > **注意**
-> 1. brew 依赖 Xcode Command Line Tools，安装 brew 时会自动执行 `xcode-select --install` 进行安装
+> 1. brew 依赖 Xcode Command Line Tools，建议安装 brew 前先安装 Xcode，并在命令行执行 `xcode-select --install` 安装 Xcode Command Line Tools。虽然直接安装 brew 也会安装此依赖，但我个人还是习惯先手动把依赖处理好
 > 2. ARM 版本安装路径在 `/opt/`，X86 版本安装路径为 `/usr/bin/`
 > 3. 个人不喜欢使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装
 > 4. 鉴于国内网络环境，可以使用 [Homebrew TUNA 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
 
 * [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
-    * git，安装 Xcode Command Line Tools 后已经带了 git，如果希望使用中文版，可以用 brew 重新装一个
     * lame，mp3 编解码、压缩
-    * nginx
     * nvm & node
         * 虽然 NVM 官方不推荐使用 brew 安装，但个人仍觉得这是最方便的方式，只需安装后参考给出的提示进行配置（我已在 `~/.bash_profile` 添加）
-        * 复制 `my-mac-env/Users/USERNAME/.cnpmrc` 文件
     * tree
 
 #### Oh My Zsh
 
 > **注意**
-> 1. omz 的插件建议使用 brew 维护，方便升级。如果自己安装则放在 omz 安装目录下的 `custom/plugins` 中，一般为 `~/.oh-my-zsh/custom/plugins`
-> 2. 鉴于国内网络环境，可以使用 [OhMyZsh TUNA 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/)
+> 1. omz 自带的插件，以及手动安装在 omz 插件目录（一般为 `~/.oh-my-zsh/custom/plugins`）的插件，直接在 `~/.zshrc` 的 `plugins=()` 中设置名称即可
+> 2. 通过 brew 安装的插件，需要手动 `source` 插件路径，插件会安装在 `/opt/homebrew/share/` 下。个人建议使用 brew 安装，方便维护与升级
+> 3. 鉴于国内网络环境，可以使用 [OhMyZsh TUNA 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/)
 
 * [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
     * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
@@ -377,28 +311,58 @@
 
 下文中依赖的配置文件已经在此 Repo 中提供
 
-### Bash & Oh My ZSH
+### Shell
 
-复制 `my-mac-env/Users/USERNAME/.bash_profile` 及 `my-mac-env/Users/USERNAME/.zshrc` 文件
+* Bash: 复制 `my-mac-env/Users/USERNAME/.bash_profile` 文件
+* Oh My ZSH：复制 `my-mac-env/Users/USERNAME/.zshrc` 文件
+* Git: 复制 `my-mac-env/Users/USERNAME/.gitconfig` 文件，并根据实际情况重新编辑其中的用户信息
+* Node & NPM: 复制 `my-mac-env/Users/USERNAME/.cnpmrc` 文件
+* Python & PyPI: 复制 `my-mac-env/Users/USERNAME/.config/pip` 目录
+* Ruby & Gem: 复制 `my-mac-env/Users/USERNAME/.gemrc` 目录
+* 其他: 复制 `my-mac-env/usr/local/bin` 目录，或酌情复制需要的命令
+
+#### SSH
+
+* 复制 `my-mac-env/Users/USERNAME/.ssh` 目录
+* 使用 `ssh-keygen` 生成针对每个站点的 SSH key
+* 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
+* 在相应站点配置公钥
+
+#### Nginx
+
+* 复制 `my-mac-env/usr/local/etc/nginx` 目录
+* 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
+* 如需要支持 https，使用 `gen-ssl-csr.sh` 生成证书
+
+### Vim & MacVim
+
+* 复制 `my-mac-env/Users/USERNAME/.vim` 目录
+
+#### Vundle
+* 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
+* 复制 `my-mac-env/Users/USERNAME/.vim` 目录
+* 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
+* 目前我基本不再使用 Vim 开发，只安装 editorconfig 一个插件就行了
+
+#### MacVim
+* 从 macOS 12 开始系统自带的 vim 已经 `+clipboard`，如果不使用图形界面就不需要额外安装 MacVim 了
+* 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
+    * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
+* 偏好设置
+    * General
+        * After last window closes => Quit MacVim
 
 ### Karabiner-Elements
 
-复制 `my-mac-env/Users/USERNAME/.config/karabiner` 下的文件
+复制 `my-mac-env/Users/USERNAME/.config/karabiner` 下的文件。
 
-在绑定快捷键时，由于系统占用了 `Command+Option+Shift+Control+,` 和 `Command+Option+Shift+Control+.` 两个快捷键（参考[这里](https://discussions.apple.com/thread/254787050)），所以这两项会绑定不成功。
-
-### Rectangle
-
-导入 `my-mac-env/Users/USERNAME/backup/rectangle-config.json` 文件
-
-### Microsoft Edge
-
-* 登录 MSN 账号，配置已同步
-
-### Google Chrome
-
-* 【勾选】退出前提示
-* 登录 Google 账，配置已同步
+> 以下快捷键在配置中存在（留做参考），但我实际已不再使用：
+>
+> * *LEFT_SHIFT enhance*: 留给 IntellijIDEA 的 Search Everywhere 功能使用
+> * *CAPS_LOCK to COMMAND + CONTROL + OPTION + SHIFT*: 替换为 CONTROL + OPTION + SHIFT 三键，原因是 `Command+Option+Shift+Control+,` 和 `Command+Option+Shift+Control+.` 两个系统快捷键无法取消，可能会被误按
+> * *Map Command-Shift-Option-Control-Period to f17 (avoid System Diagnostics)*: 绑定不成功，参考[这里](https://discussions.apple.com/thread/254787050)
+> * *Map Command-Shift-Option-Control-Comma to f18 (avoid System Diagnostics View)*: 绑定不成功，原因同上
+> * *Map Command-Shift-Option-Control-w to f17 (avoid Wifi Diagnostics)*: 绑定不成功，原因同上
 
 ### iTerm2
 
@@ -414,13 +378,13 @@
         * 【取消勾选】Stretch tabs to fill bar
 * Profiles
     * General
-        * Working Directory
+        * Initial Directory
             * 【选中】Reuse previous session's directory
     * Colors
-        * Cursor Colors
-            * 【选中】Cursor guide
         * Color Presets
             * 【选中】Solarized Dark。这个配色下目录颜色有些浅，可以通过修改 Cyan 的 Bright 颜色来解决（比如 `#99ffff`）
+        * Cursor Guide
+            * 【选中】Use cursor guide
     * Text
         * Font
             * Monaco, Regular, 18pt
@@ -447,10 +411,117 @@
                 * `^t`: 交换最后两个字母
 * Keys
     * Hotkey
-        * 【勾选】Show/hide all windows with a system-wide hotkey: Control+Options+Shift+Command+I
+        * 【勾选】Show/hide all windows with a system-wide hotkey: Control+Option+Shift+Command+I
 * 菜单栏
     * iTerm2
         * Make iTerm2 Default Term
+
+### Microsoft Edge
+
+* 登录 MSN 账号，配置已同步
+
+### Google Chrome
+
+* 【勾选】退出前提示
+* 登录 Google 账，配置已同步
+
+### Raycast
+
+* General
+    * Raycast HotKey: `Command + Space`
+    * Window Model: Compact
+* Extensions
+    * Clipboard History:
+        * Clipboard History: Hotkey: `Command + Control + C`
+    * Quicklinks
+        * Search Google: `https://www.google.com/search?q={query}`, Alias: `gg`
+        * Search Bing Global: `https://global.bing.com/search?q={query}`, Alias: `bg`
+        * Search Bing CN: `https://cn.bing.com/search?q={query}`, Alias: `bc`
+        * Search Baidu: `https://www.baidu.com/s?wd={Query}`, Alias: `bd`
+        * 百度翻译（英译中）: `https://fanyi.baidu.com/#en/zh/{query}`, Alias: `bdtc`
+        * 百度翻译（中译英）: `https://fanyi.baidu.com/#zh/en/{query}`, Alias: `bdte`
+        * DeepL（英译中）: `https://www.deepl.com/translator#en/zh/{query}`, Alias: `dltc`
+        * DeepL（中译英）: `https://www.deepl.com/translator#zh/en/{query}`, Alias: `dlte`
+        * MVN Repository: `https://mvnrepository.com/search?q={query}`, Alias: `mvn`
+        * NPM Package: `https://www.npmjs.com/package/{query}`, Alias: `npm`
+        * NPM Mirror Package: `https://npmmirror.com/package/{query}`, Alias: `cnpm`
+        * RunKit: `https://npm.runkit.com/{query}`, Alias: `rk`
+    * Snippets
+        * Search Snippets: Hotkey: `Command + Control + S`
+    * Window Management
+        * Maximize: HotKey: `Control + Option + Shift + Enter`
+        * Next Display: HotKey: `Control + Option + Shift + M`
+        * Restore: HotKey: `Control + Option + Shift + \`
+* Raycast AI: 先关闭吧
+* Account: 登录一下
+* Advanced
+    * Show Raycast on: Screen with active window
+    * Navigation Bindings: Vim Style
+* 常用插件
+    * [Battery Health](https://www.raycast.com/o1y/battery-health)，查看电池状态
+    * [Easy Dictionary](https://www.raycast.com/isfeng/easydict)，翻译
+    * [iHosts](https://www.raycast.com/JinShi/ihosts)，hosts 管理
+
+### Visual Studio Code
+
+* 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
+* 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/` 下的文件
+* 常用插件：
+    * EditorConfig for VS Code: 自动应用 .editorconfig 配置
+    * GitLens — Git supercharged: 非常强大的 Git 工具
+    * TODO Hightlight: 高亮指定关键字
+    * Vim: Vim 模拟器
+        * 安装后开启 key-repeating 能力: `defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false` （参考 [官网文档](https://github.com/VSCodeVim/Vim#mac)）
+
+### IntelliJ IDEA
+
+* 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
+* 配置项在 `my-mac-env/Users/USERNAME/Library/Application Support/JetBrains/README.md` 中有明细
+* 有几个项目配置是保存在具体项目的 `.idea` 目录下的，对应的配置可以通过复制 `my-mac-env/Users/USERNAME/Library/Application Support/JetBrains/project.default.xml` 文件快速设置
+* IdeaVim 配置在 `my-mac-env/Users/USERNAME/.ideavimrc`，复制到家目录下即可
+* 常用插件：
+    * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
+    * Chinese (Simplified) Language Pack/中文语言包: 建议新手安装，快速熟悉编辑器
+    * Easy Code Screenshots: 根据选中的代码生成截图
+    * GenerateAllSetter: 快速生成实例的全部 Setter 方法
+    * GitToolBox: 在每行代码后追加 Git Blame 信息
+    * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
+    * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
+    * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
+    * Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色（或使用 Rainbow Variable 专门处理变量）
+    * SpotBugs: 可以分析出当前项目或文件中潜在的问题
+* IntelliJ IDEA Ultimate 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 [JetBrains Products Comparison](https://www.jetbrains.com/products/compare/) 页面进行对比查看。所以理论上有了 IDEA Ultimate 就不需要再安装 WebStorm、PHPStorm、PyCharm 等产品了。
+
+### Xcode
+
+* Preferences
+    * Text Editing
+        * Display
+            * Show
+                * 【勾选】Code folding ribbon
+        * Editing
+            * Reformat code at columns: 80
+                * 【勾选】Show reformatting guide
+            * While Editing
+                * 【勾选】Including whitespcing-only lines
+* Editor
+    * 【勾选】Vim Mode (自从 v13 开始，Xcode 原生提供了 Vim Mode)
+    * 【勾选】Invisibles
+
+### Fork
+
+* General
+    * Default Source Folder: workspaces
+* Integration
+    * Terminal Client: iTerm2
+    * Merge Tool: VSCode
+    * External Diff Tool: VSCode
+* Updates
+    * Update channel: Stable(delayed 1 week)
+
+### Rectangle
+
+导入 `my-mac-env/Users/USERNAME/backup/rectangle-config.json` 文件
 
 ### 百度输入法
 
@@ -473,161 +544,18 @@
     * 不启用「自动切换英文」
     * 不启用「翻译选中文本」
 
-### Alfred
-
-* General
-    * Alfred Hotkey: Command + Space
-* Features
-    * Default Results
-        * Essentials: 只选 Preferences
-        * Fallbacks: 设置兜底搜索 Setup fallback results
-    * File Search
-        * Navigation
-            * Previous Path: 取消快捷键，这个功能不太用的上
-    * Universal Actions
-        * General
-            * Show Actions: 只保留向右箭头
-            * Selection Hotkey: 取消快捷键，这个功能不太用的上
-    * Web Search
-        * 【勾选】Only show enabled searches
-        * 根据需要自行配置
-    * Web Bookmarks
-        * Sources: 勾选需要查询收藏夹的浏览器
-    * Clipboard History
-        * History
-            * Clipboard History: 勾选文本和图片，有效期都是24小时
-            * Viewer Hotkey: Control + Command + C
-    * Snippets
-        * 根据需要自行配置
-    * Contacts
-        * Contacts
-            * 【取消勾选】Open Contacts in Alfred
-        * Email
-            * 【取消勾选】Email a contact
-    * Music
-        * General
-            * Mini Player: 取消快捷键，取消 Keyword
-    * Terminal
-        * Application
-            * 选择 Custom，将应用名从 `Terminal` 换成 `iTerm2`
-* Apperance
-    * 左下角 Options
-        * Show Alfred on: active screen 在活动窗口中唤出 alfred，当使用外接屏幕时比较有用
-
-### Raycast
-
-* 常用配置
-    * Clipboard History: Hotkey: `Command + Control + C`
-    * Quicklinks
-        * Search Google: `https://www.google.com/search?q={Query}`, Alias: `gg`
-        * Search Bing Global: `https://global.bing.com/search?q={query}`, Alias: `bg`
-        * Search Bing CN: `https://cn.bing.com/search?q={query}`, Alias: `bc`
-        * Search Baidu: `https://www.baidu.com/s?wd={Query}`, Alias: `bd`
-        * 百度翻译（英译中）: `https://fanyi.baidu.com/#en/zh/{query}`, Alias: `bdtc`
-        * 百度翻译（中译英）: `https://fanyi.baidu.com/#zh/en/{query}`, Alias: `bdte`
-        * DeepL（英译中）: `https://www.deepl.com/translator#en/zh/{query}`, Alias: `dltc`
-        * DeepL（中译英）: `https://www.deepl.com/translator#zh/en/{query}`, Alias: `dlte`
-        * MVN Repository: `https://mvnrepository.com/search?q={query}`, Alias: `mvn`
-        * NPM Package: `https://www.npmjs.com/package/{query}`, Alias: `npm`
-        * NPM Mirror Package: `https://npmmirror.com/package/{query}`, Alias: `cnpm`
-        * RunKit: `https://npm.runkit.com/{query}`, Alias: `rk`
-    * Snippets
-        * Search Snippets: Hotkey: `Command + Control + S`
-    * Window Management
-        * Maximize: HotKey: `Command + Control + Option + Shift + Enter`
-        * Next Display: HotKey: `Command + Control + Option + Shift + M`
-        * Restore: HotKey: `Command + Control + Option + Shift + \`
-* 常用插件
-    * [battery-health](https://www.raycast.com/o1y/battery-health)，查看电池状态
-    * [ihosts](https://www.raycast.com/JinShi/ihosts)，hosts 管理
-    * [Easy Dictionary](https://www.raycast.com/isfeng/easydict)，翻译
-
-### Vim & MacVim
-
-注意：从 macOS 12 开始系统自带的 vim 已经 `+clipboard`，如果不使用图形界面就不需要额外安装 MacVim 了
-
-#### Vim + MacVim
-* 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
-* 复制 `my-mac-env/Users/USERNAME/.vim` 目录
-* 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
-
-#### MacVim only
-* 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
-    * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
-* 偏好设置
-    * General
-        * After last window closes => Quit MacVim
-
-### Visual Studio Code
-
-* 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
-* 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/` 下的文件
-* 常用插件：
-    * EditorConfig for VS Code: 自动应用 .editorconfig 配置
-    * GitLens — Git supercharged: 非常强大的 Git 工具
-    * TODO Hightlight: 高亮指定关键字
-    * Vim: Vim 模拟器
-        * 安装后参考 [官网安装文档](https://github.com/VSCodeVim/Vim#mac) 开启 key-repeating 能力
-
-### IntelliJ IDEA
-
-* 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
-* 先启动一次 IDEA，再复制 `my-mac-env/Users/USERNAME/Library/Preferences/Idea` 目录下的文件到对应路径下的 `<PRODUCT><VERSION>` 目录中
-* 常用插件：
-    * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
-    * Chinese (Simplified) Language Pack/中文语言包: 建议新手安装，快速熟悉编辑器
-    * Easy Code Screenshots: 根据选中的代码生成截图
-    * GenerateAllSetter: 快速生成实例的全部 Setter 方法
-    * GitToolBox: 在每行代码后追加 Git Blame 信息
-    * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
-    * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
-    * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
-    * Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色（或使用 Rainbow Variable 专门处理变量）
-    * SpotBugs: 可以分析出当前项目或文件中潜在的问题
-* IntelliJ IDEA Ultimate 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 [JetBrains Products Comparison](https://www.jetbrains.com/products/compare/) 页面进行对比查看。所以理论上有了 IDEA Ultimate 就不需要再安装 WebStorm、PHPStorm、PyCharm 等产品了。
-
-### Xcode
-
-* Preferences
-    * Text Editing
-        * Display
-            * Show
-                * 【勾选】Code folding ribbon
-                * 【勾选】Page guide at column: 80
-        * Editing
-            * While Editing
-                * 【勾选】Including whitespcing-only lines
-* Editor
-    * 【勾选】Vim Mode (自从 v13 开始，Xcode 原生提供了 Vim Mode)
-    * 【勾选】Invisibles
-
-### Nginx
-
-* 复制 `my-mac-env/usr/local/etc/nginx` 目录
-* 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
-* 如需要支持 https，使用 `gen-ssl-csr.sh` 生成证书
-
-### Git
-
-复制 `my-mac-env/Users/USERNAME/.gitconfig` 文件，并根据实际情况重新编辑其中的用户信息
-
-### SSH
-
-* 复制 `my-mac-env/Users/USERNAME/.ssh` 目录
-* 使用 `ssh-keygen` 生成针对每个站点的 SSH key
-* 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
-* 在相应站点配置公钥
-
 ## 六 私人信息
 
-以下目录或软件中可能存在私人信息，未体现在上述列表中，记得备份旧数据。
+以下目录或软件中可能存在私人信息，可能未体现在上述列表中，记得备份旧数据。
 
-* Bash & Oh My ZSH
+* etc/hosts
+* Bash
     * `~/.bash_profile` 中一些私人配置
 * SSH
     * 如需保留之前的密钥，需要备份 `~/.ssh` 目录下的文件
     * 注意私钥的文件权限应该是 `600`
 * Nginx
     * 一些 `nginx.conf` 的路径配置
-* hosts
-* 其他家目录下的配置文件
+* Raycast
+    * quicklinks
+    * snippets

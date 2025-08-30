@@ -23,6 +23,8 @@ fe80::1%lo0     localhost
 
 ## bing
 204.79.197.200 global.bing.com
+#13.107.246.38 logincdn.msauth.net
+#152.199.39.108 acctcdn.msauth.net
 
 ## github
 185.199.110.154   github.githubassets.com
