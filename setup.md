@@ -97,9 +97,10 @@
         * 放大：看情况
         * 置于屏幕上的位置：左侧
         * 在程序坞中显示建议App和最近使用的App：关闭
-        * 根据最近的使用情况自动重新排列空间：关闭
     * 桌面与台前调度
         * 占按墙纸以显示桌面：仅在台前调度中
+    * 调度中心
+        * 根据最近的使用情况自动重新排列空间：关闭
     * 触发角：关闭所有
 * 显示器
     * 夜览
@@ -313,9 +314,9 @@
 
 ### Shell
 
-* Bash: 复制 `my-mac-env/Users/USERNAME/.bash_profile` 文件
+* Bash: 复制 `my-mac-env/Users/USERNAME/.bash_profile` 及 `my-mac-env/Users/USERNAME/.bash_profile_private` 文件
 * Oh My ZSH：复制 `my-mac-env/Users/USERNAME/.zshrc` 文件
-* Git: 复制 `my-mac-env/Users/USERNAME/.gitconfig` 文件，并根据实际情况重新编辑其中的用户信息
+* Git: 复制 `my-mac-env/Users/USERNAME/.gitconfig` 文件，并根据实际情况重新编辑用户信息
 * Node & NPM: 复制 `my-mac-env/Users/USERNAME/.cnpmrc` 文件
 * Python & PyPI: 复制 `my-mac-env/Users/USERNAME/.config/pip` 目录
 * Ruby & Gem: 复制 `my-mac-env/Users/USERNAME/.gemrc` 目录
@@ -340,9 +341,8 @@
 
 #### Vundle
 * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
-* 复制 `my-mac-env/Users/USERNAME/.vim` 目录
-* 通过 Vundle 安装插件：`:PluginsInstall`，插件已经在 `vimrc` 中定义
-* 目前我基本不再使用 Vim 开发，只安装 editorconfig 一个插件就行了
+* 编辑刚复制的 `$HOME/.vim/vimrc` 文件，选择需要的插件（我已不再使用 Vim 开发，目前只安装了 editorconfig 一个插件）
+* 通过 Vundle 安装插件：`:PluginsInstall`
 
 #### MacVim
 * 从 macOS 12 开始系统自带的 vim 已经 `+clipboard`，如果不使用图形界面就不需要额外安装 MacVim 了
@@ -431,9 +431,9 @@
     * Raycast HotKey: `Command + Space`
     * Window Model: Compact
 * Extensions
-    * Clipboard History:
+    * Clipboard History
         * Clipboard History: Hotkey: `Command + Control + C`
-    * Quicklinks
+    * Quicklinks，可直接导入 `my-mac-env/Users/USERNAME/backup/raycast-quicklinks.json` 文件
         * Search Google: `https://www.google.com/search?q={query}`, Alias: `gg`
         * Search Bing Global: `https://global.bing.com/search?q={query}`, Alias: `bg`
         * Search Bing CN: `https://cn.bing.com/search?q={query}`, Alias: `bc`
@@ -446,8 +446,10 @@
         * NPM Package: `https://www.npmjs.com/package/{query}`, Alias: `npm`
         * NPM Mirror Package: `https://npmmirror.com/package/{query}`, Alias: `cnpm`
         * RunKit: `https://npm.runkit.com/{query}`, Alias: `rk`
-    * Snippets
+    * Snippets，可直接导入 `my-mac-env/Users/USERNAME/backup/raycast-snippets.json` 文件
         * Search Snippets: Hotkey: `Command + Control + S`
+        * date: `{date "yyyy-MM-dd"}`
+        * datetime: `{datetime "yyyy-MM-dd HH:mm:ss"}`
     * Window Management
         * Maximize: HotKey: `Control + Option + Shift + Enter`
         * Next Display: HotKey: `Control + Option + Shift + M`
@@ -550,7 +552,7 @@
 
 * etc/hosts
 * Bash
-    * `~/.bash_profile` 中一些私人配置
+    * `~/.bash_profile_private` 中的配置
 * SSH
     * 如需保留之前的密钥，需要备份 `~/.ssh` 目录下的文件
     * 注意私钥的文件权限应该是 `600`

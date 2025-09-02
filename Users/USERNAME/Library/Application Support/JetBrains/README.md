@@ -190,7 +190,7 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
 编辑器默认启用了所有自带插件，禁用掉不需要的插件可以适当提升能。以下是我开启的自带插件：
 
 * Build Tools
-  * Artifacts Repository Search _被 Maven 依赖_
+  * Artifacts Repository Search _(被 Maven 依赖)_
   * Maven
 * Database
   * Database Tools and SQL
@@ -212,21 +212,23 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
   * Spring _(被 Spring Boot/Spring Web 依赖)_
   * Spring Boot _支持通过 `@Resource`/`@Autowired` 图标跳转对应依赖_
   * Spring Initializr _(被 Spring Boot 依赖)_
-  * Spring Web
+  * Spring Web _与 Endpoints, HTTP Client 组合，可以支持通过 Web 路径搜索对应方法_
 * JVM Tools
   * Java Bytecode Decompiler
   * Java Internationalization
   * Java Stream Debugger
 * Languages
+  * JSONPath _(被 Http Client 依赖)_
   * Markdown
   * Properties
   * Shell Script
 * Local AI/ML Tools
   * Full Line Code Completion
   * Machine Learning Code Completion
-  * Turbo Complete _关闭：暂只适用于 Kotlin_
+  * ~~Turbo Complete~~ _关闭：暂只适用于 Kotlin_
 * Microservices
-  * Endpoints _支持通过 Web 路径搜索对应方法（需要启用 Spring Web 插件才生效）_
+  * Endpoints _(见 Spring Web 说明)_
+  * HTTP Client _(见 Spring Web 说明)_
 * Style Sheets
   * CSS
   * Less

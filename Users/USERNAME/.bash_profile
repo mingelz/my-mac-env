@@ -67,6 +67,5 @@ alias cncu="ncu --registry=https://registry.npmmirror.com" # ncu 命令由 [npm-
 ### private
 ### ----------------------------------------------------------------------------
 
-## Homebrew
-# 如果使用官方源，建议填入 github 管理后台生成的 token，确保 brew 能够正常更新
-export HOMEBREW_GITHUB_API_TOKEN=""
+# 通过独立文件引入私人配置
+[ -s "$HOME/.bash_profile_private" ] && source "$HOME/.bash_profile_private"

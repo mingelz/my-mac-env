@@ -1,0 +1,10 @@
+[
+    {
+        "name": "date",
+        "text": "{date \"yyyy-MM-dd\"}"
+    },
+    {
+        "name": "datetime",
+        "text": "{datetime \"yyyy-MM-dd HH:mm:ss\"}"
+    }
+]

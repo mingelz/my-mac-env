@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Search Google",
+        "link": "https:\/\/google.com\/search?q={query}"
+    },
+    {
+        "name": "Search Bing Global",
+        "link": "https:\/\/global.bing.com\/search?q={query}"
+    },
+    {
+        "name": "Search Bing CN",
+        "link": "https:\/\/cn.bing.com\/search?q={query}"
+    },
+    {
+        "name": "Search Baidu",
+        "link": "https:\/\/www.baidu.com\/s?wd={query}"
+    },
+    {
+        "name": "百度翻译（英译中）",
+        "link": "https:\/\/fanyi.baidu.com\/#en\/zh\/{query}"
+    },
+    {
+        "name": "百度翻译（中译英）",
+        "link": "https:\/\/fanyi.baidu.com\/#zh\/en\/{query}"
+    },
+    {
+        "name": "DeepL（英译中）",
+        "link": "https:\/\/www.deepl.com\/translator#en\/zh\/{query}"
+    },
+    {
+        "name": "DeepL（中译英）",
+        "link": "https:\/\/www.deepl.com\/translator#zh\/en\/{query}"
+    },
+    {
+        "name": "MVN Repository",
+        "link": "https:\/\/mvnrepository.com\/search?q={query}"
+    },
+    {
+        "name": "NPM Package",
+        "link": "https:\/\/www.npmjs.com\/package\/{query}"
+    },
+    {
+        "name": "NPM Mirror Package",
+        "link": "https:\/\/npmmirror.com\/package\/{query}"
+    },
+    {
+        "name": "RunKit",
+        "link": "https:\/\/npm.runkit.com\/{query}"
+    }
+]
