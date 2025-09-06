@@ -466,7 +466,7 @@
 
 ### Visual Studio Code
 
-* 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
+* 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line)
 * 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/` 下的文件
 * 常用插件：
     * EditorConfig for VS Code: 自动应用 .editorconfig 配置
@@ -480,18 +480,8 @@
 * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
 * 配置项在 `my-mac-env/Users/USERNAME/Library/Application Support/JetBrains/README.md` 中有明细
 * 有几个项目配置是保存在具体项目的 `.idea` 目录下的，对应的配置可以通过复制 `my-mac-env/Users/USERNAME/Library/Application Support/JetBrains/project.default.xml` 文件快速设置
+* 推荐插件也在 `my-mac-env/Users/USERNAME/Library/Application Support/JetBrains/README.md` 中
 * IdeaVim 配置在 `my-mac-env/Users/USERNAME/.ideavimrc`，复制到家目录下即可
-* 常用插件：
-    * Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
-    * Chinese (Simplified) Language Pack/中文语言包: 建议新手安装，快速熟悉编辑器
-    * Easy Code Screenshots: 根据选中的代码生成截图
-    * GenerateAllSetter: 快速生成实例的全部 Setter 方法
-    * GitToolBox: 在每行代码后追加 Git Blame 信息
-    * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
-    * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
-    * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
-    * Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色（或使用 Rainbow Variable 专门处理变量）
-    * SpotBugs: 可以分析出当前项目或文件中潜在的问题
 * IntelliJ IDEA Ultimate 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 [JetBrains Products Comparison](https://www.jetbrains.com/products/compare/) 页面进行对比查看。所以理论上有了 IDEA Ultimate 就不需要再安装 WebStorm、PHPStorm、PyCharm 等产品了。
 
 ### Xcode

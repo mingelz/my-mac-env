@@ -16,9 +16,11 @@
   // Text Editor - Formatting
   "editor.formatOnPaste": true,
   // Text Editor - Diff Editor
+  "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   // Text Editor - Suggestions
   "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.editContext": false,
   "editor.quickSuggestions": {
     "comments": "on",
     "strings": "on"
@@ -77,12 +79,12 @@
   //   "MOCK"
   // ],
   // 通过正则匹配关键字，优先级比上一项高。通过 \\b 保证仅高亮完整单词，从而 TODOMVC 这个单词中的 TODO 将不再被高亮
-  // "todohighlight.keywordsPattern": "^\\s+?\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
+  "todohighlight.keywordsPattern": "^\\s+?\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
 
   // Extensions(3rd) - Vim
-  // "vim.foldfix": true,
-  // "vim.hlsearch": true,
-  // "vim.visualstar": true,
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.visualstar": true,
 
   // Extensions(3rd) - Visual Studio IntelliCode
   // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",

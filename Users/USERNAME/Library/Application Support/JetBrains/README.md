@@ -203,6 +203,8 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
 * JavaScript Frameworks and Tools
   * JavaScript and TypeScript
   * React
+  * Vue.js
+  * Webpack _(被 Vue.js 依赖)_
 * JVM Frameworks
   * AOP Pointcut Language _支持方法/类与对应切面的相互跳转_
   * Jakarta EE Platform _(被 Spring Web 依赖)_
@@ -218,6 +220,8 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
   * Java Internationalization
   * Java Stream Debugger
 * Languages
+  * Java
+  * JSON
   * JSONPath _(被 Http Client 依赖)_
   * Markdown
   * Properties
@@ -232,12 +236,26 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
 * Style Sheets
   * CSS
   * Less
+  * PostCSS _(被 Vue.js 依赖)_
 * Test Tools
   * JUnit
 * Version Controls
   * Git
 * Other Tools
   * Terminal
+
+### 独立插件
+
+* Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
+* Chinese (Simplified) Language Pack/中文语言包: 仅建议新手安装，快速熟悉编辑器
+* Easy Code Screenshots: 根据选中的代码生成截图
+* GenerateAllSetter: 快速生成实例的全部 Setter 方法
+* GitToolBox: 在每行代码后追加 Git Blame 信息
+* IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
+* Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
+* MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
+* Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色（或使用 Rainbow Variable 专门处理变量）
+* SpotBugs: 可以分析出当前项目或文件中潜在的问题
 
 ### IdeaVim 配置
 

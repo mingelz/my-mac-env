@@ -1,19 +1,13 @@
 {
-    "global": {
-        "ask_for_confirmation_before_quitting": true,
-        "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": false
-    },
     "profiles": [
         {
             "complex_modifications": {
                 "rules": [
                     {
                         "description": "LEFT_SHIFT enhance (short press to switch input sources)",
+                        "enabled": false,
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "left_shift",
                                     "modifiers": {
@@ -44,7 +38,8 @@
                                     {
                                         "key_code": "left_shift"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -52,7 +47,6 @@
                         "description": "RIGHT_SHIFT enhance (short press to switch input sources)",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "right_shift",
                                     "modifiers": {
@@ -83,12 +77,13 @@
                                     {
                                         "key_code": "right_shift"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "CAPS_LOCK to COMMAND + CONTROL + OPTION + SHIFT",
+                        "description": "CAPS_LOCK to CONTROL + OPTION + SHIFT",
                         "manipulators": [
                             {
                                 "from": {
@@ -103,7 +98,6 @@
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [
-                                            "left_command",
                                             "left_control",
                                             "left_option"
                                         ]
@@ -306,6 +300,7 @@
                     },
                     {
                         "description": "Map Command-Shift-Option-Control-Period to f17 (avoid System Diagnostics)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -328,6 +323,7 @@
                     },
                     {
                         "description": "Map Command-Shift-Option-Control-Comma to f18 (avoid System Diagnostics View)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -350,6 +346,7 @@
                     },
                     {
                         "description": "Map Command-Shift-Option-Control-w to f17 (avoid Wifi Diagnostics)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -395,7 +392,10 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "virtual_hid_keyboard": {
+                "keyboard_type_v2": "ansi"
+            }
         },
         {
             "name": "simple",
@@ -421,11 +421,17 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "virtual_hid_keyboard": {
+                "keyboard_type_v2": "ansi"
+            }
         },
         {
             "name": "empty",
-            "selected": false
+            "selected": false,
+            "virtual_hid_keyboard": {
+                "keyboard_type_v2": "ansi"
+            }
         }
     ]
 }
