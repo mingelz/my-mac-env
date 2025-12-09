@@ -6,6 +6,20 @@
 
 commit="$1" datecal="$2"
 
+if [[ -z "$commit" && -z "$datecal" ]]; then
+  commit="-h"
+fi
+
+if [[ "$commit" == "--help" || "$commit" == "-h" ]]; then
+  echo -e "usage: (both \033[1;32mgit cct\033[0m or \033[1;32mgit-cct\033[0m are valid)"
+  echo -e "    a) git cct commit_id datetime"
+  echo -e "    b) git-cct commit_id datetime"
+  echo -e "example:"
+  echo -e "    a) git cct 2132bfdb \"2020-01-01 10:00:00\""
+  echo -e "    b) git-cct 2132bfdb \"2020-01-01 10:00:00\""
+  exit 1
+fi
+
 if [[ -z "$commit" ]]; then
   echo "[ERR] commit id required!"
   exit 1
@@ -36,4 +50,3 @@ GIT_COMMITTER_DATE="$datecal_timestamp" GIT_AUTHOR_DATE="$datecal_timestamp" git
 git checkout "$current_branch"
 git rebase --autostash --committer-date-is-author-date "$commit" --onto "$rebasing_branch"
 git branch -d "$rebasing_branch"
-
