@@ -1,12 +1,10 @@
 # Intellij IDEA 配置
 
-Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开发，当开发语言主要是 Java + JavaScript(JS/ES/TS) 时，可以只依赖一个编辑器即可。
+从 2025.3 开始，Intellij IDEA 不再区分 Ultimate 和 Community 版本，只有一个安装包，通过订阅付费来提供高级功能。且部分原属于 Ultimate 版本的功能（如 Spring Boot 等）也无需付费即可使用。
 
-以下配置同时考虑了 Java 和 JavaScript 的开发场景。如果你的配置页面没有对应项目，大概率是没有启用对应插件导致的。
+Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）很好的支持前端业务的开发，当开发语言主要是 Java + JavaScript(JS/ES/TS) 时，可以只依赖一个编辑器即可。以下配置同时考虑了 Java 和 JavaScript 的开发场景。如果你的配置页面没有对应项目，大概率是没有启用对应插件导致的。
 
-配置文件存储路径：
-* Ultimate 版路径为 `$USER_HOME$/Library/Application Support/JetBrains/IntellijIdea{版本号}`
-* Community 版路径为 `$USER_HOME$/Library/Application Support/JetBrains/IdeaIC{版本号}`
+配置文件存储路径： `$USER_HOME$/Library/Application Support/JetBrains/IntellijIdea{版本号}`
 
 
 ## 配置细则
@@ -187,8 +185,10 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
 
 ### 自带插件
 
-编辑器默认启用了所有自带插件，禁用掉不需要的插件可以适当提升能。以下是我开启的自带插件：
+编辑器默认启用了所有自带插件，禁用掉不需要的插件可以适当提升性能。
+以下是我开启的自带插件（基于 2025.3）：
 
+* AI-Powered
 * Build Tools
   * Artifacts Repository Search _(被 Maven 依赖)_
   * Maven
@@ -196,15 +196,16 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
   * Database Tools and SQL
 * Deployment
   * Docker _提供 `Dockerfile` 文件语法高亮支持_
+* HTML and XML
+  * HTML Tools
+* IDE Localization
 * IDE Settings
   * EditorConfig
-  * IntelliLang
   * Java IDE Customization
 * JavaScript Frameworks and Tools
   * JavaScript and TypeScript
   * React
   * Vue.js
-  * Webpack _(被 Vue.js 依赖)_
 * JVM Frameworks
   * AOP Pointcut Language _支持方法/类与对应切面的相互跳转_
   * Jakarta EE Platform _(被 Spring Web 依赖)_
@@ -219,6 +220,8 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
   * Java Bytecode Decompiler
   * Java Internationalization
   * Java Stream Debugger
+* Keymap
+* Kotlin Frameworks
 * Languages
   * Java
   * JSON
@@ -229,19 +232,22 @@ Intellij IDEA Ultimate 版本可以通过插件很好的支持前端业务的开
 * Local AI/ML Tools
   * Full Line Code Completion
   * Machine Learning Code Completion
-  * ~~Turbo Complete~~ _关闭：暂只适用于 Kotlin_
 * Microservices
   * Endpoints _(见 Spring Web 说明)_
   * HTTP Client _(见 Spring Web 说明)_
+* Platform Development
+* Remote Development
 * Style Sheets
   * CSS
   * Less
-  * PostCSS _(被 Vue.js 依赖)_
+* Template Languages
+  * Thymeleaf
 * Test Tools
   * JUnit
 * Version Controls
   * Git
 * Other Tools
+  * Images
   * Terminal
 
 ### 独立插件
