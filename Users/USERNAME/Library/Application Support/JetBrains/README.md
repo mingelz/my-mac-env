@@ -137,6 +137,8 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * 🛄 File Encodings
     * Default encoding for properties files: `UTF-8` _*.properties 文件编码_
       * [ ] Transparent native-to-ascii conversion _将 UTF-8 字符转义保存_
+  * Life Templates
+    * 我在 [mz_life_templates](./mz_live_templates.xml) 中提供了一些常用模板，可以导入或直接放在 `~/Library/Application Support/JetBrains/IntellijIdea{版本号}/templates` 目录下
   * TODO
     * Patterns _TODO关键字高亮正则_
       * `\b(todo|fixme)\b.*`
@@ -202,6 +204,7 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
 * IDE Settings
   * EditorConfig
   * Java IDE Customization
+  * JetBrains OS Integration
 * JavaScript Frameworks and Tools
   * JavaScript and TypeScript
   * React
@@ -212,9 +215,8 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * Jakarta EE: Web/Servlets _(被 Spring Web 依赖)_
   * JVM Microservices Frameworks
   * Lombok
-  * Spring _(被 Spring Boot/Spring Web 依赖)_
+  * Spring _(Spring Web 依赖)_
   * Spring Boot _支持通过 `@Resource`/`@Autowired` 图标跳转对应依赖_
-  * Spring Initializr _(被 Spring Boot 依赖)_
   * Spring Web _与 Endpoints, HTTP Client 组合，可以支持通过 Web 路径搜索对应方法_
 * JVM Tools
   * Java Bytecode Decompiler
@@ -229,7 +231,7 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * Markdown
   * Properties
   * Shell Script
-* Local AI/ML Tools
+* Local AI/ML Tools (一些第三方 AI 插件可能会与下列插件冲突，此时可以关闭下列插件)
   * Full Line Code Completion
   * Machine Learning Code Completion
 * Microservices
@@ -248,17 +250,20 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * Git
 * Other Tools
   * Images
+  * Groovy Live Templates _(被 Spring Web 依赖)_
   * Terminal
 
 ### 独立插件
 
-* Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)
+* AceJump: 快速跳转，按 Control+; 启动，连续输入看到的字符，插件会显示对应快捷键
+* ~~Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)~~，负责人离职，许久未更新
 * Chinese (Simplified) Language Pack/中文语言包: 仅建议新手安装，快速熟悉编辑器
 * Easy Code Screenshots: 根据选中的代码生成截图
 * GenerateAllSetter: 快速生成实例的全部 Setter 方法
 * GitToolBox: 在每行代码后追加 Git Blame 信息
 * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
 * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
+* MultiHighlight: 多个关键字同时高亮
 * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
 * Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色（或使用 Rainbow Variable 专门处理变量）
 * SpotBugs: 可以分析出当前项目或文件中潜在的问题
@@ -284,8 +289,14 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
     * Commit
       * Commit Message Validation
         * [x] Check pattern match _提交信息时校验格式_
-        * Pattern: `(?:fix|chore|docs|feat|refactor|style|test|wip)(?:\(.*\))?: .*(\s#\d+)?`
-        * Test Input: `fix: 修复问题`
+        * Validate Pattern
+          * [x] Dot all _.也匹配换行_
+        * Pattern: `(?:fix|chore|docs|feat|refactor|style|test|wip)(?:\(.*\))?: .*`
+        * Test Input:
+        ```
+        fix: 修复问题
+        换行信息
+        ```
     * Blame
       * [ ] Show 'Blame' in status bar _在状态栏添加当前行Blame信息_
     * Branch

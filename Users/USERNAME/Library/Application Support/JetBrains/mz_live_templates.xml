@@ -1,0 +1,121 @@
+<templateSet group="mz_live_templates">
+  <!-- 变量声明 -->
+  <template name="pb" value="private Boolean $END$;" description="private Boolean" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="pi" value="private Integer $END$;" description="private Integer" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="pl" value="private Long $END$;" description="private Long" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="ps" value="private String $END$;" description="private String" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="psb" value="private static final Boolean $NAME$ = $VALUE$;" description="private static final Boolean" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="psi" value="private static final Integer $NAME$ = $VALUE$;" description="private static final Integer" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="psl" value="private static final Long $NAME$ = $VALUE$;" description="private static final Long" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="pss" value="private static final String $NAME$ = &quot;$VALUE$&quot;;" description="private static final String" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <!-- 日志 -->
+  <template name="li" value="log.info(&quot;$KEY$={}&quot;, $VALUE$);" description="log.info" toReformat="false" toShortenFQNames="true">
+    <variable name="KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="lw" value="log.warn(&quot;$KEY$={}&quot;, $VALUE$);" description="log.warn" toReformat="false" toShortenFQNames="true">
+    <variable name="KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="le" value="log.error(&quot;exception, $KEY$={}, $EX$={}&quot;, $VALUE$, $EX$, $EX$);" description="log.error" toReformat="false" toShortenFQNames="true">
+    <variable name="KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EX" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <!-- Text Block -->
+  <template name="tb" value="String str = &quot;&quot;&quot;&#10;    $END$&#10;    &#10;&quot;&quot;&quot;;" description="Text Block (Java 14+)" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <!-- 注释 -->
+  <template name="author" value="/** &#10; * $END$ &#10; * @author $USER$ &#10; * @since $DATE$ &#10; */" description="文件注释" toReformat="true" toShortenFQNames="true">
+    <variable name="USER" expression="user()" defaultValue="" alwaysStopAt="false" />
+    <variable name="DATE" expression="date()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <template name="todo" value="// TODO: $USER$ - $DATE$ - $END$" description="TODO 注释" toReformat="false" toShortenFQNames="true">
+    <variable name="USER" expression="user()" defaultValue="" alwaysStopAt="false" />
+    <variable name="DATE" expression="date()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+
+  <!-- MyBatis -->
+  <template name="sqlfe" value="&lt;if test=&quot;ids$END$ != null and ids.size() &gt; 0&quot;&gt;&#10;    AND id IN &lt;foreach collection=&quot;ids&quot; item=&quot;id&quot; open=&quot;(&quot; close=&quot;)&quot; separator=&quot;,&quot;&gt;#{id}&lt;/foreach&gt;&#10;&lt;/if&gt;&#10;&lt;if test=&quot;ids != null and ids.size() == 0&quot;&gt;AND 1 != 1&lt;/if&gt;" description="mapper foreach" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+
+  <template name="sqlchoose" value="&lt;choose&gt;&#10;    &lt;when test=&quot;ids != null and ids.size() &gt; 0&quot;&gt;&#10;        AND ids IN (&#10;        &lt;foreach collection=&quot;ids&quot; separator=&quot;,&quot; item=&quot;id&quot;&gt;&#10;            #{id}&#10;        &lt;/foreach&gt;&#10;        )&#10;    &lt;/when&gt;&#10;    &lt;otherwise&gt;AND 1 != 1&lt;/otherwise&gt;&#10;&lt;/choose&gt;" description="mapper choose when otherwise" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>
