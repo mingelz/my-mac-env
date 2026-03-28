@@ -1,0 +1,119 @@
+# Raycast 自定义大模型供应商配置文件
+#
+# 要求
+# 1. 文件名必须为 `providers.yaml`
+# 2. 供应商接口需要兼容 OpenAI API
+# 3. 每个提供商必须同时指定模型列表及其对应的模型能力
+#
+providers:
+    # 供应商ID，唯一值
+  - id: aliyun-coding-plan
+    # 供应商名称，会显示在 Raycast 中
+    name: aliyun-coding-plan
+    # 供应商的 API URL
+    base_url: https://coding.dashscope.aliyuncs.com/v1
+    # 如果需要身份验证，请至少指定一个 API 密钥。
+    # 如果不需要身份验证或已在其他地方提供，则此项为可选。
+    # 如果各个模型需要单独的 API 密钥，请为每个模型的 `provider` 单独指定 `key`
+    api_keys:
+      # key 随意，与 models[].provider 保持一致
+      main: your-api-key
+    # 可选的附加参数，将发送到 `/chat/completions` 接口
+    additional_parameters:
+      return_images: true
+      web_search_options:
+        search_context_size: medium
+    # 指定当前提供商下要使用的所有模型
+    models:
+      - id: qwen3.5-plus # `id` 必须与提供商使用的标识符一致
+        name: "Qwen3.5 Plus" # 在 Raycast 中显示的名称
+        provider: main # 【可选】当 API 需要特殊指定 API key 时才需要填写，默认即 api_keys.*
+        description: "文本生成、深度思考、视觉理解" # 【可选】大模型描述
+        context: 1000000 # 上下文限定大小
+        # 【可选】能力配置，所有属性均为可选。需要参阅提供商的 API 文档了解模型能力
+        abilities:
+          temperature: # 是否支持调节温度（输出的随机性/创造性，通常0.0-2.0，值越小越确定，越大越随机）
+            supported: true
+          vision: # 是否支持图像输入（多模态）
+            supported: true
+          system_message: # 是否支持系统提示词（System Prompt）
+            supported: true
+          tools: # 是否支持函数调用/工具调用（Function Calling）
+            supported: true
+          reasoning_effort: # 是否支持调节推理努力程度，影响模型思考时间
+            supported: true
+      - id: qwen3-max-2026-01-23
+        name: "Qwen3 Max"
+        description: "文本生成、深度思考"
+        context: 262144
+        abilities:
+          temperature:
+            supported: true
+          vision:
+            supported: false
+          system_message:
+            supported: true
+          tools:
+            supported: true
+          reasoning_effort:
+            supported: true
+      - id: glm-5
+        name: "GLM 5"
+        description: "文本生成、深度思考"
+        context: 202752
+        abilities:
+          temperature:
+            supported: true
+          vision:
+            supported: false
+          system_message:
+            supported: true
+          tools:
+            supported: true
+          reasoning_effort:
+            supported: true
+      - id: glm-4.7
+        name: "GLM 4.7"
+        description: "文本生成、深度思考"
+        context: 204800
+        abilities:
+          temperature:
+            supported: true
+          vision:
+            supported: false
+          system_message:
+            supported: true
+          tools:
+            supported: true
+          reasoning_effort:
+            supported: true
+      - id: kimi-k2.5
+        name: "Kimi K2.5"
+        description: "文本生成、深度思考、视觉理解"
+        context: 262144
+        abilities:
+          temperature:
+            supported: true
+          vision:
+            supported: true
+          system_message:
+            supported: true
+          tools:
+            supported: true
+          reasoning_effort:
+            supported: true
+      - id: MiniMax-M2.5
+        name: "MiniMax M2.5"
+        description: "文本生成、深度思考"
+        context: 204800
+        abilities:
+          temperature:
+            supported: true
+          vision:
+            supported: false
+          system_message:
+            supported: true
+          tools:
+            supported: true
+          reasoning_effort:
+            supported: true

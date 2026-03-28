@@ -175,7 +175,29 @@
         * 【勾选】按名称排序时的窗口中
         * 【勾选】桌面上
 
-### 3.3 Safari 偏好设置
+### 3.3 系统顶部菜单栏
+
+* 按住 Command 可拖动
+* 右向左顺序：时间、控制中心、聚焦搜索、电池、Wifi、输入法
+
+### 3.4 系统 Docker 栏
+
+* 保留：Finder、日历、iPhone镜像、浏览器、iTerm、Editor
+
+### 3.5 系统右侧通知栏
+
+* 根据喜好配置
+* 个人配置：
+    * 提醒事项
+    * 日历
+    * 天气 + 时钟
+
+### 3.6 启动台
+
+* 保留：Safari、App Store
+* 其他都放在两个文件夹中：工具、其他
+
+### 3.7 Safari 偏好设置
 
 * 通用
     * 【取消勾选】下载后打开「安全」文件
@@ -192,7 +214,14 @@
     * 显示
         * 【勾选】显示状态栏
 
-### 3.4 Terminal 偏好设置
+### 3.8 词典
+
+* 调整词典及顺序（三指触发翻译时会使用第1项）
+    1. 牛津英汉汉英词典（简体中文-英语）
+    2. 现代汉语规范词典（简体中文）
+    3. 汉语成语词典（简体中文）
+
+### 3.9 Terminal 偏好设置
 
 * 通用
     * 使用描述文件新建窗口: Homebrew
@@ -204,28 +233,6 @@
                 * Andale Mono 18 磅
         * Shell
             * 当 shell 退出时: 关闭窗口
-
-### 3.5 系统顶部菜单栏
-
-* 按住 Command 可拖动
-* 右向左顺序：时间、控制中心、聚焦搜索、电池、Wifi、输入法
-
-### 3.6 系统 Docker 栏
-
-* 保留：Finder、日历、iPhone镜像、浏览器、iTerm、Editor
-
-### 3.7 系统右侧通知栏
-
-* 根据喜好配置
-* 个人配置：
-    * 提醒事项
-    * 日历
-    * 天气 + 时钟
-
-### 3.8 启动台
-
-* 保留：Safari、App Store
-* 其他都放在两个文件夹中：工具、其他
 
 ## 四、应用安装
 
@@ -254,10 +261,10 @@
 可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
 * 必备
-    * [Baidu Input](https://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法。我现在改用系统自带的五笔输入法了，完全够用
-    * [Microsoft Edge](https://www.microsoft.com/edge)、[Google Chrome](https://www.google.com/chrome/)、[Arc](https://arc.net/)
+    * ~~[Baidu Input](https://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法。~~我现在改用系统自带的五笔输入法了，够用
+    * [Microsoft Edge](https://www.microsoft.com/edge)、[Google Chrome](https://www.google.com/chrome/)
 * 效率
-    * [Raycast](https://www.raycast.com/)、[Alfred](https://www.alfredapp.com/)、[uTools](http://www.u.tools/)，效率工具，个人已倒戈至 Raycast
+    * [Raycast](https://www.raycast.com/)、[Alfred](https://www.alfredapp.com/)、[uTools](http://www.u.tools/)，效率工具
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot
@@ -270,7 +277,7 @@
     * [Fork](https://fork.dev/)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
     * [DB Browser for SQLite](https://sqlitebrowser.org/)、[SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio)，SQLite 管理器
-    * [Charles Proxy](https://www.charlesproxy.com/)，商业软件，如果想用免费软件可以尝试 [whistle](https://github.com/avwo/whistle)
+    * [Reqable](https://reqable.com/)、[whistle](https://github.com/avwo/whistle)、[Charles Proxy](https://www.charlesproxy.com/)，抓包及代理工具
     * [JDK](https://www.oracle.com/java/technologies/downloads/)
 * 娱乐
     * [Netease Music](https://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
@@ -289,20 +296,21 @@
 > 1. brew 依赖 Xcode Command Line Tools，建议安装 brew 前先安装 Xcode，并在命令行执行 `xcode-select --install` 安装 Xcode Command Line Tools。虽然直接安装 brew 也会安装此依赖，但我个人还是习惯先手动把依赖处理好
 > 2. ARM 版本安装路径在 `/opt/`，X86 版本安装路径为 `/usr/bin/`
 > 3. 个人不喜欢使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装
-> 4. 鉴于国内网络环境，可以使用 [Homebrew TUNA 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+> 4. 建议使用国内源改善国内访问速度：[阿里云源](https://developer.aliyun.com/mirror/homebrew), [TUNA源](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
 
 * [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
-    * lame，mp3 编解码、压缩
-    * nvm & node
-        * 虽然 NVM 官方不推荐使用 brew 安装，但个人仍觉得这是最方便的方式，只需安装后参考给出的提示进行配置（我已在 `~/.bash_profile` 添加）
+    * fnm/nvm & node
+        * fnm 要比 nvm 快不少，我已经转投 fnm 怀抱
+    * uv & python
     * tree
+    * lame，mp3 编解码、压缩
 
 #### Oh My Zsh
 
 > **注意**
 > 1. omz 自带的插件，以及手动安装在 omz 插件目录（一般为 `~/.oh-my-zsh/custom/plugins`）的插件，直接在 `~/.zshrc` 的 `plugins=()` 中设置名称即可
 > 2. 通过 brew 安装的插件，需要手动 `source` 插件路径，插件会安装在 `/opt/homebrew/share/` 下。个人建议使用 brew 安装，方便维护与升级
-> 3. 鉴于国内网络环境，可以使用 [OhMyZsh TUNA 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/)
+> 3. 建议使用国内源改善国内访问速度：[TUNA源](https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/), [Gitee源](https://gitee.com/mirrors/oh-my-zsh)
 
 * [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
     * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
@@ -419,6 +427,9 @@
 ### Microsoft Edge
 
 * 登录 MSN 账号，配置已同步
+* 关闭本地网络访问弹窗
+    * 设置 - 隐私、搜索和服务 - 站点权限 - 所有权限 - 本地网络访问： 关闭
+    * 进 `edge://flags` 把 `Local Network Access Checks` 项禁用
 
 ### Google Chrome
 
@@ -454,7 +465,11 @@
         * Maximize: HotKey: `Control + Option + Shift + Enter`
         * Next Display: HotKey: `Control + Option + Shift + M`
         * Restore: HotKey: `Control + Option + Shift + \`
-* Raycast AI: 先关闭吧
+* Raycast AI:
+    * Custom Providers
+        * 复制 `my-mac-env/Users/USERNAME/.config/raycast/ai/providers.yaml` 文件
+    * Experiments
+        * 【勾选】Custom Providers _开启自定义提供商能力_
 * Account: 登录一下
 * Advanced
     * Show Raycast on: Screen with active window
@@ -463,6 +478,7 @@
     * [Battery Health](https://www.raycast.com/o1y/battery-health)，查看电池状态
     * [Easy Dictionary](https://www.raycast.com/isfeng/easydict)，翻译
     * [iHosts](https://www.raycast.com/JinShi/ihosts)，hosts 管理
+    * [Refresh Wifi](https://www.raycast.com/natterstefan/refresh-wifi)，刷新网络，切换 hosts 后快速生效
 
 ### Visual Studio Code
 

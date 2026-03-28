@@ -82,6 +82,12 @@
     # 使用交互式 rebase 工具压缩 git 提交（squash）
     ri = rebase -i
 
+    # -- reset --
+    # 撤销 commit 但保留暂存记录
+    # HEAD是指向当前版本的指针，HEAD^指向上个版本，HEAD^^指向上上个版本，注意还有HEAD~，可以自行搜索详细讲解
+    # --soft保留修改及暂存记录，--mixed保留修改但取消暂存，--hard删除修改完全恢复文件
+    undo = reset --mixed HEAD^
+
     # -- stash --
     # stash 列表也可以像 log 列表一下展示信息
     sl = stash list --abbrev-commit --pretty=format:'%C(magenta)%gd%C(reset) - %C(red)%h%C(reset) - %C(cyan)(%ai)%C(reset) - %C(white)%s%C(reset) %C(dim white)- <%an>%C(reset) %C(auto)%d%C(reset)'
@@ -93,11 +99,8 @@
     # -- status --
     st = status
 
-    # -- reset --
-    # 撤销 commit 但保留暂存记录
-    # HEAD是指向当前版本的指针，HEAD^指向上个版本，HEAD^^指向上上个版本，注意还有HEAD~，可以自行搜索详细讲解
-    # --soft保留修改及暂存记录，--mixed保留修改但取消暂存，--hard删除修改完全恢复文件
-    undo = reset --mixed HEAD^
+    # -- worktree --
+    wt = worktree
 
     # -- 统计 --
     # 统计有哪些人提交过，及每人提交次数
