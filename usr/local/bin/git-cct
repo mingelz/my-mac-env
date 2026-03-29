@@ -1,52 +1,113 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# git-cct - 修改指定 commit 的时间戳
 #
 # ref: https://stackoverflow.com/a/24584976
-# usage: git cct commit_id datetime
-# example: git cct 2132bfdb "YYYY-mm-dd HH:MM:SS"
+# 用法: git cct <commit_id> <datetime>
+# 示例: git cct 2132bfdb "2020-01-01 10:00:00"
 
-commit="$1" datecal="$2"
+set -euo pipefail
 
-if [[ -z "$commit" && -z "$datecal" ]]; then
-  commit="-h"
+# ---------- 常量 ----------
+
+REBASING_BRANCH="__rebasing-branch__"
+DATETIME_FORMAT="%Y-%m-%d %H:%M:%S"
+
+# ---------- 帮助 ----------
+
+usage() {
+    cat <<EOF
+用法: git cct <commit_id> <datetime>
+
+修改指定 commit 的时间戳（author time 和 committer time 同步修改）。
+
+参数:
+  commit_id    要修改的 commit（支持短 hash）
+  datetime     目标时间，格式: YYYY-MM-DD HH:MM:SS
+
+示例:
+  git cct 2132bfdb "2020-01-01 10:00:00"
+
+注意:
+  此操作会 rebase 当前分支，执行前请确保工作区干净。
+EOF
+}
+
+# ---------- 参数解析 ----------
+
+if [[ "${1:-}" =~ ^(-h|--help)$ ]]; then
+    usage
+    exit 0
 fi
 
-if [[ "$commit" == "--help" || "$commit" == "-h" ]]; then
-  echo -e "usage: (both \033[1;32mgit cct\033[0m or \033[1;32mgit-cct\033[0m are valid)"
-  echo -e "    a) git cct commit_id datetime"
-  echo -e "    b) git-cct commit_id datetime"
-  echo -e "example:"
-  echo -e "    a) git cct 2132bfdb \"2020-01-01 10:00:00\""
-  echo -e "    b) git-cct 2132bfdb \"2020-01-01 10:00:00\""
-  exit 1
+if [[ $# -lt 2 ]]; then
+    echo "错误: 参数不足" >&2
+    echo "运行 'git cct --help' 查看用法" >&2
+    exit 1
 fi
 
-if [[ -z "$commit" ]]; then
-  echo "[ERR] commit id required!"
-  exit 1
+commit="$1"
+datetime="$2"
+
+# ---------- 环境检查 ----------
+
+if ! git rev-parse --git-dir &>/dev/null; then
+    echo "错误: 请在 git 仓库中执行此命令" >&2
+    exit 1
 fi
 
-if [[ -z "$datecal" ]]; then
-  echo "[ERR] datetime string required"
-  exit 1
-fi
-
-rebasing_branch="__rebasing-branch__"
 current_branch="$(git rev-parse --abbrev-ref HEAD)"
 
-if [[ -z "$current_branch" ]]; then
-  echo "[ERR] please run on a git repository"
-  exit 1
+if [[ "$current_branch" == "HEAD" ]]; then
+    echo "错误: 当前处于 detached HEAD 状态，请切换到具体分支" >&2
+    exit 1
 fi
 
-datecal_timestamp=$(date -j -f "%Y-%m-%d %H:%M:%S" "$datecal" +%s)
+# ---------- 校验 commit ----------
 
-if [[ -z "$datecal_timestamp" ]]; then
-  echo "[ERR] invalid datetime format"
-  exit 1
+if ! git rev-parse --verify "$commit^{commit}" &>/dev/null; then
+    echo "错误: 无效的 commit id '$commit'" >&2
+    exit 1
 fi
 
-git checkout -b "$rebasing_branch" "$commit"
-GIT_COMMITTER_DATE="$datecal_timestamp" GIT_AUTHOR_DATE="$datecal_timestamp" git commit --amend --no-edit --date "$datecal_timestamp"
+# ---------- 校验并转换时间 ----------
+
+if ! timestamp="$(date -j -f "$DATETIME_FORMAT" "$datetime" "+%Y-%m-%dT%H:%M:%S" 2>/dev/null)"; then
+    echo "错误: 时间格式不合法，期望格式为 'YYYY-MM-DD HH:MM:SS'" >&2
+    exit 1
+fi
+
+# ---------- 清理函数（异常时自动恢复） ----------
+
+cleanup() {
+    local exit_code=$?
+    if [[ $exit_code -ne 0 ]]; then
+        echo "发生错误，正在还原..." >&2
+        git checkout "$current_branch" 2>/dev/null || true
+        git branch -D "$REBASING_BRANCH" 2>/dev/null || true
+    fi
+}
+
+trap cleanup EXIT
+
+# ---------- 核心逻辑 ----------
+
+echo "→ 正在修改 commit $commit 的时间为 $datetime ..."
+
+git checkout -b "$REBASING_BRANCH" "$commit"
+
+GIT_COMMITTER_DATE="$timestamp" \
+GIT_AUTHOR_DATE="$timestamp" \
+    git commit --amend --no-edit --date "$timestamp"
+
 git checkout "$current_branch"
-git rebase --autostash --committer-date-is-author-date "$commit" --onto "$rebasing_branch"
-git branch -d "$rebasing_branch"
+
+git rebase \
+    --autostash \
+    --committer-date-is-author-date \
+    "$commit" \
+    --onto "$REBASING_BRANCH"
+
+git branch -d "$REBASING_BRANCH"
+
+echo "✓ 完成"

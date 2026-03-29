@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+#
+# git-rank - 统计每人提交行数
+# 用法: git rank [选项]
+#   -t, --total    按净增行数排序（默认）
+#   -a, --add      按新增行数排序
+#   -d, --delete   按删除行数排序
+#   -h, --help     显示帮助
+
+set -euo pipefail
+
+# ---------- 参数解析 ----------
+
+usage() {
+    cat <<EOF
+用法: git rank [选项]
+
+统计每位作者的提交行数。
+
+选项:
+  -t, --total    按净增行数排序（默认）
+  -a, --add      按新增行数排序
+  -d, --delete   按删除行数排序
+  -h, --help     显示此帮助
+
+示例:
+  git rank
+  git rank --add
+  git rank --delete
+EOF
+}
+
+sort_key=1  # 默认按 total
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -t | --total)  sort_key=1 ;;
+        -a | --add)    sort_key=2 ;;
+        -d | --delete) sort_key=3 ;;
+        -h | --help)   usage; exit 0 ;;
+        *)
+            echo "错误: 未知参数 '$1'" >&2
+            echo "运行 'git rank --help' 查看用法" >&2
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+# ---------- 核心逻辑 ----------
+
+print_header() {
+    printf "     total        add     delete  author\n"
+    printf "%s\n" "---------------------------------------------"
+}
+
+collect_stats() {
+    git log --no-merges --pretty=format:%an --numstat \
+    | awk '
+        /./ && !author {
+            author = $0
+            next
+        }
+        author {
+            ins[author] += $1
+            del[author] += $2
+        }
+        /^$/ {
+            author = ""
+            next
+        }
+        END {
+            for (a in ins) {
+                printf "%d:%d:%d:%s\n",
+                    ins[a] - del[a], ins[a], del[a], a
+            }
+        }
+    '
+}
+
+format_output() {
+    sort -rn -t: -k "$sort_key" \
+    | awk -F: '{
+        printf "%10d %10d %10d  %s\n", $1, $2, $3, $4
+    }'
+}
+
+print_header
+collect_stats | format_output

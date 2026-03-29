@@ -13,6 +13,9 @@
 #    path = .gitconfig_foo
 [init]
     defaultBranch = master
+[status]
+    # 未 git add 的目录，也显式列出其下的所有文件
+    showUntrackedFiles = all
 [push]
     default = simple
 [pull]
@@ -30,12 +33,12 @@
 [merge]
     # merge 时只允许 Fast Forward 方式处理，否则建议使用 rebase
     #ff = only
-[status]
-    # 未 git add 的目录，也显式列出其下的所有文件
-    showUntrackedFiles = all
 [pager]
     # 从 git@2.16 开始 branch 使用 less 显示信息，不太习惯，改为传统方式
     branch = false
+[credential]
+    # 保存密码到 keychain，避免每次输入密码（仅适用于 macOS）
+    helper = osxkeychain
 [alias]
     # -- branch --
     br = branch
@@ -78,6 +81,10 @@
     # 添加 --rebase 参数，在 merge 的时候不会分叉
     pr = pull --rebase
 
+    # -- push --
+    # 强制 push，但会检查远程分支是否发生变更，比直接 --force 更安全
+    pfl = push --force-with-lease
+
     # -- rebase --
     # 使用交互式 rebase 工具压缩 git 提交（squash）
     ri = rebase -i
@@ -103,10 +110,5 @@
     wt = worktree
 
     # -- 统计 --
-    # 统计有哪些人提交过，及每人提交次数
+    # 统计有哪些人提交过，及每人提交次数，更高级的统计请看本项目的 `usr/local/git-rank` 文件
     who = shortlog -sn --all --no-merges
-    # 统计每人提交行数，支持跟一个参数（值为 1/2/3)，含义：1:按total排序（默认）; 2:按add排序; 3:按delete排序
-    cnt = "!f() { si=\"${1:-1}\"; printf \"     total        add     delete  author\\n%s\\n\" \"---------------------------------------------\"; git log --no-merges --pretty=format:%an --numstat | awk '/./ && !author { author = $0; next } author { ins[author] += $1; del[author] += $2 } /^$/ { author = \"\"; next } END { for (a in ins) { printf \"%d:%d:%d:%s\\n\", ins[a] - del[a], ins[a], del[a], a } }' | sort -rn -t : -k $si | awk -F: '{ printf \"%10d %10d %10d  %s\\n\", $1, $2, $3, $4}'; }; f"
-    cnt1 = cnt 1
-    cnt2 = cnt 2
-    cnt3 = cnt 3
