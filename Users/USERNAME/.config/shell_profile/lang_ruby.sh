@@ -5,3 +5,8 @@
 if which ruby >/dev/null && which gem >/dev/null; then
    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
+
+# 通过修改为国内镜像源提高国内访问速度
+# * TUNA 源：https://mirrors.tuna.tsinghua.edu.cn/help/rubygems/
+# * RubyChina 源：https://ruby-china.org/
+# 具体配置在 ~/.gemrc 中

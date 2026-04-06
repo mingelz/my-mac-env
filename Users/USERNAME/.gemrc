@@ -4,6 +4,7 @@
 :backtrace: false
 :bulk_threshold: 1000
 :sources:
+- https://mirrors.tuna.tsinghua.edu.cn/rubygems/
 - https://gems.ruby-china.com/
 :update_sources: true
 :verbose: true

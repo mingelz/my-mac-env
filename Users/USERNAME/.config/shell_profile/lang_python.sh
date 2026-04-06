@@ -6,8 +6,8 @@
 # * USTC 源：https://mirrors.ustc.edu.cn/help/pypi.html
 
 # uv
-export UV_INDEX_URL=http://mirrors.aliyun.com/pypi/simple/
-export UV_EXTRA_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/
+export UV_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
+export UV_EXTRA_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
 
 ## alias
 alias python='uv run python'

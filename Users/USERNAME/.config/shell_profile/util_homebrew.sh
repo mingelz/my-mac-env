@@ -5,12 +5,13 @@
 # * TUNA 源：https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
 # * USTC 源：https://mirrors.ustc.edu.cn/help/brew.git.html
 
-export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
 export HOMEBREW_INSTALL_FROM_API=1
 export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_PIP_INDEX_URL="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
 
 ## ARM 版本的 brew 需要手动指定环境变量
 eval "$(/opt/homebrew/bin/brew shellenv)"
