@@ -254,7 +254,7 @@
 * [WeChat](https://weixin.qq.com/)
 * [Xcode](http://developer.apple.com/xcode)
 * [XMind](http://www.xmind.net/)
-* iShot/iOCR，[宁波上官](https://www.better365.cn/) 有很多优秀的产品
+* [宁波上官](https://www.better365.cn/) 有很多优秀的产品
 
 ### 4.2 下载
 
@@ -268,12 +268,12 @@
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
     * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot
-    * [Topit](https://github.com/lihaoyun6/Topit)，将任意窗口置顶
+    * [Floaty](https://www.floatytool.com/)，将任意窗口置顶
 * 生产力
     * [draw.io](https://www.drawio.com/)
     * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn` （[参考](https://zhuanlan.zhihu.com/p/536236143)）
     * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-    * [iTerm](https://www.iterm2.com)
+    * [iTerm](https://www.iterm2.com), [cmux](https://cmux.com)
     * [Fork](https://fork.dev/)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
     * [DB Browser for SQLite](https://sqlitebrowser.org/)、[SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio)，SQLite 管理器

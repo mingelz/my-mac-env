@@ -13,4 +13,4 @@ export UV_EXTRA_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
 alias python='uv run python'
 alias python3='uv run python'
 
-# 另：如果需要针对 pip 安装提速，请复制 ~/.config/pip/pip.conf 文件
+# 另：如果需要针对 pip 安装提速，请复制 ~/.pip/pip.conf 文件

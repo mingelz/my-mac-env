@@ -9,40 +9,8 @@ My Mac Environment
 ```
 / (Root Directory)
 |
-|-- Users/
-|   |-- USERNAME/ ($HOME)
-|       |-- backup
-|       |   |-- baidu-ime-pharse.txt
-|       |   |-- rectangle-config.json
-|       |-- Library
-|       |   |-- Application Support
-|       |       |-- Code
-|       |       |   |-- User
-|       |       |       |-- keybindings.json
-|       |       |       |-- settings.json
-|       |       |-- JetBrains
-|       |           |-- Idea
-|       |               |-- README.md
-|       |-- .bash_profile
-|       |-- .config
-|       |-- .gemrc
-|       |-- .gitconfig
-|       |-- .npmrc
-|       |-- .ssh/
-|       |-- .vimrc
-|       |-- .zshrc
 |-- etc/
-|   |-- hosts
-|   |-- motd
+|-- Users/USERNAME/ ($HOME)
 |-- usr/
-|   |-- local/
-|       |-- bin/
-|           |-- mycleaner.sh
-|       |-- etc/
-|           |-- nginx/
-|               |-- gen-ssl-csr.sh
-|               |-- nginx.conf
 |-- setup.md
-|-- .editorconfig
-|-- .gitignore
 ```

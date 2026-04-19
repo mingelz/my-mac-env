@@ -1,33 +1,31 @@
-# Raycast 自定义大模型供应商配置文件
+# Raycast 自定义大模型配置文件
 #
 # 要求
-# 1. 文件名必须为 `providers.yaml`
+# 1. 文件名必须为 `~/.config/raycast/ai/providers.yaml`
 # 2. 供应商接口需要兼容 OpenAI API
-# 3. 每个提供商必须同时指定模型列表及其对应的模型能力
+# 3. 以下以阿里云百炼 Coding Plan 配置为例
 #
 providers:
     # 供应商ID，唯一值
   - id: aliyun-coding-plan
     # 供应商名称，会显示在 Raycast 中
     name: aliyun-coding-plan
-    # 供应商的 API URL
+    # 供应商的 API URL（需要兼容 OpenAI API）
     base_url: https://coding.dashscope.aliyuncs.com/v1
-    # 如果需要身份验证，请至少指定一个 API 密钥。
-    # 如果不需要身份验证或已在其他地方提供，则此项为可选。
-    # 如果各个模型需要单独的 API 密钥，请为每个模型的 `provider` 单独指定 `key`
+    # 供应商提供的 API Key（支持多个）
     api_keys:
       # key 随意，与 models[].provider 保持一致
-      main: your-api-key
+      primary: 【这里填你自己的API Key】
     # 可选的附加参数，将发送到 `/chat/completions` 接口
     additional_parameters:
       return_images: true
       web_search_options:
         search_context_size: medium
-    # 指定当前提供商下要使用的所有模型
+    # 指定当前提供商下要使用的模型列表
     models:
       - id: qwen3.5-plus # `id` 必须与提供商使用的标识符一致
-        name: "Qwen3.5 Plus" # 在 Raycast 中显示的名称
-        provider: main # 【可选】当 API 需要特殊指定 API key 时才需要填写，默认即 api_keys.*
+        name: "Qwen3.5 Plus" # 在 Raycast 中显示的模型名称
+        provider: primary # 【可选】当 API 需要特殊指定 API key 时才需要填写，默认即 api_keys.*
         description: "文本生成、深度思考、视觉理解" # 【可选】大模型描述
         context: 1000000 # 上下文限定大小
         # 【可选】能力配置，所有属性均为可选。需要参阅提供商的 API 文档了解模型能力

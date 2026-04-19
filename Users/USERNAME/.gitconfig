@@ -1,9 +1,13 @@
-[core]
-    # 不追踪快捷方式
-    symlinks = false
 [user]
     name = mingelz
     email = mingelz@gmail.com
+
+# 设置 http/https 代理，在某些场景下会用到
+#[http]
+#    proxy = socks5://127.0.0.1:8888
+#[https]
+#    proxy = socks5://127.0.0.1:8888
+
 # 当你同时维护多个账号时，建议使用 includeIf 分别配置账号信息 https://git-scm.com/docs/git-config#_conditional_includes
 # 例1: 在某个路径下使用另一套配置（一般只需配置 user.name 和 user.email）
 #[includeIf "gitdir/i:/path/to/dir/"]
@@ -11,16 +15,19 @@
 # 例2: 在某个域下使用另一套配置，对应的域路径像这样 https://github.com/**/** 或 git@gitlab.com:**/**
 #[includeIf "hasconfig:remote.*.url:https://example.com/**/**"]
 #    path = .gitconfig_foo
+
+[core]
+    # 不追踪快捷方式
+    symlinks = false
+[credential]
+    # 保存密码到 keychain，避免每次输入密码（仅适用于 macOS）
+    helper = osxkeychain
 [init]
     defaultBranch = master
-[status]
-    # 未 git add 的目录，也显式列出其下的所有文件
-    showUntrackedFiles = all
-[push]
-    default = simple
-[pull]
-    # git pull 默认记录 merge 分叉，如果希望不分叉就使用后边定义的 pr 命令
-    rebase = false
+[pager]
+    # 从 git@2.16 开始 branch 使用 less 显示信息，不太习惯，改为传统方式
+    branch = false
+
 [diff]
     tool = vimdiff
 [difftool]
@@ -33,12 +40,15 @@
 [merge]
     # merge 时只允许 Fast Forward 方式处理，否则建议使用 rebase
     #ff = only
-[pager]
-    # 从 git@2.16 开始 branch 使用 less 显示信息，不太习惯，改为传统方式
-    branch = false
-[credential]
-    # 保存密码到 keychain，避免每次输入密码（仅适用于 macOS）
-    helper = osxkeychain
+[push]
+    default = simple
+[pull]
+    # git pull 默认记录 merge 分叉，如果希望不分叉就使用后边定义的 pr 命令
+    rebase = false
+[status]
+    # 未 git add 的目录，也显式列出其下的所有文件
+    showUntrackedFiles = all
+
 [alias]
     # -- branch --
     br = branch

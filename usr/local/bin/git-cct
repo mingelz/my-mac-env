@@ -21,15 +21,14 @@ usage() {
 
 修改指定 commit 的时间戳（author time 和 committer time 同步修改）。
 
+⚠️  注意: 执行前必须确保工作区干净（无未提交更改、无未追踪文件）。
+
 参数:
   commit_id    要修改的 commit（支持短 hash）
   datetime     目标时间，格式: YYYY-MM-DD HH:MM:SS
 
 示例:
   git cct 2132bfdb "2020-01-01 10:00:00"
-
-注意:
-  此操作会 rebase 当前分支，执行前请确保工作区干净。
 EOF
 }
 
@@ -63,6 +62,26 @@ if [[ "$current_branch" == "HEAD" ]]; then
     exit 1
 fi
 
+# ---------- 🔒 安全检查：工作区必须干净 ----------
+
+echo "→ 检查工作区状态..."
+
+# 检查是否有未提交的更改（staged 或 unstaged）
+if ! git diff-index --quiet HEAD --; then
+    echo "❌ 错误: 工作区有未提交的更改。" >&2
+    echo "   请先 commit 或 stash 你的更改，再运行此命令。" >&2
+    exit 1
+fi
+
+# 检查是否有未追踪的文件（untracked files）
+if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
+    echo "❌ 错误: 工作区存在未追踪的文件。" >&2
+    echo "   请删除或添加这些文件到 .gitignore，或暂时移走它们。" >&2
+    exit 1
+fi
+
+echo "✓ 工作区干净，可以继续。"
+
 # ---------- 校验 commit ----------
 
 if ! git rev-parse --verify "$commit^{commit}" &>/dev/null; then
@@ -72,9 +91,19 @@ fi
 
 # ---------- 校验并转换时间 ----------
 
-if ! timestamp="$(date -j -f "$DATETIME_FORMAT" "$datetime" "+%Y-%m-%dT%H:%M:%S" 2>/dev/null)"; then
-    echo "错误: 时间格式不合法，期望格式为 'YYYY-MM-DD HH:MM:SS'" >&2
-    exit 1
+# 兼容 macOS (BSD date) 和 Linux (GNU date)
+if date --version &>/dev/null; then
+    # GNU date (Linux)
+    if ! timestamp="$(date -d "$datetime" "+%Y-%m-%dT%H:%M:%S" 2>/dev/null)"; then
+        echo "错误: 时间格式不合法，期望格式为 'YYYY-MM-DD HH:MM:SS'" >&2
+        exit 1
+    fi
+else
+    # BSD date (macOS)
+    if ! timestamp="$(date -j -f "$DATETIME_FORMAT" "$datetime" "+%Y-%m-%dT%H:%M:%S" 2>/dev/null)"; then
+        echo "错误: 时间格式不合法，期望格式为 'YYYY-MM-DD HH:MM:SS'" >&2
+        exit 1
+    fi
 fi
 
 # ---------- 清理函数（异常时自动恢复） ----------
@@ -82,9 +111,20 @@ fi
 cleanup() {
     local exit_code=$?
     if [[ $exit_code -ne 0 ]]; then
-        echo "发生错误，正在还原..." >&2
-        git checkout "$current_branch" 2>/dev/null || true
-        git branch -D "$REBASING_BRANCH" 2>/dev/null || true
+        echo "" >&2
+        echo "⚠️  发生错误，正在尝试还原..." >&2
+
+        # 尝试切回原分支
+        if git rev-parse --verify "$current_branch" &>/dev/null; then
+            git checkout "$current_branch" 2>/dev/null || true
+        fi
+
+        # 删除临时分支
+        if git rev-parse --verify "$REBASING_BRANCH" &>/dev/null; then
+            git branch -D "$REBASING_BRANCH" 2>/dev/null || true
+        fi
+
+        echo "❌ 操作失败，工作区已尽可能还原。请检查状态。" >&2
     fi
 }
 
@@ -94,20 +134,26 @@ trap cleanup EXIT
 
 echo "→ 正在修改 commit $commit 的时间为 $datetime ..."
 
+# 1. 创建临时分支指向目标 commit
 git checkout -b "$REBASING_BRANCH" "$commit"
 
+# 2. 修改该 commit 的时间戳
 GIT_COMMITTER_DATE="$timestamp" \
 GIT_AUTHOR_DATE="$timestamp" \
     git commit --amend --no-edit --date "$timestamp"
 
+# 3. 切回原分支
 git checkout "$current_branch"
 
+# 4. 执行 rebase，将原分支上从 commit 之后的所有 commit 重新应用到修改后的 commit 上
+#    --committer-date-is-author-date 确保 committer date 也跟随 author date
 git rebase \
     --autostash \
     --committer-date-is-author-date \
     "$commit" \
     --onto "$REBASING_BRANCH"
 
+# 5. 删除临时分支
 git branch -d "$REBASING_BRANCH"
 
-echo "✓ 完成"
+echo "✓ 完成！commit $commit 的时间已更新为 $datetime"

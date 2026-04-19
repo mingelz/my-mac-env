@@ -1,17 +1,22 @@
 # ohmyzsh 插件
 
-## 插件配置 - brew
-### 列出安装项目的依赖关系，插件中没提供，只好自己加一个
-alias bldeps="brew leaves | xargs brew deps --tree --include-build"
+# --------------------------------------
+# 插件前序配置，在启动插件前要配置的环境变量
+# --------------------------------------
 
 ## 插件配置 - z
+### 用习惯 autojump 了，所以继续用 j 做快捷键
 ZSHZ_CMD=j
 
 ## 插件配置 - vi
 #VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 #VI_MODE_SET_CURSOR=true
 
-## 启用的插件
+
+# --------------------------------------
+# 启用插件
+# --------------------------------------
+
 ## 默认插件在 $ZSH/plugins/
 ## 自定义插件在 $ZSH_CUSTOM/plugins/
 ## 更多插件可以参考 https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
@@ -19,6 +24,15 @@ plugins=(
   brew
   z
 )
+
+
+# --------------------------------------
+# 插件后序配置，启动插件后要补充执行的命令
+# --------------------------------------
+
+## 插件配置 - brew
+### 列出安装项目的依赖关系，插件中没提供，只好自己加一个
+alias bldeps="brew leaves | xargs brew deps --tree --include-build"
 
 ## 插件配置 - brew 安装 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 #ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
