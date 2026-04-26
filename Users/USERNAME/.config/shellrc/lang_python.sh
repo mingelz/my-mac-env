@@ -5,12 +5,13 @@
 # * TUNA 源：https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
 # * USTC 源：https://mirrors.ustc.edu.cn/help/pypi.html
 
-# uv
+# 另：如果需要针对 pip 安装提速，请复制 ~/.pip/pip.conf 文件
+
+
+## uv
 export UV_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
 export UV_EXTRA_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
 
 ## alias
 alias python='uv run python'
 alias python3='uv run python'
-
-# 另：如果需要针对 pip 安装提速，请复制 ~/.pip/pip.conf 文件

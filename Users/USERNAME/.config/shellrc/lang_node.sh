@@ -2,11 +2,12 @@
 
 # 通过修改为国内镜像源提高国内访问速度
 # * npmmirror 源：https://npmmirror.com/
-# * 阿里云源：https://developer.aliyun.com/mirror/NPM, https://developer.aliyun.com/mirror/nodejs-release
+# * 阿里云源：https://developer.aliyun.com/mirror/NPM
 # * TUNA 源：https://mirrors.tuna.tsinghua.edu.cn/help/nodejs-release/
-# * USTC 源：https://mirrors.ustc.edu.cn/help/npm.html, https://mirrors.ustc.edu.cn/help/node.html
+# * USTC 源：https://mirrors.ustc.edu.cn/help/npm.html
 
-## nvm 我现在改用 fnm 了，效率更高
+
+## nvm
 #export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node"
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
@@ -19,5 +20,6 @@ export FNM_NODE_DIST_MIRROR="https://npmmirror.com/mirrors/node"
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 ## alias
-alias cnpm="npm --registry=https://registry.npmmirror.com --disturl=https://npmmirror.com/mirrors/node"
-alias cncu="ncu --registry=https://registry.npmmirror.com" # ncu 命令由 [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) 提供
+alias cnpm="npm --registry=https://registry.npmmirror.com"
+### ncu 命令由 [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) 提供
+alias cncu="ncu --registry=https://registry.npmmirror.com"

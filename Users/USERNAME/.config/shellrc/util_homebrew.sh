@@ -15,3 +15,7 @@ export HOMEBREW_PIP_INDEX_URL="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/sim
 
 ## ARM 版本的 brew 需要手动指定环境变量
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+## alias
+### 列出安装项目的依赖关系，omz 的 brew 插件没提供类似能力，所以自己加一个
+alias bldeps="brew leaves | xargs brew deps --tree --include-build"

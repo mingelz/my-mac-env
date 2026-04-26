@@ -1,20 +1,22 @@
-# bash
-source "$HOME/.config/shell_profile/bash_base.sh"
-source "$HOME/.config/shell_profile/bash_func.sh"
+# base
+source "$HOME/.config/shellrc/base_alias.sh"
+source "$HOME/.config/shellrc/base_env.sh"
+source "$HOME/.config/shellrc/base_func.sh"
 
 # lang
-source "$HOME/.config/shell_profile/lang_java.sh"
-source "$HOME/.config/shell_profile/lang_node.sh"
-source "$HOME/.config/shell_profile/lang_python.sh"
-source "$HOME/.config/shell_profile/lang_ruby.sh"
+source "$HOME/.config/shellrc/lang_java.sh"
+source "$HOME/.config/shellrc/lang_node.sh"
+source "$HOME/.config/shellrc/lang_python.sh"
+source "$HOME/.config/shellrc/lang_ruby.sh"
 
 # util
-source "$HOME/.config/shell_profile/util_homebrew.sh"
+source "$HOME/.config/shellrc/util_homebrew.sh"
 
 # private
-#source "$HOME/.config/shell_profile/private_homebrew.sh"
+source "$HOME/.config/shellrc/private_env.sh"
 
-# ------------------------------------------------------------------------------
+
+# ------------------------------------------------
 # base 额外配置
 # ...
-# ------------------------------------------------------------------------------
+# ------------------------------------------------

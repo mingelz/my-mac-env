@@ -1,4 +1,4 @@
-# ohmyzsh 插件
+# oh-my-zsh 插件
 
 # --------------------------------------
 # 插件前序配置，在启动插件前要配置的环境变量
@@ -29,10 +29,6 @@ plugins=(
 # --------------------------------------
 # 插件后序配置，启动插件后要补充执行的命令
 # --------------------------------------
-
-## 插件配置 - brew
-### 列出安装项目的依赖关系，插件中没提供，只好自己加一个
-alias bldeps="brew leaves | xargs brew deps --tree --include-build"
 
 ## 插件配置 - brew 安装 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 #ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
