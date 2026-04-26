@@ -1,8 +1,0 @@
-# 通过修改为国内镜像源提高国内访问速度
-# * npmmirror 源：https://npmmirror.com/
-# * 阿里云源：https://developer.aliyun.com/mirror/NPM, https://developer.aliyun.com/mirror/nodejs-release
-# * TUNA 源：https://mirrors.tuna.tsinghua.edu.cn/help/nodejs-release/
-# * USTC 源：https://mirrors.ustc.edu.cn/help/npm.html, https://mirrors.ustc.edu.cn/help/node.html
-
-registry=https://registry.npmmirror.com
-disturl=https://npmmirror.com/mirrors/node
