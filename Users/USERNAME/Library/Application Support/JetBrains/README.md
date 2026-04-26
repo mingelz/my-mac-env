@@ -231,6 +231,7 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * Markdown
   * Properties
   * Shell Script
+  * YAML
 * Local AI/ML Tools (一些第三方 AI 插件可能会与下列插件冲突，此时可以关闭下列插件)
   * Full Line Code Completion
   * Machine Learning Code Completion

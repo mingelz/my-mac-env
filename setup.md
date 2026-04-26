@@ -386,6 +386,8 @@
         * 【取消勾选】Stretch tabs to fill bar
 * Profiles
     * General
+        * Command
+            * 【选中】Load shell integration automatically
         * Initial Directory
             * 【选中】Reuse previous session's directory
     * Colors
