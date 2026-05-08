@@ -316,6 +316,22 @@
     * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
     * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)，命令补全插件
 
+### 4.4 字体安装
+
+由于系统默认字体无法支持英文与中文 1:2 宽显示，所以我在编辑器中使用了以下字体：
+
+* [更纱黑体](https://github.com/be5invis/Sarasa-Gothic)，特点：英文字体较窄（英文宽500，中文宽1000）
+    * [Gitee镜像](https://gitee.com/mirrors/Sarasa-Gothic)、[TUNA镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic)
+    * 推荐 Sarasa-Term-Slab-SC-TTF （带连字/带字体微调/term=半宽破折号/slab=粗衬线体/sc=集成简体中文字形/ttf=单一字形）
+* [Maple Mono](https://github.com/subframe7536/maple-font)，特点：中文字体间距较大（英文宽600，中文宽1200）
+    * [Gitee镜像](https://gitee.com/subframe7536/Maple)
+    * 推荐 Maple-Mono-NF-CN-unhinted （带连字/nf=集成[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)/cn=集成中日文字形/unhinted=无字体微调）
+* 参考文档
+    * 系统默认英文宽600、中文宽1000，两者不是 1:2，所以在代码注释中进行中英混排时无法对齐
+    * [更纱黑体这么多版本，要怎么选？](https://zhuanlan.zhihu.com/p/627059922)
+    * [Vscode 等宽字体](https://jqtmviyu.github.io/post/vscode-mono-font/)
+    * [Maple Mono 项目 README](https://github.com/subframe7536/maple-font/blob/variable/README_CN.md)
+
 ## 五 应用配置
 
 下文中依赖的配置文件已经在此 Repo 中提供
