@@ -278,7 +278,7 @@
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
     * [DB Browser for SQLite](https://sqlitebrowser.org/)、[SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio)，SQLite 管理器
     * [Reqable](https://reqable.com/)、[whistle](https://github.com/avwo/whistle)、[Charles Proxy](https://www.charlesproxy.com/)，抓包及代理工具
-    * [JDK](https://www.oracle.com/java/technologies/downloads/)
+    * ~~[JDK](https://www.oracle.com/java/technologies/downloads/)~~，改为使用 Homebrew 安装 Temurin
 * 娱乐
     * [Netease Music](https://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
     * [Steam](https://www.steampowered.com/)
@@ -295,26 +295,30 @@
 > **注意**
 > 1. brew 依赖 Xcode Command Line Tools，建议安装 brew 前先安装 Xcode，并在命令行执行 `xcode-select --install` 安装 Xcode Command Line Tools。虽然直接安装 brew 也会安装此依赖，但我个人还是习惯先手动把依赖处理好
 > 2. ARM 版本安装路径在 `/opt/`，X86 版本安装路径为 `/usr/bin/`
-> 3. 个人不喜欢使用 cask 安装应用，会导致安装目录比较乱，可以通过 cask 查找要安装应用的下载地址后自主下载安装
-> 4. 建议使用国内源改善国内访问速度：[阿里云源](https://developer.aliyun.com/mirror/homebrew), [TUNA源](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+> 3. 个人不太喜欢使用 cask 安装会自动更新的应用，可能会导致安装目录比较乱，此时可通过 cask 查找要安装应用的下载地址后自主下载安装
+> 4. 建议使用国内源改善国内访问速度，参考本文【附录：开源镜像站】
 
-* [brew](http://brew.sh/) & [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
+* [brew](http://brew.sh/)
     * fnm/nvm & node
-        * fnm 要比 nvm 快不少，我已经转投 fnm 怀抱
+        * fnm 要比 nvm 快不少，我已经转投 fnm
     * uv & python
     * tree
     * lame，mp3 编解码、压缩
+    * oh-my-zsh 插件
+        * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
+        * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)，命令补全插件
+* [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
+    * temurin@25
+    * maven (安装时需要 `--ignore-dependencies`，因为它识别不到已安装的 temurin)
 
 #### Oh My Zsh
 
 > **注意**
 > 1. omz 自带的插件，以及手动安装在 omz 插件目录（一般为 `~/.oh-my-zsh/custom/plugins`）的插件，直接在 `~/.zshrc` 的 `plugins=()` 中设置名称即可
 > 2. 通过 brew 安装的插件，需要手动 `source` 插件路径，插件会安装在 `/opt/homebrew/share/` 下。个人建议使用 brew 安装，方便维护与升级
-> 3. 建议使用国内源改善国内访问速度：[TUNA源](https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/), [Gitee源](https://gitee.com/mirrors/oh-my-zsh)
+> 4. 建议使用国内源改善国内访问速度，参考本文【附录：开源镜像站】
 
 * [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-    * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
-    * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)，命令补全插件
 
 ### 4.4 字体安装
 
@@ -336,54 +340,42 @@
 
 下文中依赖的配置文件已经在此 Repo 中提供
 
-### 开源镜像站
-
-因为众所周知的原因，在使用 github/pip/npm 等官方服务时速度不理想，后续多处配置会涉及切换镜像源，这里简单列一下:
-* [阿里云](https://developer.aliyun.com/mirror/)
-* [腾讯云](https://mirrors.cloud.tencent.com/)
-* [网易](http://mirrors.163.com/)
-* [华为云](https://mirrors.huaweicloud.com/)
-* [清华大学 TUNA](https://mirrors.tuna.tsinghua.edu.cn/)
-* [北京外国语大学 BFSU](https://mirrors.bfsu.edu.cn/)
-* [中国科学技术大学 USTC](https://mirrors.ustc.edu.cn/)
-* [上海交通大学 SJTU](https://mirror.sjtu.edu.cn/)
-* [南京大学 NJU](https://mirrors.nju.edu.cn/)
-* [浙江大学 ZJU](https://mirrors.zju.edu.cn/)
-* [重庆大学 CQU](https://mirrors.cqu.edu.cn/)
-* [npmmirror](https://npmmirror.com/)
-* RubyChina 的 [Ruby](https://ruby-china.org/wiki/ruby-mirror) 和 [Gems](https://gems.ruby-china.com/)
-
 ### Shell
 
-* Bash: 复制 `my-mac-env/Users/USERNAME/.bash_profile` 及 `my-mac-env/Users/USERNAME/.bash_profile_private` 文件
-* Oh My ZSH：复制 `my-mac-env/Users/USERNAME/.zshrc` 文件
-* Git: 复制 `my-mac-env/Users/USERNAME/.gitconfig` 文件，并根据实际情况重新编辑用户信息
-* Node & NPM: 复制 `my-mac-env/Users/USERNAME/.cnpmrc` 文件
-* Python & PyPI: 复制 `my-mac-env/Users/USERNAME/.config/pip` 目录
-* Ruby & Gem: 复制 `my-mac-env/Users/USERNAME/.gemrc` 目录
-* 其他: 复制 `my-mac-env/usr/local/bin` 目录，或酌情复制需要的命令
+推荐使用 [install.sh](./install.sh) 进行统一安装，各模块的配置文件位于 `Users/USERNAME/` 下：
+
+* Bash & ZSH: `install.sh shell`，链接 `.bash_profile`、`.zshrc` 及 `.config/shellrc/` 下的配置文件
+    * 私人配置参考 `.config/shellrc/private.sh.example`，按需创建 `private*.sh`（通用）/ `private*.zsh`（仅 zsh）/ `private*.bash`（仅 bash）
+* Git: `install.sh git`，链接 `.config/git/` 目录
+    * 私人配置参考 `.config/git/private_config.example`，复制为 `private_config` 并填入个人信息
+* SSH: `install.sh ssh`，复制 `.ssh/config` 文件
+* Node & NPM: `install.sh node`，链接 `.config/npm/npmrc`
+* Python & PyPI: `install.sh python`，链接 `.config/pip/pip.conf`
+* Ruby & Gem: `install.sh ruby`，链接 `.config/gem/gemrc`
+* Bin: `install.sh bin`，逐个链接 `.local/bin/` 下的脚本
 
 #### SSH
 
-* 复制 `my-mac-env/Users/USERNAME/.ssh` 目录
+* 运行 `install.sh ssh`，会将 `.ssh/config` 复制到 `~/.ssh/config`
 * 使用 `ssh-keygen` 生成针对每个站点的 SSH key
 * 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
 * 在相应站点配置公钥
 
 #### Nginx
 
-* 复制 `my-mac-env/usr/local/etc/nginx` 目录
+* 复制 `./opt/homebrew/etc/nginx` 目录
 * 根据实际需要编辑 `nginx.conf` 文件，其中有较详细的注释
 * 如需要支持 https，使用 `gen-ssl-csr.sh` 生成证书
 
 ### Vim & MacVim
 
-* 复制 `my-mac-env/Users/USERNAME/.vim` 目录
+* 运行 `install.sh vim`，链接 `.config/vim/` 目录
+* 配置文件位于 `~/.config/vim/vimrc`，运行时文件（viminfo、undo、swap、backup）统一存放在 `~/.local/state/vim/` 下
 
 #### Vundle
 
 * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
-* 编辑刚复制的 `$HOME/.vim/vimrc` 文件，选择需要的插件（我已不再使用 Vim 开发，目前只安装了 editorconfig 一个插件）
+* 编辑 `~/.config/vim/vimrc` 文件，选择需要的插件（我已不再使用 Vim 开发，目前只安装了 editorconfig 一个插件）
 * 通过 Vundle 安装插件：`:PluginsInstall`
 
 #### MacVim
@@ -398,7 +390,7 @@
 
 ### Karabiner-Elements
 
-复制 `my-mac-env/Users/USERNAME/.config/karabiner` 下的文件。
+运行 `install.sh karabiner`，会将 `.config/karabiner/karabiner.json` 复制到 `~/.config/karabiner/karabiner.json`。Karabiner 会写回配置文件，如有更新请手动同步回仓库。
 
 > 以下快捷键在配置中存在（留做参考），但我实际已不再使用：
 >
@@ -482,7 +474,7 @@
 * Extensions
     * Clipboard History
         * Clipboard History: Hotkey: `Command + Control + C`
-    * Quicklinks，可直接导入 `my-mac-env/Users/USERNAME/backup/raycast-quicklinks.json` 文件
+    * Quicklinks，可直接导入 [raycast-quicklinks.json](./Users/USERNAME/.config/raycast/raycast-quicklinks.json) 文件
         * Search Google: `https://www.google.com/search?q={query}`, Alias: `gg`
         * Search Bing Global: `https://global.bing.com/search?q={query}`, Alias: `bg`
         * Search Bing CN: `https://cn.bing.com/search?q={query}`, Alias: `bc`
@@ -495,7 +487,7 @@
         * NPM Package: `https://www.npmjs.com/package/{query}`, Alias: `npm`
         * NPM Mirror Package: `https://npmmirror.com/package/{query}`, Alias: `cnpm`
         * RunKit: `https://npm.runkit.com/{query}`, Alias: `rk`
-    * Snippets，可直接导入 `my-mac-env/Users/USERNAME/backup/raycast-snippets.json` 文件
+    * Snippets，可直接导入 [raycast-snippets.json](./Users/USERNAME/.config/raycast/raycast-snippets.json) 文件
         * Search Snippets: Hotkey: `Command + Control + S`
         * date: `{date "yyyy-MM-dd"}`
         * datetime: `{datetime "yyyy-MM-dd HH:mm:ss"}`
@@ -505,7 +497,7 @@
         * Restore: HotKey: `Control + Option + Shift + \`
 * Raycast AI:
     * Custom Providers
-        * 复制 `my-mac-env/Users/USERNAME/.config/raycast/ai/providers.yaml` 文件
+        * 运行 `install.sh raycast`，会将 `providers.yaml` 复制到 `~/.config/raycast/ai/providers.yaml`，自行配置 API Key 及模型等信息
     * Experiments
         * 【勾选】Custom Providers _开启自定义提供商能力_
 * Account: 登录一下
@@ -521,7 +513,7 @@
 ### Visual Studio Code
 
 * 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line)
-* 复制 `my-mac-env/Users/USERNAME/Library/Application\ Support/Code/User/` 下的文件
+* 运行 `install.sh vscode`，会将 `settings.json` 和 `keybindings.json` 复制到 `~/Library/Application Support/Code/User/`
 * 常用插件：
     * EditorConfig for VS Code: 自动应用 .editorconfig 配置
     * GitLens — Git supercharged: 非常强大的 Git 工具
@@ -532,10 +524,10 @@
 ### IntelliJ IDEA
 
 * 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
-* 配置项在 `my-mac-env/Users/USERNAME/Library/Application Support/JetBrains/README.md` 中有明细
-* 有几个项目配置是保存在具体项目的 `.idea` 目录下的，对应的配置可以通过复制 `my-mac-env/Users/USERNAME/Library/Application Support/JetBrains/project.default.xml` 文件快速设置
-* 推荐插件也在 `my-mac-env/Users/USERNAME/Library/Application Support/JetBrains/README.md` 中
-* IdeaVim 配置在 `my-mac-env/Users/USERNAME/.ideavimrc`，复制到家目录下即可
+* 配置项在 [.../JetBrains/README.md](./Users/USERNAME/Library/Application%20Support/JetBrains/README.md) 中有明细
+* 有几个项目配置是保存在具体项目的 `.idea` 目录下的，对应的配置可以通过复制 `Users/USERNAME/Library/Application Support/JetBrains/project.default.xml` 文件快速设置
+* 推荐插件也在 [.../JetBrains/README.md](./Users/USERNAME/Library/Application%20Support/JetBrains/README.md) 中
+* IdeaVim: 运行 `install.sh ideavim`，链接 `.config/ideavim/ideavimrc` 到 `~/.config/ideavim/ideavimrc`
 * IntelliJ IDEA Ultimate 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 [JetBrains Products Comparison](https://www.jetbrains.com/products/compare/) 页面进行对比查看。所以理论上有了 IDEA Ultimate 就不需要再安装 WebStorm、PHPStorm、PyCharm 等产品了。
 
 ### Xcode
@@ -567,7 +559,7 @@
 
 ### Rectangle
 
-导入 `my-mac-env/Users/USERNAME/backup/rectangle-config.json` 文件
+导入 [rectangle-config.json](./assets/rectangle-config.json) 文件
 
 ### 百度输入法
 
@@ -583,7 +575,7 @@
     * 【取消勾选】开启五笔调频
 * 词库
     * 删除所有分类词库
-    * 删除默认个性短语，重新导入 `my-mac-env/Users/USERNAME/backup/baidu-ime-phrase.txt`
+    * 删除默认个性短语，重新导入 [baidu-ime-phrase.txt](./assets/baidu-ime-phrase.txt)
 * QuickTip
     * 仅保留「表情/符号」
 * 高级
@@ -595,13 +587,44 @@
 以下目录或软件中可能存在私人信息，可能未体现在上述列表中，记得备份旧数据。
 
 * etc/hosts
-* Bash
-    * `~/.config/shellrc/*private*` 文件中的配置
+* Shell
+    * `~/.config/shellrc/private*.{sh,zsh,bash}` 中的配置
+* Git
+    * `~/.config/git/private_config` 中的配置
 * SSH
     * 如需保留之前的密钥，需要备份 `~/.ssh` 目录下的文件
     * 注意私钥的文件权限应该是 `600`
 * Nginx
-    * 一些 `nginx.conf` 的路径配置
+    * `nginx.conf` 中的私人配置
 * Raycast
-    * quicklinks
-    * snippets
+    * 一些私人 quicklinks
+    * 一些私人 snippets
+
+## 七、附录
+
+### 开源镜像站
+
+因为众所周知的原因，在使用 github/pip/npm 等官方服务时速度不理想，前述多项配置涉及切换镜像源，这里简单列一下:
+
+#### 企业
+
+* [阿里云](https://developer.aliyun.com/mirror/)
+* [腾讯云](https://mirrors.cloud.tencent.com/)
+* [网易](http://mirrors.163.com/)
+* [火山引擎(字节)](https://developer.volcengine.com/mirror/)
+* [华为云](https://mirrors.huaweicloud.com/)
+
+#### 高校
+
+* [清华大学 TUNA](https://mirrors.tuna.tsinghua.edu.cn/)
+* [北京外国语大学 BFSU](https://mirrors.bfsu.edu.cn/)
+* [中国科学技术大学 USTC](https://mirrors.ustc.edu.cn/)
+* [上海交通大学 SJTU](https://mirror.sjtu.edu.cn/)
+* [南京大学 NJU](https://mirrors.nju.edu.cn/)
+* [浙江大学 ZJU](https://mirrors.zju.edu.cn/)
+* [重庆大学 CQU](https://mirrors.cqu.edu.cn/)
+
+#### 专项
+
+* [npmmirror](https://npmmirror.com/)
+* RubyChina 的 [Ruby](https://ruby-china.org/wiki/ruby-mirror) 和 [Gems](https://gems.ruby-china.com/)

@@ -124,12 +124,16 @@ fi
 # 2. Shell History
 # ------------------------------------------------------------------------------
 info "Cleaning shell history..."
+# Legacy paths
 safe_rm ~/.bash_history
+safe_rm ~/.bash_sessions
 safe_rm ~/.zsh_history
 safe_rm ~/.zsh_sessions
-safe_rm ~/.bash_sessions
 safe_rm ~/.sh_history
-safe_rm ~/.python_history # Python REPL history
+safe_rm ~/.python_history
+# XDG paths
+safe_rm "${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
+safe_rm "${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
 
 # ------------------------------------------------------------------------------
 # 3. Node.js / NPM (Using Native Command)
@@ -199,17 +203,38 @@ fi
 # 6. Vim/Neovim
 # ------------------------------------------------------------------------------
 info "Cleaning Vim/Neovim..."
+# Legacy paths
 safe_rm ~/.viminfo
 safe_rm ~/.vim/undo
-safe_rm ~/.local/share/nvim/swap
-safe_rm ~/.local/share/nvim/undo
+# XDG paths
+vim_state="${XDG_STATE_HOME:-$HOME/.local/state}/vim"
+safe_rm "$vim_state/backup"
+safe_rm "$vim_state/viminfo"
+safe_rm "$vim_state/swap"
+safe_rm "$vim_state/undo"
+# Neovim
+nvim_state="${XDG_STATE_HOME:-$HOME/.local/state}/nvim"
+safe_rm "$nvim_state/swap"
+safe_rm "$nvim_state/undo"
 
 if [ "$DRY_RUN" = false ]; then
-    mkdir -p ~/.vim/undo ~/.local/share/nvim/swap ~/.local/share/nvim/undo
+    mkdir -p "$vim_state/backup" "$vim_state/swap" "$vim_state/undo"
+    mkdir -p "$nvim_state/swap" "$vim_state/undo"
 fi
 
 # ------------------------------------------------------------------------------
-# 7. General macOS Caches
+# 7. .DS_Store Files
+# ------------------------------------------------------------------------------
+info "Cleaning .DS_Store files..."
+if [ "$DRY_RUN" = false ]; then
+    find "$HOME" -name ".DS_Store" -type f -delete 2>/dev/null || warn "Some .DS_Store files could not be deleted."
+    info "Removed .DS_Store files from home directory."
+else
+    action "find \$HOME -name '.DS_Store' -type f -delete"
+fi
+
+# ------------------------------------------------------------------------------
+# 8. General macOS Caches
 # ------------------------------------------------------------------------------
 info "Cleaning general macOS user caches..."
 # Warning: This is aggressive. Some apps may need to re-download assets.

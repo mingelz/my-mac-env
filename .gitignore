@@ -45,5 +45,18 @@ pnpm*.log*
 yarn*.log*
 .eslintcache
 
+### Environment ###
+.env
+.env.*
+!.env.example
+
 ### Others ###
 TODOs.md
+
+### Private Config ###
+Users/USERNAME/.config/git/private*
+!Users/USERNAME/.config/git/private_config.example
+Users/USERNAME/.config/shellrc/private*.sh
+Users/USERNAME/.config/shellrc/private*.zsh
+Users/USERNAME/.config/shellrc/private*.bash
+!Users/USERNAME/.config/shellrc/private.sh.example

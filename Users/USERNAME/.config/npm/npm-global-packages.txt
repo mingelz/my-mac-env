@@ -1,0 +1,6 @@
+# npm 全局包列表
+# install.sh 的 node 模块会读取此文件，自动安装列出的全局包
+# 每行一个包名（支持 @version 后缀），# 开头的行和空行会被忽略
+
+@anthropic-ai/claude-code
+npm-check-updates

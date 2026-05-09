@@ -12,11 +12,20 @@ source "$HOME/.config/shellrc/lang_ruby.sh"
 # util
 source "$HOME/.config/shellrc/util_homebrew.sh"
 
-# private
-source "$HOME/.config/shellrc/private_env.sh"
-
+# bash 历史记录文件位置
+export HISTFILE="$XDG_STATE_HOME/bash/history"
+mkdir -p "$(dirname "$HISTFILE")"
 
 # ------------------------------------------------
-# base 额外配置
-# ...
+# private 配置
+# ------------------------------------------------
+# private*.sh: 通用配置
+for f in "$HOME"/.config/shellrc/private*.sh; do
+  [[ -f "$f" && "$f" != *.example ]] && source "$f"
+done
+# ------------------------------------------------
+# private*.bash: bash 配置环境
+for f in "$HOME"/.config/shellrc/private*.bash; do
+  [[ -f "$f" && "$f" != *.example ]] && source "$f"
+done
 # ------------------------------------------------

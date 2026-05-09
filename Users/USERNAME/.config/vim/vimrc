@@ -10,7 +10,14 @@ endif
 " == }}}
 
 " == 变量 == {{{
-let RTHOME=split(&runtimepath, ',')[0]    "先取到 RUNTIMEPATH 路径，.vim 或 vimfiles，接下来会用到
+" 参考 XDG 规范，定义 STATE/CACHE 目录
+if has("win32")
+  let s:state_dir = expand('$LOCALAPPDATA/vim')
+  let s:cache_dir = expand('$LOCALAPPDATA/vim')
+else
+  let s:state_dir = expand('$HOME/.local/state/vim')
+  let s:cache_dir = expand('$HOME/.cache/vim')
+endif
 " == }}}
 
 " == 基础 == {{{
@@ -25,13 +32,16 @@ elseif has("mac")    "Vim on Mac, or MacVim
   " 解决打开 Typescript 文件会卡住的问题，ref: https://vi.stackexchange.com/questions/25086/vim-hangs-when-i-open-a-typescript-file
   set regexpengine=0    "语法匹配引擎 (0:自动选择; 1:旧引擎; 2: NFA引擎) [re=regexpengine]
 endif
-"指定 viminfo 的位置，使用 set viminfo 的方式只能跟字符串，为了合适变量，需要用 let &viminfo
-if has('nvim')
-  " neovim 的 viminfo 格式不与 vim 兼容
-  let &viminfo .= ',n' . RTHOME . '/nviminfo'
-else
-  let &viminfo .= ',n' . RTHOME . '/viminfo'
-endif
+"定义运行时文件路径
+let &viminfo .= ',n' . s:state_dir . '/viminfo'
+let g:netrw_home = s:state_dir    "控制 Netrw 插件生成的 .netrwhist 文件位置
+let &backupdir = s:state_dir . '/backup'
+let &undodir = s:state_dir . '/undo'
+let &directory = s:cache_dir . '/swap'
+"对应目录不存在时会失败（backup静默失败，undo文件不保存，swap回退到文件目录），需要预建目录
+for s:dir in [&backupdir, &undodir, &directory]
+  if !isdirectory(s:dir) | call mkdir(s:dir, 'p') | endif
+endfor
 " == }}}
 
 " == 编码 == {{{
@@ -150,14 +160,10 @@ au BufRead,BufNewFile *.we set filetype=html
 
 " == 备份 == {{{
 set nobackup    "关闭备份。备份文件是 Vim 每隔一段时间自动保存的文件，备份文件不会被删除，如果需要在结束编辑时删除备份文件，使用 set writebackup  (见下一个设置项)
-set nowritebackup    "关闭备份。此命令只会在编辑时创建备份文件，当关闭 Vim 时也会将备份文件删除 [nowb=nowritebackup]
-"set noswapfile    "关闭交换文件。Vim 会在打开文件的同时，在同目录下 (如需要自定义目录请看下一项) 创建一个交换文件(.swp)，在 Vim 意外关闭的时候，可以通过交换文件恢复之前的操作。非常不建议关闭！
-if has("persistent_undo")    "持久化撤销，该功能从 7.3 版本开始支持
+set writebackup    "关闭备份。此命令只会在编辑时创建备份文件，当关闭 Vim 时也会将备份文件删除 [nowb=nowritebackup]
+"set noswapfile    "关闭交换文件。Vim 默认会在打开文件的同时，在同目录下创建一个交换文件(.swp)，在 Vim 意外关闭时可以通过交换文件恢复之前的操作。非常不建议关闭！
+if has("persistent_undo")    "持久化撤销，该功能从 7.3 版本开始支持。Vim 默认会在同目录下创建后缀为 .un~ 的文件
   set undofile    "开启持久化撤销 [udf=undofile]
-  "持久化撤销的路径默认为"."，保存的文件名后缀为 .un~ [udir=undodir]，个人习惯放到 RUNTIMEPATH 目录
-  "因为调用了变量，所以使用 `let &undodir` 而不是 `set undodir`
-  "并记得在 RTHOME 下建一个 undo 目录
-  let &undodir = RTHOME . '/undo/'
 endif
 " == }}}
 

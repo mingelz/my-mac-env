@@ -8,10 +8,13 @@
   ],
   "editor.scrollBeyondLastLine": false,
   "editor.unicodeHighlight.allowedLocales": {
-      "zh-hans": true
+    "zh-hans": true
   },
   "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.wordWrap": "off",
   // Text Editor - Font
+  "editor.fontFamily": "Sarasa Term SC, Maple Mono NF CN, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
   "editor.fontSize": 18,
   // Text Editor - Formatting
   "editor.formatOnPaste": true,
@@ -38,7 +41,6 @@
   "breadcrumbs.enabled": false,
   // Workbench - Zen Mode
   "zenMode.hideLineNumbers": false,
-  "zenMode.hideTabs": false,
   // Features - Search
   "search.smartCase": true,
   // Features - Extensions
@@ -79,13 +81,11 @@
   //   "MOCK"
   // ],
   // 通过正则匹配关键字，优先级比上一项高。通过 \\b 保证仅高亮完整单词，从而 TODOMVC 这个单词中的 TODO 将不再被高亮
-  "todohighlight.keywordsPattern": "^\\s+?\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
-
+  "todohighlight.keywordsPattern": "\\b(TODO|FIXME|XXX|NOTE|OPTIMIZE|HACK|BUG|CHANGED|REVIEW|QUESTION|TEMP|DEBUG|WARNING|MOCK)\\b",
   // Extensions(3rd) - Vim
   "vim.foldfix": true,
   "vim.hlsearch": true,
   "vim.visualstar": true,
-
   // Extensions(3rd) - Visual Studio IntelliCode
   // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }

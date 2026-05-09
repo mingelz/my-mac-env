@@ -1,0 +1,31 @@
+# Git 私人配置模板
+#
+# 使用方法：
+#   1. 复制本文件并去掉 .example 后缀
+#   2. 填入你的私人信息
+#   3. private* 文件已被 .gitignore 忽略，不会被提交
+#
+
+# 设置用户信息
+[user]
+    name = YOUR_NAME
+    email = YOUR_EMAIL
+
+# 当你同时维护多个账号时，建议使用 includeIf 分别配置账号信息 https://git-scm.com/docs/git-config#_conditional_includes
+# 例1: 在某个路径下使用另一套配置
+#[includeIf "gitdir/i:/path/to/dir/"]
+#    path = /path/to/another/config/file（此文件一般只需配置 user.name 和 user.email 即可）
+# 例2: 在某个域下使用另一套配置，对应的域路径像这样 https://github.com/**/** 或 git@github.com:**/**
+#[includeIf "hasconfig:remote.*.url:https://example.com/**/**"]
+#    path = /path/to/another/config/file（此文件一般只需配置 user.name 和 user.email 即可）
+
+# 设置 http/https 代理，建议使用 [alias] 节提供的 set-proxy/unset-proxy 快捷切换
+#[http]
+#    proxy = socks5://127.0.0.1:7890
+#[https]
+#    proxy = socks5://127.0.0.1:7890
+
+#[alias]
+#    # 快速切换代理
+#    set-proxy = "!git config --global http.proxy 'socks5://127.0.0.1:7890' && git config --global https.proxy 'socks5://127.0.0.1:7890'"
+#    unset-proxy = "!git config --global --unset http.proxy && git config --global --unset https.proxy"

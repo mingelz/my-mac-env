@@ -1,0 +1,34 @@
+# 全局生效的 gitignore
+
+### MacOS ###
+**/.DS_Store
+**/._*
+
+### Windows ###
+**/$RECYCLE.BIN/
+**/Thumbs.db
+**/[Dd]esktop.ini
+
+### IntelliJ IDEA ###
+**/.idea/
+
+### VS Code ###
+**/.vscode/
+
+### VIM ###
+**/*.sw?
+
+### CVS ###
+**/.svn/
+
+### AI Agents ###
+**/.claude/settings.local.json
+*.local.md
+
+### Environment ###
+.env
+.env.*
+!.env.example
+
+### Others ###
+TODOs.md

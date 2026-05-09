@@ -1,20 +1,7 @@
-[user]
-    name = mingelz
-    email = mingelz@gmail.com
-
-# 设置 http/https 代理，在某些场景下会用到，建议用在 [alias] 节提供的 set-proxy/unset-proxy 快捷操作
-#[http]
-#    proxy = socks5://127.0.0.1:8888
-#[https]
-#    proxy = socks5://127.0.0.1:8888
-
-# 当你同时维护多个账号时，建议使用 includeIf 分别配置账号信息 https://git-scm.com/docs/git-config#_conditional_includes
-# 例1: 在某个路径下使用另一套配置
-#[includeIf "gitdir/i:/path/to/dir/"]
-#    path = /path/to/another/config/file（此文件一般只需配置 user.name 和 user.email 即可）
-# 例2: 在某个域下使用另一套配置，对应的域路径像这样 https://github.com/**/** 或 git@github.com:**/**
-#[includeIf "hasconfig:remote.*.url:https://example.com/**/**"]
-#    path = /path/to/another/config/file（此文件一般只需配置 user.name 和 user.email 即可）
+# 引入私人配置（user.name, user.email, proxy 等）
+# 使用方法见 private_config.example
+[include]
+    path = private_config
 
 [core]
     # 不追踪快捷方式
@@ -127,9 +114,3 @@
     # -- 统计 --
     # 统计有哪些人提交过，及每人提交次数，更高级的统计请看本项目的 `usr/local/git-rank` 文件
     who = shortlog -sn --all --no-merges
-
-    # -- 代理 --
-    # 设置代理
-    set-proxy = "!git config --global http.proxy 'socks5://127.0.0.1:7890' && git config --global https.proxy 'socks5://127.0.0.1:7890'"
-    # 取消代理
-    unset-proxy = "!git config --global --unset http.proxy && git config --global --unset https.proxy"

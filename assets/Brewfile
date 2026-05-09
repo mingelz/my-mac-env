@@ -1,0 +1,23 @@
+# Brewfile
+# 使用方式: `brew bundle --file=backup/Brewfile`
+# 文档: https://docs.brew.sh/Brew-Bundle-and-Brewfile
+
+## 统一配置
+### Cask 默认安装在 ~/Applications 下
+cask_args appdir: "~/Applications", require_sha: true
+
+
+## CLI tools
+brew "fnm"
+brew "tree"
+brew "uv"
+
+## ZSH plugins (安装后需要在 .zshrc 中 source 对应路径)
+brew "zsh-syntax-highlighting"
+brew "zsh-autosuggestions"
+
+## JDK & Maven
+##cask "zulu@8"    #temurin@8 没有 ARM 版本，被迫换成 zulu
+cask "temurin@25"
+### 因为 maven 依赖 openjdk，但不识别 temurin，所以需要指定参数跳过依赖检测
+brew "maven", args: ["ignore-dependencies"]

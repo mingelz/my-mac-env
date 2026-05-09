@@ -19,3 +19,6 @@ ij_wrap_on_typing = false
 [{*.js,*.jsx,*.ts,*.tsx,*.es,*.ms,*.json,*.yaml,*.swift,*.md,*.markdown}]
 indent_size = 2
 ij_continuation_indent_size = 4
+
+[Makefile]
+indent_style = tab

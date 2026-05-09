@@ -4,7 +4,7 @@
 
 Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）很好的支持前端业务的开发，当开发语言主要是 Java + JavaScript(JS/ES/TS) 时，可以只依赖一个编辑器即可。以下配置同时考虑了 Java 和 JavaScript 的开发场景。如果你的配置页面没有对应项目，大概率是没有启用对应插件导致的。
 
-配置文件存储路径： `$USER_HOME$/Library/Application Support/JetBrains/IntellijIdea{版本号}`
+配置文件存储路径： `$HOME/Library/Application Support/JetBrains/IntellijIdea{版本号}`
 
 
 ## 配置细则
@@ -79,7 +79,9 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
     * Highlight on Caret Movement
       * [x] Current scope _高亮当前层级的缩进线_
   * Font
+    * Font: `Maple Mono NF CN` _编辑器字体_
     * Size: `18` _编辑器字体大小_
+    * [x] Enable ligatures _开启连字_
   * Color Schema
     * Schema: `Darcula` _颜色主题方案_
   * Code Style
@@ -138,7 +140,7 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
     * Default encoding for properties files: `UTF-8` _*.properties 文件编码_
       * [ ] Transparent native-to-ascii conversion _将 UTF-8 字符转义保存_
   * Life Templates
-    * 我在 [mz_life_templates](./mz_live_templates.xml) 中提供了一些常用模板，可以导入或直接放在 `~/Library/Application Support/JetBrains/IntellijIdea{版本号}/templates` 目录下
+    * 我在 [mz_life_templates](./mz_live_templates.xml) 中提供了一些常用模板，可以导入或直接放在 `$HOME/Library/Application Support/JetBrains/IntellijIdea{版本号}/templates` 目录下
   * TODO
     * Patterns _TODO关键字高亮正则_
       * `\b(todo|fixme)\b.*`
@@ -202,9 +204,11 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * HTML Tools
 * IDE Localization
 * IDE Settings
+  * Configuration Script _(被 Shared Indexes 依赖)_
   * EditorConfig
   * Java IDE Customization
   * JetBrains OS Integration
+  * Shared Indexes
 * JavaScript Frameworks and Tools
   * JavaScript and TypeScript
   * React
@@ -250,28 +254,31 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
 * Version Controls
   * Git
 * Other Tools
-  * Images
   * Groovy Live Templates _(被 Spring Web 依赖)_
+  * Images
   * Terminal
 
 ### 独立插件
 
 * AceJump: 快速跳转，按 Control+; 启动，连续输入看到的字符，插件会显示对应快捷键
 * ~~Alibaba Java Coding Guidelines: [阿里巴巴代码规约](https://github.com/alibaba/p3c)~~，负责人离职，许久未更新
-* Chinese (Simplified) Language Pack/中文语言包: 仅建议新手安装，快速熟悉编辑器
 * Easy Code Screenshots: 根据选中的代码生成截图
 * GenerateAllSetter: 快速生成实例的全部 Setter 方法
 * GitToolBox: 在每行代码后追加 Git Blame 信息
 * IdeaVim: Vim 模拟器，对于 Vimer 无论用哪个编辑器，第一个要装的都是它
+  * IdeaVim-EasyMotion: IdeaVim 插件，提供 EasyMotion 支持，此插件还依赖 AceJump 插件
+  * IdeaVim-Quickscope: IdeaVim 插件，提供 Quickscope 支持
+  * IdeaVimExtension: IdeaVim 插件，退回 Normal 模式自动切换英文输入法
 * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
 * MultiHighlight: 多个关键字同时高亮
 * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
+* MyBatisX: mybatis 插件，支持跳转到 mapper 路径
 * Rainbow Brackets: 每级括号使用不同颜色，此插件也支持变量颜色（或使用 Rainbow Variable 专门处理变量）
 * SpotBugs: 可以分析出当前项目或文件中潜在的问题
 
 ### IdeaVim 配置
 
-安装 IdeaVim 插件后，记得复制 `my-mac-env/Users/USERNAME/.ideavimrc` 文件
+安装 IdeaVim 插件后，记得复制 `/Users/USERNAME/.config/ideavim/ideavimrc` 文件
 
 ### GitToolBox 配置
 

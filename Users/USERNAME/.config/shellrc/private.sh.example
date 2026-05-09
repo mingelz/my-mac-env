@@ -1,0 +1,17 @@
+# 私人配置模板
+#
+# 按需创建以下文件并填入私人信息，以下文件均已被 .gitignore 忽略：
+#   - private*.sh        bash/zsh 通用，在 oh-my-zsh 初始化前加载
+#   - private*.bash      仅 bash 加载
+#   - private*.pre.zsh   仅 zsh 加载，oh-my-zsh 初始化前（适合设置环境变量、$plugins 等）
+#   - private*.post.zsh  仅 zsh 加载，oh-my-zsh 初始化后（适合 compdef、completions 等）
+#
+
+## 私有npm
+
+## Homebrew
+### 如果使用官方源，建议填入 github 管理后台生成的 token，确保 brew 能够正常更新，参考 https://docs.brew.sh/Manpage#environment-variables
+export HOMEBREW_GITHUB_API_TOKEN=""
+
+## Maven Check, ref: https://github.com/AlexisJehan/MvnCheck/
+export PATH="/path/to/mvn-check-2.2.1/bin:$PATH"

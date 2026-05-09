@@ -7,6 +7,7 @@
 ## 插件配置 - z
 ### 用习惯 autojump 了，所以继续用 j 做快捷键
 ZSHZ_CMD=j
+ZSHZ_DATA="$XDG_STATE_HOME/zsh/z"
 
 ## 插件配置 - vi
 #VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
@@ -31,8 +32,12 @@ plugins=(
 # --------------------------------------
 
 ## 插件配置 - brew 安装 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-#ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
-#source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="/opt/homebrew/share/zsh-syntax-highlighting/highlighters"
+  source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
 
 ## 插件配置 - brew 安装 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-#source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
