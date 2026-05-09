@@ -332,9 +332,26 @@
     * [Vscode 等宽字体](https://jqtmviyu.github.io/post/vscode-mono-font/)
     * [Maple Mono 项目 README](https://github.com/subframe7536/maple-font/blob/variable/README_CN.md)
 
-## 五 应用配置
+## 五、应用配置
 
 下文中依赖的配置文件已经在此 Repo 中提供
+
+### 开源镜像站
+
+因为众所周知的原因，在使用 github/pip/npm 等官方服务时速度不理想，后续多处配置会涉及切换镜像源，这里简单列一下:
+* [阿里云](https://developer.aliyun.com/mirror/)
+* [腾讯云](https://mirrors.cloud.tencent.com/)
+* [网易](http://mirrors.163.com/)
+* [华为云](https://mirrors.huaweicloud.com/)
+* [清华大学 TUNA](https://mirrors.tuna.tsinghua.edu.cn/)
+* [北京外国语大学 BFSU](https://mirrors.bfsu.edu.cn/)
+* [中国科学技术大学 USTC](https://mirrors.ustc.edu.cn/)
+* [上海交通大学 SJTU](https://mirror.sjtu.edu.cn/)
+* [南京大学 NJU](https://mirrors.nju.edu.cn/)
+* [浙江大学 ZJU](https://mirrors.zju.edu.cn/)
+* [重庆大学 CQU](https://mirrors.cqu.edu.cn/)
+* [npmmirror](https://npmmirror.com/)
+* RubyChina 的 [Ruby](https://ruby-china.org/wiki/ruby-mirror) 和 [Gems](https://gems.ruby-china.com/)
 
 ### Shell
 
@@ -364,12 +381,15 @@
 * 复制 `my-mac-env/Users/USERNAME/.vim` 目录
 
 #### Vundle
+
 * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
 * 编辑刚复制的 `$HOME/.vim/vimrc` 文件，选择需要的插件（我已不再使用 Vim 开发，目前只安装了 editorconfig 一个插件）
 * 通过 Vundle 安装插件：`:PluginsInstall`
 
 #### MacVim
-* 从 macOS 12 开始系统自带的 vim 已经 `+clipboard`，如果不使用图形界面就不需要额外安装 MacVim 了
+
+> 从 macOS 12 开始系统自带的 vim 已经 `+clipboard`，如果不使用图形界面就不需要额外安装 MacVim 了
+
 * 配置 MacVim 可在命令行启动：`ln -s ~/Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
     * 注意 `/usr/local/bin` 需要安装了 brew 后才会有
 * 偏好设置
@@ -570,13 +590,13 @@
     * 不启用「自动切换英文」
     * 不启用「翻译选中文本」
 
-## 六 私人信息
+## 六、私人信息
 
 以下目录或软件中可能存在私人信息，可能未体现在上述列表中，记得备份旧数据。
 
 * etc/hosts
 * Bash
-    * `~/.bash_profile_private` 中的配置
+    * `~/.config/shellrc/*private*` 文件中的配置
 * SSH
     * 如需保留之前的密钥，需要备份 `~/.ssh` 目录下的文件
     * 注意私钥的文件权限应该是 `600`
