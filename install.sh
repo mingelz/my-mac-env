@@ -269,6 +269,13 @@ install_brew() {
     _info "执行 brew bundle..."
     brew bundle --file="$brewfile"
     _ok "brew bundle 完成"
+
+    # maven 使用 ignore-dependencies 安装，pin 住避免 brew upgrade 时拉入 openjdk
+    # 后续如果需要更新 maven 版本，请执行：brew unpin maven && brew install maven --ignore-dependencies && brew pin maven
+    if brew list maven &>/dev/null; then
+        brew pin maven
+        _ok "已 pin: maven (避免 upgrade 时安装 openjdk 依赖)"
+    fi
 }
 
 # ============================================================
