@@ -14,4 +14,7 @@
 export HOMEBREW_GITHUB_API_TOKEN=""
 
 ## Maven Check, ref: https://github.com/AlexisJehan/MvnCheck/
-export PATH="/path/to/mvn-check-2.2.1/bin:$PATH"
+## 追加 PATH 时建议加防重复判断
+#if [[ ":$PATH:" != *":/path/to/mvn-check/bin:"* ]]; then
+#    export PATH="/path/to/mvn-check/bin:$PATH"
+#fi

@@ -227,7 +227,11 @@ fi
 # ------------------------------------------------------------------------------
 info "Cleaning .DS_Store files..."
 if [ "$DRY_RUN" = false ]; then
-    find "$HOME" -name ".DS_Store" -type f -delete 2>/dev/null || warn "Some .DS_Store files could not be deleted."
+    # 跳过 Library 等不需要搜索的目录，避免遍历大量文件
+    find "$HOME" \
+        \( -path "$HOME/Library" -o -path "$HOME/.Trash" \) -prune \
+        -o -name ".DS_Store" -type f -delete \
+        2>/dev/null || warn "Some .DS_Store files could not be deleted."
     info "Removed .DS_Store files from home directory."
 else
     action "find \$HOME -name '.DS_Store' -type f -delete"

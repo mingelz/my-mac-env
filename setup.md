@@ -267,7 +267,7 @@
     * [Raycast](https://www.raycast.com/)、[Alfred](https://www.alfredapp.com/)、[uTools](http://www.u.tools/)，效率工具
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
     * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
-    * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot
+    * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot(MAS)
     * [Floaty](https://www.floatytool.com/)，将任意窗口置顶
 * 生产力
     * [draw.io](https://www.drawio.com/)
@@ -302,6 +302,7 @@
     * fnm/nvm & node
         * fnm 要比 nvm 快不少，我已经转投 fnm
     * uv & python
+    * maven (安装时需要 `--ignore-dependencies`，因为它识别不到已安装的 temurin)
     * tree
     * lame，mp3 编解码、压缩
     * oh-my-zsh 插件
@@ -309,7 +310,6 @@
         * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)，命令补全插件
 * [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
     * temurin@25
-    * maven (安装时需要 `--ignore-dependencies`，因为它识别不到已安装的 temurin)
 
 #### Oh My Zsh
 
@@ -322,7 +322,7 @@
 
 ### 4.4 字体安装
 
-由于系统默认字体无法支持英文与中文 1:2 宽显示，所以我在编辑器中使用了以下字体：
+由于系统默认字体英文与中文宽度非 1:2 （英文宽600，中文宽1000），导致在代码注释中进行中英混排时无法对齐，所以我在编辑器中使用了以下字体：
 
 * [更纱黑体](https://github.com/be5invis/Sarasa-Gothic)，特点：英文字体较窄（英文宽500，中文宽1000）
     * [Gitee镜像](https://gitee.com/mirrors/Sarasa-Gothic)、[TUNA镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic)
@@ -331,7 +331,6 @@
     * [Gitee镜像](https://gitee.com/subframe7536/Maple)
     * 推荐 Maple-Mono-NF-CN-unhinted （带连字/nf=集成[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)/cn=集成中日文字形/unhinted=无字体微调）
 * 参考文档
-    * 系统默认英文宽600、中文宽1000，两者不是 1:2，所以在代码注释中进行中英混排时无法对齐
     * [更纱黑体这么多版本，要怎么选？](https://zhuanlan.zhihu.com/p/627059922)
     * [Vscode 等宽字体](https://jqtmviyu.github.io/post/vscode-mono-font/)
     * [Maple Mono 项目 README](https://github.com/subframe7536/maple-font/blob/variable/README_CN.md)

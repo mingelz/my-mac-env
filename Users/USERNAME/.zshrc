@@ -34,7 +34,11 @@ for f in "$HOME"/.config/shellrc/private*.pre.zsh(N); do
 done
 # ------------------------------------------------
 # === 启动 oh-my-zsh ===
-source "$ZSH/oh-my-zsh.sh"
+if [[ -f "$ZSH/oh-my-zsh.sh" ]]; then
+  source "$ZSH/oh-my-zsh.sh"
+else
+  echo "[WARN] oh-my-zsh 未安装，跳过加载。请先安装: https://ohmyz.sh/"
+fi
 # ------------------------------------------------
 # private*.post.zsh: 适合放在 omz 启动后的配置（如依赖 omz 环境中的命令等）
 for f in "$HOME"/.config/shellrc/private*.post.zsh(N); do

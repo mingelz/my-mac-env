@@ -1,2 +1,6 @@
 ## 当涉及写操作时（如发 npm 包）registry 需要改回官方源
 registry=https://registry.npmmirror.com
+
+## XDG 规范：缓存和日志不再写入 ~/.npm
+cache=${XDG_CACHE_HOME}/npm
+logs-dir=${XDG_STATE_HOME}/npm/logs

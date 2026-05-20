@@ -270,6 +270,7 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * IdeaVim-Quickscope: IdeaVim 插件，提供 Quickscope 支持
   * IdeaVimExtension: IdeaVim 插件，退回 Normal 模式自动切换英文输入法
 * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
+* Mermaid: 支持 Markdown 内针对 Mermaid 代码块的语法高亮及预览
 * MultiHighlight: 多个关键字同时高亮
 * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
 * MyBatisX: mybatis 插件，支持跳转到 mapper 路径

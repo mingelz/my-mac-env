@@ -9,7 +9,9 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirror.nju.edu.cn/homebrew-bottles"
 export HOMEBREW_PIP_INDEX_URL="https://mirror.nju.edu.cn/pypi/web/simple"
 
 ## ARM 版本的 brew 需要手动指定环境变量
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 ## alias
 ### 列出安装项目的依赖关系，omz 的 brew 插件没提供类似能力，所以自己加一个
