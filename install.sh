@@ -90,8 +90,10 @@ _link() {
             return
         fi
 
-        # 是普通文件/目录，备份后替换（加时间戳避免多次运行覆盖备份）
-        local bak="${dst}.bak.$(date +%Y%m%d%H%M%S)"
+        # 是普通文件/目录，备份到统一目录后替换
+        local bak_dir="$HOME_DIR/.config/_bak"
+        local bak="$bak_dir$(echo "$dst" | sed "s|^$HOME_DIR||").$(date +%Y%m%d%H%M%S)"
+        mkdir -p "$(dirname "$bak")"
         _warn "目标已存在且非 symlink，备份为: $bak"
         mv "$dst" "$bak"
     fi
