@@ -16,7 +16,9 @@ export FNM_DIR="$HOME/.local/share/fnm"
 ### 此配置可能与 zsh 冲突，导致执行 cd 命令时无法联想出目录名，此时可以把 --use-on-cd 去掉
 #eval "$(fnm env --use-on-cd --shell zsh)"
 ### 但我自己实际用下来对于自动切换 node 版本的需求并不高，所以暂关闭了
-eval "$(fnm env --shell zsh)"
+if command -v fnm &>/dev/null; then
+    eval "$(fnm env --shell zsh)"
+fi
 
 ## alias
 alias cnpm="npm --registry=https://registry.npmmirror.com"
