@@ -12,7 +12,7 @@ source "$HOME/.config/shellrc/lang_ruby.sh"
 # util
 source "$HOME/.config/shellrc/util_homebrew.sh"
 
-# bash 历史记录文件位置
+# bash 历史记录文件位置（与 zsh 共用 HISTFILE 配置名称），默认 ~/.bash_history
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 mkdir -p "$(dirname "$HISTFILE")"
 

@@ -16,7 +16,7 @@ source "$HOME/.config/shellrc/util_homebrew.sh"
 source "$HOME/.config/shellrc/omz_env.sh"
 source "$HOME/.config/shellrc/omz_plugin.sh"
 
-# zsh 历史记录文件位置
+# zsh 历史记录文件位置（与 bash 共用 HISTFILE 配置名称），默认 ~/.zsh_history
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 mkdir -p "$(dirname "$HISTFILE")"
 
