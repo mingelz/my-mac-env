@@ -587,9 +587,9 @@
 
 * etc/hosts
 * Shell
-    * `~/.config/shellrc/private*.{sh,zsh,bash}` 中的配置
+    * `~/.config/shellrc/private*.` 中的配置
 * Git
-    * `~/.config/git/private_config` 中的配置
+    * `~/.config/git/private*` 中的配置
 * SSH
     * 如需保留之前的密钥，需要备份 `~/.ssh` 目录下的文件
     * 注意私钥的文件权限应该是 `600`
