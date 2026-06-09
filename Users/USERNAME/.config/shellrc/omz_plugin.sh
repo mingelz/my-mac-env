@@ -32,12 +32,14 @@ plugins=(
 # --------------------------------------
 
 ## 插件配置 - brew 安装 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-if [ -f "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="/opt/homebrew/share/zsh-syntax-highlighting/highlighters"
-  source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  # 如果提示 "highlighters directory not found" 可以取消下面一行的注释
+  # ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/highlighters"
+  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+  source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 ## 插件配置 - brew 安装 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-if [ -f "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-  source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi

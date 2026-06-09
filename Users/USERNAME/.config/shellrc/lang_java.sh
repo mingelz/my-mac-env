@@ -1,9 +1,9 @@
 # Java & Maven
 
 ## 设置 JAVA_HOME
-### 1. 按优先级依次尝试，确认默认版本
+### 1. 按优先级依次尝试，确认默认版本（使用 -F failfast，避免 -v 过滤回退到非目标版本）
 for _jdk_ver in 25 21 17 11 8; do
-    if /usr/libexec/java_home -v "$_jdk_ver" &>/dev/null; then
+    if /usr/libexec/java_home -v "$_jdk_ver" -F &>/dev/null; then
         export JAVA_HOME=$(/usr/libexec/java_home -v "$_jdk_ver")
         break
     fi
@@ -23,7 +23,7 @@ jdk() {
         /usr/libexec/java_home -V 2>&1 | tail -n +2
         return
     fi
-    if /usr/libexec/java_home -v "$1" &>/dev/null; then
+    if /usr/libexec/java_home -v "$1" -F &>/dev/null; then
         export JAVA_HOME=$(/usr/libexec/java_home -v "$1")
         export PATH="$JAVA_HOME/bin:$PATH"
         echo "Switched to JDK $1: $JAVA_HOME"

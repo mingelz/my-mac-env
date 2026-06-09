@@ -7,11 +7,14 @@
 #   - private*.post.zsh  仅 zsh 加载，oh-my-zsh 初始化后（适合 compdef、completions 等）
 #
 
+## 本项目 bin
+#export PATH="/path/to/this/project/.local/bin:$PATH"
+
 ## 私有npm
 
 ## Homebrew
 ### 如果使用官方源，建议填入 github 管理后台生成的 token，确保 brew 能够正常更新，参考 https://docs.brew.sh/Manpage#environment-variables
-export HOMEBREW_GITHUB_API_TOKEN=""
+#export HOMEBREW_GITHUB_API_TOKEN=""
 
 ## Maven Check, ref: https://github.com/AlexisJehan/MvnCheck/
 ## 追加 PATH 时建议加防重复判断
