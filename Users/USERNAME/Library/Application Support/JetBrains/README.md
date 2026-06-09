@@ -211,6 +211,7 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * Shared Indexes
 * JavaScript Frameworks and Tools
   * JavaScript and TypeScript
+  * JavaScript Debugger
   * React
   * Vue.js
 * JVM Frameworks
@@ -300,7 +301,7 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
         * [x] Check pattern match _提交信息时校验格式_
         * Validate Pattern
           * [x] Dot all _.也匹配换行_
-        * Pattern: `(?:fix|chore|docs|feat|refactor|style|test|wip)(?:\(.*\))?: .*`
+        * Pattern: `(?:fix|chore|docs|feat|refactor|style|test|perf|ci|build|wip)(?:\(.*\))?(?:!)?: .*`
         * Test Input:
         ```
         fix: 修复问题

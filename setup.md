@@ -261,7 +261,7 @@
 可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
 * 必备
-    * ~~[Baidu Input](https://srf.baidu.com/input/mac.html)，之前的梅花点迅输入法。~~我现在改用系统自带的五笔输入法了，够用
+    * [清歌输入法](https://qingg.im/mac/)、[Baidu Input](https://srf.baidu.com/input/mac.html)（之前的梅花点迅输入法），以及系统自带的五笔输入法其实也够用。第三方输入法对我最大的价值是 SHIFT 切临时拼音（用 Karabiner-Elements 绑定 SHIFT 键的方案不太理想，经常切失败）
     * [Microsoft Edge](https://www.microsoft.com/edge)、[Google Chrome](https://www.google.com/chrome/)
 * 效率
     * [Raycast](https://www.raycast.com/)、[Alfred](https://www.alfredapp.com/)、[uTools](http://www.u.tools/)，效率工具
@@ -273,12 +273,14 @@
     * [draw.io](https://www.drawio.com/)
     * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn` （[参考](https://zhuanlan.zhihu.com/p/536236143)）
     * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-    * [iTerm](https://www.iterm2.com), [cmux](https://cmux.com)
+    * [Qoder/QoderWork](https://qoder.com)、[CodeBuddy/WorkBuddy](https://www.codebuddy.cn/)、[TRAE/TRAE Work](https://www.trae.cn/)、[Claude Code](https://code.claude.com/docs/zh-CN/overview)、[OpenCode](https://opencode.ai)
+    * [iTerm](https://www.iterm2.com), [ghostty](https://ghostty.org/)
     * [Fork](https://fork.dev/)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
     * [DB Browser for SQLite](https://sqlitebrowser.org/)、[SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio)，SQLite 管理器
     * [Reqable](https://reqable.com/)、[whistle](https://github.com/avwo/whistle)、[Charles Proxy](https://www.charlesproxy.com/)，抓包及代理工具
     * ~~[JDK](https://www.oracle.com/java/technologies/downloads/)~~，改为使用 Homebrew 安装 Temurin
+        * 在 Oracle 下载 JDK 时需要先注册，可以换成 Adobe 的 CDN 链接跳过注册直接下载（具体地址请自行找规律）: `https://cfdownload.adobe.com/pub/adobe/coldfusion/java/java8/java8u481/jdk/jdk-8u481-macosx-aarch64.dmg`
 * 娱乐
     * [Netease Music](https://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
     * [Steam](https://www.steampowered.com/)
@@ -322,7 +324,8 @@
 
 ### 4.4 字体安装
 
-由于系统默认字体英文与中文宽度非 1:2 （英文宽600，中文宽1000），导致在代码注释中进行中英混排时无法对齐，所以我在编辑器中使用了以下字体：
+由于系统默认字体英文与中文宽度非 1:2 （英文宽600，中文宽1000），导致在代码注释中进行中英混排时无法对齐。
+所以我在一些代码相关的 App 中（如编辑器、终端工具）中使用了以下字体：
 
 * [更纱黑体](https://github.com/be5invis/Sarasa-Gothic)，特点：英文字体较窄（英文宽500，中文宽1000）
     * [Gitee镜像](https://gitee.com/mirrors/Sarasa-Gothic)、[TUNA镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic)
@@ -411,44 +414,50 @@
         * 【勾选】Show tab bar even when there is only one tab
         * 【取消勾选】Tabs have close buttons
         * 【取消勾选】Stretch tabs to fill bar
-* Profiles
+* Profiles - **Default**
     * General
-        * Command
-            * 【选中】Load shell integration automatically
+        * Title
+            * 勾选：`Session Name`, `Job Name`
+        * Icon
+            * 【选中】Built-in Icon from Current App
         * Initial Directory
             * 【选中】Reuse previous session's directory
     * Colors
+        * Modes
+            * 【取消勾选】Use separate colors for light and dark mode
         * Color Presets
-            * 【选中】Solarized Dark。这个配色下目录颜色有些浅，可以通过修改 Cyan 的 Bright 颜色来解决（比如 `#99ffff`）
+            * 【选中】Solarized Dark
+                * 这个配色下目录颜色有些浅，可以通过修改 Cyan 的 Bright 颜色来解决（比如 `#99ffff`）
         * Cursor Guide
-            * 【选中】Use cursor guide
-    * Text
+            * 【选中】Use cursor guide _高亮光标所在行_
+    * Text **_如果已经按照【4.4 字体安装】方案安装了字体_**
         * Font
-            * Monaco, Regular, 18pt
-            * 【勾选】Use a different font for non-ASCII text
+            * `Maple Mono NF CN`, `Regular`, `18pt`
+            * 【勾选】Use Ligatures _启用连字_
+    * Text **_如果未额外安装字体_**
+        * Font
+            * `Monaco`, `Regular`, `18pt`
         * Non-ASCII Font
-            * PingFang SC (苹方-简), Regular, 18pt
-    * Window
-        * Settings for New Windows。新开窗口的大小，默认的略小
-            * Columns: 100
-            * Rows: 28
+            * 【勾选】Use a different font for non-ASCII text
+            * `PingFang SC`(苹方-简), `Regular`, `18pt`
     * Terminal
-        * Scrollback Buffer
+        * Scrollback lines
             * 【勾选】Unlimited scrollback
+* Profiles - **Floaty** _(将 Default 配置好后复制一份并命名为 Floaty)_
+    * _此配置用于浮动窗口（快捷终端），与 **Default** 相同的配置不再重复描述_
+    * Window
+        * New Windows
+            * Style: `Full-Width Top of Screen`
     * Keys
-        * Key Mappings
-            * `Sent ^[[1;5D`: `^b` ，使用 Control+b 向后（左）移动一个单词
-            * `Sent ^[[1;5C`: `^f` ，使用 Control+f 向前（右）移动一个单词
-            * 额外的，默认配置中一些有用的快捷键：
-                * `^a`: 移动到行首
-                * `^e`/`^k`: 移动到行尾
-                * `^d`: 删除光标下的字符
-                * `^w`: 向后（左）删除一个单词
-                * `^q`/`^u`: 清空当前行
-                * `^t`: 交换最后两个字母
+        Hotkey window
+            * 【勾选】A hotkey opens a deciceted window with this profile _唤起快捷终端_
+            * Configure Hotkey window
+                * Hotkey: `Control+Option+Shift+I`
+                * 【取消勾选】Floating window
+                * On Dock icon click: `Show this Hotkey Window if no other window is open`
 * Keys
     * Hotkey
-        * 【勾选】Show/hide all windows with a system-wide hotkey: Control+Option+Shift+Command+I
+        * 【勾选】Show/hide all windows with a system-wide hotkey: `Control+Option+Shift+O`
 * 菜单栏
     * iTerm2
         * Make iTerm2 Default Term
