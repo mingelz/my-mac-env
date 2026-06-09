@@ -1,0 +1,262 @@
+#!/usr/bin/env bash
+#
+# git-cca - 修改 commit 的作者信息
+#
+# 支持三种模式:
+#   1. 单个 commit:   git cca <commit_id> "Author <email>"
+#   2. commit 范围:   git cca <range> "Author <email>"
+#   3. 按旧作者替换:  git cca --replace <old_email> "Author <email>"
+
+set -euo pipefail
+
+# ---------- 常量 ----------
+
+REBASING_BRANCH="__rebasing-branch__"
+
+# ---------- 帮助 ----------
+
+usage() {
+    cat <<EOF
+用法:
+  git cca <commit_id> "Author Name <email>"
+  git cca <range> "Author Name <email>"
+  git cca --replace <old_email> "Author Name <email>"
+
+修改 commit 的作者信息（author 和 committer 同步修改）。
+
+模式:
+  单个 commit    修改指定 commit 的作者
+  commit 范围    修改范围内所有 commit 的作者（如 HEAD~5..HEAD）
+  --replace      将仓库中所有指定旧邮箱的 commit 替换为新作者
+
+⚠️  注意: 执行前必须确保工作区干净（无未提交更改、无未追踪文件）。
+
+示例:
+  git cca 2132bfdb "Zhang San <zhangsan@example.com>"
+  git cca HEAD~5..HEAD "Zhang San <zhangsan@example.com>"
+  git cca --replace old@email.com "Zhang San <zhangsan@example.com>"
+EOF
+}
+
+# ---------- 工具函数 ----------
+
+# 校验 author 格式
+validate_author() {
+    if [[ ! "$1" =~ ^.+\ \<.+@.+\>$ ]]; then
+        echo "错误: author 格式不合法，期望格式为 'Name <email>'" >&2
+        exit 1
+    fi
+}
+
+# 环境检查
+check_env() {
+    if ! git rev-parse --git-dir &>/dev/null; then
+        echo "错误: 请在 git 仓库中执行此命令" >&2
+        exit 1
+    fi
+}
+
+# 工作区干净检查
+check_clean() {
+    echo "→ 检查工作区状态..."
+
+    if ! git diff-index --quiet HEAD --; then
+        echo "❌ 错误: 工作区有未提交的更改。" >&2
+        echo "   请先 commit 或 stash 你的更改，再运行此命令。" >&2
+        exit 1
+    fi
+
+    if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
+        echo "❌ 错误: 工作区存在未追踪的文件。" >&2
+        echo "   请删除或添加这些文件到 .gitignore，或暂时移走它们。" >&2
+        exit 1
+    fi
+
+    echo "✓ 工作区干净，可以继续。"
+}
+
+# 从 author 字符串中提取 name 和 email
+parse_author_name()  { echo "${1%% <*}"; }
+parse_author_email() { local raw="${1#*<}"; echo "${raw%>}"; }
+
+# ---------- 模式: 单个 commit ----------
+
+mode_single() {
+    local commit="$1"
+    local author="$2"
+    local current_branch
+
+    current_branch="$(git rev-parse --abbrev-ref HEAD)"
+    if [[ "$current_branch" == "HEAD" ]]; then
+        echo "错误: 当前处于 detached HEAD 状态，请切换到具体分支" >&2
+        exit 1
+    fi
+
+    if ! git rev-parse --verify "$commit^{commit}" &>/dev/null; then
+        echo "错误: 无效的 commit id '$commit'" >&2
+        exit 1
+    fi
+
+    # 清理函数
+    cleanup() {
+        local exit_code=$?
+        if [[ $exit_code -ne 0 ]]; then
+            echo "" >&2
+            echo "⚠️  发生错误，正在尝试还原..." >&2
+            git checkout "$current_branch" 2>/dev/null || true
+            git branch -D "$REBASING_BRANCH" 2>/dev/null || true
+            echo "❌ 操作失败，工作区已尽可能还原。请检查状态。" >&2
+        fi
+    }
+    trap cleanup EXIT
+
+    echo "→ 正在修改 commit $commit 的作者为 $author ..."
+
+    git checkout -b "$REBASING_BRANCH" "$commit"
+
+    GIT_COMMITTER_NAME="$(parse_author_name "$author")" \
+    GIT_COMMITTER_EMAIL="$(parse_author_email "$author")" \
+        git commit --amend --no-edit --author "$author"
+
+    git checkout "$current_branch"
+
+    git rebase \
+        --autostash \
+        --committer-date-is-author-date \
+        "$commit" \
+        --onto "$REBASING_BRANCH"
+
+    git branch -d "$REBASING_BRANCH"
+
+    echo "✓ 完成！commit $commit 的作者已更新为 $author"
+}
+
+# ---------- 模式: commit 范围 ----------
+
+mode_range() {
+    local range="$1"
+    local author="$2"
+    local new_name new_email
+
+    new_name="$(parse_author_name "$author")"
+    new_email="$(parse_author_email "$author")"
+
+    # 统计范围内的 commit 数量
+    local count
+    count=$(git rev-list "$range" | wc -l | tr -d ' ')
+    if [[ "$count" -eq 0 ]]; then
+        echo "错误: 范围 '$range' 中没有 commit" >&2
+        exit 1
+    fi
+
+    echo "→ 将修改 $count 个 commit ($range) 的作者为 $author"
+    read -p "确认继续？(y/N): " confirm
+    if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+        echo "已取消。"
+        exit 0
+    fi
+
+    if ! FILTER_BRANCH_SQUELCH_WARNING=1 \
+        git filter-branch --force --env-filter "
+            export GIT_AUTHOR_NAME='$new_name'
+            export GIT_AUTHOR_EMAIL='$new_email'
+            export GIT_COMMITTER_NAME='$new_name'
+            export GIT_COMMITTER_EMAIL='$new_email'
+        " "$range"; then
+        echo "❌ filter-branch 执行失败。可通过以下命令恢复:" >&2
+        echo "   git reset --hard refs/original/refs/heads/\$(git rev-parse --abbrev-ref HEAD)" >&2
+        exit 1
+    fi
+
+    # 清理 filter-branch 产生的备份引用
+    git for-each-ref --format='%(refname)' refs/original/ | while read -r ref; do
+        git update-ref -d "$ref"
+    done
+
+    echo "✓ 完成！$count 个 commit 的作者已更新为 $author"
+}
+
+# ---------- 模式: 按旧作者替换 ----------
+
+mode_replace() {
+    local old_email="$1"
+    local author="$2"
+    local new_name new_email
+
+    new_name="$(parse_author_name "$author")"
+    new_email="$(parse_author_email "$author")"
+
+    # 统计匹配的 commit 数量
+    local count
+    count=$(git log --all --format='%ae' | grep -ci "^${old_email}$" || true)
+    if [[ "$count" -eq 0 ]]; then
+        echo "错误: 未找到作者邮箱为 '$old_email' 的 commit" >&2
+        exit 1
+    fi
+
+    echo "→ 将修改 $count 个 commit (作者邮箱: $old_email) 为 $author"
+    read -p "确认继续？(y/N): " confirm
+    if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+        echo "已取消。"
+        exit 0
+    fi
+
+    if ! FILTER_BRANCH_SQUELCH_WARNING=1 \
+        git filter-branch --force --env-filter "
+            if [ \"\$GIT_AUTHOR_EMAIL\" = '$old_email' ]; then
+                export GIT_AUTHOR_NAME='$new_name'
+                export GIT_AUTHOR_EMAIL='$new_email'
+            fi
+            if [ \"\$GIT_COMMITTER_EMAIL\" = '$old_email' ]; then
+                export GIT_COMMITTER_NAME='$new_name'
+                export GIT_COMMITTER_EMAIL='$new_email'
+            fi
+        " --tag-name-filter cat -- --all; then
+        echo "❌ filter-branch 执行失败。可通过以下命令恢复:" >&2
+        echo "   git reset --hard refs/original/refs/heads/\$(git rev-parse --abbrev-ref HEAD)" >&2
+        exit 1
+    fi
+
+    # 清理 filter-branch 产生的备份引用
+    git for-each-ref --format='%(refname)' refs/original/ | while read -r ref; do
+        git update-ref -d "$ref"
+    done
+
+    echo "✓ 完成！$count 个 commit 的作者已更新为 $author"
+}
+
+# ---------- 主流程 ----------
+
+if [[ "${1:-}" =~ ^(-h|--help)$ ]]; then
+    usage
+    exit 0
+fi
+
+if [[ $# -lt 2 ]]; then
+    echo "错误: 参数不足" >&2
+    echo "运行 'git cca --help' 查看用法" >&2
+    exit 1
+fi
+
+check_env
+
+if [[ "$1" == "--replace" ]]; then
+    # 模式: 按旧作者替换
+    if [[ $# -lt 3 ]]; then
+        echo "错误: --replace 模式需要 <old_email> 和 \"Author <email>\" 两个参数" >&2
+        exit 1
+    fi
+    validate_author "$3"
+    check_clean
+    mode_replace "$2" "$3"
+elif [[ "$1" == *".."* ]]; then
+    # 模式: commit 范围
+    validate_author "$2"
+    check_clean
+    mode_range "$1" "$2"
+else
+    # 模式: 单个 commit
+    validate_author "$2"
+    check_clean
+    mode_single "$1" "$2"
+fi

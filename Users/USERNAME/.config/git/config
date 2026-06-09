@@ -1,41 +1,49 @@
-# 引入私人配置（user.name, user.email, proxy 等）
+# === 私人配置（user.name, user.email 等） ===
 # 使用方法见 private_config.example
 [include]
     path = private_config
 
+# === 通用配置 ===
+[advice]
+    # 不提示添加被忽略的文件
+    #addIgnoredFile = false
 [core]
     # 不追踪快捷方式
     symlinks = false
 [credential]
     # 保存密码到 keychain，避免每次输入密码（仅适用于 macOS）
     helper = osxkeychain
-[init]
-    defaultBranch = master
-[pager]
-    # 从 git@2.16 开始 branch 使用 less 显示信息，不太习惯，改为传统方式
-    branch = false
-
 [diff]
+    # 使用 vimdiff 进行 diff
     tool = vimdiff
 [difftool]
+    # 不提示是否使用 difftool
     prompt = false
     # 通过 :cquit 可以退出 diff 队列
     trustExitCode = true
 [difftool "vimdiff"]
     # 默认的 diff.tool = vimdiff 会导致添加 -R (只读) 参数，所以需要专门指定一下 cmd
     cmd = "vimdiff $LOCAL $REMOTE"
+[init]
+    # 设置默认分支名为 master
+    defaultBranch = master
 [merge]
     # merge 时只允许 Fast Forward 方式处理，否则建议使用 rebase
     #ff = only
-[push]
-    default = simple
+[pager]
+    # 从 git@2.16 开始 branch 使用 less 显示信息，不太习惯，改为传统方式
+    branch = false
 [pull]
     # git pull 默认记录 merge 分叉，如果希望不分叉就使用后边定义的 pr 命令
     rebase = false
+[push]
+    # push 时使用 simple 模式，避免出现 force 的情况
+    default = simple
 [status]
     # 未 git add 的目录，也显式列出其下的所有文件
     showUntrackedFiles = all
 
+# === 别名 ===
 [alias]
     # -- branch --
     br = branch
@@ -75,6 +83,10 @@
     # 查看最近修改的文件
     last = log -1 --stat
 
+    # -- ls-files --
+    # 统计哪些文件被忽略
+    ig = ls-files --others --ignored --exclude-standard --directory -- .
+
     # -- merge --
     mg = merge
 
@@ -97,6 +109,8 @@
     undo = "!GIT_PAGER=cat git log -1 --pretty='%C(red)Undoing%C(reset): [%C(green)%h%C(reset)] %C(cyan)%s%C(reset)' && git reset --soft HEAD^"
     # 恢复刚才被 undo 撤销的提交
     redo = "!git reset --soft HEAD@{1}"
+    # 将当前分支回退到指定版本，用法：git rollback <commit>
+    rollback = reset --hard
 
     # -- stash --
     # stash 列表也可以像 log 列表一下展示信息

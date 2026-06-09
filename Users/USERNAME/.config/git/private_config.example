@@ -18,6 +18,8 @@
 # 例2: 在某个域下使用另一套配置，对应的域路径像这样 https://github.com/**/** 或 git@github.com:**/**
 #[includeIf "hasconfig:remote.*.url:https://example.com/**/**"]
 #    path = /path/to/another/config/file（此文件一般只需配置 user.name 和 user.email 即可）
+#[includeIf "hasconfig:remote.*.url:git@example.com/**/**"]
+#    path = /path/to/another/config/file（此文件一般只需配置 user.name 和 user.email 即可）
 
 # 设置 http/https 代理，建议使用 [alias] 节提供的 set-proxy/unset-proxy 快捷切换
 #[http]
