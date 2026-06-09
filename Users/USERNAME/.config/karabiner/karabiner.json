@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "LEFT_SHIFT enhance (short press to switch input sources)",
+                        "description": "LEFT_SHIFT alone switches input source",
                         "enabled": false,
                         "manipulators": [
                             {
@@ -17,8 +17,8 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.to_if_alone_timeout_milliseconds": 200,
-                                    "basic.to_if_held_down_threshold_milliseconds": 200
+                                    "basic.to_if_alone_timeout_milliseconds": 500,
+                                    "basic.to_if_held_down_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -28,6 +28,8 @@
                                 ],
                                 "to_if_alone": [
                                     {
+                                        "halt": true,
+                                        "hold_down_milliseconds": 100,
                                         "key_code": "spacebar",
                                         "modifiers": [
                                             "left_control"
@@ -44,7 +46,7 @@
                         ]
                     },
                     {
-                        "description": "RIGHT_SHIFT enhance (short press to switch input sources)",
+                        "description": "RIGHT_SHIFT alone switches input source",
                         "manipulators": [
                             {
                                 "from": {
@@ -56,8 +58,8 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.to_if_alone_timeout_milliseconds": 200,
-                                    "basic.to_if_held_down_threshold_milliseconds": 200
+                                    "basic.to_if_alone_timeout_milliseconds": 500,
+                                    "basic.to_if_held_down_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -67,6 +69,8 @@
                                 ],
                                 "to_if_alone": [
                                     {
+                                        "halt": true,
+                                        "hold_down_milliseconds": 100,
                                         "key_code": "spacebar",
                                         "modifiers": [
                                             "left_control"
@@ -227,6 +231,7 @@
                     },
                     {
                         "description": "[Keychron K6] COMMAND + ESC to COMMAND + Tilda(~)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -263,6 +268,7 @@
                     },
                     {
                         "description": "[Keychron K6] SHIFT + ESC to Tilda(~)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -315,7 +321,7 @@
                                     }
                                 },
                                 "to": {
-                                    "key_code": "f19"
+                                    "key_code": "f17"
                                 },
                                 "type": "basic"
                             }
@@ -345,7 +351,7 @@
                         ]
                     },
                     {
-                        "description": "Map Command-Shift-Option-Control-w to f17 (avoid Wifi Diagnostics)",
+                        "description": "Map Command-Shift-Option-Control-w to f19 (avoid Wifi Diagnostics)",
                         "enabled": false,
                         "manipulators": [
                             {
@@ -361,7 +367,7 @@
                                     }
                                 },
                                 "to": {
-                                    "key_code": "f17"
+                                    "key_code": "f19"
                                 },
                                 "type": "basic"
                             }

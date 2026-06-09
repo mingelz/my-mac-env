@@ -3,57 +3,34 @@
 # 要求
 # 1. 文件名必须为 `~/.config/raycast/ai/providers.yaml`
 # 2. 供应商接口需要兼容 OpenAI API
-# 3. 以下以阿里云百炼 Coding Plan 配置为例
 #
 providers:
-    # 供应商ID，唯一值
-  - id: aliyun-coding-plan
-    # 供应商名称，会显示在 Raycast 中
-    name: aliyun-coding-plan
-    # 供应商的 API URL（需要兼容 OpenAI API）
-    base_url: https://coding.dashscope.aliyuncs.com/v1
-    # 供应商提供的 API Key（支持多个）
-    api_keys:
-      # key 随意，与 models[].provider 保持一致
-      primary: 【这里填你自己的API Key】
-    # 可选的附加参数，将发送到 `/chat/completions` 接口
-    additional_parameters:
+    # 阿里云百炼示例
+  - id: aliyun-bailian                                  # 供应商ID，唯一值
+    name: "Aliyun Bailian"                              # 供应商名称，会显示在 Raycast 中
+    base_url: https://coding.dashscope.aliyuncs.com/v1  # 供应商的 API URL（需要兼容 OpenAI API）
+    api_keys:                                           # 供应商提供的 API Key（支持多个）
+      primary: 【这里填你自己的 API_Key】               # key 随意，支持多项，与 models[].provider 对应
+    additional_parameters:                              # 【可选】附加参数，将发送到 `/chat/completions` 接口
       return_images: true
       web_search_options:
         search_context_size: medium
-    # 指定当前提供商下要使用的模型列表
-    models:
-      - id: qwen3.5-plus # `id` 必须与提供商使用的标识符一致
-        name: "Qwen3.5 Plus" # 在 Raycast 中显示的模型名称
-        provider: primary # 【可选】当 API 需要特殊指定 API key 时才需要填写，默认即 api_keys.*
-        description: "文本生成、深度思考、视觉理解" # 【可选】大模型描述
-        context: 1000000 # 上下文限定大小
-        # 【可选】能力配置，所有属性均为可选。需要参阅提供商的 API 文档了解模型能力
-        abilities:
-          temperature: # 是否支持调节温度（输出的随机性/创造性，通常0.0-2.0，值越小越确定，越大越随机）
+    models:                                             # 指定当前提供商的模型列表
+      - id: qwen3.7-plus                                # `id` 必须与提供商使用的标识符一致
+        name: "Qwen3.7 Plus"                            # 在 Raycast 中显示的模型名称
+        provider: primary                               # 【可选】当前模型使用的 API key，当 api_keys 中只有一项时可省略
+        description: "文本生成、深度思考、视觉理解"     # 【可选】大模型描述
+        context: 1000000                                # 上下文限定大小
+        abilities:                                      # 【可选】模型能力，请参阅提供商的 API 文档了解
+          temperature:                                  # 【可选】是否支持调节温度（输出的随机性/创造性，通常0.0-2.0，值越小越确定，越大越随机）
             supported: true
-          vision: # 是否支持图像输入（多模态）
+          vision:                                       # 【可选】是否支持图像输入（多模态）
             supported: true
-          system_message: # 是否支持系统提示词（System Prompt）
+          system_message:                               # 【可选】是否支持系统提示词（System Prompt）
             supported: true
-          tools: # 是否支持函数调用/工具调用（Function Calling）
+          tools:                                        # 【可选】是否支持函数调用/工具调用（Function Calling）
             supported: true
-          reasoning_effort: # 是否支持调节推理努力程度，影响模型思考时间
-            supported: true
-      - id: qwen3-max-2026-01-23
-        name: "Qwen3 Max"
-        description: "文本生成、深度思考"
-        context: 262144
-        abilities:
-          temperature:
-            supported: true
-          vision:
-            supported: false
-          system_message:
-            supported: true
-          tools:
-            supported: true
-          reasoning_effort:
+          reasoning_effort:                             # 【可选】是否支持调节推理努力程度，影响模型思考时间
             supported: true
       - id: glm-5
         name: "GLM 5"
@@ -70,10 +47,21 @@ providers:
             supported: true
           reasoning_effort:
             supported: true
-      - id: glm-4.7
-        name: "GLM 4.7"
+    # Deepseek 示例
+  - id: deepseek
+    name: "Deepseek"
+    base_url: https://api.deepseek.com
+    api_keys:
+      primary: 【这里填你自己的 API_Key】
+    additional_parameters:
+      return_images: false
+      web_search_options:
+        search_context_size: medium
+    models:
+      - id: deepseek-v4-flash
+        name: "Deepseek V4 Flash"
         description: "文本生成、深度思考"
-        context: 204800
+        context: 1000000
         abilities:
           temperature:
             supported: true
@@ -85,25 +73,10 @@ providers:
             supported: true
           reasoning_effort:
             supported: true
-      - id: kimi-k2.5
-        name: "Kimi K2.5"
-        description: "文本生成、深度思考、视觉理解"
-        context: 262144
-        abilities:
-          temperature:
-            supported: true
-          vision:
-            supported: true
-          system_message:
-            supported: true
-          tools:
-            supported: true
-          reasoning_effort:
-            supported: true
-      - id: MiniMax-M2.5
-        name: "MiniMax M2.5"
+      - id: deepseek-v4-pro
+        name: "Deepseek V4 Pro"
         description: "文本生成、深度思考"
-        context: 204800
+        context: 1000000
         abilities:
           temperature:
             supported: true
