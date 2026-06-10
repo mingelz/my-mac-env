@@ -1,0 +1,41 @@
+# 主题
+theme = Starlight
+
+# 字体
+font-family = "Maple Mono NF CN"
+font-size = 18
+font-feature = +calt
+
+# 背景色
+# background-opacity = 0.8
+# background-blur-radius = 20
+
+# 光标
+cursor-style = block
+cursor-style-blink = false
+# 不应用集成终端的光标特性（否则 cursor-style 设置无效）
+shell-integration-features = no-cursor
+# 打字时隐藏光标
+mouse-hide-while-typing = true
+
+# 窗口留白
+window-padding-x = 12
+window-padding-y = 12
+
+# 非激活分屏覆层的样式
+unfocused-split-opacity = 0.6
+unfocused-split-fill = #999999
+
+# 快捷终端
+quick-terminal-position = top
+quick-terminal-size = 50%
+
+# 关闭最后一个窗口后退出 App
+quit-after-last-window-closed = true
+
+# 快捷键
+# 以 global: 开头的快捷键在全局范围内生效（即使 Ghostty 没有焦点），否则仅在 Ghostty 窗口内生效
+# 全局切换 Ghostty 窗口的显示/隐藏（注意不要与 iTerm 快捷键冲突）
+# keybind = global:ctrl+alt+shift+u=toggle_visibility
+# 全局切换快捷终端的显示/隐藏（注意不要与 iTerm 快捷键冲突）
+# keybind = global:ctrl+alt+shift+o=toggle_quick_terminal
