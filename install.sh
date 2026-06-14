@@ -21,16 +21,25 @@ DOTFILES_DIR="$SCRIPT_DIR/Users/USERNAME"
 ASSETS_DIR="$SCRIPT_DIR/assets"
 HOME_DIR="$HOME"
 
-# 所有可用模块（有序，依赖信息）
-# - brew (安装 omz 插件) -> shell (启用 omz 插件)
-# - brew (安装 fnm) -> node (安装 node, 安装 npm 包)
-ALL_MODULES=(brew shell ssh git vim ideavim node python ruby karabiner raycast agents bin vscode)
+# 所有可用模块（有序）
+ALL_MODULES=(
+  # 先安装 brew，涉及：
+  # - omz 插件：保证 shell 环节可以启用 omz 插件
+  # - fnm：保证 node 环节可以安装 node 和 npm 包
+  brew
+  # Shell & Terminal
+  shell ssh git vim ideavim
+  # Language
+  node python ruby
+  # App
+  karabiner raycast ghostty vscode
+)
 
 # ============================================================
 # 工具函数
 # ============================================================
 
-# 颜色输出
+# 输出彩色日志
 _info()  { printf "\033[0;34m[INFO]\033[0m  %s\n" "$*"; }
 _ok()    { printf "\033[0;32m[OK]\033[0m    %s\n" "$*"; }
 _warn()  { printf "\033[0;33m[WARN]\033[0m  %s\n" "$*"; }
@@ -230,33 +239,9 @@ install_raycast() {
     fi
 }
 
-install_agents() {
-    _info "安装模块: agents"
-    local src_dir="$DOTFILES_DIR/.agents"
-    local dst_dir="$HOME_DIR/.agents"
-    local category
-    for category in commands rules; do
-        [ -d "$src_dir/$category" ] || continue
-        mkdir -p "$dst_dir/$category"
-        for item in "$src_dir/$category"/*; do
-            [ -e "$item" ] || continue
-            _link "$item" "$dst_dir/$category/$(basename "$item")"
-        done
-    done
-}
-
-install_bin() {
-    _info "安装模块: bin"
-    local src_dir="$DOTFILES_DIR/.local/bin"
-    local dst_dir="$HOME_DIR/.local/bin"
-    mkdir -p "$dst_dir"
-    local item_name dst
-    for item in "$src_dir"/*; do
-        [ -e "$item" ] || continue
-        item_name="$(basename "$item")"
-        dst="$dst_dir/$item_name"
-        _link "$item" "$dst"
-    done
+install_ghostty() {
+    _info "安装模块: ghostty"
+    _link "$DOTFILES_DIR/.config/ghostty" "$HOME_DIR/.config/ghostty"
 }
 
 install_vscode() {
@@ -344,8 +329,7 @@ show_list() {
   ruby        .config/gem/
   karabiner   .config/karabiner/
   raycast     .config/raycast/ai/providers.yaml
-  agents      .agents/
-  bin         .local/bin/
+  ghostty     .config/ghostty/
   vscode      settings.json, keybindings.json
   brew        执行 brew bundle (读取 assets/Brewfile)
 EOF
@@ -410,52 +394,9 @@ show_status() {
         _status_line "raycast" "not_set" "providers.yaml"
     fi
 
-    # agents — 逐个检查 symlink 是否正确指向
-    local agents_src_dir="$DOTFILES_DIR/.agents"
-    local agents_dst_dir="$HOME_DIR/.agents"
-    local agents_total=0 agents_linked=0
-    for category in commands rules; do
-        [ -d "$agents_src_dir/$category" ] || continue
-        for item in "$agents_src_dir/$category"/*; do
-            [ -e "$item" ] || continue
-            agents_total=$((agents_total + 1))
-            local agents_name
-            agents_name=$(basename "$item")
-            if [ -L "$agents_dst_dir/$category/$agents_name" ] && [ "$(readlink "$agents_dst_dir/$category/$agents_name")" = "$item" ]; then
-                agents_linked=$((agents_linked + 1))
-            fi
-        done
-    done
-    if [ "$agents_total" -eq "$agents_linked" ] && [ "$agents_total" -gt 0 ]; then
-        _status_line "agents" "ok" "$agents_linked/$agents_total linked"
-    elif [ "$agents_linked" -gt 0 ]; then
-        _status_line "agents" "wrong" "$agents_linked/$agents_total linked"
-    else
-        _status_line "agents" "not_set" ".agents/"
-    fi
-
-    # bin — 只统计本项目管理的 symlink
-    local bin_src_dir="$DOTFILES_DIR/.local/bin"
-    local bin_dst_dir="$HOME_DIR/.local/bin"
-    local bin_total=0 bin_linked=0
-    if [ -d "$bin_src_dir" ]; then
-        for item in "$bin_src_dir"/*; do
-            [ -e "$item" ] || continue
-            bin_total=$((bin_total + 1))
-            local bin_name
-            bin_name=$(basename "$item")
-            if [ -L "$bin_dst_dir/$bin_name" ] && [ "$(readlink "$bin_dst_dir/$bin_name")" = "$item" ]; then
-                bin_linked=$((bin_linked + 1))
-            fi
-        done
-    fi
-    if [ "$bin_total" -eq "$bin_linked" ] && [ "$bin_total" -gt 0 ]; then
-        _status_line "bin" "ok" "$bin_linked/$bin_total linked"
-    elif [ "$bin_linked" -gt 0 ]; then
-        _status_line "bin" "wrong" "$bin_linked/$bin_total linked"
-    else
-        _status_line "bin" "not_set" ".local/bin/"
-    fi
+    # ghostty
+    st=$(_check_link "$DOTFILES_DIR/.config/ghostty" "$HOME_DIR/.config/ghostty")
+    _status_line "ghostty" "$st" ".config/ghostty/"
 
     # vscode — settings.json + keybindings.json
     local vscode_src_dir="$DOTFILES_DIR/Library/Application Support/Code/User"
@@ -565,8 +506,7 @@ main() {
             ruby)      install_ruby ;;
             karabiner) install_karabiner ;;
             raycast)   install_raycast ;;
-            agents)    install_agents ;;
-            bin)       install_bin ;;
+            ghostty)   install_ghostty ;;
             vscode)    install_vscode ;;
             brew)      install_brew ;;
             *)

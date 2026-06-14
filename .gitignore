@@ -38,4 +38,4 @@ TODOs.md
 Users/USERNAME/.config/git/private*
 !Users/USERNAME/.config/git/private_config.example
 Users/USERNAME/.config/shellrc/private*
-!Users/USERNAME/.config/shellrc/private.sh.example
+!Users/USERNAME/.config/shellrc/private.example.sh

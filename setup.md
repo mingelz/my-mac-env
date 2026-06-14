@@ -347,7 +347,7 @@
 推荐使用 [install.sh](./install.sh) 进行统一安装，各模块的配置文件位于 `Users/USERNAME/` 下：
 
 * Bash & ZSH: `install.sh shell`，链接 `.bash_profile`、`.zshrc` 及 `.config/shellrc/` 下的配置文件
-    * 私人配置参考 `.config/shellrc/private.sh.example`，按需创建 `private*.sh`（通用）/ `private*.zsh`（仅 zsh）/ `private*.bash`（仅 bash）
+    * 私人配置参考 `.config/shellrc/private.example.sh`，按需创建 `private*.sh`（通用）/ `private*.zsh`（仅 zsh）/ `private*.bash`（仅 bash）
 * Git: `install.sh git`，链接 `.config/git/` 目录
     * 私人配置参考 `.config/git/private_config.example`，复制为 `private_config` 并填入个人信息
 * SSH: `install.sh ssh`，复制 `.ssh/config` 文件
