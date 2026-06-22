@@ -410,4 +410,4 @@ endif
 " == }}}
 
 " XXX: 最后一行为 模式行，请勿修改，可参考 modelines
-" vim:set et ts=2 sts=2 sw=2 fdm=marker:
+" vim:set et ts=2 sts=2 sw=2 fdm=marker ft=vim:

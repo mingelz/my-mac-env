@@ -1,14 +1,6 @@
 " IdeaVimrc
 " mingelz <mingelz@gmail.com>
 
-" == 前置依赖 == {{{
-"此配置除了 ideavim 外，还依赖以下插件
-" - IdeaVimExtension (从 insert 模式回到 normal 模式时，自动切换为英文输入法)
-" - IdeaVim-EasyMotion (通过 `\\` 自动高亮并快速跳转到对应位置)
-" - AceJump (被 IdeaVim-EasyMotion 依赖)
-" - IdeaVim-Quickscope (自动高亮当前行唯一字符，方便通过 f/t/F/T 快速跳转)
-" == }}}
-
 " == 通用设置 == {{{
 "set clipboard+=ideaput    "配置复制时的寄存器，如果使用 unnamed 将和系统剪贴板共享 [cb=clipboard]，ideaput 是 IDEA 对 VIM 剪贴板的支持
 "set digraph    "开启在 insert 模式下对二合字母的支持 [dg=digraph]
@@ -18,7 +10,7 @@ set hlsearch    "高亮搜索结果 [hls=hlsearch]
 set ignorecase    "搜索时忽略大小写 [ic=ignorecase]
 "set iskeyword    "识别哪些是关键字 [isk=iskeyword]
 set incsearch    "搜索时实时定位到搜索位置 [is=incsearch]
-"set keymodel=continueselect,stopselect    "打开特殊的键功能 [km=keymodel]
+"set keymodel=continueselect,stopselect    "打开特殊的键功能 (startsel:按住 Shift+特殊键开始选择; stopsel:非 Shift 特殊键停止选择; stopselect/stopvisual:分别停止 select/visual 模式; continueselect/continuevisual:在对应模式中继续选择) [km=keymodel]
 "set matchpairs=(:),{:},[:]    "在执行 % 时可识别的配对字符 [mps=matchpairs]
 "set maxmapdepth=1000    "最大映射次数 [mmd=maxmapdepth]
 "set more    "是否用 more 来渲染列表，即屏幕被填充满时暂停
@@ -31,7 +23,7 @@ set scrolloff=3    "纵向滚动时光标上下要预留的行数 [so=scrolloff]
 "set selection=inclusive    "在选择模式时的行为 [sel=selection]
 "set selectmode=    "指定进入 select 模式的触发方式 (mouse:使用鼠标时; key:使用特殊键时; cmd:使用 v/V/ctrl-v 时; ideaselection: Idea 独有的，用于由 IDE 提供了 selection 时) [slm=selectmode]
 "set startofline    "在某些命令中将光标移到行首还是首个非空白字符 [sol=startofline]
-"set showmode    "在状态栏显示当前模式 [smd=showmode]
+set showmode    "在状态栏显示当前模式 [smd=showmode]
 "set showcmd    "在状态栏显示执行的命令（部分） [sc=showcmd]
 "set sidescroll=0    "横向滚动且光标超过可视范围时，要调整的列数量，0表示把光标调整到屏幕中间 [ss=sidescroll]
 "set sidescrolloff=0    "横向滚动时光标左右要预留的列数 [siso=sidescrolloff]
@@ -48,11 +40,14 @@ set smartcase    "如果搜索时键入了大写字母，则不再执行 ignorec
 " == IdeaVIM 专有设置 == {{{
 set ideajoin    "启用 IDE 特有的多行合并特性，详情见 https://github.com/JetBrains/ideavim/wiki/%22ideajoin%22-examples
 set ideamarks    "创建 Vim 的标签（通过 `m`）将同步创建 IDE 编辑器中的标签，反之亦然
+"set ideacopypreprocess    "复制时是否执行 IDE 预处理（如 Java 字符串中转义字符转为实际控制符）
 set idearefactormode=select    "在代码 refactoring 时进入哪个模式 (keep:保持执行 refactor 时的模式; select:进入 select 模式; visual:进入 visual 模式)，注意仅在 normal/insert/replace 模式执行 refactor 时起作用，select/visual 会保持原有模式
 set ideastatusicon=enabled    "定义 IdeaVim 在状态栏的图标 (enabled:使用彩色图标; gray:使用灰色图标; disabled:隐藏状态栏图标)
 set ideavimsupport=dialog    " 可以在哪些额外区域启用 IdeaVim (dialog:对话框中; singleline:单行编辑器中，官方不推荐)
 set ideawrite=all    "在执行 `:w` 命令时的行为 (all:执行`:w`实际执行的`:wa`，即保存所有文件; file:执行`:w`只保存当前文件)
-"set lookupkeys=     "哪些键在自动完成列表弹出时可直接透给编辑器处理（不被自动完成列表识别），没看明白怎么设置
+"set lookupkeys=<Tab>,<Down>,<Up>,<Enter>,<Left>,<Right>,<C-Down>,<C-Up>,<PageUp>,<PageDown>,<C-J>,<C-Q>    "代码补全弹窗激活时，哪些键由 IDE 处理而非传给 IdeaVim（逗号分隔）[lookupkeys]
+"set trackactionids    "开启后会通知显示当前执行的 IDE action ID，方便发现可用于映射的动作
+"set visualdelay=100    "IDE 选中文本后转换为 Visual 模式的延迟毫秒数，防止临时选中触发模式切换
 " == }}}
 
 
@@ -64,7 +59,7 @@ set ideawrite=all    "在执行 `:w` 命令时的行为 (all:执行`:w`实际执
 "     + mode-list 是由 `-` 号分隔的模式列表，有效值包括：n(normal), i(insert), x(visual), v(visual+select), a(all)
 "     + handler 是对应模式要执行哪个命令，有效值包括：ide(IDE 命令), vim(VIM 命令)
 
-" 所有命令在 normal 下执行 VIM 命令，insert 下执行 IDE 命令
+" 所有命令在 normal 下执行 VIM 命令，insert 下执行 IDE 命令（未指定的模式默认为 vim）
 sethandler n:vim i:ide
 " == }}}
 
@@ -97,6 +92,7 @@ nmap <leader>cb <Action>(CloseAllEditorsButActive)
 "代码补全
 nmap <leader>cc <Action>(CodeCompletion)
 " ---------- d ----------
+"打开数据库工具窗口
 nmap <leader>d <Action>(ActivateDatabaseToolWindow)
 " ---------- e ----------
 " extract method/function 将选中的代码片段提取为一个独立的方法 (Ctrl + Alt + M)
@@ -116,6 +112,7 @@ nmap <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 " ---------- i ----------
 "nmap <leader>i <Action>(Maven.Reimport)
 " ---------- m ----------
+"打开 Maven 工具窗口
 nmap <leader>m <Action>(ActivateMavenToolWindow)
 " ---------- n ----------
 "在当前目录新建文件夹
@@ -124,6 +121,8 @@ nmap <leader>nd <Action>(NewDir)
 nmap <leader>nc <Action>(NewClass)
 " ---------- r ----------
 nmap <leader>r <Action>(RunConfiguration)
+"重新加载 ideavimrc 配置
+nmap <leader>rv <Action>(IdeaVim.ReloadVimRc.reload)
 " ---------- s ----------
 nmap <leader>s <Action>(FileStructurePopup)
 " ---------- t ----------
@@ -135,12 +134,15 @@ nmap <leader>zo <Action>(ExpandAllRegions)
 nmap <leader>zc <Action>(CollapseAllRegions)
 
 " ========== g 键配置 ==========
+"显示 Git Blame 注解
 nmap ga <Action>(Annotate)
-nmap gc <Action>(CopyReference)
+"复制当前符号的引用路径（如类名、方法全路径等）
+nmap gY <Action>(CopyReference)
 "跳转到方法/变量定义的位置
 nmap gd <Action>(GotoDeclaration)
 "跳转到下一个错误或警告
 nmap ge <Action>(GotoNextError)
+"高亮当前文件中的所有引用
 nmap gf <Action>(HighlightUsagesInFile)
 "显示当前错误详情（类似鼠标悬停后的提示）
 nmap gh <Action>(ShowErrorDescription)
@@ -150,8 +152,11 @@ nmap gi <Action>(GotoImplementation)
 nmap gp <Action>(ParameterInfo)
 "重命名（与编辑器中重命名一致，会检索定义位置）
 nmap gr <Action>(RenameElement)
+"跳转到父类/接口的方法定义
 nmap gs <Action>(GotoSuperMethod)
+"弹窗显示当前符号的用法
 nmap gu <Action>(ShowUsages)
+"查找所有引用（打开 Find 工具窗口）
 nmap gv <Action>(FindUsages)
 "跳转到上一个方法定义位置
 nmap g[ <Action>(MethodUp)
@@ -162,6 +167,7 @@ nmap g] <Action>(MethodDown)
 
 " == 插件 == {{{
 " 插件列表 https://github.com/JetBrains/ideavim/wiki/IdeaVim%20Plugins
+" 注：有 Vim 原始插件的用 `Plug` 启用；JetBrains 市场独有插件只能用 `set` 启用
 
 " ---------- 文本对象类 ----------
 
@@ -178,8 +184,8 @@ nmap g] <Action>(MethodDown)
 "set classtextobj
 
 " functextobj: 提供 `am`(方法签名+体) `aM`(含 JavaDoc) `im`(方法体内容) 文本对象
-" 灵感来自: https://github.com/kana/vim-textobj-function
-"set functextobj
+" 原始插件: https://github.com/kana/vim-textobj-function
+"Plug 'kana/vim-textobj-function'
 
 " functiontextobj: 提供 `if`/`af` 文本对象操作函数/方法（类似 `iw` 操作单词）
 " 需要安装 Vim FunctionTextObj 插件: https://plugins.jetbrains.com/plugin/25897-vim-functiontextobj
@@ -193,6 +199,10 @@ nmap g] <Action>(MethodDown)
 " 原始插件: https://github.com/echasnovski/mini.ai
 "set mini-ai
 
+" targets: 扩展内置文本对象，支持 next/last 寻址、引号/括号/分隔符/参数/标签等的 i/a/I/A 变体
+" 原始插件: https://github.com/wellle/targets.vim
+"Plug 'wellle/targets.vim'
+
 " textobj-entire: 提供 `ae`/`ie` 文本对象选中整个缓冲区内容（无需关心光标位置）
 " 原始插件: https://github.com/kana/vim-textobj-entire
 "Plug 'kana/vim-textobj-entire'
@@ -201,7 +211,12 @@ nmap g] <Action>(MethodDown)
 
 " easymotion: 通过高亮所有可能目标并按键直达，简化 `w`/`f{char}` 等移动操作
 " 需要安装 IdeaVim-EasyMotion 和 AceJump 两个插件
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
+
+" CamelCaseMotion: 按 CamelCase/snake_case 子词边界移动，提供 `<leader>w`/`b`/`e` 及对应内文本对象
+" 原始插件: https://github.com/bkad/CamelCaseMotion
+"Plug 'bkad/CamelCaseMotion'
+"let g:camelcasemotion_key = '<leader>'
 
 " sneak: 输入两个字符快速跳转到匹配位置（`s`前向/`S`后向，`;`/`,`继续跳转）
 " 原始插件: https://github.com/justinmk/vim-sneak
@@ -209,7 +224,7 @@ Plug 'easymotion/vim-easymotion'
 
 " quickscope: 自动高亮当前行唯一字符，方便通过 f/t/F/T 快速跳转
 " 需要安装 IdeaVim-Quickscope 插件: https://plugins.jetbrains.com/plugin/19417-ideavim-quickscope
-set quickscope
+"set quickscope
 
 " paragraph-motion: 扩展 `{`/`}` 跳转，使其能识别仅包含空格的空行（默认只识别纯空行）
 " 原始插件: https://github.com/dbakker/vim-paragraph-motion
@@ -217,9 +232,13 @@ set quickscope
 
 " matchit: 扩展 `%` 键功能，支持 HTML/XML 标签、ruby 的 if/else 等成对结构间跳转
 " 原始插件: https://github.com/chrisbra/matchit
-"packadd matchit
+"Plug 'chrisbra/matchit'
 
 " ---------- 编辑增强类 ----------
+
+" abolish: 大小写风格快速转换（`crs` snake_case、`crc` camelCase、`crm` MixedCase 等）及大小写感知的 :S 替换
+" 原始插件: https://github.com/tpope/vim-abolish
+"Plug 'tpope/vim-abolish'
 
 " commentary: 代码注释增强，`gcc` 注释/取消注释当前行，`gc` + 动作注释目标区域
 " 原始插件: https://github.com/tpope/vim-commentary
@@ -255,6 +274,9 @@ set quickscope
 "let g:highlightedyank_highlight_duration="1000"
 "let g:highlightedyank_highlight_color="rgba(160, 160, 160, 155)"
 
+" youcompleteme: Tab 键循环代码补全弹窗中的候选项（类似 SuperTab）
+"set youcompleteme
+
 " ---------- UI 与导航类 ----------
 
 " NERDTree: 在项目面板中使用 NERDTree 风格的导航
@@ -277,7 +299,7 @@ set quickscope
 
 " keep-english-in-normal: 返回 Normal 模式后自动切换为英文输入法
 " 需要安装 IdeaVimExtension 插件: https://plugins.jetbrains.com/plugin/9615-ideavimextension
-set keep-english-in-normal
+"set keep-english-in-normal
 " == }}}
 
 
@@ -292,4 +314,4 @@ set keep-english-in-normal
 
 
 " XXX: 最后一行为 模式行，请勿修改，可参考 modelines
-" vim:set et ts=2 sts=2 sw=2 fdm=marker:
+" vim:set et ts=2 sts=2 sw=2 fdm=marker ft=vim:
