@@ -261,7 +261,7 @@
 可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
 * 必备
-    * [清歌输入法](https://qingg.im/mac/)、[Baidu Input](https://srf.baidu.com/input/mac.html)（之前的梅花点迅输入法），以及系统自带的五笔输入法其实也够用。第三方输入法对我最大的价值是 SHIFT 切临时拼音（用 Karabiner-Elements 绑定 SHIFT 键的方案不太理想，经常切失败）
+    * [RIME](https://rime.im/)、[Baidu Input](https://srf.baidu.com/input/mac.html)（之前的点讯梅花输入法，且 [RIME 作者也曾就职于此](https://www.ituring.com.cn/article/118072)），以及系统自带的五笔输入法其实也够用
     * [Microsoft Edge](https://www.microsoft.com/edge)、[Google Chrome](https://www.google.com/chrome/)
 * 效率
     * [Raycast](https://www.raycast.com/)、[Alfred](https://www.alfredapp.com/)、[uTools](http://www.u.tools/)，效率工具
@@ -461,6 +461,40 @@
 * 菜单栏
     * iTerm2
         * Make iTerm2 Default Term
+
+### 输入法
+
+#### Rime
+
+[Rime](https://rime.im) 输入法引擎对有特殊输入诉求的人非常友好，虽然我作为普通话+冀鲁官话使用者暂无特殊诉求，但 Rime 这个优秀方案仍然值得尝试。
+
+安装共分两大步骤：
+1. 安装 Rime 输入法引擎，可以去[官网下载页](https://rime.im/download/)下载对应平台安装包
+2. 安装对应的输入方案，可以使用 [东风破](https://github.com/rime/plum) 或自己用 git 下载方案到配置目录
+
+#### 输入方案
+
+经过我个人实践，推荐两款输入方案：
+
+* [oh-my-rime](https://github.com/Mintimate/oh-my-rime)，囊括了大部分社区优秀输入方案，包括全拼、双拼、五笔86、五笔98等
+* [极点五笔输入配置方案](https://github.com/KyleBing/rime-wubi86-jidian)，我在 Windows 下最喜欢的就是极点五笔了
+
+以下为自己用 git 下载方案配置目录的步骤：
+
+```bash
+# 1. 进入 Rime 鼠须管 配置目录（输入法中添加了鼠须管才会有此路径）
+cd ~/Library/Rime
+# 2. 将当前目录初始化为 git 仓库（因为路径不为空，不能直接 git clone）
+git init
+# 3. 设置输入方案 git 地址
+git remote add origin git@github.com:KyleBing/rime-wubi86-jidian.git
+# 4. 获取 master 最新代码
+git fetch origin master --depth=1
+# 5. 检出 master 分支代码到本地
+git checkout -t origin/master
+```
+
+最后记得点击状态栏鼠须管图标，并「重新部署」使配置生效
 
 ### Microsoft Edge
 
