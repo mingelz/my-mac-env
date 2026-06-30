@@ -377,8 +377,9 @@
 #### Vundle
 
 * 安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
-* 编辑 `~/.config/vim/vimrc` 文件，选择需要的插件（我已不再使用 Vim 开发，目前只安装了 editorconfig 一个插件）
+* 编辑 `~/.config/vim/vimrc` 文件，选择需要的插件
 * 通过 Vundle 安装插件：`:PluginsInstall`
+* 由于我已不再使用 Vim 开发，目前把 `vimrc` 中的插件都注释掉了
 
 #### MacVim
 

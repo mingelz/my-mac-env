@@ -1,41 +1,65 @@
-# 主题
+# === 主题 ===
+# 可在 ghostty 中通过 `ghostty +list-themes` 命令查看可用主题
 theme = Starlight
 
-# 字体
+# === 字体 ===
 font-family = "Maple Mono NF CN"
 font-size = 18
-font-feature = +calt
+# 字体特性
+# 1. 四字符标签为 OpenType 通用规范，参考 https://learn.microsoft.com/en-us/typography/opentype/spec/featurelist
+# 2. cv（字符变体 Character Variants）、ss（风格集 Stylistic Sets）编号含义由字体作者决定，不同字体不通用
+# 3. 常见通用规范特性：
+#   - liga: 基础连字，如 fi, tt 等排版连字
+#   - calt: 上下文替换，一般作为编程连字的实现方案，如把 -> 连成 →
+#   - dlig: 自由连字，更激进的连字，如把 Friday 连成 ㈮
+#   - zero: 异形零，数字 0 显示为带斜线/点的样式，方便与字母 oO 区分
+#   - frac: 分数，1/2 → ½
+#   - ordn: 序数，1st 的 st 上标
+#   - swsh: 花笔字形
+# 4. 可以在 fontdrop.info, wakamaifondue.com 等平台检查字体特性支持情况、以及预览特性效果
+# 5. Maple Font 作者提供了专门的字体特性预览页 font.subf.dev/en/playground
+font-feature = +liga,+calt,+cv09,+cv10,+cv42,+cv43
 
-# 背景色
+# === 背景色 ===
 # background-opacity = 0.8
 # background-blur-radius = 20
 
-# 光标
+# === 光标 ===
 cursor-style = block
 cursor-style-blink = false
+# 光标颜色
+cursor-color = #ff9966
+# 光标文本颜色
+cursor-text = #1a1a1a
 # 不应用集成终端的光标特性（否则 cursor-style 设置无效）
 shell-integration-features = no-cursor
 # 打字时隐藏光标
 mouse-hide-while-typing = true
 
+# === 窗口 ===
 # 窗口留白
 window-padding-x = 12
 window-padding-y = 12
+# macOS 窗口装饰样式
+# - tabs: 直接把标签栏放在窗口顶部，不显示窗口标题
+macos-titlebar-style = tabs
 
-# 非激活分屏覆层的样式
+# === 非激活分屏覆层的样式 ===
 unfocused-split-opacity = 0.6
 unfocused-split-fill = #999999
 
-# 快捷终端
+# === 快捷终端 ===
 quick-terminal-position = top
 quick-terminal-size = 50%
 
+# === 杂项 ===
 # 关闭最后一个窗口后退出 App
 quit-after-last-window-closed = true
 
-# 快捷键
+# === 快捷键 ===
+# 可在 ghostty 中通过 `ghostty +list-keybinds` 命令查找可用快捷键
 # 以 global: 开头的快捷键在全局范围内生效（即使 Ghostty 没有焦点），否则仅在 Ghostty 窗口内生效
 # 全局切换 Ghostty 窗口的显示/隐藏（注意不要与 iTerm 快捷键冲突）
-# keybind = global:ctrl+alt+shift+u=toggle_visibility
+keybind = global:ctrl+alt+shift+u=toggle_visibility
 # 全局切换快捷终端的显示/隐藏（注意不要与 iTerm 快捷键冲突）
 # keybind = global:ctrl+alt+shift+o=toggle_quick_terminal

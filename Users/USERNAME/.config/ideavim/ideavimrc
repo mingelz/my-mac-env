@@ -207,6 +207,10 @@ nmap g] <Action>(MethodDown)
 " 原始插件: https://github.com/kana/vim-textobj-entire
 "Plug 'kana/vim-textobj-entire'
 
+" textobj-user: 自定义文本对象框架，可在 ideavimrc 中声明式定义自己的文本对象（无需写插件代码）
+" 原始插件: https://github.com/kana/vim-textobj-user
+"Plug 'kana/vim-textobj-user'
+
 " ---------- 移动与跳转类 ----------
 
 " easymotion: 通过高亮所有可能目标并按键直达，简化 `w`/`f{char}` 等移动操作
@@ -233,6 +237,10 @@ nmap g] <Action>(MethodDown)
 " matchit: 扩展 `%` 键功能，支持 HTML/XML 标签、ruby 的 if/else 等成对结构间跳转
 " 原始插件: https://github.com/chrisbra/matchit
 "Plug 'chrisbra/matchit'
+
+" indentwise: 按缩进深度移动（`[-`/`]-` 更浅、`[+`/`]+` 更深、`[=`/`]=` 同级、`[%`/`]%` 缩进块首/尾）
+" 原始插件: https://github.com/jeetsukumaran/vim-indentwise
+"Plug 'jeetsukumaran/vim-indentwise'
 
 " ---------- 编辑增强类 ----------
 
@@ -303,9 +311,25 @@ nmap g] <Action>(MethodDown)
 " == }}}
 
 
+" == 自动命令 Autocmd == {{{
+" + 在编辑器事件触发时自动执行 Ex 命令或 Vimscript，语法：`autocmd [group] {event} {pattern} {command}`
+" + 常用事件：InsertEnter/InsertLeave(进出插入模式)、BufWritePre/BufWritePost(保存前/后)、
+"   BufEnter/BufLeave(切换缓冲区)、FileType(文件类型确定时，pattern 匹配类型名如 python/java)、
+"   FocusGained/FocusLost(IDE 窗口获得/失去焦点)
+" + 注意：IDEA 会在失焦、切标签、构建时自动保存，BufWritePre/Post 触发频率远高于 Vim 的 `:w`，处理器应幂等
+
+" 示例：进入 Python 文件类型时提示（FileType 的 pattern 匹配类型名而非路径）
+"autocmd FileType python echo "editing python"
+
+" 示例：保存 Markdown 前的钩子
+"autocmd BufWritePre *.md echo "saving markdown"
+" == }}}
+
+
 " == 参考 & 引用 == {{{
 " + IdeaVim 官网: https://github.com/JetBrains/ideavim
 " + IdeaVim Wiki: https://github.com/JetBrains/ideavim/wiki
+" + Autocmd 自动命令文档: https://github.com/JetBrains/ideavim/wiki/autocmd
 " + Share your ~/.ideavimrc: https://github.com/JetBrains/ideavim/discussions/303
 " + IdeaVim 默认键绑定（键索引）: https://github.com/JetBrains/ideavim/blob/master/src/main/java/com/maddyhome/idea/vim/package-info.java
 " + IdeaVim 默认键绑定（行为索引）: https://github.com/JetBrains/ideavim/blob/master/src/main/resources/META-INF/includes/VimActions.xml

@@ -1,0 +1,6 @@
+# 当源为 http（非 TLS）时需要加入此列表，等价于 pip 的 trusted-host
+allow-insecure-host = ["mirror.nju.edu.cn"]
+
+[[index]]
+url = "https://mirror.nju.edu.cn/pypi/web/simple"
+default = true

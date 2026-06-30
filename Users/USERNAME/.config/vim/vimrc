@@ -309,8 +309,8 @@ cmap w!! w !sudo tee % >/dev/null
 "set rtp+=~/.vim/bundle/Vundle.vim    "添加 vundle runtime path 并启动 vundle
 "call vundle#begin()    "必须将安装插件的命令放在 vundle#begin 和 vundle#end 之间
 " 格式为 `Plugin 'github-username/repo-name'`
-"Plugin 'VundleVim/Vundle.vim'    "让 vundle 管理插件版本, 必须
-"Plugin 'editorconfig/editorconfig-vim'    "Editor Config
+" Plugin 'VundleVim/Vundle.vim'    "让 vundle 管理插件版本, 必须
+" Plugin 'editorconfig/editorconfig-vim'    "Editor Config
 " Plugin 'yianwillis/vimcdoc'    "vim中文文档
 " Plugin 'wakatime/vim-wakatime'    "统计写码时间 https://wakatime.com
 " Plugin 'scrooloose/nerdtree'    "文件管理器

@@ -31,7 +31,8 @@ plugins=(
 # 插件后序配置，启动插件后要补充执行的命令
 # --------------------------------------
 
-## 插件配置 - brew 安装 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+## 插件配置 - zsh-syntax-highlighting 命令语法高亮
+## brew 安装 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
   # 如果提示 "highlighters directory not found" 可以取消下面一行的注释
   # ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/highlighters"
@@ -39,7 +40,8 @@ if [ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.
   source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
-## 插件配置 - brew 安装 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+## 插件配置 - zsh-autosuggestions 根据历史命令自动补全建议（灰色提示）
+## brew 安装 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 if [ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
   source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi

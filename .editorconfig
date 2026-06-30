@@ -43,6 +43,7 @@ indent_size = 4
 # Java 以 4 个空格缩进
 [*.{java,kt}]
 indent_size = 4
+ij_continuation_indent_size = 8
 
 # Python 以 4 个空格缩进
 [*.py]
