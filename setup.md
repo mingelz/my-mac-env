@@ -261,7 +261,9 @@
 可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
 
 * 必备
-    * [RIME](https://rime.im/)、[Baidu Input](https://srf.baidu.com/input/mac.html)（之前的点讯梅花输入法，且 [RIME 作者也曾就职于此](https://www.ituring.com.cn/article/118072)），以及系统自带的五笔输入法其实也够用
+    * [RIME](https://rime.im/)、[Baidu Input](https://srf.baidu.com/input/mac.html)（之前的点讯梅花输入法，且 [RIME 作者也曾就职于此](https://www.ituring.com.cn/article/118072)），以及系统自带的五笔输入法其实也够用。目前让我选择三方输入法的主要原因有以下几点：
+        * 我希望通过点击 SHIFT 切中英文（目前通过 Karabiner 已有完美方案，故不再成为问题）
+        * 我希望输入数字后的下一个标点自动切英文半角（方便输入如 `1.2` 数字及 `1. ` 这种 Markdown 序列）
     * [Microsoft Edge](https://www.microsoft.com/edge)、[Google Chrome](https://www.google.com/chrome/)
 * 效率
     * [Raycast](https://www.raycast.com/)、[Alfred](https://www.alfredapp.com/)、[uTools](http://www.u.tools/)，效率工具
@@ -396,12 +398,10 @@
 运行 `install.sh karabiner`，会将 `.config/karabiner/karabiner.json` 复制到 `~/.config/karabiner/karabiner.json`。Karabiner 会写回配置文件，如有更新请手动同步回仓库。
 
 > 以下快捷键在配置中存在（留做参考），但我实际已不再使用：
->
-> * *LEFT_SHIFT enhance*: 留给 IntellijIDEA 的 Search Everywhere 功能使用
 > * *CAPS_LOCK to COMMAND + CONTROL + OPTION + SHIFT*: 替换为 CONTROL + OPTION + SHIFT 三键，原因是 `Command+Option+Shift+Control+,` 和 `Command+Option+Shift+Control+.` 两个系统快捷键无法取消，可能会被误按
 > * *Map Command-Shift-Option-Control-Period to f17 (avoid System Diagnostics)*: 绑定不成功，参考[这里](https://discussions.apple.com/thread/254787050)
 > * *Map Command-Shift-Option-Control-Comma to f18 (avoid System Diagnostics View)*: 绑定不成功，原因同上
-> * *Map Command-Shift-Option-Control-w to f17 (avoid Wifi Diagnostics)*: 绑定不成功，原因同上
+> * *Map Command-Shift-Option-Control-w to f19 (avoid Wifi Diagnostics)*: 绑定不成功，原因同上
 
 ### iTerm2
 
