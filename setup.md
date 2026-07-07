@@ -349,14 +349,16 @@
 推荐使用 [install.sh](./install.sh) 进行统一安装，各模块的配置文件位于 `Users/USERNAME/` 下：
 
 * Bash & ZSH: `install.sh shell`，链接 `.bash_profile`、`.zshrc` 及 `.config/shellrc/` 下的配置文件
-    * 私人配置参考 `.config/shellrc/private.example.sh`，按需创建 `private*.sh`（通用）/ `private*.zsh`（仅 zsh）/ `private*.bash`（仅 bash）
+    * 私人配置参考 `.config/shellrc/private.example.sh`，按需创建 `private*.sh`（通用）/ `private*.pre.zsh`（仅 zsh，omz 初始化前）/ `private*.post.zsh`（仅 zsh，omz 初始化后）/ `private*.bash`（仅 bash）
 * Git: `install.sh git`，链接 `.config/git/` 目录
     * 私人配置参考 `.config/git/private_config.example`，复制为 `private_config` 并填入个人信息
 * SSH: `install.sh ssh`，复制 `.ssh/config` 文件
-* Node & NPM: `install.sh node`，链接 `.config/npm/npmrc`
-* Python & PyPI: `install.sh python`，链接 `.config/pip/pip.conf`
+* Node & NPM: `install.sh node`，链接 `.config/npm/` 目录；若已装 fnm 则同时安装 Node LTS 并安装 `.config/npm/npm-global-packages.txt` 中的全局包
+* Python & PyPI: `install.sh python`，链接 `.config/pip/` 目录；若已装 uv 则同时安装最新版 Python
 * Ruby & Gem: `install.sh ruby`，链接 `.config/gem/gemrc`
-* Bin: `install.sh bin`，逐个链接 `.local/bin/` 下的脚本
+* Bin: `.local/bin/` 下有一些实用脚本（如 `git-cca`、`git-cct`、`git-rank`、`clean-my-mac.sh`），通过在 `private*.sh` 中将该目录加入 `PATH` 使用（参考 `private.example.sh`），无需 install.sh 单独安装
+
+> 完整模块列表（含 `ideavim`、`karabiner`、`raycast`、`ghostty`、`vscode`、`brew` 等）请运行 `install.sh --list` 查看，各自的详细配置见下文对应小节
 
 #### SSH
 
@@ -411,6 +413,8 @@
     * Selection
         * 【取消勾选】Copy to pasteboard on selection
 * Appearance
+    * General
+        * Theme: `Minimal`
     * Tabs
         * 【勾选】Show tab bar even when there is only one tab
         * 【取消勾选】Tabs have close buttons
@@ -518,22 +522,9 @@ git checkout -t origin/master
     * Clipboard History
         * Clipboard History: Hotkey: `Command + Control + C`
     * Quicklinks，可直接导入 [raycast-quicklinks.json](./Users/USERNAME/.config/raycast/raycast-quicklinks.json) 文件
-        * Search Google: `https://www.google.com/search?q={query}`, Alias: `gg`
-        * Search Bing Global: `https://global.bing.com/search?q={query}`, Alias: `bg`
-        * Search Bing CN: `https://cn.bing.com/search?q={query}`, Alias: `bc`
-        * Search Baidu: `https://www.baidu.com/s?wd={Query}`, Alias: `bd`
-        * 百度翻译（英译中）: `https://fanyi.baidu.com/#en/zh/{query}`, Alias: `bdtc`
-        * 百度翻译（中译英）: `https://fanyi.baidu.com/#zh/en/{query}`, Alias: `bdte`
-        * DeepL（英译中）: `https://www.deepl.com/translator#en/zh/{query}`, Alias: `dltc`
-        * DeepL（中译英）: `https://www.deepl.com/translator#zh/en/{query}`, Alias: `dlte`
-        * MVN Repository: `https://mvnrepository.com/search?q={query}`, Alias: `mvn`
-        * NPM Package: `https://www.npmjs.com/package/{query}`, Alias: `npm`
-        * NPM Mirror Package: `https://npmmirror.com/package/{query}`, Alias: `cnpm`
-        * RunKit: `https://npm.runkit.com/{query}`, Alias: `rk`
+        * 并按个人习惯配置对应的 Alias
     * Snippets，可直接导入 [raycast-snippets.json](./Users/USERNAME/.config/raycast/raycast-snippets.json) 文件
         * Search Snippets: Hotkey: `Command + Control + S`
-        * date: `{date "yyyy-MM-dd"}`
-        * datetime: `{datetime "yyyy-MM-dd HH:mm:ss"}`
     * Window Management
         * Maximize: HotKey: `Control + Option + Shift + Enter`
         * Next Display: HotKey: `Control + Option + Shift + M`
@@ -631,7 +622,7 @@ git checkout -t origin/master
 
 * etc/hosts
 * Shell
-    * `~/.config/shellrc/private*.` 中的配置
+    * `~/.config/shellrc/private*` 中的配置
 * Git
     * `~/.config/git/private*` 中的配置
 * SSH

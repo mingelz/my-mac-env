@@ -300,10 +300,11 @@ show_help() {
   --status, -s    查看各模块安装状态
 
 模块:
-  不指定模块时安装全部。指定一个或多个模块名，用空格分隔。
+  指定一个或多个模块名（用空格分隔），或用 all 安装全部模块。
+  不指定任何模块时显示本帮助信息。
 
 示例:
-  ./install.sh              安装全部模块
+  ./install.sh all          安装全部模块
   ./install.sh shell        只安装 shell
   ./install.sh shell git    只安装 shell 和 git
 

@@ -14,7 +14,7 @@
 
 ```bash
 ./install.sh --list              # 列出所有模块
-./install.sh                     # 安装全部配置
+./install.sh all                 # 安装全部配置
 ./install.sh shell git vim       # 选择性安装指定模块配置
 ```
 
