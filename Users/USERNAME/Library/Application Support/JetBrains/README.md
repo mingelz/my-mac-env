@@ -1,8 +1,8 @@
-# Intellij IDEA 配置
+# Intellij IDEA 配置（基于 2026.2）
 
 从 2025.3 开始，Intellij IDEA 不再区分 Ultimate 和 Community 版本，只有一个安装包，通过订阅付费来提供高级功能。且部分原属于 Ultimate 版本的功能（如 Spring Boot 等）也无需付费即可使用。
 
-Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）很好的支持前端业务的开发，当开发语言主要是 Java + JavaScript(JS/ES/TS) 时，可以只依赖一个编辑器即可。以下配置同时考虑了 Java 和 JavaScript 的开发场景。如果你的配置页面没有对应项目，大概率是没有启用对应插件导致的。
+Intellij IDEA 可以通过插件很好的支持前端业务的开发（大部分支持前端的插件需要付费），当开发语言主要是 Java + JavaScript(JS/ES/TS) 时，可以只依赖一个编辑器即可。以下配置同时考虑了 Java 和 JavaScript 的开发场景。如果你的配置页面没有对应项目，大概率是没有启用对应插件导致的。
 
 配置文件存储路径： `$HOME/Library/Application Support/JetBrains/IntellijIdea{版本号}`
 
@@ -21,9 +21,11 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
     * Project
       * [ ] Reopen projects on startup _启动时打开关闭前的项目_
       * Open project in: `New window` _在新窗口打开项目_
-    * Autosave
+    * Files
       * [ ] Save files when switching to a different application or a built-in terminal _是否自动保存文件_
       * [ ] Back up files before saving _修改前是否备份文件_
+    * Updates
+      * [ ] Check for JDK updates
   * Notifications
     * Plugin suggestings available _推荐插件_
       * `No Pupup`
@@ -55,10 +57,10 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
     * Auto Import
       * XML
         * [ ] Show auto-import tooltip _编辑pom文件时因依赖较多容易卡住_
-      * Java
-        * [x] Add unambiguous imports on the fly _自动 import 无歧义的类_
       * TypeScript / JavaScript
         * [x] Unambiguous imports on the fly _自动 import 无歧义的类_
+      * Java
+        * [x] Add unambiguous imports on the fly _自动 import 无歧义的类_
     * Appearance
       * [x] Show method separators _展示方法分隔线_
       * [x] Show whitespaces _展示空白字符_
@@ -150,6 +152,9 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
     * [x] Clear initial commit message _清空上一次的提交信息_
   * Confirmation
     * When files are created: `Do not add` _新增文件时不自动提交_
+  * Git
+    * Commit
+      * [x] Enagle staging area _使用 git 标准的 staging 能力，而不是 IDEA 的 changelist_
 * Build, Execution, Deployment
   * 🛄 Build Tools
     * Maven
@@ -190,11 +195,11 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
 ### 自带插件
 
 编辑器默认启用了所有自带插件，禁用掉不需要的插件可以适当提升性能。
-以下是我开启的自带插件（基于 2025.3）：
+以下是我开启的自带插件：
 
 * AI-Powered
+  * MCP Server
 * Build Tools
-  * Artifacts Repository Search _(被 Maven 依赖)_
   * Maven
 * Database
   * Database Tools and SQL
@@ -204,19 +209,21 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * HTML Tools
 * IDE Localization
 * IDE Settings
+  * Agent Client Protocol
   * Configuration Script _(被 Shared Indexes 依赖)_
   * EditorConfig
   * Java IDE Customization
-  * JetBrains OS Integration
   * Shared Indexes
 * JavaScript Frameworks and Tools
+  * ESLint
   * JavaScript and TypeScript
   * JavaScript Debugger
+  * Node.js
   * React
   * Vue.js
 * JVM Frameworks
   * AOP Pointcut Language _支持方法/类与对应切面的相互跳转_
-  * Jakarta EE Platform _(被 Spring Web 依赖)_
+  * Jakarta EE Platform _(被 Jakarta EE: Web/Servlets, Spring Web 依赖)_
   * Jakarta EE: Web/Servlets _(被 Spring Web 依赖)_
   * JVM Microservices Frameworks
   * Lombok
@@ -226,7 +233,6 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
 * JVM Tools
   * Java Bytecode Decompiler
   * Java Internationalization
-  * Java Stream Debugger
 * Keymap
 * Kotlin Frameworks
 * Languages
@@ -248,6 +254,7 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
 * Style Sheets
   * CSS
   * Less
+  * PostCSS _(被 Vue.js 依赖)_
 * Template Languages
   * Thymeleaf
 * Test Tools
@@ -255,9 +262,19 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
 * Version Controls
   * Git
 * Other Tools
-  * Groovy Live Templates _(被 Spring Web 依赖)_
+  * Data Editor UI _(被 Database Tools and SQL 依赖)_
+  * Grid Core _(被 Database Tools and SQL, Jakarta EE: Web/Servlets, Spring Web 依赖)_
   * Images
+  * Mermaid
+  * Navbar _(被 Docker, Database Tools and SQL 依赖)_
+  * Recent Files
+  * Services View _(被 Docker, Database Tools and SQL 依赖)_
+  * SSH _(被 JavaScript Debugger, Node.js 依赖)_
+  * Structural Search
+  * Structure View
   * Terminal
+  * TODO Comments
+  * Web Browser (JCEF) _(被 JavaScript Debugger, Node.js 依赖)_
 
 ### 独立插件
 
@@ -271,7 +288,6 @@ Intellij IDEA 可以通过插件（大部分支持前端的插件需要付费）
   * IdeaVim-Quickscope: IdeaVim 插件，提供 Quickscope 支持
   * IdeaVimExtension: IdeaVim 插件，退回 Normal 模式自动切换英文输入法
 * Maven Helper: 查看 Maven 依赖树，在排查依赖冲突时很有用
-* Mermaid: 支持 Markdown 内针对 Mermaid 代码块的语法高亮及预览
 * MultiHighlight: 多个关键字同时高亮
 * MyBatisCodeHelperPro: 更强大的 mybatis 插件，我买了收费版（最近用 mybatis-plus，不怎么手搓 sql，到期后就没再续），单纯的 xml/mapper 跳转可以用其他免费插件，比如 MyBatisX
 * MyBatisX: mybatis 插件，支持跳转到 mapper 路径
