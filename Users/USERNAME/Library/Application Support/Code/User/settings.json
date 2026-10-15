@@ -13,7 +13,7 @@
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.wordWrap": "off",
   // Text Editor - Font
-  "editor.fontFamily": "Sarasa Term SC, Maple Mono NF CN, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Maple Mono NF CN, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
   // Text Editor - Formatting
@@ -36,6 +36,7 @@
   // Workbench
   "workbench.startupEditor": "none",
   // Workbench - Appearance
+  "workbench.colorTheme": "Solarized Dark",
   // "workbench.iconTheme": "material-icon-theme",
   // Workbench - Breadcrumbs
   "breadcrumbs.enabled": false,

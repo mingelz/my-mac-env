@@ -1,3 +1,5 @@
+# 此配置放在 XDG 下能生效，依赖于 `export NPM_CONFIG_USERCONFIG` 配置，而非 NPM 默认支持
+
 # 当涉及写操作时（如发 npm 包）registry 需要改回官方源
 registry=https://registry.npmmirror.com
 

@@ -29,21 +29,6 @@ Thumbs.db
 .svn/
 
 ### AI Agents ###
-.agents/
-.claude/
-.codebuddy/
-.codex/
-.copilot/
-.cursor/
-.gemini/
-.opencode/
-.qoder/
-.trae/
-opencode.json
-AGENTS.md
-CLAUDE.md
-CODEBUDDY.md
-GEMINI.md
 *.local.md
 
 ### Environment ###

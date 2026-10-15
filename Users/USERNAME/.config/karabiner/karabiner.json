@@ -4,7 +4,7 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "CAPS_LOCK to CONTROL + OPTION + SHIFT",
+            "description": "CAPS_LOCK to CONTROL+OPTION+SHIFT (MehKey)",
             "manipulators": [
               {
                 "from": {
@@ -17,6 +17,12 @@
                 },
                 "to": [
                   {
+                    "set_variable": {
+                      "name": "meh_key_pressed",
+                      "value": 1
+                    }
+                  },
+                  {
                     "key_code": "left_shift",
                     "modifiers": [
                       "left_control",
@@ -24,14 +30,29 @@
                     ]
                   }
                 ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "meh_key_pressed",
+                      "value": 0
+                    }
+                  }
+                ],
                 "type": "basic"
               }
             ]
           },
           {
-            "description": "LEFT_CONTROL + h/j/k/l to arrow keys",
+            "description": "LEFT_CONTROL + H/J/K/L to arrow keys",
             "manipulators": [
               {
+                "conditions": [
+                  {
+                    "name": "meh_key_pressed",
+                    "type": "variable_unless",
+                    "value": 1
+                  }
+                ],
                 "from": {
                   "key_code": "h",
                   "modifiers": {
@@ -51,6 +72,13 @@
                 "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "name": "meh_key_pressed",
+                    "type": "variable_unless",
+                    "value": 1
+                  }
+                ],
                 "from": {
                   "key_code": "j",
                   "modifiers": {
@@ -70,6 +98,13 @@
                 "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "name": "meh_key_pressed",
+                    "type": "variable_unless",
+                    "value": 1
+                  }
+                ],
                 "from": {
                   "key_code": "k",
                   "modifiers": {
@@ -89,6 +124,13 @@
                 "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "name": "meh_key_pressed",
+                    "type": "variable_unless",
+                    "value": 1
+                  }
+                ],
                 "from": {
                   "key_code": "l",
                   "modifiers": {
@@ -110,15 +152,25 @@
             ]
           },
           {
-            "description": "LEFT_CONTROL + p/n to arrow up/down",
+            "description": "LEFT_CONTROL + P/N to arrow up/down",
             "enabled": false,
             "manipulators": [
               {
+                "conditions": [
+                  {
+                    "name": "meh_key_pressed",
+                    "type": "variable_unless",
+                    "value": 1
+                  }
+                ],
                 "from": {
                   "key_code": "p",
                   "modifiers": {
                     "mandatory": [
                       "left_control"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -130,11 +182,21 @@
                 "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "name": "meh_key_pressed",
+                    "type": "variable_unless",
+                    "value": 1
+                  }
+                ],
                 "from": {
                   "key_code": "n",
                   "modifiers": {
                     "mandatory": [
                       "left_control"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -250,6 +312,7 @@
                     "description": "65% Keyboard Only. Keychron K6(p:591,v:1452)",
                     "identifiers": [
                       {
+                        "is_keyboard": true,
                         "product_id": 591,
                         "vendor_id": 1452
                       }
@@ -286,6 +349,7 @@
                     "description": "65% Keyboard Only. Keychron K6(p:591,v:1452)",
                     "identifiers": [
                       {
+                        "is_keyboard": true,
                         "product_id": 591,
                         "vendor_id": 1452
                       }
@@ -306,79 +370,9 @@
                     "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "left_shift"
-                    ],
-                    "repeat": true
+                    ]
                   }
                 ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Map Command-Shift-Option-Control-Period to f17 (avoid System Diagnostics)",
-            "enabled": false,
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "period",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_option",
-                      "left_shift"
-                    ]
-                  }
-                },
-                "to": {
-                  "key_code": "f17"
-                },
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Map Command-Shift-Option-Control-Comma to f18 (avoid System Diagnostics View)",
-            "enabled": false,
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "comma",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_option",
-                      "left_shift"
-                    ]
-                  }
-                },
-                "to": {
-                  "key_code": "f18"
-                },
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Map Command-Shift-Option-Control-w to f19 (avoid Wifi Diagnostics)",
-            "enabled": false,
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "w",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_option",
-                      "left_shift"
-                    ]
-                  }
-                },
-                "to": {
-                  "key_code": "f19"
-                },
                 "type": "basic"
               }
             ]

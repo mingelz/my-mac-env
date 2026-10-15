@@ -12,7 +12,7 @@
 
 ## 数据库相关
 
-- 设计表时，要保证每个表都包括 `id`, `created_at`, `updated_at` 列，以 MySQL 举例：
+- 设计表时，要保证每个表都包括 `id`, `created_at`, `updated_at` 列（且置于最前边），以 MySQL 举例：
 
 ```sql
 CREATE TABLE `table_name` (
