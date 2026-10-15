@@ -34,6 +34,9 @@
 |   |-- .ssh/
 |   |-- Library/
 |   |-- .bash_profile
+|   |-- .bashrc
+|   |-- .zprofile
+|   |-- .zshenv
 |   |-- .zshrc
 |-- install.sh
 |-- setup.md

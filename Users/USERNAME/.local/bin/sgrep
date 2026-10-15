@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# sgrep - grep 时按窗口宽度截断而不换行，查看大量应用日志时更易读
+#
+# 用法: sgrep <grep 的所有参数>
+
+set -euo pipefail
+
+# 仅在输出到终端时切换换行模式：
+# 1. 重定向或管道时 tput 的控制序列会混进数据流
+# 2. cron 等无 TERM 的环境下 tput 会报错
+if [ -t 1 ]; then
+    # 无论正常结束、grep 无匹配返回 1、还是被 Ctrl-C 中断，都要恢复自动换行，
+    # 否则终端会一直停留在不换行状态
+    trap 'tput smam' EXIT
+    tput rmam
+fi
+
+grep "$@"

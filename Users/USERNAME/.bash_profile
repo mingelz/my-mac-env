@@ -1,46 +1,48 @@
-# ------------------------------------------------
-# 通用配置
-# ------------------------------------------------
-# base
-source "$HOME/.config/shellrc/base_alias.sh"
-source "$HOME/.config/shellrc/base_env.sh"
-source "$HOME/.config/shellrc/base_func.sh"
+# bash env + path 层入口
+#
+# 加载时机：bash login shell
+# 注意：bash 只会读取 .bash_profile / .bash_login / .profile 中【第一个存在】的文件，
+#       本文件存在时后两者永远不会生效
+#
+# 交互配置见 .bashrc，本文件在末尾显式转发
 
-# lang
-source "$HOME/.config/shellrc/lang_java.sh"
-source "$HOME/.config/shellrc/lang_node.sh"
-source "$HOME/.config/shellrc/lang_python.sh"
-source "$HOME/.config/shellrc/lang_ruby.sh"
+# ------------------------------------------------------------------------------
+# env 层
+# ------------------------------------------------------------------------------
 
-# util
-source "$HOME/.config/shellrc/util_homebrew.sh"
+source "$HOME/.config/shell/env.sh"
 
-
-# ------------------------------------------------
-# bash 专属配置
-# ------------------------------------------------
-# 快捷键配置
-source "$HOME/.config/shellrc/base_keys.bash"
-
-# bash 历史记录文件位置（与 zsh 共用 HISTFILE 配置名称），默认 ~/.bash_history
-export HISTFILE="$XDG_STATE_HOME/bash/history"
-mkdir -p "$(dirname "$HISTFILE")"
-
-
-# ------------------------------------------------
-# private 配置
-# ------------------------------------------------
-# private*.sh: 私有通用配置
-for f in "$HOME"/.config/shellrc/private*.sh; do
-  [[ -f "$f" && "$f" != *.example ]] && source "$f"
-done
-
-# private*.bash: 私有 bash 专属配置
-for f in "$HOME"/.config/shellrc/private*.bash; do
-  [[ -f "$f" && "$f" != *.example ]] && source "$f"
+# private*.env.sh: 私有的 env 层配置（机器/内网专属，不进版本库）
+# 约束同 .zshenv：只能放纯变量赋值，禁止子进程调用与任何输出（守卫式目录保障例外见 .config/shell/README.md）
+# glob 已限定后缀为 *.env.sh，不会匹配 *.example.sh，无需额外排除
+for f in "$HOME"/.config/shell/private*.env.sh; do
+  [ -f "$f" ] || continue
+  source "$f"
 done
 
 
-# ------------------------------------------------
+# ------------------------------------------------------------------------------
+# path 层
+# ------------------------------------------------------------------------------
+
+source "$HOME/.config/shell/path.sh"
+
+# private*.path.sh: 私有的 PATH 配置（机器/内网专属，不进版本库）
+# glob 已限定后缀为 *.path.sh，不会匹配 *.example.sh，无需额外排除
+for f in "$HOME"/.config/shell/private*.path.sh; do
+  [ -f "$f" ] || continue
+  source "$f"
+done
+
+
+# ------------------------------------------------------------------------------
+# rc 层
+# ------------------------------------------------------------------------------
+
+# login shell 通常同时也是交互 shell（终端 App 新开窗口），需显式加载交互配置
+[ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
+
+
+# ------------------------------------------------------------------------------
 # 其他配置（当有应用修改此文件时可快速识别）
-# ------------------------------------------------
+# ------------------------------------------------------------------------------

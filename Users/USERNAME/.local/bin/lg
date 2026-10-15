@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+#
+# lg - 列出目录下所有 git 仓库的名称与 origin 地址
+#
+# 用法: lg [目录...]
+#   不传参数时列出当前目录；行为类似 ls——lg abc 等价于进入 abc 目录后执行 lg，支持传多个目录
+#   若目录自身就是 git 仓库，会先以 . 列出它自己的 origin
+
+set -euo pipefail
+
+# ---------- 内部函数 ----------
+
+# 打印单个仓库目录的一行：$1=目录路径，$2=显示名称；非仓库根则跳过
+_row() {
+    local url
+    # 目录自身必须是仓库根，否则 git -C 会向上取到父仓库的 origin
+    [ -e "$1/.git" ] || return 0
+
+    url=$(git -C "$1" remote get-url origin 2>/dev/null) || url=""
+
+    printf "%-40s %s\n" "$2" "${url:--}"
+}
+
+# ---------- 主流程 ----------
+
+if [ "$#" -eq 0 ]; then
+    set -- .
+fi
+
+first=1
+for target in "$@"; do
+    if [ ! -d "$target" ]; then
+        echo "lg: '$target' 不是目录" >&2
+        continue
+    fi
+
+    # 传多个目录时打印分组标题（类似 ls a b c）
+    if [ "$#" -gt 1 ]; then
+        [ "$first" -eq 1 ] || echo
+        echo "$target:"
+    fi
+    first=0
+
+    # 在子 shell 里 cd 到目标目录后再列举，输出与直接在该目录执行一致
+    ( cd "$target" || exit 1
+      _row . .
+      find . -mindepth 1 -maxdepth 1 -type d -print0 |
+          while IFS= read -r -d '' dir; do
+              _row "$dir" "${dir#./}"
+          done
+    )
+done
