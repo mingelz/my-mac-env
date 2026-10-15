@@ -1,0 +1,7 @@
+# npm 全局包清单
+#
+# 由 install.sh 的 node 模块读取（npm install -g）。
+# 格式: 每行一个包名，可带 @version 后缀；空行和 # 开头的行会被忽略。
+# 内容变化后才会重新安装，避免每次执行都联网核对（哈希记录在 ~/.local/state/my-mac-env/）。
+
+npm-check-updates

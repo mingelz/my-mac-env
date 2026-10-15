@@ -1,0 +1,39 @@
+# 模块注册表：模块名与说明以本文件为唯一来源
+#
+# 格式: 模块名 | 一行说明
+#   说明在 --list 展示；模块未实现 status_<模块名> 时，--status 也用它兜底展示。
+#   说明里不要出现 | （它是字段分隔符）。
+#
+# 行序即 `install/install.sh all` 的安装顺序。
+# 新增模块 = 在这里加一行 + 在 install.sh 实现 install_<模块名>（可选 status_<模块名>），
+# 不需要再改 --list / --status / 分发逻辑。
+# 暂时不用的模块注释掉对应行即可（_each_manifest 跳过 # 行；被注释的模块不出现在 --list，
+# 按名安装也会报“未知模块”，恢复只需取消注释）。
+#
+# brew 放最前，后续模块依赖它装进来的工具：
+# - omz 插件：保证 shell 环节可以启用 omz 插件
+# - fnm：保证 node 环节可以安装 node 和 npm 包
+# - intellij-idea cask：保证 idea 环节能拿到 `idea` 命令来装插件
+
+# Homebrew
+brew       | 执行 brew bundle (读取 install/Brewfile)
+
+# Shell & Terminal
+shell      | oh-my-zsh + .zshenv, .zprofile, .zshrc, .bash_profile, .bashrc, .config/shell/
+bin        | .local/bin/ 下的实用脚本
+ssh        | .ssh/config
+git        | .config/git/
+vim        | .config/vim/
+
+# Language
+node       | .config/npm/ + fnm install LTS + 全局 npm 包 (install/npm-packages.txt)
+python     | .config/pip/ + .config/uv/
+ruby       | .config/gem/
+
+# App
+appdir     | ~/Applications/ 目录本身 + .localized（cask 的 appdir）
+karabiner  | .config/karabiner/
+ghostty    | .config/ghostty/
+#raycast    | .config/raycast/
+vscode     | settings.json, keybindings.json + key-repeating
+idea       | IntelliJ IDEA 第三方插件 (install/idea-plugins.txt) + .config/ideavim/ 链接

@@ -13,9 +13,10 @@
 克隆当前仓库，执行：
 
 ```bash
-./install.sh --list              # 列出所有模块
-./install.sh all                 # 安装全部配置
-./install.sh shell git vim       # 选择性安装指定模块配置
+install/install.sh --list              # 列出所有模块
+install/install.sh --status            # 查看安装状态
+install/install.sh all                 # 安装全部配置
+install/install.sh shell git vim       # 选择性安装指定模块配置
 ```
 
 > 或参考 [Mac 环境安装配置一条龙](./setup.md) 自行配置
@@ -26,6 +27,7 @@
 / (Root Directory)
 |-- assets/
 |-- etc/
+|-- install/
 |-- opt/
 |-- Users/USERNAME/ ($HOME)
 |   |-- .agents/
@@ -38,6 +40,5 @@
 |   |-- .zprofile
 |   |-- .zshenv
 |   |-- .zshrc
-|-- install.sh
 |-- setup.md
 ```

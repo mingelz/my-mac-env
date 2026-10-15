@@ -1,0 +1,18 @@
+# IntelliJ IDEA 第三方插件清单
+#
+# 由 install.sh 的 idea 模块读取（idea installPlugins 安装），--status 用它核对插件目录。
+# 清单内容变化后才会重新执行安装（哈希记录在 ~/.local/state/my-mac-env/）。
+#
+# 格式: xmlId | 插件目录名 | 说明
+#   xmlId    Marketplace 上的唯一标识，安装时使用的就是它
+#   目录名   插件落盘后 plugins/ 下的文件夹名，由插件自身定义，与 xmlId 不一定一致
+#   说明     仅给人看，可省略
+#
+# 只列第三方插件。Java / Spring / EditorConfig 等官方插件随 IDE 分发并自动更新，不需要在这里声明。
+# 更完整的推荐清单（含当前未启用的）见 Users/USERNAME/Library/Application Support/JetBrains/README.md
+
+IdeaVIM | IdeaVIM | IdeaVim，按键配置见 .config/ideavim/ideavimrc
+MavenRunHelper | MavenHelper | Maven Helper
+MultiHighlight | MultiHighlight | Multi Highlight
+com.baomidou.plugin.idea.mybatisx | MybatisX | MyBatisX
+zielu.gittoolbox | gittoolbox | GitToolBox

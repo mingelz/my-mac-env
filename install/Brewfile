@@ -1,0 +1,121 @@
+# Brewfile
+# 使用方式: `brew bundle --file=path/to/Brewfile`
+# 文档: https://docs.brew.sh/Brew-Bundle-and-Brewfile
+
+
+# == 统一配置 ==================================================================
+## Cask 默认安装在 ~/Applications 下
+cask_args appdir: "~/Applications", require_sha: true
+
+
+# == 字体 ======================================================================
+cask "font-maple-mono-nf-cn"            # MapleMono 字体
+
+
+# == 应用：Mac App Store =======================================================
+## Homebrew 支持通过 `mas "应用名", id: xxx` 安装 MAS 应用，其中应用名只是描述不会被安装程序消费
+## 可以通 https://apps.apple.com/ 找 App 的 id
+brew "mas"
+
+## Microsoft 365 & Apple Create Studio
+#mas "Word", id: 462054704
+#mas "Excel", id: 462058435
+#mas "PowerPoint", id: 462062816
+#mas "Pages", id: 361309726
+#mas "Numbers", id: 361304891
+#mas "Keynote", id: 361285480
+
+## 其他
+mas "Agenda", id: 1287445660
+mas "Caffeinated", id: 1362171212
+mas "Dingtalk 钉钉", id: 1435447041
+mas "Longshot", id: 6450262949
+mas "Pixiu 貔貅记账", id: 1461452315
+mas "QQ", id: 451108668
+#mas "QSpace", id: 1469774098            # MAS 版本受沙箱限制较多，转为通过 cask 安装 QSpace Pro
+mas "The Unarchiver", id: 425424353
+mas "Wechat 微信", id: 836500024
+mas "Xcode", id: 497799835
+mas "Xmind", id: 1327661892
+
+
+# == 应用：未分组 Brew & Cask ==================================================
+## Homebrew 对非官方 tap 默认拒绝加载，需要显式写 trusted，且 cask 必须写全限定名
+
+## Brew
+brew "mole"                             # 系统清理与软件卸载
+#brew "lame"                             # 音频编码、压缩
+brew "tree"                             # 文件目录树形结构显示
+
+## Cask - 输入法
+cask "qingg"
+#cask "squirrel"                         # 目前用清歌，暂不安装 RIME
+
+## Cask - 浏览器
+cask "microsoft-edge", args: { appdir: "/Applications" }    # EdgeUpdater 把安装路径注册死在 /Applications
+
+## Cask - 娱乐与多媒体
+cask "neteasemusic"
+cask "qqmusic"
+
+## Cask - 系统及效率工具
+cask "background-music"
+cask "karabiner-elements"               # 配置由 install.sh 的 karabiner 模块落盘（.config/karabiner/）
+cask "onyx"
+cask "qspace-pro"
+#cask "raycast"                          # 换 Tinycast 了
+cask "abue-ammar/tinycast/tinycast", trusted: true
+
+
+# == 开发环境：oh-my-zsh =======================================================
+## oh-my-zsh 本体的安装由 install.sh 的 shell 模块负责
+## 以下是可通过 brew 安装的 zsh 插件 (安装后需要在 .zshrc 中 source 对应路径)
+brew "zsh-autosuggestions"              # 命令行自动补全
+brew "zsh-syntax-highlighting"          # 语法高亮
+
+
+# == 开发环境：Node & npm ======================================================
+brew "fnm"                              # fnm 要比 nvm 快不少，且兼容 .nvmrc 等配置
+## Node LTS 与 npm 全局包的安装由 install.sh 的 node 模块负责
+
+
+# == 开发环境：Python & uv =====================================================
+brew "uv"                               # 替代 pip + venv + pyenv
+## Python 的安装由 install.sh 的 python 模块负责
+
+
+# == 开发环境：Java & Maven =====================================================
+## 不使用 OpenJDK 是因为它是 key-only（不链接到全局），定位为底层依赖而非生产工具
+cask "zulu@8"                           # 本想统一使用 temurin，但 ARM 版的 jdk8 环境只有 zulu 提供
+cask "temurin@11"
+cask "temurin@17"
+cask "temurin@21"
+cask "temurin@25"
+## 因 Maven 被标为依赖 OpenJDK，但其实 mvn 命令完全兼容 temurin/zulu 提供的环境，故意跳过依赖进行安装
+## 为防止 brew upgrade 时重新拉入 OpenJDK 需要将 maven 锁定，
+## 未来升级 Maven 使用 `brew unpin maven && brew install maven --ignore-dependencies && brew pin maven`
+brew "maven", args: ["ignore-dependencies"]
+## brew pin 由 install.sh 的 brew 模块负责
+
+
+# == 开发者工具 ================================================================
+## 未分组
+#cask "db-browser-for-sqlite"
+cask "drawio"
+cask "fork"
+cask "ghostty"                          # 配置由 install.sh 的 ghostty 模块链接（.config/ghostty/）
+#cask "imageoptim"
+cask "iterm2"
+cask "orbstack"
+cask "reqable"
+cask "switchhosts"
+
+## Intellij IDEA：从 2025.3 起不再区分 Ultimate / Community，只有一个安装包，靠订阅解锁高级功能
+cask "intellij-idea"                    # 插件与 .config/ideavim/ 链接由 install.sh 的 idea 模块负责
+
+## VSCode: 插件可以通过 `vscode` 安装，这是 brew bundle 的原生类型
+cask "visual-studio-code"               # 配置文件与 key-repeating 由 install.sh 的 vscode 模块负责
+vscode "editorconfig.editorconfig"
+vscode "eamodio.gitlens"
+vscode "wayou.vscode-todo-highlight"
+vscode "vscodevim.vim"
