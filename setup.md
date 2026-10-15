@@ -256,89 +256,83 @@
 * [XMind](http://www.xmind.net/)
 * [宁波上官](https://www.better365.cn/) 有很多优秀的产品
 
-### 4.2 下载
+### 4.2 命令行安装
 
-可以将下载的应用安装在自己的家目录下，此时需要在家目录下创建 `Applications` 文件夹（注意是复数形式），如果要让它显示中文名，在文件夹中创建一个名为 `.localized` 的文件即可（无需内容）。
+#### Oh My Zsh
 
-* 必备
-    * [RIME](https://rime.im/)、[Baidu Input](https://srf.baidu.com/input/mac.html)（之前的点讯梅花输入法，且 [RIME 作者也曾就职于此](https://www.ituring.com.cn/article/118072)），以及系统自带的五笔输入法其实也够用。目前让我选择三方输入法的主要原因有以下几点：
-        * 我希望通过点击 SHIFT 切中英文（目前通过 Karabiner 已有完美方案，故不再成为问题）
-        * 我希望输入数字后的下一个标点自动切英文半角（方便输入如 `1.2` 数字及 `1. ` 这种 Markdown 序列）
-    * [Microsoft Edge](https://www.microsoft.com/edge)、[Google Chrome](https://www.google.com/chrome/)
-* 效率
-    * [Raycast](https://www.raycast.com/)、[Alfred](https://www.alfredapp.com/)、[uTools](http://www.u.tools/)，效率工具
+* 官方链接：[官网](https://ohmyz.sh/)、[源码](https://github.com/ohmyzsh/ohmyzsh)
+* 建议使用国内源改善访问速度，参考本文【附录：开源镜像站】
+
+> **注意**
+> 1. 依赖的 omz 插件统一在 Homebrew 维护，参考 [Brewfile](/install/Brewfile) 及 [rc_omz.pre.zsh](/Users/USERNAME/.config/shell/rc_omz.pre.zsh)
+
+#### Homebrew
+
+* 官方链接：[官网](https://brew.sh/)、[源码](https://github.com/Homebrew/homebrew-core)、[cask](https://formulae.brew.sh/cask/)
+* 建议使用国内源改善访问速度，参考本文【附录：开源镜像站】
+* 通过 [Brewfile](/install/Brewfile) 统一管理 brew 项
+
+> **注意**
+> 1. brew 依赖 Xcode Command Line Tools，建议先在命令行执行 `xcode-select --install` 进行安装，虽然 brew 的安装脚本中会检测并自动安装，但我还是习惯先手动把依赖处理好
+> 2. Homebrew 的 ARM 版本安装路径在 `/opt/`，X86 版本安装路径为 `/usr/bin/`
+
+### 4.3 字体安装
+
+由于系统默认字体英文与中文宽度非 1:2 （英文宽600，中文宽1000），导致在代码注释中进行中英混排时无法对齐。
+所以我在一些代码相关的 App 中（如编辑器、终端工具）中使用了以下字体（目前在用 `Maple-Mono-NF-CN`）：
+
+* [更纱黑体](https://github.com/be5invis/Sarasa-Gothic)，特点：英文字体较窄（英文宽500，中文宽1000）
+    * [Gitee镜像](https://gitee.com/mirrors/Sarasa-Gothic)、[TUNA镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic)
+    * [更纱黑体这么多版本，要怎么选？](https://zhuanlan.zhihu.com/p/627059922)
+    * [Vscode 等宽字体](https://jqtmviyu.github.io/post/vscode-mono-font/)
+    * 推荐 Sarasa-Term-Slab-SC-TTF （带连字/带字体微调/term=半宽破折号/slab=粗衬线体/sc=集成简体中文字形/ttf=单一字形）
+* [Maple Mono](https://github.com/subframe7536/maple-font)，特点：中文字体间距较大（英文宽600，中文宽1200）
+    * [Gitee镜像](https://gitee.com/subframe7536/Maple)
+    * [官网](https://font.subf.dev/) 提供 [在线特性测试](https://font.subf.dev/zh-cn/playground/)
+    * 推荐 Maple-Mono-NF-CN-unhinted （带连字/nf=集成[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)/cn=集成中日文字形/unhinted=无字体微调）
+
+
+### 4.4 常用软件列表
+
+我常用的软件已经都列在了 [Brewfile](/install/Brewfile) 中了，这里列出主要是想多说些碎碎念。
+另外如果希望家目录下的 `~/Applications` 显示中文名，可以在文件夹中创建名为 `.localized` 的文件即可（无需内容）。
+
+* 输入法：除系统自带的输入法外，额外推荐：
+    * [RIME](https://rime.im/)，强大的输入法平台，macOS 下叫鼠须管（语出自欧阳修「酌君以荆州鱼枕之蕉，赠君以宣城鼠须之管」）
+    * [清歌](https://qingg.im/)，开箱即用，我现在用它
+    * [百度输入法](https://srf.baidu.com/input/mac.html)，之前的点讯梅花输入法，且 [RIME 作者也曾就职于此](https://www.ituring.com.cn/article/118072)
+* 浏览器：
+    * [Microsoft Edge](https://www.microsoft.com/edge)，使用 Edge 是为了方便在国内同步书签
+    * [Google Chrome](https://www.google.com/chrome/)
+* 启动器：
+    * [Tinycast](https://tinycast.dev)，作者用爱(AI)发电，无死角抄 Raycast（甚至支持 Raycast 插件市场），还开源免费，反正我是没把持住
+    * [Raycast](https://www.raycast.com/)，免费的 Alfred 不够用，但 Raycast 免费部分足够了
+    * [Alfred](https://www.alfredapp.com/)，早期神器，我已经转投 ~~Raycast~~ Tinycast
+    * [uTools](http://www.u.tools/)，之前号称 Alfred 国产平替，其实我没用过
+* 终端：
+    * [iTerm](https://www.iterm2.com)
+    * [ghostty](https://ghostty.org/)
+* 编辑器：
+    * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+    * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可[参考此文](https://zhuanlan.zhihu.com/p/536236143)将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn`
+* 未归类
     * [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)，从系统层面绑定快捷键
-    * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置
+    * [Rectangle](https://rectangleapp.com/)，移动+缩放窗口到屏幕指定位置，因 Raycast/Tinycast 自带类似能力，所以目前暂未用到了
     * [Snipaste](https://zh.snipaste.com/)，截图+贴图，目前我已转投 Longshot(MAS)
     * [Floaty](https://www.floatytool.com/)，将任意窗口置顶
-* 生产力
     * [draw.io](https://www.drawio.com/)
-    * [Visual Studio Code](https://code.visualstudio.com/)，如果下载慢可将下载地址域名 `https://az764295.vo.msecnd.net` 换为 `https://vscode.cdn.azure.cn` （[参考](https://zhuanlan.zhihu.com/p/536236143)）
-    * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-    * [Qoder/QoderWork](https://qoder.com)、[CodeBuddy/WorkBuddy](https://www.codebuddy.cn/)、[TRAE/TRAE Work](https://www.trae.cn/)、[Claude Code](https://code.claude.com/docs/zh-CN/overview)、[OpenCode](https://opencode.ai)
-    * [iTerm](https://www.iterm2.com), [ghostty](https://ghostty.org/)
     * [Fork](https://fork.dev/)
     * [SwitchHosts](https://github.com/oldj/SwitchHosts)
     * [DB Browser for SQLite](https://sqlitebrowser.org/)、[SQLiteStudio](https://github.com/pawelsalawa/sqlitestudio)，SQLite 管理器
     * [Reqable](https://reqable.com/)、[whistle](https://github.com/avwo/whistle)、[Charles Proxy](https://www.charlesproxy.com/)，抓包及代理工具
-    * ~~[JDK](https://www.oracle.com/java/technologies/downloads/)~~，改为使用 Homebrew 安装 Temurin
-        * 在 Oracle 下载 JDK 时需要先注册，可以换成 Adobe 的 CDN 链接跳过注册直接下载（具体地址请自行找规律）: `https://cfdownload.adobe.com/pub/adobe/coldfusion/java/java8/java8u481/jdk/jdk-8u481-macosx-aarch64.dmg`
-* 娱乐
-    * [Netease Music](https://music.163.com)，因沙箱限制 App Store 版无法使用键盘控制播放，官网下载安装的版本可以
+    * [Netease Music](https://music.163.com)、[QQ Music](https://y.qq.com/)，因沙箱限制 MAS 版无法使用键盘控制播放，官网下载安装的版本可以
     * [Steam](https://www.steampowered.com/)
-* 未归类
     * [OnyX](https://www.titanium-software.fr/en/onyx.html)，Mac 优化工具，同时此开发者还有其他一些 Mac 小工具
     * [BackgroundMusic](https://github.com/kyleneideck/BackgroundMusic)，为每个App设置不同的音量
     * [xbar(bitbar)](https://github.com/matryer/xbar)、[SwiftBar](https://github.com/swiftbar/SwiftBar)，在菜单栏展示自定义脚本内容
     * [ImageOptim](https://imageoptim.com/mac)，图片压缩，[pngquant](https://pngquant.org/) 的 Mac UI 版
+    * 如下载 [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) 时不想注册，可以换成 Adobe 的 CDN 链接直接下载，可参考以下地址自行找规律：`https://cfdownload.adobe.com/pub/adobe/coldfusion/java/java8/java8u481/jdk/jdk-8u481-macosx-aarch64.dmg`。当然我已经转投 brew+temurin，没用 [SDKMAN!](https://sdkman.io/) 是觉得 brew 够用了
 
-### 4.3 命令行安装
-
-#### Brew
-
-> **注意**
-> 1. brew 依赖 Xcode Command Line Tools，建议安装 brew 前先安装 Xcode，并在命令行执行 `xcode-select --install` 安装 Xcode Command Line Tools。虽然直接安装 brew 也会安装此依赖，但我个人还是习惯先手动把依赖处理好
-> 2. ARM 版本安装路径在 `/opt/`，X86 版本安装路径为 `/usr/bin/`
-> 3. 个人不太喜欢使用 cask 安装会自动更新的应用，可能会导致安装目录比较乱，此时可通过 cask 查找要安装应用的下载地址后自主下载安装
-> 4. 建议使用国内源改善国内访问速度，参考本文【附录：开源镜像站】
-
-* [brew](http://brew.sh/)
-    * fnm/nvm & node
-        * fnm 要比 nvm 快不少，我已经转投 fnm
-    * uv & python
-    * maven (安装时需要 `--ignore-dependencies`，因为它识别不到已安装的 temurin)
-    * tree
-    * lame，mp3 编解码、压缩
-    * oh-my-zsh 插件
-        * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)，语法高亮插件
-        * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)，命令补全插件
-* [cask](https://formulae.brew.sh/cask/)(已经与 brew 集成，无需额外安装)
-    * temurin@25
-
-#### Oh My Zsh
-
-> **注意**
-> 1. omz 自带的插件，以及手动安装在 omz 插件目录（一般为 `~/.oh-my-zsh/custom/plugins`）的插件，直接在 `~/.zshrc` 的 `plugins=()` 中设置名称即可
-> 2. 通过 brew 安装的插件，需要手动 `source` 插件路径，插件会安装在 `/opt/homebrew/share/` 下。个人建议使用 brew 安装，方便维护与升级
-> 4. 建议使用国内源改善国内访问速度，参考本文【附录：开源镜像站】
-
-* [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-
-### 4.4 字体安装
-
-由于系统默认字体英文与中文宽度非 1:2 （英文宽600，中文宽1000），导致在代码注释中进行中英混排时无法对齐。
-所以我在一些代码相关的 App 中（如编辑器、终端工具）中使用了以下字体：
-
-* [更纱黑体](https://github.com/be5invis/Sarasa-Gothic)，特点：英文字体较窄（英文宽500，中文宽1000）
-    * [Gitee镜像](https://gitee.com/mirrors/Sarasa-Gothic)、[TUNA镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic)
-    * 推荐 Sarasa-Term-Slab-SC-TTF （带连字/带字体微调/term=半宽破折号/slab=粗衬线体/sc=集成简体中文字形/ttf=单一字形）
-* [Maple Mono](https://github.com/subframe7536/maple-font)，特点：中文字体间距较大（英文宽600，中文宽1200）
-    * [Gitee镜像](https://gitee.com/subframe7536/Maple)
-    * 推荐 Maple-Mono-NF-CN-unhinted （带连字/nf=集成[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)/cn=集成中日文字形/unhinted=无字体微调）
-* 参考文档
-    * [更纱黑体这么多版本，要怎么选？](https://zhuanlan.zhihu.com/p/627059922)
-    * [Vscode 等宽字体](https://jqtmviyu.github.io/post/vscode-mono-font/)
-    * [Maple Mono 项目 README](https://github.com/subframe7536/maple-font/blob/variable/README_CN.md)
 
 ## 五、应用配置
 
@@ -346,23 +340,24 @@
 
 ### Shell
 
-推荐使用 [install.sh](./install.sh) 进行统一安装，各模块的配置文件位于 `Users/USERNAME/` 下：
+运行 `install/install.sh shell` 安装 Bash/Zsh 配置，包括 `.zshenv`、`.zprofile` 、`.zshrc`、`.bash_profile`、`.bashrc` 及 `.config/shell/` 下的分层配置。
 
-* Bash & ZSH: `install.sh shell`，链接 `.bash_profile`、`.zshrc` 及 `.config/shellrc/` 下的配置文件
-    * 私人配置参考 `.config/shellrc/private.example.sh`，按需创建 `private*.sh`（通用）/ `private*.pre.zsh`（仅 zsh，omz 初始化前）/ `private*.post.zsh`（仅 zsh，omz 初始化后）/ `private*.bash`（仅 bash）
-* Git: `install.sh git`，链接 `.config/git/` 目录
-    * 私人配置参考 `.config/git/private_config.example`，复制为 `private_config` 并填入个人信息
-* SSH: `install.sh ssh`，复制 `.ssh/config` 文件
-* Node & NPM: `install.sh node`，链接 `.config/npm/` 目录；若已装 fnm 则同时安装 Node LTS 并安装 `.config/npm/npm-global-packages.txt` 中的全局包
-* Python & PyPI: `install.sh python`，链接 `.config/pip/` 目录；若已装 uv 则同时安装最新版 Python
-* Ruby & Gem: `install.sh ruby`，链接 `.config/gem/gemrc`
-* Bin: `.local/bin/` 下有一些实用脚本（如 `git-cca`、`git-cct`、`git-rank`、`clean-my-mac.sh`），通过在 `private*.sh` 中将该目录加入 `PATH` 使用（参考 `private.example.sh`），无需 install.sh 单独安装
+配置按加载时机分为 env / path / rc 三层，命名规则、层约束、私人配置示例等详见 [.config/shell/README.md](./Users/USERNAME/.config/shell/README.md)。
 
-> 完整模块列表（含 `ideavim`、`karabiner`、`raycast`、`ghostty`、`vscode`、`brew` 等）请运行 `install.sh --list` 查看，各自的详细配置见下文对应小节
+* Git: `install/install.sh git`，链接 `.config/git/` 目录；私人配置参考 `.config/git/private_config.example`
+* SSH: `install/install.sh ssh`，复制 `.ssh/config` 文件
+* Node & NPM: `install/install.sh node`，链接 `.config/npm/` 目录；若已装 fnm 则同时安装 Node LTS 与全局 npm 包（清单见 [install/npm-packages.txt](./install/npm-packages.txt)，内容没变则跳过）
+* Python & PyPI: `install/install.sh python`，链接 `.config/pip/` 目录；若已装 uv 则同时安装最新版 Python
+* Ruby & Gem: `install/install.sh ruby`，链接 `.config/gem/gemrc`
+* Bin: `install/install.sh bin`，将 `.local/bin/` 下的实用脚本链接到 `~/.local/bin`
+
+> 完整模块列表（含 `karabiner`、`ghostty`、`brew` 等）请运行 `install/install.sh --list` 查看，各自的详细配置见下文对应小节。
+
+> 部分模块的安装项（npm 全局包、IDEA 插件等）放在 [install/](./install) 下的清单文件里，格式说明写在各文件头部；增删条目只需要改清单，不必动 shell 脚本。清单内容变化后才会重新执行安装（哈希记录在 `~/.local/state/my-mac-env/`），用 `install/install.sh --status` 还可以反查仓库里有没有未被任何模块认领的路径。
 
 #### SSH
 
-* 运行 `install.sh ssh`，会将 `.ssh/config` 复制到 `~/.ssh/config`
+* 运行 `install/install.sh ssh`，会将 `.ssh/config` 复制到 `~/.ssh/config`
 * 使用 `ssh-keygen` 生成针对每个站点的 SSH key
 * 编辑 `~/.ssh/config` 文件分别指向刚才生成的密钥
 * 在相应站点配置公钥
@@ -375,7 +370,7 @@
 
 ### Vim & MacVim
 
-* 运行 `install.sh vim`，链接 `.config/vim/` 目录
+* 运行 `install/install.sh vim`，链接 `.config/vim/` 目录
 * 配置文件位于 `~/.config/vim/vimrc`，运行时文件（viminfo、undo、swap、backup）统一存放在 `~/.local/state/vim/` 下
 
 #### Vundle
@@ -397,13 +392,33 @@
 
 ### Karabiner-Elements
 
-运行 `install.sh karabiner`，会将 `.config/karabiner/karabiner.json` 复制到 `~/.config/karabiner/karabiner.json`。Karabiner 会写回配置文件，如有更新请手动同步回仓库。
+运行 `install/install.sh karabiner`，会将 `.config/karabiner/karabiner.json` 复制到 `~/.config/karabiner/karabiner.json`（目标已存在则跳过，不覆盖）。Karabiner 会写回配置文件，如有更新请手动同步回仓库。
 
-> 以下快捷键在配置中存在（留做参考），但我实际已不再使用：
-> * *CAPS_LOCK to COMMAND + CONTROL + OPTION + SHIFT*: 替换为 CONTROL + OPTION + SHIFT 三键，原因是 `Command+Option+Shift+Control+,` 和 `Command+Option+Shift+Control+.` 两个系统快捷键无法取消，可能会被误按
-> * *Map Command-Shift-Option-Control-Period to f17 (avoid System Diagnostics)*: 绑定不成功，参考[这里](https://discussions.apple.com/thread/254787050)
-> * *Map Command-Shift-Option-Control-Comma to f18 (avoid System Diagnostics View)*: 绑定不成功，原因同上
-> * *Map Command-Shift-Option-Control-w to f19 (avoid Wifi Diagnostics)*: 绑定不成功，原因同上
+> 一些备忘
+>
+> **键位写法约定**:
+> 修饰键之间用 `+` 连接且不加空格（如 `CONTROL+OPTION+SHIFT`），修饰键（组）与被触发的实键之间的 `+` 两侧加空格（如 `MehKey + H`、`LEFT_CONTROL + H/J/K/L`），多个可选实键用 `/` 分隔
+>
+> **关于 `karabiner.json`**:
+> 我通过 Karabiner 把物理 CONTROL 与 CAPS_LOCK 互换（`simple_modifications`），不常用的 CAPS_LOCK 键当 CONTROL 用；互换后的物理 CONTROL 键再映射成 CONTROL+OPTION+SHIFT（`complex_modifications`），**后续如果看到键位是 `MehKey` 或 `MEH_KEY` 即表示此组合键**
+> - Karabiner 会先应用 `simple_modifications` 再应用 `complex_modifications`，上面两步是串联依赖：complex 规则的 `from` 写的是 `caps_lock`，但它命中的是已被 simple 换过来的物理 CONTROL 键。净效果是 物理 CONTROL 键 → MehKey、物理 CAPS_LOCK 键 → CONTROL
+> - 配置内含三个 profile：`full-featured`（当前选中，含下列全部规则）、`simple`（仅保留 CONTROL 与 CAPS_LOCK 互换）、`empty`（不做任何修改，排查问题时可临时切过去）
+> - `LEFT_CONTROL + H/J/K/L` 映射为方向键 左/下/上/右，任何应用内都能用 vim 式移动。该规则带 `meh_key_pressed` 变量条件，MehKey 按下期间不生效，避免 `MehKey + H/J/K/L` 被它抢先处理
+> - `LEFT_CONTROL + P/N` 映射为方向键 上/下，同样带 `meh_key_pressed` 条件
+> - `RIGHT_SHIFT` 单击切换输入法（ABC ↔ 系统自带五笔，走 `select_input_source` 原生 API）
+> - 两条 `[65% Keyboard]` 规则仅对 Keychron K6（vendor 1452 / product 591）生效：`COMMAND + ESC` → `COMMAND + ~`、`SHIFT + ESC` → `~`，弥补 65% 键盘没有独立的 `~` 键
+>
+> 一些历史配置留档（已从配置文件中移除）:
+> - *CAPS_LOCK to COMMAND+CONTROL+OPTION+SHIFT*: 替换为 CONTROL+OPTION+SHIFT 三键，原因是 `COMMAND+CONTROL+OPTION+SHIFT + .` 快捷键由内核 HID 层直接判定（不走 symbolic hotkeys），无法通过 Karabiner 覆盖，改为三键组合可规避误触问题
+> - *COMMAND+SHIFT+OPTION+CONTROL + Period/Comma to f17/f18*: 原因同上一条。[Apple 社区讨论](https://discussions.apple.com/thread/254787050)也认为这两个 chord 应视为被 macOS 保留（reserved to macOS）
+>
+> 小知识
+> - *COMMAND+CONTROL+OPTION+SHIFT + .*: 触发系统诊断（sysdiagnose），生成系统全量快照，一般需要几分钟，产物约几百 MB，路径为 `/private/var/tmp`
+> - *COMMAND+CONTROL+OPTION+SHIFT + ,*: 触发回溯诊断（tailspin，原意是飞机快速旋转坠落的状态），可用 `sudo tailspin enable/disable` 开启/关闭，系统默认关闭。启用后会有服务常驻后台循环记录进程调用栈，按快捷键后产物是按键前 20s 的回溯采样，用于排查无复现规律的问题
+> - 人们一般将 `COMMAND(WIN)+CONTROL+OPTION(ALT)+SHIFT` 称为 `HyperKey`，把 `CONTROL+OPTION(ALT)+SHIFT` 称为 `MehKey`（Meh 意为 一般般、将就、尚可，MehKey 即表达「虽不如 HyperKey 但也够用的键」）
+>    - 为什么 MehKey 去掉的是 `COMMAND(WIN)` 而非其他键：因为 `COMMAND(WIN)` 被称为 GUI 键，即它与操作系统绑定较深，当涉及菜单快捷键时会被优先考虑，导致它的键组合更容易产生冲突（`COMMAND` 绑定了大量 macOS 系统能力、`WIN` 看名字就知道和 Windows 扯不清瓜葛）
+>    - 相比之下各操作系统和知名软件在定义快捷键时一般会避开 MehKey 组合，它确实更不容易冲突
+>    - MehKey 只是社区约定并无强制约束，你也可以改成其他键组合
 
 ### iTerm2
 
@@ -457,12 +472,12 @@
         Hotkey window
             * 【勾选】A hotkey opens a deciceted window with this profile _唤起快捷终端_
             * Configure Hotkey window
-                * Hotkey: `Control+Option+Shift+I`
+                * Hotkey: `MehKey + O`
                 * 【取消勾选】Floating window
                 * On Dock icon click: `Show this Hotkey Window if no other window is open`
 * Keys
     * Hotkey
-        * 【勾选】Show/hide all windows with a system-wide hotkey: `Control+Option+Shift+O`
+        * 【勾选】Show/hide all windows with a system-wide hotkey: `MehKey + I`
 * 菜单栏
     * iTerm2
         * Make iTerm2 Default Term
@@ -521,17 +536,17 @@ git checkout -t origin/master
 * Extensions
     * Clipboard History
         * Clipboard History: Hotkey: `Command + Control + C`
-    * Quicklinks，可直接导入 [raycast-quicklinks.json](./Users/USERNAME/.config/raycast/raycast-quicklinks.json) 文件
+    * Quicklinks，可直接导入 [raycast-quicklinks.json](./assets/raycast-quicklinks.json) 文件
         * 并按个人习惯配置对应的 Alias
-    * Snippets，可直接导入 [raycast-snippets.json](./Users/USERNAME/.config/raycast/raycast-snippets.json) 文件
+    * Snippets，可直接导入 [raycast-snippets.json](./assets/raycast-snippets.json) 文件
         * Search Snippets: Hotkey: `Command + Control + S`
     * Window Management
-        * Maximize: HotKey: `Control + Option + Shift + Enter`
-        * Next Display: HotKey: `Control + Option + Shift + M`
-        * Restore: HotKey: `Control + Option + Shift + \`
+        * Maximize: HotKey: `MehKey + Enter`
+        * Next Display: HotKey: `MehKey + M`
+        * Restore: HotKey: `MehKey + \`
 * Raycast AI:
     * Custom Providers
-        * 运行 `install.sh raycast`，会将 `providers.yaml` 复制到 `~/.config/raycast/ai/providers.yaml`，自行配置 API Key 及模型等信息
+        * 运行 `install/install.sh raycast`，会将 `providers.yaml` 复制到 `~/.config/raycast/ai/providers.yaml`，自行配置 API Key 及模型等信息
     * Experiments
         * 【勾选】Custom Providers _开启自定义提供商能力_
 * Account: 登录一下
@@ -546,22 +561,25 @@ git checkout -t origin/master
 
 ### Visual Studio Code
 
-* 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line)
-* 运行 `install.sh vscode`，会将 `settings.json` 和 `keybindings.json` 复制到 `~/Library/Application Support/Code/User/`
+> VSCode 由 [Brewfile](./install/Brewfile) 中的 `cask "visual-studio-code"` 与 `vscode` 插件声明安装；配置复制与 key-repeating 开启由 [install.sh](./install/install.sh) 的 vscode 模块负责。
+
+* 配置 VSCode 可在命令行启动：[Launching from the Command Line](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line) （通过 Brew 安装会自动提供命令行能力，就无需自己搞了）
+* 运行 `install/install.sh vscode`，会将 `settings.json` 和 `keybindings.json` 复制到 `~/Library/Application Support/Code/User/`，并开启 key-repeating
 * 常用插件：
     * EditorConfig for VS Code: 自动应用 .editorconfig 配置
     * GitLens — Git supercharged: 非常强大的 Git 工具
-    * TODO Hightlight: 高亮指定关键字
+    * TODO Highlight: 高亮指定关键字
     * Vim: Vim 模拟器
-        * 安装后开启 key-repeating 能力: `defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false` （参考 [官网文档](https://github.com/VSCodeVim/Vim#mac)）
+        * key-repeating（长按触发按键重复）已由 vscode 模块开启：`defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false`（参考 [官网文档](https://github.com/VSCodeVim/Vim#mac)）
 
 ### IntelliJ IDEA
 
-* 配置 IDEA 可在命令行中启动：打开应用点击 【Tools - Create Command-line Launcher...】
+* IDEA 由 [Brewfile](/install/Brewfile) 中的 `cask "intellij-idea"` 安装，该 cask 附带 command wrapper，装完 `idea` 命令即在 PATH 中，无需再手动执行 【Tools - Create Command-line Launcher...】
 * 配置项在 [.../JetBrains/README.md](./Users/USERNAME/Library/Application%20Support/JetBrains/README.md) 中有明细
 * 有几个项目配置是保存在具体项目的 `.idea` 目录下的，对应的配置可以通过复制 `Users/USERNAME/Library/Application Support/JetBrains/project.default.xml` 文件快速设置
-* 推荐插件也在 [.../JetBrains/README.md](./Users/USERNAME/Library/Application%20Support/JetBrains/README.md) 中
-* IdeaVim: 运行 `install.sh ideavim`，链接 `.config/ideavim/ideavimrc` 到 `~/.config/ideavim/ideavimrc`
+* 推荐插件也在 [.../JetBrains/README.md](./Users/USERNAME/Library/Application%20Support/JetBrains/README.md) 中，其中实际纳入自动安装的是 [install/idea-plugins.txt](./install/idea-plugins.txt) 里列出的那几个
+* 第三方插件: 运行 `install/install.sh idea`，通过 `idea installPlugins` 安装。注意该命令是 IDE 启动阶段的能力，执行前需完全退出 IDEA，且没有 `--force`，装完要重启才生效。清单没变时会自动跳过，增删插件改 [install/idea-plugins.txt](./install/idea-plugins.txt) 后重跑即可
+* IdeaVim: 配置链接由 idea 模块随插件安装一并完成（`install/install.sh idea`），链接 `.config/ideavim/ideavimrc` 到 `~/.config/ideavim/ideavimrc`；链接排在插件安装之前，IDE 未装/运行中跳过插件时 ideavimrc 照常就位
 * IntelliJ IDEA Ultimate 包含了 JetBrains 大部分产品能力，可参考 [Intellij IDEA has "exactly" the same functionality as webstorm as far as web is concerned?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207054055) 和 [Can IntelliJ IDEA encapsulate all of the functionality of WebStorm and PHPStorm through plugins?](https://stackoverflow.com/questions/13827214)。具体差异可以通过 [JetBrains Products Comparison](https://www.jetbrains.com/products/compare/) 页面进行对比查看。所以理论上有了 IDEA Ultimate 就不需要再安装 WebStorm、PHPStorm、PyCharm 等产品了。
 
 ### Xcode
@@ -622,7 +640,7 @@ git checkout -t origin/master
 
 * etc/hosts
 * Shell
-    * `~/.config/shellrc/private*` 中的配置
+    * `~/.config/shell/private*` 中的配置
 * Git
     * `~/.config/git/private*` 中的配置
 * SSH
@@ -633,6 +651,8 @@ git checkout -t origin/master
 * Raycast
     * 一些私人 quicklinks
     * 一些私人 snippets
+* 输入法
+    * Rime 词库： `~/Library/Rime/` 下的某些文件（与实际使用的输入方案有关）
 
 ## 七、附录
 
